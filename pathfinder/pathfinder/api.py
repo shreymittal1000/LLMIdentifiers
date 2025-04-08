@@ -217,7 +217,7 @@ class OpenRouter(ModelAPI):
             api_key=os.getenv("OPENROUTER_API_KEY"),
         )
 
-    def request_api(self, chat, tmeperature, top_p, max_tokens):
+    def request_api(self, chat, temperature, top_p, max_tokens):
         import openai
 
         @backoff.on_exception(backoff.expo, openai.RateLimitError)
@@ -227,7 +227,7 @@ class OpenRouter(ModelAPI):
         out = completions_with_backoff(
             model=self.model_name,
             messages=chat,
-            temperature=tmeperature,
+            temperature=temperature,
             top_p=top_p,
             seed=self.seed,
             max_tokens=max_tokens,

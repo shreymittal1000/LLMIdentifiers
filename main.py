@@ -1,7 +1,7 @@
 from prompt_engine import Prompter
 
-model_1 = "llama2-7b-chat"
-model_2 = "mixed-llama2-7b-chat"
+model_1 = "meta-llama/llama-3.3-70b-instruct"
+model_2 = "deepseek/deepseek-chat-v3-0324"
 seed = 42
 MAX_ITERATIONS = 10
 
