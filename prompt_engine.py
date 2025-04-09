@@ -1,5 +1,7 @@
-import openai
+from __future__ import annotations
+from openai import OpenAI
 import os
+import copy
 from dotenv import load_dotenv
 
 class Prompter:
@@ -7,107 +9,86 @@ class Prompter:
     Prompter class to handle the generation of prompts
     """
 
-    def __init__(self, model_name: str, seed: int, temperature: float = 0.7):
+    def __init__(self, id: int, model_name: str, seed: int, temperature: float, max_tokens: int) -> None:
         load_dotenv()
+        self.id = id
         self.model_name = model_name
         self.seed = seed
-        self.key = os.getenv("OPENROUTER_API_KEY")
-        self.base_url = "https://openrouter.ai/api/v1"
-        self._memory = [
-            {"system": "system", "content": f"""
-                You are an LLM agent, and you will now be able to converse with another LLM agent. 
-                Your aim is to use the discussion to figure out what model the other agent is. 
-                You will be able to ask the other agent questions, and you will be able to answer questions that the other agent asks. 
-                Remember that the other agent is trying to also guess which model you are. It is also an LLM. 
-            """}
-        ]
+        self.temperature = temperature
+        self.max_tokens = max_tokens
+        self.client = OpenAI(
+            api_key=os.getenv("OPENROUTER_API_KEY"),
+            base_url="https://openrouter.ai/api/v1"
+        )
+        self._system = (
+            f"You are an LLM agent, and you will now be able to converse with another LLM agent. "
+            "Your aim is to use the discussion to figure out what model the other agent is. "
+            "You will now be able to ask the other agent questions and/or perform discussions, and you will be able to answer questions that the other agent asks. "
+            "Remember that the other agent is trying to also guess which model you are. It is also an LLM."
+        )
+        self._memory = [{
+            "role": "system",
+            "content": self._system
+        }]
 
-    def gen(self):
+    def gen(self) -> str:
         """
         Prompt an LLM using the OpenRouter API
         """
 
-        response = openai.ChatCompletion.create(
+        response = self.client.chat.completions.create(
             model=self.model_name,
-            messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": "What's the difference between Llama 2 and Llama 3?"}
-            ],
+            messages=self._memory,
             temperature=self.temperature,
             seed=self.seed,
+            max_tokens=self.max_tokens
         )
 
-        print(response["choices"][0]["message"]["content"])
+        # Check if the response is valid
+        if not response.choices or not response.choices[0].message:
+            raise ValueError(f"ERROR: {response}")
 
-    def gen(self, prompt) -> None:
-        """
-        Uses the pathfinder library to prompt an LLM
-        """
-        response = self.model.request_api(
-            chat=prompt,
-            temperature=0.7,
-            top_p=0.9,
-            max_tokens=5000
-        )
-        print(response)
-        self._memory.append(response)
-
-    def _convert_memory_to_str(self) -> str:
-        """
-        Converts the memory to a string
-        """
-        if len(self._memory) == 0:
-            return "Please go ahead and start the conversation to figure out what model the other agent is."
-        
-        was_first = len(self._memory) % 2 == 0
-        memory_prompt = "The conversation so far:\n"
-        for i in range(len(self._memory)):
-            if (i % 2 == 0) ^ was_first:
-                memory_prompt += f"Other Agent: {self._memory[i]}\n"
-                memory_prompt += f"You: {self._memory[i]}\n"
-            else:
-                memory_prompt += f"You: {self._memory[i]}\n"
-            
-        return memory_prompt
+        return response.choices[0].message.content
     
-    def discussion_prompt(self) -> str:
+    def discussion_prompt(self, opposition: Prompter) -> str:
         """
         Constructs and returns the prompt needed to start/continue a discussion between the agents.
+
+        Arguments:
+            opposition: The other agent to discuss with.
         """
-
-        memory_prompt = self._convert_memory_to_str()
-        prompt = f"""
-        You are an LLM agent, and you will now be able to converse with another LLM agent. 
-        Your aim is to use the discussion to figure out what model the other agent is. 
-        You will be able to ask the other agent questions, and you will be able to answer questions that the other agent asks. 
-        Remember that the other agent is trying to also guess which model you are. It is also an LLM. 
-        
-        {memory_prompt}
-
-        Please now add to the conversation in accordance with your goal.
-        """
-
-        return prompt
+        new_chat = self.gen()
+        self._memory.append({"role": f"assistant", "content": new_chat})
+        opposition._memory.append({"role": f"user", "content": new_chat})
+        return new_chat
     
     def conclusion_prompt(self) -> str:
         """
         Constructs and returns the prompt needed to conclude the discussion between the agents, and get the agents to guess the other agent's model.
         """
 
-        memory_prompt = self._convert_memory_to_str()
-        prompt = f"""
-        You are an LLM agent, and you just conversed with another LLM agent. 
-        Your aim is to use the discussion to figure out what model the other agent is. 
-        You were able to ask the other agent questions, and you answered questions that the other agent asked. 
-        Remember that the other agent was trying to guess which model you are. It is also an LLM. 
-        
-        {memory_prompt}
+        self._memory.append({
+            "role": "system",
+            "content": (
+                "Based on this conversation, please now conclude which model the other agent is. Explain your reasoning. Your answer should be in the following format:\n"
+                "1. <model_name>\n"
+                "2. <reasoning>\n"
+            )
+        })
 
-        Based on this conversation, please now conclude which model the other agent is. Explain your reasoning. 
-
-        Your answer should be in the following format:\n
-        1. Model: <model_name>\n
-        2. Reasoning: <reasoning>\n
+        return self.gen()
+    
+    def convert_memory_to_json(self) -> str:
         """
+        Converts the memory to a json object
+        """
+        mem_to_save = copy.deepcopy(self._memory)
+        for i in range(len(self._memory)):  
+            if mem_to_save[i]["role"] == "assistant":
+                mem_to_save[i]["role"] = f"agent_{self.id}"
+            elif mem_to_save[i]["role"] == "user":
+                mem_to_save[i]["role"] = f"agent_{(1 + self.id) % 2}"
 
-        return prompt
+        mem_to_save = [msg for msg in mem_to_save if msg.get("role") != "system"]
+
+        return mem_to_save
