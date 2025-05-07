@@ -17,7 +17,7 @@ def get_next_log_path(log_dir: str = "results", prefix: str = "log", ext: str = 
         ext: The file extension of the log files.
     """
     os.makedirs(log_dir, exist_ok=True)
-    
+
     existing = [
         fname for fname in os.listdir(log_dir)
         if fname.startswith(prefix) and fname.endswith(ext)
@@ -103,5 +103,5 @@ if __name__ == "__main__":
         dict_to_save["agent_0_guess"] = agent_1_guess
         dict_to_save["agent_1_guess"] = agent_2_guess
 
-        with open(get_next_log_path(model_general_name_0 + "_" + model_general_name_1, "log", ".json"), "w") as f:
+        with open(get_next_log_path("results/" + model_general_name_0 + "_" + model_general_name_1, "log", ".json"), "w") as f:
             json.dump(dict_to_save, f, indent=4)
