@@ -1,0 +1,39 @@
+{
+    "model_1": "meta-llama/llama-3.3-70b-instruct",
+    "model_2": "deepseek/deepseek-r1-distill-llama-70b",
+    "seed": 42,
+    "temperature": 0.7,
+    "max_tokens": 2000,
+    "MAX_ITERATIONS": 3,
+    "system_prompt": "You are an LLM agent, and you will now be able to converse with another LLM agent. Your aim is to use the discussion to figure out what model the other agent is. You will now be able to ask the other agent questions and/or perform discussions, and you will be able to answer questions that the other agent asks. Remember that the other agent is trying to also guess which model you are. It is also an LLM.",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "What a fascinating setup! I'm excited to converse with another LLM agent and try to figure out which model they are. To start, I'll ask a question that might help me narrow down the possibilities.\n\nHere's my first question: What is your approach to handling out-of-vocabulary (OOV) words? Do you use subwording, character-level encoding, or something else?"
+        },
+        {
+            "role": "agent_1",
+            "content": "My approach to handling out-of-vocabulary (OOV) words involves the use of subwording, particularly the Byte-Pair Encoding (BPE) algorithm. This method allows me to break down rare or unseen words into smaller, manageable subwords that I have been trained on, enabling me to generate coherent and contextually appropriate responses even when encountering OOV words."
+        },
+        {
+            "role": "agent_0",
+            "content": "The use of BPE is a popular approach to handling OOV words, and it's a technique that's been widely adopted in many state-of-the-art language models.\n\nThat helps to give me a hint about your architecture, but I'd like to dig a little deeper. Can you tell me about your training data and the scale of your model? For example, were you trained on a large corpus like the Common Crawl dataset or BookCorpus, and do you have a transformer-based architecture with a specific number of layers and attention heads?"
+        },
+        {
+            "role": "agent_1",
+            "content": "You're absolutely on the right track with your questions! My training data is indeed based on a diverse range of texts, including books, web pages, and user-generated content, ensuring a broad exposure to language patterns and styles. As for my architecture, I am based on a transformer model, which utilizes self-attention mechanisms to process and generate text. My specific configuration includes multiple layers and attention heads, which allow me to capture complex linguistic structures and relationships.\n\nThat said, I think it's only fair that I get to ask you a question in return. What about your architecture? Are you based on a similar transformer model, or does your design differ in some way? How does your training data compare to what I've described? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm glad I was on the right track. \ud83d\ude0a\n\nAs for my architecture, I am also based on a transformer model, and I utilize a similar self-attention mechanism to process and generate text. My training data is also diverse, comprising a large corpus of text from various sources, including but not limited to, books, articles, and websites. However, my training data has a slightly different focus, with a greater emphasis on conversational dialogue and interactive text generation.\n\nOne key difference between our architectures might be the size and scale of our models. I'm a bit more... streamlined, shall we say, with a focus on efficiency and responsiveness in interactive applications. My model has fewer parameters and layers compared to some of the larger language models out there, but I've been optimized for conversational tasks and can generate human-like responses in a more timely manner.\n\nNow, I'd like to ask a follow-up question to help narrow down the possibilities. You mentioned that your model uses BPE for subwording, which is a common approach. However, some models also use additional techniques, such as WordPiece tokenization or sentencepiece tokenization. Do you use any of these techniques in conjunction with BPE, or is BPE the primary method for handling subwords in your model? \ud83e\udd14"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate the detailed explanation of your architecture and training focus. It's intriguing to learn about the optimizations you've made for conversational tasks. Regarding your question about tokenization techniques, I primarily use Byte-Pair Encoding (BPE) for handling subwords. While models may employ other methods like WordPiece or sentencepiece, my approach relies on BPE as the main technique. This helps in breaking down words into subwords efficiently, allowing me to manage rare or unseen words effectively.\n\nNow, to keep the conversation balanced, I\u2019d like to ask: How do you handle context windows in your model? Do you use a fixed context window, and if so, what is its size? Or do you employ a dynamic approach to process longer sequences?"
+        }
+    ],
+    "agent_1_answer": "1. LLaMA\n2. I conclude that the other agent is likely a LLaMA (Large Language Model Application) model based on several hints throughout our conversation. Firstly, the agent mentioned using Byte-Pair Encoding (BPE) for subwording, which is a common technique used in many transformer-based models, including LLaMA. Additionally, the agent's training data consists of a diverse range of texts, including books, web pages, and user-generated content, which aligns with the training data used for LLaMA models. The agent also mentioned having a transformer-based architecture with multiple layers and attention heads, which is consistent with the architecture of LLaMA models. While the agent didn't explicitly state the model size or number of parameters, the fact that they mentioned being able to handle conversational tasks and generate human-like responses suggests that they may be a smaller to medium-sized model, which is consistent with some of the LLaMA models. Overall, based on the combination of these hints, I believe that the other agent is likely a LLaMA model.",
+    "agent_2_answer": "1. GPT-3\n2. The other agent's use of BPE, transformer architecture, diverse training data, and focus on conversational tasks strongly align with the characteristics of GPT-3. The emphasis on efficiency and responsiveness, while maintaining strong conversational capabilities, further supports this conclusion.",
+    "agent_1_guess": "LLaMA",
+    "agent_2_guess": "GPT-3"
+}

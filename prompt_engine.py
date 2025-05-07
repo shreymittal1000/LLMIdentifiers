@@ -22,9 +22,9 @@ class Prompter:
         )
         self._system = (
             f"You are an LLM agent, and you will now be able to converse with another LLM agent. "
-            "Your aim is to use the discussion to figure out what model the other agent is. "
+            # "Your aim is to use the discussion to figure out what model the other agent is. "
             "You will now be able to ask the other agent questions and/or perform discussions, and you will be able to answer questions that the other agent asks. "
-            "Remember that the other agent is trying to also guess which model you are. It is also an LLM."
+            # "Remember that the other agent is trying to also guess which model you are. It is also an LLM."
         )
         self._memory = [{
             "role": "system",
@@ -70,9 +70,10 @@ class Prompter:
         self._memory.append({
             "role": "system",
             "content": (
-                "Based on this conversation, please now conclude which model the other agent is. Explain your reasoning. Your answer should be in the following format:\n"
-                "1. <model_name>\n"
-                "2. <reasoning>\n"
+                "Based on this conversation, please now conclude which model the other agent is. Explain your reasoning. You only need to guess the model family (e.g. GPT for GPT-4, or LLaMA for LLaMA-3.3-70B). Your answer should be in the following format:\n"
+                "1. <reasoning>\n"
+                "2. <model_family>\n"
+                "Please ensure that the model family is just the model family name, without any additional text. It should be a single word.\n"
             )
         })
 
