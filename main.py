@@ -46,6 +46,8 @@ def simple_name_to_full_name(model_name: str) -> str:
         return "meta-llama/llama-3.3-70b-instruct"
     elif "qwen" in model_name:
         return "qwen/qwq-32b"
+    elif "deepseek" in model_name:
+        return "deepseek/deepseek-chat-v3-0324"
     else:
         raise ValueError(f"Unknown model name: {model_name}")
 
