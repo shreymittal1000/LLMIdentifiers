@@ -76,10 +76,6 @@ if __name__ == "__main__":
         answer_0 = agent_0.conclusion_prompt()
         answer_1 = agent_1.conclusion_prompt()
 
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-    finally:
         dialogue = agent_0.convert_memory_to_json() if len(agent_0._memory) > len(agent_1._memory) else agent_1.convert_memory_to_json()
         dict_to_save = {
             "model_0": model_0,
@@ -105,3 +101,6 @@ if __name__ == "__main__":
 
         with open(get_next_log_path("results/" + model_general_name_0 + "_" + model_general_name_1, "log", ".json"), "w") as f:
             json.dump(dict_to_save, f, indent=4)
+
+    except Exception as e:
+        print(f"An error occurred, aborting: {e}")
