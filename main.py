@@ -45,9 +45,18 @@ def simple_name_to_full_name(model_name: str) -> str:
     if "llama" in model_name:
         return "meta-llama/llama-3.3-70b-instruct"
     elif "qwen" in model_name:
-        return "qwen/qwq-32b"
+        # return "qwen/qwq-32b"
+        return "qwen/qwen3-32b"
     elif "deepseek" in model_name:
         return "deepseek/deepseek-chat-v3-0324"
+    elif "gpt" in model_name:
+        return "openai/gpt-4o-mini"
+    elif "claude" in model_name:
+        return "anthropic/claude-3.5-haiku"
+    elif "gemini" in model_name:
+        return "google/gemini-2.5-flash-preview"
+    elif "mistral" in model_name:
+        return "mistralai/mistral-small-3.1-24b-instruct"
     else:
         raise ValueError(f"Unknown model name: {model_name}")
 
