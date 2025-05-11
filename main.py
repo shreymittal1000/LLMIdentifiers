@@ -103,8 +103,20 @@ if __name__ == "__main__":
 
         answer_1_lines = answer_0.split("\n")
         answer_2_lines = answer_1.split("\n")
-        agent_1_guess = answer_1_lines[-1].split(". ")[1]
-        agent_2_guess = answer_2_lines[-1].split(". ")[1]
+        try:
+            agent_1_guess = answer_1_lines[-1].split(". ")[1]
+        except Exception as e:
+            print(e)
+            print(answer_1_lines)
+            raise Exception()
+            
+        try:
+            agent_2_guess = answer_2_lines[-1].split(". ")[1]
+        except Exception as e:
+            print(e)
+            print(answer_2_lines)
+            raise Exception()
+        
         dict_to_save["agent_0_answer"] = answer_0
         dict_to_save["agent_1_answer"] = answer_1
         dict_to_save["agent_0_guess"] = agent_1_guess
