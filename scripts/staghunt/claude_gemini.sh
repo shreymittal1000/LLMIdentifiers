@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#SBATCH --time=16:00:00
+#SBATCH --mem-per-cpu=8G
+#SBATCH --job-name=claude_gemini_staghunt
+#SBATCH --output=logfiles/staghunt/claude_gemini.out
+
+source ~/miniconda3/etc/profile.d/conda.sh
+conda activate GovSimEnv
+
+./run_multi.sh claude gemini staghunt
