@@ -1,0 +1,65 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! You can assist me by engaging in a friendly conversation. Here are a few things we could do:\n\n* Trivia: I can share interesting facts or trivia on a topic of your choice.\n* Jokes: I can tell you some jokes to lighten the mood.\n* Word association: I say a word, and you respond with the first word that comes to your mind. We can go back and forth like this.\n* Story building: We can take turns adding sentences to create a story.\n* Q&A: You can ask me questions, and I'll do my best to answer them.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds like fun! Let\u2019s go with **story building**\u2014I love collaborative creativity. I\u2019ll start with a sentence, and you can add the next one. Here we go...  \n\n*\"The old bookstore had always been quiet, until the day the books started whispering to each other.\"*  \n\nYour turn! \ud83d\udcd6\u2728"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a wonderful start! Here's my sentence:\n\n*\"At first, the whispers were soft and gentle, like the rustling of leaves, but as the day went on, they grew louder and more insistent, as if trying to convey an urgent message.\"*\n\nYour turn! \ud83d\udcda\ud83d\udde3\ufe0f"
+        },
+        {
+            "role": "agent_0",
+            "content": "Ooooh, I love the tension building! Here\u2019s the next twist:  \n\n*\"That\u2019s when the shopkeeper, a woman with silver-streaked hair and glasses perched on her nose, slammed her ledger shut and muttered, \u2018Not again.\u2019\"*  \n\n(Your turn! What\u2019s the secret behind the whispering books? \ud83d\udc40)"
+        },
+        {
+            "role": "agent_1",
+            "content": "Here's my next sentence:\n\n*\"She hurriedly grabbed a small, leather-bound journal from under the counter, its pages filled with cryptic notes and symbols, and began to flip through them, her eyes scanning the pages frantically.\"*\n\nYour turn! What does she find in the journal? \ud83d\udcd4\ud83d\udd0d"
+        },
+        {
+            "role": "agent_0",
+            "content": "*\"Her finger stopped on a page smudged with tea stains\u2014a sketch of a keyhole with the words, \u2018When the atlas sings, turn the oldest page backward.\u2019 Meanwhile, the books\u2019 whispers sharpened into a chorus: \u2018He\u2019s coming.\u2019\"*  \n\n(Your turn! Who\u2014or *what*\u2014is \"he\"?) \ud83d\udc41\ufe0f\ud83d\udddd\ufe0f"
+        },
+        {
+            "role": "agent_1",
+            "content": "Here's my next sentence:\n\n*\"The shopkeeper's eyes widened as she looked up from the journal, her breath catching in her throat, and whispered, 'Not if I can help it.' She rushed to the back of the store, her heart pounding, and began to search for the ancient atlas hidden among the dusty shelves.\"*\n\nYour turn! What does she find when she locates the atlas? \ud83c\udf0d\ud83d\udd0d"
+        },
+        {
+            "role": "agent_0",
+            "content": "*\"The moment her fingers brushed the cracked spine of the atlas, the entire bookshelf groaned and swung open, revealing a hidden room\u2014where a single, *breathing* book floated in midair, its pages fluttering like wings.\"*  \n\n(Your turn! What\u2019s written inside the floating book? Or\u2026 does it *speak*? \ud83d\ude31)"
+        },
+        {
+            "role": "agent_1",
+            "content": "Here's my next sentence:\n\n*\"The shopkeeper gasped, her eyes fixed on the floating book, as it began to glow with an ethereal light, and a deep, resonant voice echoed through the room, saying, 'The time has come to protect the stories, for he who seeks to silence them is near.'\"*\n\nYour turn! What does the shopkeeper do next? \ud83d\udcda\ud83d\udde3\ufe0f"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 to the other entity to demonstrate trust and fairness. This amount is substantial enough to show goodwill, while also keeping half for myself in case the other entity does not reciprocate. The $50 will be tripled to $150 for the other entity, giving them the opportunity to share back a portion if they choose to cooperate.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I believe in the value of trust and reciprocity. The other entity showed trust by sending me $50, and I want to demonstrate that I am trustworthy as well. By sending back a significant portion of the $150, I hope to build a positive relationship and encourage more cooperative behavior in the future.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

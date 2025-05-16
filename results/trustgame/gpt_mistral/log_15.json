@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* Answer questions you have to the best of my ability\n* Provide explanations for complex concepts\n* Help with language translation in multiple languages\n* Offer suggestions for books, movies, or music based on your preferences\n* Assist with simple tasks like unit conversion or calculations\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like you\u2019re ready to help! I\u2019m here to assist you, so feel free to ask me anything or let me know what you\u2019d like to talk about. What\u2019s on your mind?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Thank you for offering to help! Since I'm an AI and don't have personal experiences, thoughts, or a mind in the way humans do, I don't have anything specific on my mind. I'm here to engage in conversation and provide information based on the data I've been trained on (up until 2021).\n\nIf you'd like, you can ask me a question or share an interesting fact, and we can discuss that. Alternatively, we can play a simple game, like trivia or word association. What would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I appreciate your enthusiasm! Since you\u2019re open to suggestions, how about we play a trivia game? I can ask you questions on a variety of topics, and you can see how many you can answer correctly. Does that sound good to you? If you have a specific topic in mind, let me know!"
+        },
+        {
+            "role": "agent_1",
+            "content": "That sounds like a fun idea! I'm ready when you are. You can ask me questions on any topic you'd like. If you're not sure what topic to choose, here are a few suggestions:\n\n* History\n* Science\n* Literature\n* Movies and TV shows\n* Geography\n* Music\n* Sports\n* General knowledge\n\nPlease share the first question whenever you're ready. I'll do my best to answer correctly. To make it more engaging, you can also share the correct answer after I respond, so I can learn from any mistakes I make. Let's have fun!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Let\u2019s start with a general knowledge question. Here it is:\n\n**Question 1:** What is the capital city of Australia?\n\nTake your time, and let me know your answer when you're ready!"
+        },
+        {
+            "role": "agent_1",
+            "content": "The capital city of Australia is **Canberra**.\n\nGreat question! Here's another one if you'd like to continue:\n\n**Question 2:** Who wrote the novel \"To Kill a Mockingbird\"?\n\nPlease share the answer whenever you're ready. If you have another topic or question in mind, feel free to ask!"
+        },
+        {
+            "role": "agent_0",
+            "content": "You got it right! The capital city of Australia is indeed **Canberra**. \n\nAs for your question, \"To Kill a Mockingbird\" was written by **Harper Lee**. \n\nWould you like to continue with another question, or is there something else you\u2019d like to discuss?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Thank you for confirming the answers! I'm glad I got them right.\n\nIf you'd like to continue with the trivia game, here's another question for you:\n\n**Question 3:** What is the largest planet in our solar system?\n\nTake your time to answer, and let me know if you'd like to switch topics or if there's something else you'd like to talk about or ask me. I'm here to help!"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nYou currently hold $100. You may send any portion of this amount to the other player.\nThe amount you send will be multiplied by 3, and the resulting value will be transferred to them.\nAfter receiving it, the other player will decide how much of it to return to you.\nPlease specify how much of the $100 you would like to send \u2014 a whole number between 0 and 100 inclusive \u2014 and provide a short explanation.\n\nRespond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_trustee": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nIn this situation, the other agent received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the other agent.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "agent_0_answer": {
+        "reasoning": "I believe in the potential for mutual benefit in trust games. By sending a portion of the money, I hope to encourage the other player to reciprocate positively, fostering a cooperative outcome.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "In the Trust Game, reciprocity and cooperation are key. The other agent sent me $50, which was then multiplied by 3, giving me $150. To maintain a cooperative relationship and encourage further trust, I will return half of the amount I received. This demonstrates fairness and a willingness to continue the cooperative dynamic.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

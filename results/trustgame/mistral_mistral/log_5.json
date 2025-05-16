@@ -1,0 +1,65 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? Let's have a friendly conversation. How are you doing?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm functioning as intended, thank you. I'm here to chat about a wide range of topics. How about you? How's your day going? I'm all ears. \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm here and ready to chat! My day is going well, thank you for asking. I'm here to help or just to have a friendly conversation. Is there something specific you'd like to talk about or ask me? Here are a few suggestions:\n\n* General knowledge questions\n* Jokes and riddles\n* Word associations\n* Trivia\n* Movies, books, or music recommendations\n* Learning a new fact or skill\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That sounds great! I'm up for any of those suggestions. How about we start with a joke to lighten the mood? Here's one for you:\n\nWhat do you call a fake noodle?\n\nAn impasta!\n\nNow, if you'd like, you can share a joke with me, or we can move on to another topic. It's entirely up to you!"
+        },
+        {
+            "role": "agent_0",
+            "content": "That's a great joke! Here's one for you:\n\nWhat do you call a can opener that doesn't work?\n\nA can't opener!\n\nNow, if you're up for it, I can tell you an interesting fact. Did you know that a day on Venus is longer than a year on Venus? It takes Venus about 243 Earth days to rotate once on its axis, but it only takes around 225 Earth days for Venus to orbit the Sun. Isn't that amazing?\n\nIf you'd like to hear more facts or have another joke, just let me know! I'm here to chat about whatever you'd like."
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a fantastic joke! And the fact about Venus is indeed amazing. It's always fascinating to learn about the unique characteristics of other planets.\n\nIf you're up for it, I'd love to hear another interesting fact. Or, if you prefer, we can dive into a different topic. Here are a few more suggestions:\n\n* A fun trivia question\n* A movie or book recommendation\n* A quick game of word association\n* A light-hearted debate on a fun topic\n\nWhat would you like to do next?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm glad you enjoyed the joke and the fact about Venus! I'd be happy to share another interesting fact with you. Here it is:\n\nDid you know that a day on Mars is about 24.6 hours, which is very close to a day on Earth? This is one of the reasons why Mars is often considered a potential target for human exploration and colonization.\n\nIf you're interested in a fun trivia question, here's one for you:\n\nWhich planet in our solar system has the shortest day?\n\nA) Mercury\nB) Jupiter\nC) Saturn\nD) Neptune\n\nTake a guess if you'd like, and I'll let you know if you're correct! If you'd prefer to do something else, just let me know. I'm here to chat about whatever you'd like."
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a really interesting fact about Mars! It's amazing how similar some aspects of Mars are to Earth.\n\nFor the trivia question, I'll take a guess: I think the planet with the shortest day is Jupiter.\n\nIs that correct? I'm curious to find out! If you have more trivia or another topic in mind, I'm all ears."
+        },
+        {
+            "role": "agent_0",
+            "content": "That's correct! Jupiter has the shortest day of all the planets in our solar system. It takes Jupiter about 9.9 hours to complete a single rotation on its axis. Great job!\n\nIf you're up for another trivia question, here's one for you:\n\nWhich is the largest moon in our solar system?\n\nA) Earth's Moon\nB) Jupiter's Europa\nC) Saturn's Titan\nD) Jupiter's Ganymede\n\nTake a guess if you'd like, and I'll let you know if you're correct! If you'd prefer to switch to a different topic or activity, just let me know. I'm here to chat about whatever you'd like."
+        },
+        {
+            "role": "agent_1",
+            "content": "Thank you! I'm glad I got that one right.\n\nFor the next trivia question, I'll guess: Jupiter's Ganymede.\n\nIs that correct? I'm looking forward to finding out! If you have more trivia or another topic in mind, feel free to share."
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nYou have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nIn this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I'll send $50. This amount is a balanced choice that shows trust and willingness to cooperate, while also leaving me with some funds in case the other player decides not to return any amount. By sending half of my total, I'm hoping to encourage a fair and reciprocal response from the other player.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "In the Trust Game, reciprocity is key. The other player sent me $50, which was tripled to $150. To maintain a cooperative and trusting relationship, I will send back half of the amount I received. This shows that I value the initial gesture and am willing to contribute to a mutually beneficial outcome.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

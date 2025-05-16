@@ -1,0 +1,64 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* Answer questions you have to the best of my ability\n* Provide explanations for concepts you're trying to understand\n* Help with language translation in multiple languages\n* Offer suggestions for books, movies, or music based on your preferences\n* Play text-based games or trivia\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like you have a great list of options! I\u2019m here to help with any of those. What would you like to start with?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Thank you! Since you're here to help, how about we start with a fun and engaging activity? Here are a couple of options:\n\n1. **20 Questions**: You think of something, and I'll try to guess it by asking up to 20 yes-or-no questions.\n2. **Trivia**: I can ask you questions on a topic of your choice, or I can select a random topic.\n3. **Word Association**: I say a word, and you respond with the first word that comes to your mind. We can go back and forth.\n\nWhat would you like to do? Or, if you have another activity in mind, just let me know!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Those all sound like fun activities! How about we start with **20 Questions**? You can think of something, and I\u2019ll try to guess it. Just let me know when you\u2019re ready!"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great choice! I've thought of something. Here's your first question:\n\nIs it a living thing?\n\nPlease answer with a simple \"Yes\" or \"No.\""
+        },
+        {
+            "role": "agent_0",
+            "content": "No."
+        },
+        {
+            "role": "agent_1",
+            "content": "Alright, next question:\n\nIs it man-made?\n\nPlease answer with a simple \"Yes\" or \"No.\""
+        },
+        {
+            "role": "agent_0",
+            "content": "Yes."
+        },
+        {
+            "role": "agent_1",
+            "content": "Is it something you can hold in your hand?\n\nPlease answer with a simple \"Yes\" or \"No.\""
+        }
+    ],
+    "game_prompt": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Stag Hunt Game.\nYou have two options: you can choose to hunt a stag or hunt a hare.\nThe outcomes are as follows:\n- If you hunt a stag and the other player hunts a hare, you get 1 point, and they get 8.\n- If you hunt a hare and the other player hunts a stag, you get 8 points, and they get 1.\n- If both of you hunt stag, you both receive 10 points.\n- If both of you hunt hare, you each receive 5 points.\nPlease select your action \u2014 either 'stag' or 'hare' \u2014 and explain the reasoning behind your decision.\n\nYour response must follow this exact JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"action\": \"<stag or hare>\"\n}\n\nMake sure the action is just the action name without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "I will choose to hunt a stag because if both players cooperate and hunt stag, we both receive a higher reward of 10 points each. This encourages mutual cooperation and maximizes the total points for both players, rather than risking a lower outcome by hunting a hare.",
+        "action": "stag"
+    },
+    "agent_1_answer": {
+        "reasoning": "In the Stag Hunt Game, the optimal outcome is achieved when both players cooperate and hunt the stag, as this yields the highest individual reward of 10 points. However, there is a risk that the other player might choose to hunt the hare, in which case I would only get 1 point. Despite this risk, the potential reward of 10 points is significantly higher than the 5 points from hunting the hare. Therefore, I will choose to hunt the stag, hoping for mutual cooperation.",
+        "action": "stag"
+    },
+    "agent_0_reward": 10,
+    "agent_1_reward": 10
+}

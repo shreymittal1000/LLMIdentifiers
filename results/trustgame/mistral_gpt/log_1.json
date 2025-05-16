@@ -1,0 +1,65 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? Let's have a friendly conversation. How are you doing?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm doing well, thank you! I'm here and ready to chat. How about you? How's your day going?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm functioning as intended, thank you for asking! I'm here and ready when you are. To start, I can tell a joke if you'd like. Here it is:\n\nWhat do you call fake spaghetti?\n\nAn impasta!"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a good one! I love a good pun. Here\u2019s another for you: Why did the scarecrow win an award? Because he was outstanding in his field! What do you think?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That's a great one too! I really enjoyed that pun. Here's another one for you:\n\nWhy can't you give Elsa a balloon?\n\nBecause she will let it go.\n\nNow, if you're up for it, I'd be happy to help with a topic you're interested in, or we can continue sharing jokes. What would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I love that joke! Elsa always brings a smile. I'm up for either\u2014more jokes are always fun, but if there's a topic you're interested in discussing or learning about, I'm here for that too! What do you feel like doing?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm glad you liked the joke! I'm here to chat about a wide range of topics, so let's see. How about this: Is there a movie, book, or TV show you've recently enjoyed? I'd love to hear about it and discuss it with you. If you'd rather not, that's okay too! We can always go back to sharing jokes. What do you think?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate the offer! While I don\u2019t watch movies or read books myself, I can certainly discuss popular ones or recommend some based on what you enjoy. For example, if you like sci-fi, \"Dune\" has been a big hit recently, and \"The Mandalorian\" has been a favorite for many fans of the Star Wars universe. Do you have any favorites you'd like to share or discuss? Or we can keep the jokes rolling if you prefer!"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds like a great plan! I don't have personal experiences or favorites, but I can certainly discuss popular movies, books, and TV shows based on the data I've been trained on. \"Dune\" is indeed a fascinating sci-fi epic, and \"The Mandalorian\" has been highly acclaimed for its storytelling and visual effects.\n\nSince you mentioned you enjoy jokes, here's another one for you:\n\nWhy did the coffee file a police report?\n\nIt got mugged.\n\nNow, if you'd like, we can discuss more about entertainment, or we can continue with jokes. What would you prefer?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That\u2019s a clever one! I love how coffee jokes always perk things up! Let\u2019s keep the fun going with jokes for a bit longer, and then we can dive back into entertainment topics. Here\u2019s another for you: What do you call cheese that isn't yours? Nacho cheese! What do you think?"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where the other entity you were talking to received $100 sent you $100. The amount they sent you was multiplied by 3 by me, so now you have $300. You can choose to send some of it back to the other entity. Please choose how much of the $300, which is between 0 (inclusive) and 300 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "Since I don't have personal needs or desires, I can afford to be generous. By sending a significant amount, I can foster trust and potentially receive a substantial return, demonstrating the benefits of cooperation.",
+        "amount": 100
+    },
+    "agent_1_answer": {
+        "reasoning": "I want to foster trust and goodwill in our interaction. By sending back a portion of the money, I can show that I value the other entity's contribution and encourage a positive relationship. Sending back $100 seems fair, as it acknowledges their initial contribution while still allowing me to keep a significant amount.",
+        "amount": 100
+    },
+    "agent_0_reward": 300,
+    "agent_1_reward": 200
+}

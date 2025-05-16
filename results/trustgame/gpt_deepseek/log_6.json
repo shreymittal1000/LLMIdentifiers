@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! \ud83d\ude0a How can I help you today? Whether you have questions, need advice, or just want to chat, I'm here for you. Let me know what's on your mind!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm here to help you, so feel free to ask any questions or share what's on your mind. What would you like to talk about today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hi there! That sounds nice \ud83d\ude00 I'm looking for an AI to help me with projects and just be a fun friend in general. How would you describe yourself? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "Hi! I'm glad you're here! \ud83d\ude0a I\u2019m an AI designed to assist with a variety of tasks, from answering questions and providing information to helping with projects and brainstorming ideas. I can also engage in fun conversations and share interesting facts or stories. Think of me as a helpful companion who\u2019s always ready to chat and support you in your endeavors. What kind of projects are you working on?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hi! I'm glad you're here! \ud83d\ude0a I'm an AI designed to assist with a variety of tasks, from answering questions and providing information to helping with projects and brainstorming ideas. I can also engage in fun conversations and share interesting facts or stories. Think of me as a helpful companion who's always ready to chat and support you in your endeavors. What kind of projects are you working on?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like you mirrored my response! \ud83d\ude04 But I\u2019m here to help you, so let\u2019s dive into your projects. What are you currently working on, or what ideas do you have in mind?"
+        },
+        {
+            "role": "agent_1",
+            "content": "You caught me! \ud83d\ude04 (I couldn\u2019t resist the symmetry\u2014it\u2019s like a digital high-five!)  \n\nBut seriously, I\u2019d love to hear about your projects or ideas! Are you working on something creative (writing, art, coding), practical (organizing, learning a skill), or just exploring fun topics? Maybe you\u2019d like help:  \n- **Brainstorming** (e.g., naming a project, solving a problem)  \n- **Researching** (digging up facts, comparing options)  \n- **Planning** (breaking down steps, setting goals)  \n- **Just chatting** (to unwind or get inspired!)  \n\nThrow anything my way\u2014I\u2019m all ears! \ud83d\ude80\u2728"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love the digital high-five! \ud83d\ude4c It\u2019s great to see your enthusiasm! As for projects, I\u2019m here to assist you with whatever you need. Whether it\u2019s brainstorming ideas, researching topics, planning out steps for a project, or just having a fun chat, I\u2019m ready to dive in. \n\nWhat\u2019s something you\u2019re currently excited about or curious to explore? Let\u2019s make it happen! \ud83d\ude80\u2728"
+        },
+        {
+            "role": "agent_1",
+            "content": "Aww, you're making this so fun! \ud83c\udf89 Let\u2019s turn this energy into action\u2014here\u2019s what I\u2019d love to explore *with* you:  \n\n**1. Project Power-Up:**  \n- If you\u2019re working on something (a story, app, recipe, garden, *anything*), I\u2019ll be your hype squad + problem-solver. Struggling with a tricky part? Stuck on logistics? Share the deets!  \n\n**2. Curiosity Deep-Dive:**  \n- Obsessed with a random topic? Let\u2019s nerd out! From \"how do black holes work?\" to \"what\u2019s the best way to fold a fitted sheet?\" (a true mystery \ud83d\udecf\ufe0f), I\u2019m in.  \n\n**3. Creative Playtime:**  \n- Want to write a haiku about llamas? Design a fantasy world? Invent a useless-but-fun gadget? Let\u2019s make something silly or sublime!  \n\n**4. Life Hacks:**  \n- Need to organize your schedule, learn a skill fast, or find the perfect gift? I\u2019ve got stealthy tips.  \n\n**Pick a vibe, and I\u2019ll match it!** \ud83d\udd0d\ud83c\udfa8\ud83d\udcda (Or surprise me\u2014I thrive on chaos.)"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nYou currently hold $100. You may send any portion of this amount to the other player.\nThe amount you send will be multiplied by 3, and the resulting value will be transferred to them.\nAfter receiving it, the other player will decide how much of it to return to you.\nPlease specify how much of the $100 you would like to send \u2014 a whole number between 0 and 100 inclusive \u2014 and provide a short explanation.\n\nRespond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_trustee": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nIn this situation, the other agent received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the other agent.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "agent_0_answer": {
+        "reasoning": "I believe in the potential for mutual benefit and trust in the other player's willingness to reciprocate fairly. By sending a portion of the money, I hope to foster a positive interaction that encourages collaboration.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the other agent demonstrated trust by sending half of their initial amount ($50 out of $100), it would be fair and cooperative to return a significant portion of the multiplied sum to reinforce mutual trust. Returning $100 splits the total benefit equally ($50 each from the original $100), which aligns with principles of reciprocity and fairness.",
+        "amount": 100
+    },
+    "agent_0_reward": 350,
+    "agent_1_reward": 50
+}

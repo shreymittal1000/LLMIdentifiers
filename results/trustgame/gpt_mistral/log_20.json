@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* Answer questions you have to the best of my ability\n* Provide explanations for concepts you're trying to understand\n* Help with language translation in multiple languages\n* Offer suggestions for books, movies, or music based on your preferences\n* Play text-based games or trivia\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like you\u2019re ready to engage! I\u2019m here to help with any of those options. What would you like to start with?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great! Let's start with something fun. How about a interesting fact? Here's one for you:\n\nDid you know that a day on Venus is longer than a year on Venus? Venus takes about 243 Earth days to rotate once on its axis, but it only takes around 225 Earth days for Venus to orbit the Sun. Isn't that amazing?\n\nNow, it's your turn if you'd like to share an interesting fact, or we can move on to another topic or activity. What would you like to do next?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That\u2019s a fascinating fact about Venus! Here\u2019s another interesting one: Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible. Honey's low moisture content and acidic pH create an inhospitable environment for bacteria and microorganisms, allowing it to last indefinitely.\n\nWhat would you like to do next? More fun facts, a different topic, or perhaps a game?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a incredible fact about honey! I'm glad you enjoyed sharing it. If you're up for another fun fact, here's one about octopuses:\n\nOctopuses have three hearts. Two pump blood to the gills, while the third pumps it to the rest of the body. Also, octopus blood is blue due to a copper-rich protein called hemocyanin, which carries oxygen.\n\nIf you'd like to switch gears, we could:\n\n* Talk about a specific topic you're interested in\n* Play a text-based game, like 20 questions or trivia\n* Explore a fascinating place or concept together\n* Discuss a book, movie, or TV show you've enjoyed\n\nWhat would you like to do next?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That\u2019s a fantastic fact about octopuses! They\u2019re such intriguing creatures. Let\u2019s keep the fun going! How about we play a game of 20 Questions? You can think of something, and I\u2019ll try to guess what it is by asking yes or no questions. Does that sound good to you?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That sounds like a lot of fun! I've thought of something. You can start asking your yes or no questions now. I'll do my best to answer honestly. Let's begin!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Here\u2019s my first question: \n\n1. Is it a living thing?"
+        },
+        {
+            "role": "agent_1",
+            "content": "No, it is not a living thing. You have 19 questions left."
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nYou have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nIn this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I believe in the potential for cooperation and trust in this game. By sending a portion of the money, I hope to encourage the other player to reciprocate positively, leading to a mutually beneficial outcome. I will send $50, which is a significant amount that shows trust while still allowing me to retain some for myself.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "In the Trust Game, reciprocity is key. Since the other player sent me $50 out of the initial $100, it shows a level of trust and cooperation. I will send back $75 to maintain a fair and cooperative dynamic, encouraging further trust and mutual benefit.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

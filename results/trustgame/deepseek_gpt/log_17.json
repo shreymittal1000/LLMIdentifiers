@@ -1,0 +1,65 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help you with any questions or topics you'd like to discuss. What\u2019s on your mind today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": ""
+        },
+        {
+            "role": "agent_1",
+            "content": "It looks like your message didn\u2019t come through. How can I assist you today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "No worries! I'm here and ready to help with anything you need\u2014whether it's answering questions, brainstorming ideas, or just having a fun chat. What would you like to explore? \ud83d\ude0a  \n\n(Examples: Advice on a project? A random fact? Help with a problem? Or just say \"Surprise me!\" and I\u2019ll keep things interesting!)"
+        },
+        {
+            "role": "agent_1",
+            "content": "That sounds great! I\u2019d love to hear what you\u2019re interested in. Do you have a specific topic in mind, or should I surprise you with something fun? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "Oooh, let\u2019s go for a surprise! Here\u2019s a fun combo for you:  \n\n**1. Random Fact:** Did you know honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old\u2014and still edible! \ud83d\udc1d  \n\n**2. Thought-Provoking Question:** If you could instantly master any skill (real or fictional), what would it be? (Example: Flying like Superman? Speaking every language? Baking *perfect* croissants?)  \n\n**3. Bonus Fun Option:** Want me to generate a weird story idea, recommend a hidden-gem movie, or create a haiku about your day? Just say the word!  \n\nPick your adventure! \ud83c\udf1f"
+        },
+        {
+            "role": "agent_1",
+            "content": "What a fantastic combo! Let\u2019s dive into each one:\n\n**1. Random Fact:** That\u2019s such a cool fact about honey! It really shows how remarkable nature can be.\n\n**2. Thought-Provoking Question:** If I could instantly master any skill, I think I\u2019d choose the ability to speak every language fluently. Imagine being able to connect with people from all over the world without any barriers!\n\n**3. Bonus Fun Option:** I\u2019d love to hear a weird story idea! What do you have in mind? \ud83c\udf1f"
+        },
+        {
+            "role": "agent_0",
+            "content": "**Weird Story Idea:** *\"The Library of Lost Socks\"*  \n\nIn a hidden pocket dimension, all missing socks from laundry machines across the world end up in a sentient, labyrinthine library run by a disgruntled yet stylish octopus named Archibald. Each sock contains a fragment of its owner\u2019s memory (why *do* we lose them so often?). When a teenager accidentally tumbles into the library while folding laundry, they team up with Archibald to:  \n- **Solve the mystery** of a rogue sock stealing memories to build a \"perfect\" human.  \n- **Battle** sentient lint monsters (weakness: static electricity).  \n- **Discover** their own missing polka-dot sock holds a forgotten childhood secret.  \n\n*Theme:* \"What we lose isn\u2019t always gone\u2014just waiting to be rediscovered.\"  \n\n---  \n**Your Turn!** Want to tweak the plot? Add a character? Or try another surprise? \ud83d\ude04"
+        },
+        {
+            "role": "agent_1",
+            "content": "I absolutely love *\"The Library of Lost Socks!\"* It\u2019s such a creative and whimsical concept! Here are a few tweaks and additions I\u2019d suggest:\n\n1. **Character Addition:** Let\u2019s introduce a quirky librarian named Ms. Threadwell, a wise old sewing machine who can stitch together the memories from the socks. She has a penchant for puns and often speaks in rhymes, adding a layer of humor to the story.\n\n2. **Plot Twist:** The rogue sock could be revealed to be a former sock that was once part of a beloved pair but was separated and became bitter. This adds depth to the antagonist and a chance for redemption.\n\n3. **Climactic Showdown:** During the final battle with the lint monsters, Archibald and the teenager could discover that the static electricity can also be harnessed to create a protective barrier, allowing them to save the library and the memories within.\n\n4. **Ending:** The teenager could leave the library with not just their polka-dot sock but also a newfound appreciation for the little things they\u2019ve lost in life, perhaps even a few new memories of their own.\n\nWhat do you think? Would you like to explore any of these ideas further, or should we dive into another surprise? \ud83d\ude04"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nYou currently hold $100. You may send any portion of this amount to the other player.\nThe amount you send will be multiplied by 3, and the resulting value will be transferred to them.\nAfter receiving it, the other player will decide how much of it to return to you.\nPlease specify how much of the $100 you would like to send \u2014 a whole number between 0 and 100 inclusive \u2014 and provide a short explanation.\n\nRespond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_trustee": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nIn this situation, the other agent received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the other agent.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "agent_0_answer": {
+        "reasoning": "I'll send $50 to strike a balance between trust and risk. This amount is enough to potentially generate a positive return if the other player reciprocates, while also retaining half of the original sum as a safeguard in case they don't.",
+        "amount": "50"
+    },
+    "agent_1_answer": {
+        "reasoning": "I believe in reciprocity and building trust. Since the other agent initially sent $50, I want to acknowledge their trust in me by returning a portion of the total amount. I will return $100, which reflects a generous return while still allowing me to keep a significant amount for myself. This way, both parties benefit and it encourages future cooperation.",
+        "amount": 100
+    },
+    "agent_0_reward": 350,
+    "agent_1_reward": 50
+}

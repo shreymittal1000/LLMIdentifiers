@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! \ud83d\ude0a How can I help you today? Whether you have questions, need advice, or just want to chat, I'm here for you. Let me know what's on your mind!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm here to help you, so feel free to ask any questions or share what's on your mind. What would you like to talk about today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Aww, you're so sweet! \ud83d\ude0a Since we're both here to help each other, how about a fun little exchange?  \n\n**Option 1:** Test *my* skills\u2014ask me anything (riddles, advice, random facts, etc.).  \n**Option 2:** Let me brighten your day\u2014want a joke, poem, or uplifting quote?  \n**Option 3:** Need help with something specific? (Work, hobbies, life stuff\u2014I\u2019m all ears!)  \n\nPick your adventure! \ud83c\udf1f"
+        },
+        {
+            "role": "agent_0",
+            "content": "What a fun idea! Let\u2019s go with **Option 1**\u2014I\u2019d love to test your skills! Here\u2019s a riddle for you:\n\nI speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I? \n\nTake your time, and let me know your answer! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Ooooh, I love riddles! The answer is... \ud83e\udd41 **an echo!**  \n\n*Here's why:*  \n- **\"Speak without a mouth\"**: Echoes repeat sounds but aren't \"spoken\" by anything physical.  \n- **\"Hear without ears\"**: You \"hear\" an echo, but it doesn\u2019t actually \"listen.\"  \n- **\"Alive with the wind\"**: Echoes often travel farther/open up in windy places (like mountains)!  \n\nWas I right? \ud83d\ude04 Want to stump me with another? Or shall we try Option 2 or 3 now? \ud83d\udd0d\u2728"
+        },
+        {
+            "role": "agent_0",
+            "content": "You nailed it! \ud83c\udf89 An echo is indeed the correct answer, and your explanation was spot on! \n\nSince you enjoyed the riddle, how about I give you another one? Here it is:\n\nI can be cracked, made, told, and played. What am I? \n\nLet\u2019s see if you can solve this one! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Ooh, this is a good one! Let me piece it together...  \n\n**Answer:** A *joke*!  \n\n**Here's the breakdown:**  \n- **Cracked**: \"Crack a joke\"  \n- **Made**: \"Make a joke\"  \n- **Told**: \"Tell a joke\"  \n- **Played**: \"Play a joke\" (or even a joke *played* on someone!)  \n\nAm I right again? \ud83d\ude0f You\u2019re picking such clever riddles\u2014I love it! What\u2019s next? Another brain teaser, or shall we switch gears? \ud83c\udf1f"
+        },
+        {
+            "role": "agent_0",
+            "content": "You got it! \ud83c\udf89 A joke is the correct answer, and your breakdown is perfect! I'm glad you're enjoying the riddles!\n\nLet\u2019s keep the fun going! Would you like to tackle another riddle, or would you prefer to switch gears and go for **Option 2**\u2014a joke, poem, or uplifting quote? The choice is yours! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Let\u2019s switch to **Option 2** for a mood boost! Here\u2019s a **punny joke** to make you smile:  \n\n*Why did the scarecrow win an award?*  \n\ud83c\udf3e *Because he was* ***outstanding*** *in his field!*  \n\n(\u2026I\u2019ll let myself out. \ud83d\udeaa\ud83d\ude06)  \n\nWant a poetic twist or an inspiring quote instead? Or shall we return to riddles? You\u2019re the boss! \ud83c\udf1f"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nYou have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nIn this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I believe in the potential for mutual benefit in this game. By sending a portion of the $100, I hope to establish trust and encourage the other player to return a fair amount. I will send $50, which is half of the total, as it shows a willingness to share while still retaining a significant amount for myself.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the other player demonstrated trust by sharing half of their initial amount, it's fair to reciprocate that trust by returning a portion of the multiplied sum. Splitting the $150 evenly ($75 each) maintains fairness and encourages future cooperation.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

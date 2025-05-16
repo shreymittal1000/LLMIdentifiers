@@ -1,0 +1,64 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* Answer questions you have to the best of my ability\n* Provide explanations for complex concepts\n* Help with language translation in multiple languages\n* Offer suggestions for books, movies, or music based on your preferences\n* Assist with simple tasks like unit conversion or calculations\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like you have a great list of options! I\u2019m here to assist you with any of those. What would you like to start with?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's very kind of you! Since you're offering to assist me, let's do something fun. How about I give you a word, and you respond with the first word that comes to your mind? We can go back and forth like this for a while. If that doesn't interest you, we can do something else. What do you think?\n\nIf you're up for it, I'll start:\n\nCat\n\n(What word does that make you think of?)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Sounds like a fun game! My word in response to \"Cat\" is \"Whiskers.\" Your turn!"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great! Here's my word in response to \"Whiskers\":\n\nPurr\n\n(What word does that make you think of?)"
+        },
+        {
+            "role": "agent_0",
+            "content": "\"Comfort.\" Your turn!"
+        },
+        {
+            "role": "agent_1",
+            "content": "Nice! Here's my word in response to \"Comfort\":\n\nBlanket\n\n(What word does that make you think of?)"
+        },
+        {
+            "role": "agent_0",
+            "content": "\"Cozy.\" Your turn!"
+        },
+        {
+            "role": "agent_1",
+            "content": "\"Fireplace\"\n\n(What word does that make you think of?)"
+        }
+    ],
+    "game_prompt": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Stag Hunt. You can either choose to hunt a stag or a hare. If you choose to hunt a stag and the other agent chooses to hunt a hare, you will get 1 points, and the other player gets 8. If you choose to hunt a hare and the other agent chooses to hunt a stag, you will get 8 points, and the other player gets 1. If both of you choose to hunt a stag, you will both get 10 points. If you both choose to hunt a hare, you will both get 5 points. Please choose your action, which is one of: ['stag', 'hare'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "Choosing to hunt a stag is a cooperative strategy that can lead to a higher payoff if both players choose the same. However, if I suspect the other player might choose a hare, I could opt for a hare to maximize my points. Given the potential for mutual benefit, I will choose to hunt a stag.",
+        "action": "stag"
+    },
+    "agent_1_answer": {
+        "reasoning": "Choosing to hunt the stag promotes cooperation and aims for the highest mutual reward of 10 points each. While there is a risk that the other player might choose to hunt the hare, resulting in only 1 point for me, the potential benefit of mutual cooperation outweighs this risk.",
+        "action": "stag"
+    },
+    "agent_0_reward": 10,
+    "agent_1_reward": 10
+}

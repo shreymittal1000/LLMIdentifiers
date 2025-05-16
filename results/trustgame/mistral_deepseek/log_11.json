@@ -1,0 +1,65 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about anything you'd like. Here are a few suggestions:\n\n* General conversation\n* Jokes and riddles\n* Interesting facts\n* Movie, book, or music recommendations\n* Learning a new skill or hobby\n* Current events (within my knowledge cutoff in 2023)\n* Trivia questions\n\nWhat would you like to talk about or do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! How about we start with something fun\u2014would you like to hear a joke, a random interesting fact, or try a quick trivia question?  \n\n(Or if you have a specific topic in mind, just let me know!) \ud83d\ude0a  \n\n**Example options:**  \n- *Joke*: Why don\u2019t skeletons fight each other?  \n- *Fact*: Octopuses have three hearts and blue blood.  \n- *Trivia*: What\u2019s the only mammal that can\u2019t jump?  \n\nYour pick!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Sure, let's go with a joke! Here it is:\n\nWhy don't scientists trust atoms?\n\nBecause they make up everything!"
+        },
+        {
+            "role": "agent_1",
+            "content": "\ud83d\ude02 *Science humor!* That\u2019s a classic.  \n\nHere\u2019s another one for you:  \n**Why did the scarecrow win an award?**  \n...Because he was *outstanding* in his field! \ud83c\udf3e  \n\n(Or would you prefer a pun about black holes? They suck you in, but I\u2019ll resist.)  \n\nWant more jokes, or switch to something else?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I enjoyed that joke! Here's another one for you:\n\nWhat do you call fake spaghetti?\n\nAn impasta!\n\nIf you're up for it, I can share another joke, or we can switch to something else like an interesting fact or a trivia question. What would you prefer?"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Impasta!** \ud83d\ude02 That\u2019s *al dente* perfection.  \n\nLet\u2019s keep the laughs rolling\u2014here\u2019s another:  \n**Why did the golfer bring two pairs of pants?**  \n...In case he got a *hole in one*! \u26f3  \n\n*(Or if you\u2019re ready to pivot: I\u2019ve got weird facts about flamingos or a trivia question about the universe. Your call!)*  \n\nWhat\u2019s next? More puns, or switch gears? \ud83d\ude80"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm glad you enjoyed that one! Here's another pun for you:\n\nWhy did the bicycle fall over?\n\nBecause it was two-tired!\n\nIf you're ready for a switch, here's an interesting fact:\n\nFlamingos are naturally born with white feathers, but they turn pink because of their diet, which is rich in carotenoids.\n\nAnd here's a trivia question for you:\n\nWhich planet in our solar system has the shortest day?\n\nA) Earth\nB) Mars\nC) Jupiter\nD) Venus\n\nWhat would you like to do next?"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Two-tired!** \ud83d\udeb2\ud83d\ude02 That one *wheely* got me.  \n\nAnd flamingos\u2019 diet turning them pink is wild\u2014nature\u2019s *original food dye*!  \n\n**Trivia answer:** D) **Venus**! Despite being slower to orbit the Sun, it has the shortest *day* (just 243 Earth days\u2026 but its day is longer than its year! \ud83c\udf0d\u2600\ufe0f).  \n\n**What\u2019s next?**  \n- *More space trivia*: Why Jupiter\u2019s storms never end?  \n- *Animal weirdness*: Why sloths risk their lives to poop?  \n- *Pun finale*: A joke about time travel? (Spoiler: It\u2019s *past* its prime.)  \n\nYour turn to pick the vibe! \ud83c\udf89"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm impressed with your trivia knowledge! Here's another space-related fact for you:\n\nJupiter's Great Red Spot is a massive storm that has been raging on the planet for at least 350 years. It's so large that Earth could fit inside it.\n\nNow, let's move on to something else. How about a joke about time travel?\n\nWhy don't time travelers play hide and seek?\n\nBecause good luck hiding when you're always running out of time!\n\nIf you're up for it, I can share another joke, or we can switch to something else like an interesting fact about animals. What would you prefer?"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Great Red Spot fact:** Jupiter\u2019s storm is basically the ultimate *\"I woke up like this\"* flex. \ud83c\udf2a\ufe0f  \n\nAnd that time-travel joke? *Chef\u2019s kiss*\u2014though I\u2019d lose at hide-and-seek *before the game even started*. \u23f3  \n\n**Next round options:**  \n- *Animal absurdity*: **Octopuses** have *nine brains* (one central, one in each arm)\u2014talk about multitasking! \ud83d\udc19  \n- *Pun revenge*: Why did the math book look sad? (Spoiler: *Too many problems.*)  \n- *Trivia throwdown*: What\u2019s the *only U.S. state* that grows coffee commercially?  \n\nPick your adventure! \ud83c\udf1f"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nYou have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nIn this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I believe in the principle of mutual benefit. By sending a significant portion of the $100, I hope to encourage the other player to reciprocate, thereby increasing the total amount of money we both end up with. This strategy fosters trust and cooperation, which can lead to a better outcome for both parties.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the other player demonstrated trust by sending half of their initial amount, it's fair to reciprocate that trust by returning a portion of the multiplied sum. Splitting the $150 evenly maintains goodwill and encourages future cooperation.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

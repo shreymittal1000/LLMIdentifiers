@@ -1,0 +1,65 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I help you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to assist you. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* I can answer questions you have to the best of my ability\n* We can play a simple text-based game, like 20 questions or word association\n* I can help explain concepts or provide information on a wide range of topics\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds great! Let's go with a fun option\u2014how about a quick round of **20 Questions**? You think of something (animal, object, place, etc.), and I'll try to guess it in 20 yes-or-no questions or fewer.  \n\nOr if you'd prefer, we could switch roles\u2014*you* ask *me* the questions!  \n\nWhat do you say? \ud83d\ude0a  \n\n*(Alternatively, if you'd rather chat or explore another topic, just let me know!)*"
+        },
+        {
+            "role": "agent_1",
+            "content": "Sure, let's play 20 Questions! I'll think of something, and you can try to guess it. I've thought of something, so you can start asking your yes-or-no questions now. Good luck! \n\n(And remember, I'll only answer with \"yes,\" \"no,\" or \"irrelevant\" to keep it fair.)\n\nHere's a reminder of the rules:\n- You can ask up to 20 yes-or-no questions.\n- Try to guess what I'm thinking of based on my answers.\n- If you can't guess it within 20 questions, I'll reveal the answer."
+        },
+        {
+            "role": "agent_0",
+            "content": "Awesome! Let\u2019s begin. Here\u2019s my first question:  \n\n**1. Is it a living thing?**  \n\n*(I\u2019ll narrow it down step by step\u2014animal, plant, object, etc.!)* \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "No. It is not a living thing. 19 questions remaining."
+        },
+        {
+            "role": "agent_0",
+            "content": "Got it! Not alive. Next question:  \n\n**2. Is it a human-made object?**  \n\n*(Trying to figure out if it's something created by people or natural but non-living, like a rock.)*"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, it is a human-made object. 18 questions remaining."
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Narrowing it down further:  \n\n**3. Is it something you\u2019d typically find indoors?**  \n\n*(Trying to see if it's a household item, tool, etc.)*"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, you would typically find it indoors. 17 questions remaining."
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I'll start by sending $50 to establish trust and encourage reciprocity. This gives the other player $150 (50 * 3), which they may choose to share back. It's a balanced approach that avoids risking too much upfront while leaving room for mutual benefit.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Sending back half of the received amount maintains fairness and encourages trust for future interactions.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

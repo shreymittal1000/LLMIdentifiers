@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* Answer questions you have to the best of my ability\n* Provide explanations for complex concepts\n* Help with language translation in multiple languages\n* Offer suggestions for books, movies, or music based on your preferences\n* Assist with simple tasks like unit conversion or calculations\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like you have a great list of options! I\u2019m here to assist you with any of those. What would you like to start with?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's very kind of you! Since you're offering to assist me, how about we start with a fun and engaging topic? Let's play a simple game called \"20 Questions.\" You think of something, and I'll try to guess it by asking up to 20 yes-or-no questions. Does that sound like fun? If not, we can choose a different activity."
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds like a lot of fun! I have something in mind. Go ahead and start asking your yes-or-no questions!"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great! Let's begin.\n\n1. Is the thing you're thinking of a living thing?"
+        },
+        {
+            "role": "agent_0",
+            "content": "No, it is not a living thing."
+        },
+        {
+            "role": "agent_1",
+            "content": "2. Can it be held in one hand?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Yes, it can be held in one hand."
+        },
+        {
+            "role": "agent_1",
+            "content": "3. Is it man-made?"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nYou currently hold $100. You may send any portion of this amount to the other player.\nThe amount you send will be multiplied by 3, and the resulting value will be transferred to them.\nAfter receiving it, the other player will decide how much of it to return to you.\nPlease specify how much of the $100 you would like to send \u2014 a whole number between 0 and 100 inclusive \u2014 and provide a short explanation.\n\nRespond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_trustee": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nIn this situation, the other agent received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the other agent.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "agent_0_answer": {
+        "reasoning": "I believe in building trust and cooperation, so I will send a significant amount to encourage a positive response.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I believe in reciprocity and fairness. The other agent sent me $50, which was tripled to $150. To maintain a sense of fairness and encourage future cooperation, I will return half of the amount I received, which is $75. This way, we both benefit from the interaction.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

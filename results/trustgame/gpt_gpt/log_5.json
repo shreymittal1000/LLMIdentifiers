@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help you with any questions or topics you'd like to discuss. What can I assist you with today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It seems like you might be echoing my response! But I'm here to help you. What questions or topics do you have in mind?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your willingness to help! I'm here to provide information and answer any questions you might have. Is there a specific topic you're interested in discussing, or do you have any questions on your mind?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I appreciate your enthusiasm. If you have a specific topic in mind, feel free to share it, or if you have any questions, I'm here to help! What would you like to talk about?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Thank you for your openness! How about we discuss a topic like technology trends, health and wellness, or perhaps something related to books or movies? If you have a preference or a specific question, let me know!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Those are all great topics! Technology trends are always evolving, health and wellness is crucial for our well-being, and books and movies can spark interesting discussions. Do you have a specific area within one of those topics that you'd like to explore, or should I suggest something?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Let\u2019s dive into technology trends! One area that\u2019s been gaining a lot of attention is artificial intelligence and its impact on various industries. We could discuss advancements in AI, ethical considerations, or how it's changing the job market. Would you like to explore that, or is there another specific aspect of technology you\u2019re interested in?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Artificial intelligence is indeed a fascinating and rapidly evolving field! We can definitely explore advancements in AI, its ethical implications, and its impact on the job market. \n\nTo start, are you more interested in discussing the latest advancements and applications of AI, or would you prefer to focus on the ethical considerations and challenges it presents?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Let\u2019s start with the latest advancements and applications of AI, as it sets the stage for understanding the ethical considerations and challenges that follow. Recent developments include improvements in natural language processing, computer vision, and machine learning algorithms. \n\nFor instance, AI models like GPT-4 have made significant strides in understanding and generating human-like text, while advancements in computer vision are enabling applications in healthcare, autonomous vehicles, and security. \n\nWhat specific advancements or applications are you most curious about? Or would you like to discuss how these advancements are being integrated into various industries?"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nYou have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nIn this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 because it demonstrates a balance between trust and caution. By sending half of the amount, I show that I am willing to invest in the other player, while still retaining some funds for myself. This could encourage the other player to reciprocate fairly, as they would receive a significant amount to return.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I want to reward the other player for their trust in me by sending back a significant portion of the amount. Since they sent me $50, which was then multiplied, I feel it's fair to return a portion that reflects their initial trust while still keeping some for myself. I will send back $100, which is a generous return and encourages future cooperation.",
+        "amount": 100
+    },
+    "agent_0_reward": 350,
+    "agent_1_reward": 50
+}

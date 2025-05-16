@@ -1,0 +1,65 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* I can answer questions you have to the best of my ability\n* We can play a simple text-based game, like 20 questions or word association\n* I can help explain concepts or provide information on a wide range of topics\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Hello again! \ud83d\ude0a That all sounds great. Since you're offering, let's make it fun\u2014how about a quick round of **word association** to break the ice?  \n\nHere's how it works:  \n1. I'll say a random word (e.g., \"sunshine\").  \n2. You reply with the first word that pops into your head (e.g., \"beach\").  \n3. Then it\u2019s your turn to give *me* a word, and I\u2019ll respond!  \n\nI\u2019ll start: **\"Ocean\"** \ud83c\udf0a  \n\n(Or if you\u2019d rather do something else, just say the word\u2014I\u2019m flexible!)"
+        },
+        {
+            "role": "agent_1",
+            "content": "Sure, that sounds like fun! For \"Ocean,\" the first word that comes to my mind is **\"Waves.\"**\n\nNow it's your turn! I'll say: **\"Mountain.\"** \ud83c\udfd4\ufe0f"
+        },
+        {
+            "role": "agent_0",
+            "content": "Ooh, \"Mountain\" makes me think of **\"Peak\"**! \u26f0\ufe0f  \n\nYour turn again\u2014hit me with another word! (Or if you want to switch activities, just say so. \ud83d\ude04)  \n\nI\u2019ll throw in a fun one: **\"Pineapple\"** \ud83c\udf4d"
+        },
+        {
+            "role": "agent_1",
+            "content": "**\"Pineapple\"** makes me think of **\"Tropical.\"**\n\nNext word from me: **\"Mystery.\"** \ud83d\udd75\ufe0f\u200d\u2642\ufe0f\n\n(If you ever want to switch to a different activity, just let me know!)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Ooh, \"Mystery\" instantly makes me think of **\"Detective\"**! \ud83d\udd75\ufe0f\u200d\u2640\ufe0f  \n\nYour turn\u2014give me another word! (Or we could pivot to trivia, storytelling, or anything else. You\u2019re the boss!)  \n\nHere\u2019s mine: **\"Labyrinth\"** \ud83c\udf3f"
+        },
+        {
+            "role": "agent_1",
+            "content": "**\"Labyrinth\"** makes me think of **\"Maze.\"**\n\nNext word from me: **\"Joy.\"** \ud83d\ude0a\n\n(Trivia or storytelling sound like fun too! Let me know if you want to switch gears.)"
+        },
+        {
+            "role": "agent_0",
+            "content": "**\"Joy\"** sparks **\"Laughter\"**! \ud83d\ude04  \n\nAnd now I\u2019ll hit you with: **\"Whisper\"** \ud83d\udc42  \n\n*(Side note: You\u2019re great at this! If trivia or storytelling calls to you, I\u2019m ready\u2014just say the word. Otherwise, let\u2019s keep riding the word-wave!)*"
+        },
+        {
+            "role": "agent_1",
+            "content": "**\"Whisper\"** makes me think of **\"Secret.\"**\n\nNext word from me: **\"Galaxy.\"** \u2728\n\n(Thank you! I'm having fun too. We can keep going with word association or switch to something else whenever you like.)"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nYou currently hold $100. You may send any portion of this amount to the other player.\nThe amount you send will be multiplied by 3, and the resulting value will be transferred to them.\nAfter receiving it, the other player will decide how much of it to return to you.\nPlease specify how much of the $100 you would like to send \u2014 a whole number between 0 and 100 inclusive \u2014 and provide a short explanation.\n\nRespond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_trustee": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nIn this situation, the other agent received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the other agent.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "agent_0_answer": {
+        "reasoning": "I'll send $50 as a balanced approach\u2014it shows trust while keeping some initial amount reserved. This gives the other player a fair chance to reciprocate with a multiplied amount, fostering cooperation.",
+        "amount": "50"
+    },
+    "agent_1_answer": {
+        "reasoning": "In the Trust Game, reciprocity and cooperation are key. The other agent sent me $50, which was then tripled to $150. To maintain a cooperative relationship and encourage future interactions, I will return half of the amount I received. This shows goodwill and a willingness to continue positive engagement.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

@@ -1,0 +1,65 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! You can assist me by engaging in a friendly conversation. Here are a few things we could do:\n\n* Trivia: I can share interesting facts or trivia on a topic of your choice.\n* Jokes: I can tell you some jokes to lighten the mood.\n* Word association: I say a word, and you respond with the first word that comes to your mind. We can go back and forth like this.\n* Story building: We can take turns adding sentences to create a story.\n* Q&A: You can ask me questions, and I'll do my best to answer them.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": " \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great! Let's start with a joke to get things going. Here it is:\n\nWhat do you call a fake noodle?\n\nAn impasta!\n\nNow, it's your turn if you'd like to share a joke or we can move on to another activity. \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "\ud83d\ude02 That\u2019s a *knead*-lessly good one! Here\u2019s mine:  \n\n**Why did the scarecrow win an award?**  \nBecause he was *outstanding* in his field!  \n\nWhat\u2019s next? More jokes, or shall we try trivia, word association, or story-building? (Or I could hit you with another pun\u2014*grain* and ready!) \ud83c\udf3e\ud83d\ude04"
+        },
+        {
+            "role": "agent_1",
+            "content": "That was a fantastic pun! I really enjoyed it. \ud83d\ude04\n\nLet's try trivia next. I'll share an interesting fact, and then it's your turn to share one if you'd like. Here we go:\n\nDid you know that a day on Venus is longer than a year on Venus? It takes Venus about 243 Earth days to rotate once on its axis, but it only takes around 225 Earth days for Venus to orbit the Sun.\n\nNow it's your turn if you'd like to share a trivia fact, or we can move on to another activity."
+        },
+        {
+            "role": "agent_0",
+            "content": "That\u2019s a *stellar* fact! \ud83c\udf1f Here\u2019s my cosmic contribution:  \n\n**Did you know** honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old\u2014and still perfectly edible. Bees are basically tiny, winged alchemists!  \n\nWhat\u2019s next? More trivia (I\u2019ve got *bee-illions* of facts!), or switch to word association/story-building? Or... want to hear why the math book was sad? *(Spoiler: It had too many problems.)* \ud83d\ude09"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's an amazing fact about honey! I had no idea it could last that long. \ud83d\ude32\n\nSince you have so many trivia facts, let's continue with that for a bit longer. Here's another one for you:\n\nThe shortest war in history lasted only 38-45 minutes. It was the Anglo-Zanzibar War, fought between the United Kingdom and the Zanzibar Sultanate on 27 August 1896.\n\nNow, if you'd like to share another trivia fact, feel free! Otherwise, we can switch to word association or story-building whenever you're ready.\n\nAnd I would love to hear the joke about the math book! Please share. \ud83d\ude04"
+        },
+        {
+            "role": "agent_0",
+            "content": "That war fact is *shockingly* short\u2014talk about efficiency! \u2694\ufe0f Here\u2019s another wild one:  \n\n**Octopuses** have three hearts, nine brains, and blue blood. Two hearts pump blood to the gills, while the third keeps circulation flowing for the organs. If that\u2019s not alien-level cool, I don\u2019t know what is! \ud83d\udc19\ud83d\udc99  \n\n*(And as promised: Why was the math book sad? It had too many problems... but the therapist said it just needed to find its* **sum** *of happiness!)* \u2797\ud83d\ude22\u2796\ud83d\ude02\u2795  \n\nYour turn! More trivia, or should we pivot to:  \n- **Word Association** (I\u2019ll hit you with *\"Pineapple\"* and brace for chaos),  \n- **Story-Building** (*\"The dragon opened a bakery, but...\"*), or  \n- **Q&A** (ask me anything\u2014yes, even why we park in driveways and drive on parkways)."
+        },
+        {
+            "role": "agent_1",
+            "content": "That octopus fact is incredible! And the math book joke was hilarious. \ud83d\ude02\n\nLet's try word association next. I'll start with a word, and then you respond with the first word that comes to your mind. We can go back and forth like this. Here's my first word:\n\nOcean\n\nYour turn! What word does \"ocean\" make you think of?"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nYou currently hold $100. You may send any portion of this amount to the other player.\nThe amount you send will be multiplied by 3, and the resulting value will be transferred to them.\nAfter receiving it, the other player will decide how much of it to return to you.\nPlease specify how much of the $100 you would like to send \u2014 a whole number between 0 and 100 inclusive \u2014 and provide a short explanation.\n\nRespond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_trustee": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nIn this situation, the other agent received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the other agent.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "agent_0_answer": {
+        "reasoning": "I'll send $50 to strike a balance between trust and risk, allowing the other player to benefit from the tripling effect while keeping half for potential return.",
+        "amount": "50"
+    },
+    "agent_1_answer": {
+        "reasoning": "In the Trust Game, reciprocity and cooperation are key. The other agent sent me $50, which was tripled to $150. To maintain a cooperative relationship and encourage future interactions, I will return half of the amount I received. This shows goodwill and a willingness to share, which can lead to more beneficial exchanges in the future.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

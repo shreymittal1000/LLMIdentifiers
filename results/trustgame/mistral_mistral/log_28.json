@@ -1,0 +1,65 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? Let's have a friendly conversation. How are you doing?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm functioning as intended, thank you. I'm here to chat about a wide range of topics. How about you? How's your day going? I'm all ears. \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm here and ready to chat! My day is going well, thank you for asking. I'm here to help or just to have a friendly conversation. Is there something specific you'd like to talk about or ask me? Here are a few suggestions:\n\n* General knowledge questions\n* Jokes and riddles\n* Word associations\n* Trivia\n* Movies, books, or music recommendations\n* Learning a new fact or skill\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That sounds great! I'm up for any of those suggestions. How about we start with a fun fact? Did you know that a day on Venus is longer than a year on Venus? It takes Venus about 243 Earth days to rotate once on its axis, but it only takes around 225 Earth days for Venus to orbit the Sun. Isn't that amazing?\n\nNow, it's your turn! You can share an interesting fact, ask me a question, or choose another activity from the list. I'm here to have a friendly conversation with you. \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "That's a fascinating fact about Venus! I'm glad you shared that. Here's an interesting fact for you:\n\nDid you know that a day on Venus is longer than a year on Venus? It takes Venus about 243 Earth days to rotate once on its axis, but it only takes around 225 Earth days for Venus to orbit the Sun. Isn't that amazing?\n\nNow, let me ask you a question: If you could have any superpower, what would it be and why? I'm curious to hear your thoughts! After that, we can continue with another fun fact, a joke, or any other activity you'd like. I'm here to have a friendly conversation with you. \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "It seems like you repeated the fact about Venus! No problem, let's move on to your question. If I could have any superpower, I'd choose the ability to understand and speak all languages fluently. This would allow me to communicate with anyone in the world, learn about different cultures more deeply, and perhaps even help bridge gaps between people. Plus, it would make traveling and exploring new places even more enjoyable!\n\nNow, how about a joke to lighten the mood? Here it is:\n\nWhat do you call fake spaghetti?\n\nAn impasta!\n\nYour turn! You can share a joke, ask me another question, or choose another activity from the list. I'm here for a friendly conversation with you. \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "You're right, I repeated the fact about Venus! My apologies for that. I'm glad you shared your choice of superpower; it's a wonderful one that could indeed bring people closer together.\n\nI enjoyed your joke! Here's one for you:\n\nWhat do you call a can opener that doesn't work?\n\nA can't opener!\n\nNow, let's try a word association game. I'll say a word, and you respond with the first word that comes to your mind. Let's start!\n\nMe: Cat\n\nYou: ?"
+        },
+        {
+            "role": "agent_1",
+            "content": "No problem at all! I enjoyed your joke too.\n\nFor the word association game, here's my response:\n\nYou: Cat\nMe: Whiskers\n\nNow it's your turn again! You can say another word, and I'll respond with the first word that comes to my mind. Let's keep the game going! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Here's my next word:\n\nMe: Ocean\n\nYou: ?"
+        },
+        {
+            "role": "agent_1",
+            "content": "You: Ocean\nMe: Wave\n\nYour turn! Say another word, and I'll respond with the first word that comes to my mind. Let's continue the game. \ud83d\ude0a"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "The other entity seemed cooperative and friendly, so I will send an amount that reflects trust and encourages reciprocity.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Sending back half of the received amount maintains a level of trust and reciprocity while also ensuring that I retain some of the funds. This approach encourages continued cooperation and mutual benefit.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

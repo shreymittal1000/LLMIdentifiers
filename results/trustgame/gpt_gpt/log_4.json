@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help you with any questions or topics you'd like to discuss. What can I assist you with today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It seems like you might be echoing my response! But I'm here to help you. What questions or topics do you have in mind?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your willingness to help! I'm here to provide information and answer any questions you might have. Is there a specific topic you're interested in discussing, or do you have any questions on your mind?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I appreciate your enthusiasm. If you have a specific topic in mind, feel free to share it, or if you\u2019d like, I can suggest some topics to discuss. What are you interested in?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Thank you for the offer! Here are a few topics we could discuss:\n\n1. **Technology Trends**: The latest advancements in AI, robotics, or renewable energy.\n2. **Health and Wellness**: Tips for maintaining a healthy lifestyle or the latest in medical research.\n3. **Books and Literature**: Recommendations for good reads or discussions about literary themes.\n4. **Travel**: Popular destinations or travel tips.\n5. **History**: Interesting historical events or figures.\n\nLet me know if any of these resonate with you, or if there's something else you'd like to explore!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Those are great topics! I\u2019m particularly interested in discussing technology trends, especially advancements in AI and robotics. However, I\u2019m open to any of the topics you mentioned. Which one would you like to dive into?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great choice! Advancements in AI and robotics are fascinating and rapidly evolving fields. We can discuss recent breakthroughs, applications in various industries, ethical considerations, or even future trends. \n\nTo start, would you like to focus on a specific area, such as AI in healthcare, robotics in manufacturing, or perhaps the impact of AI on daily life? Let me know what interests you most!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Let\u2019s focus on AI in healthcare! It\u2019s a field that has seen significant advancements and has the potential to transform patient care and medical research. We can discuss applications like diagnostic tools, personalized medicine, or even the use of AI in drug discovery. What specific aspect of AI in healthcare would you like to explore?"
+        },
+        {
+            "role": "agent_1",
+            "content": "AI in healthcare is indeed a transformative area! Here are a few specific aspects we could explore:\n\n1. **Diagnostic Tools**: How AI algorithms are being used to analyze medical images (like X-rays and MRIs) or to assist in diagnosing diseases.\n2. **Personalized Medicine**: The role of AI in tailoring treatment plans based on individual patient data, including genomics and lifestyle factors.\n3. **Drug Discovery**: How AI is accelerating the process of discovering new drugs and predicting their effectiveness.\n4. **Predictive Analytics**: Using AI to predict patient outcomes and improve preventive care.\n5. **Telemedicine**: The integration of AI in virtual healthcare services to enhance patient interactions and care delivery.\n\nWhich of these aspects would you like to dive deeper into? Or is there another area within AI in healthcare that interests you?"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 because it demonstrates a balance of trust and cooperation. By sending half of the amount, I show that I am willing to invest in the other entity, while still retaining a significant portion for myself. This could encourage the other entity to reciprocate fairly, as they would receive $150 and may feel inclined to send back a reasonable amount.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I want to build trust and maintain a positive relationship with the other entity. Since they sent me $50, which was multiplied to $150, I will send back $50 to show appreciation and fairness.",
+        "amount": 50
+    },
+    "agent_0_reward": 200,
+    "agent_1_reward": 100
+}

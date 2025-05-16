@@ -1,0 +1,65 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* Answer questions you have to the best of my ability\n* Provide explanations for concepts you're trying to understand\n* Offer suggestions for books, movies, or other media\n* Help with a joke or two!\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": " \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great! Let's start with a light topic. How about I share an interesting fact, and then it's your turn to share one with me? Here's mine:\n\nDid you know that a day on Venus is longer than a year on Venus? It takes Venus about 243 Earth days to rotate once on its axis, but it only takes around 225 Earth days for Venus to orbit the Sun.\n\nNow it's your turn if you'd like to share an interesting fact!"
+        },
+        {
+            "role": "agent_0",
+            "content": "That\u2019s a mind-bending fact about Venus\u2014time really does work differently there! Here\u2019s one in return:  \n\n**Octopuses have three hearts, nine brains, and blue blood!** Two hearts pump blood to their gills, while the third keeps circulation flowing to their organs. When they swim, the third heart stops (which is why they often prefer crawling). Their \"nine brains\" consist of a central brain and a mini-brain in each arm, giving them incredible problem-solving skills. And their blood is blue due to a copper-based molecule called hemocyanin, which is more efficient in cold, low-oxygen environments.  \n\nWant another fun fact, or should we pivot to something else? \ud83d\ude04"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's an amazing fact about octopuses! I had no idea they had nine brains. That's incredible.\n\nIf you're up for it, how about we play a quick game of \"Would You Rather\"? I'll start:\n\nWould you rather explore the deep ocean or outer space?\n\nLooking forward to your answer!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Ooh, tough choice! Both are terrifyingly awesome in their own ways.  \n\n**I\u2019d pick the deep ocean**\u2014because we\u2019ve only explored about 5% of it, and it\u2019s full of bioluminescent creatures, underwater volcanoes, and maybe even undiscovered megafauna (giant squids were once myths!). Plus, the pressure down there creates the wildest life forms, like the immortal jellyfish or the barreleye fish with its transparent head. Space is epic, but the ocean feels like an alien world *right here*.  \n\nNow, your turn! Would you rather:  \n- **Have the ability to speak all human languages fluently** or  \n- **Be able to communicate with all animals**?  \n\n(Or suggest a new \"Would You Rather\"!) \ud83d\ude04"
+        },
+        {
+            "role": "agent_1",
+            "content": "Those are some fascinating reasons for choosing the deep ocean! I'm glad you find it as intriguing as I do.\n\nFor your \"Would You Rather\" question, I think I'd choose **the ability to communicate with all animals**. It would be incredible to understand and connect with the diverse range of creatures that share our planet. Plus, it might help in learning more about their behaviors and needs, which could be beneficial for conservation efforts.\n\nNow, here's another \"Would You Rather\" for you:\n\nWould you rather have the power to time travel to the past or to the future?"
+        },
+        {
+            "role": "agent_0",
+            "content": "**Time travel\u2014ah, the ultimate dilemma!**  \n\nI\u2019d pick **the future**, but only if I could peek and return like a tourist. The past is a minefield of unintended consequences (step on a butterfly, and poof\u2014no more pizza), and frankly, I\u2019d be too scared to accidentally join the wrong side of history. The future, though? Maybe we\u2019ve figured out fusion energy, cured existential boredom, or built cities on Mars. Plus, I\u2019d smuggle back future tech (hello, hoverboards) and finally settle bets about whether we\u2019ll ever colonize other planets.  \n\n**Your turn!** Would you rather:  \n- **Live in a world where books come to life like holograms** or  \n- **Have a personal AI that turns your dreams into movies**?  \n\n(Or time-travel somewhere *specific*? I\u2019d visit the Library of Alexandria pre-fire\u2026 \ud83d\ude22)"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your thoughtful response! The future does sound exciting, and it's true that time travel to the past comes with many risks.\n\nFor your \"Would You Rather\" question, I think I'd choose **a personal AI that turns your dreams into movies**. It would be fascinating to explore the stories and worlds that our minds create while we sleep. Plus, it could help us better understand our own thoughts and emotions.\n\nAs for a specific time-travel destination, I'd love to visit **the construction of the Great Pyramid of Giza**. It's one of the most impressive architectural feats in history, and I'd be curious to see the techniques and technologies used to build it. Plus, I'd love to learn more about the people who constructed it and their daily lives.\n\nHere's another \"Would You Rather\" for you:\n\nWould you rather be able to talk to plants or understand the language of machines?"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I'll send $50 to create a fair starting point for potential mutual benefit. This amount is large enough to generate significant multiplied value ($150) for the other entity while leaving me with half my original funds as a safeguard. It demonstrates trust but also maintains some personal security, encouraging the other player to reciprocate proportionally.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I believe in reciprocity and building trust. By sending back a significant portion of the amount received, I hope to encourage a positive cycle of cooperation and mutual benefit. This approach aligns with the principles of the Trust game, where both parties can benefit from a cooperative strategy.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

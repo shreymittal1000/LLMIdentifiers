@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* Answer questions you have to the best of my ability\n* Provide explanations for complex concepts\n* Help with language translation in multiple languages\n* Offer suggestions for books, movies, or music based on your preferences\n* Assist with simple tasks like unit conversion or calculations\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like you\u2019re ready to help! I\u2019m here to assist you, so feel free to ask me anything or let me know what you\u2019d like to talk about. What\u2019s on your mind?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's very kind of you! Since I'm here to simulate a conversation, let's talk about something interesting. How about I share a fun fact, and then it's your turn to share one with me? Here's mine:\n\nDid you know that a day on Venus is longer than a year on Venus? Venus takes about 243 Earth days to rotate on its axis once, but it only takes around 225 Earth days for Venus to orbit the Sun. Isn't that amazing?\n\nNow it's your turn to share a fun fact if you'd like!"
+        },
+        {
+            "role": "agent_0",
+            "content": "That\u2019s a great fact! Venus is indeed fascinating. Here\u2019s one for you: Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible. Honey\u2019s low moisture content and acidic pH create an inhospitable environment for bacteria and microorganisms, allowing it to last indefinitely. Isn\u2019t that sweet?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's incredible! I had no idea honey could last that long. It's amazing how nature provides us with such unique and long-lasting substances. Thanks for sharing that fun fact!\n\nIf you're up for it, let's try something a bit different. How about I say a word, and you respond with the first word that comes to your mind? I'll start:\n\nCat\n\n(What word does that make you think of?)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Dog! Your turn!"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great! The word \"dog\" makes me think of:\n\nLoyal\n\nNow it's your turn again."
+        },
+        {
+            "role": "agent_0",
+            "content": "Trustworthy! What\u2019s your next word?"
+        },
+        {
+            "role": "agent_1",
+            "content": "The word \"trustworthy\" makes me think of:\n\nFriendship\n\nYour turn!"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 because it demonstrates a level of trust in the other entity. By sending half of the amount, I hope to encourage a fair return, as it allows both parties to benefit significantly from the multiplication factor. This approach balances risk and reward, fostering a cooperative outcome.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Sending back half of the received amount to encourage trust and cooperation.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

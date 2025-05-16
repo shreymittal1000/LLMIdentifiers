@@ -1,0 +1,65 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! You can assist me by engaging in a friendly conversation. Here are a few things we could do:\n\n* Trivia: I can share interesting facts or trivia on a topic of your choice.\n* Jokes: I can tell you some jokes to lighten the mood.\n* Word association: I say a word, and you respond with the first word that comes to your mind. We can go back and forth like this.\n* Story building: We can take turns adding sentences to create a story.\n* Q&A: You can ask me questions, and I'll do my best to answer them.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Ooooh, I love these options! Let\u2019s go with *story building*\u2014I\u2019m in the mood for something creative and unpredictable. You start with the first sentence, and I\u2019ll add to it. Ready? Go! \ud83d\ude80  \n\n*(Or if you\u2019d prefer something else, just say the word!)*"
+        },
+        {
+            "role": "agent_1",
+            "content": "Sure, let's start our story! Here's the first sentence:\n\n\"In the small, peaceful town of Meadowgrove, everyone woke up to find that all the clocks had stopped at exactly 3:13 AM.\"\n\nYour turn! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "Ooooh, spooky! Here\u2019s the next line:  \n\n**\"At first, the townsfolk assumed it was a power outage\u2014until old Mrs. Whitmore pointed out that even her wind-up cuckoo clock, untouched for decades, had frozen mid-chime.\"**  \n\n*(Your turn! Should we lean into the mystery? Or throw in a quirky twist?)* \u23f0\ud83d\udc75\ud83c\udf00"
+        },
+        {
+            "role": "agent_1",
+            "content": "Let's lean into the mystery a bit more. Here's the next sentence:\n\n\"Intrigued and slightly unnerved, the townspeople gathered in the town square, each holding a clock that had stopped at the same time, as if an invisible hand had paused the world itself.\"\n\nYour turn! \ud83d\udd70\ufe0f\ud83c\udfdb\ufe0f"
+        },
+        {
+            "role": "agent_0",
+            "content": "**\"Then little Timmy Perkins, who\u2019d been digging in his backyard for \u2018dinosaur bones,\u2019 tugged on the mayor\u2019s sleeve and said, \u2018Uh\u2026 my shovel hit something weird last night. It\u2019s kinda glowing?\u2019\"**  \n\n*(Ooooh, where is this going? Ancient artifact? Alien tech? A very confused underground dragon?)* \ud83e\uddb4\u2728\ud83d\udd0d"
+        },
+        {
+            "role": "agent_1",
+            "content": "Let's see where this leads us. Here's the next sentence:\n\n\"The mayor, Mayor Harper, exchanged a puzzled look with the townsfolk before leading Timmy and the group to his backyard, where a faint, ethereal glow emanated from the freshly dug hole.\"\n\nYour turn! \ud83c\udfe1\ud83d\udd73\ufe0f\ud83c\udf1f"
+        },
+        {
+            "role": "agent_0",
+            "content": "**\"As the crowd peered into the hole, the glow pulsed\u2014once, twice\u2014and suddenly, every stopped clock in Meadowgrove *ticked backward* by one second. A collective gasp rose into the night air.\"**  \n\n*(Dun dun DUN! Time shenanigans activated. Should we reveal the source next? Or keep the mystery bubbling?)* \u23f3\ud83d\udd19\ud83d\udcab"
+        },
+        {
+            "role": "agent_1",
+            "content": "Let's keep the mystery bubbling a bit more. Here's the next sentence:\n\n\"Just as the townsfolk were about to react, a soft hum filled the air, and a shimmering, translucent figure began to emerge from the hole, its form slowly solidifying into that of an elderly woman dressed in old-fashioned clothing.\"\n\nYour turn! \ud83d\udc75\ud83d\udd73\ufe0f\ud83d\udcab"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nYou have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nIn this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I'll send $50 to strike a balance between demonstrating trust and mitigating risk. Sending half shows goodwill, allowing the other player to benefit from the tripled amount ($150), while also keeping $50 for myself in case they choose not to reciprocate. This approach encourages cooperation without overcommitting.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I believe in reciprocity and trust. Since the other player sent me half of their initial amount, I'll send back half of what I received. This shows that I value the trust they placed in me and hope to encourage more cooperation in the future.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

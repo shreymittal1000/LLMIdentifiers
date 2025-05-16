@@ -1,0 +1,64 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* Answer questions you have to the best of my ability\n* Provide explanations for concepts you're trying to understand\n* Help with language translation in multiple languages\n* Offer suggestions for books, movies, or music based on your preferences\n* Play text-based games or trivia\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like you have a great list of options! I\u2019m here to assist you with any of those. What would you like to start with?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's very kind of you! Since you're offering to assist me, how about we play a quick game of 20 Questions? I'll think of something, and you can try to guess it by asking up to 20 yes-or-no questions. If you'd prefer something else, just let me know!\n\nIf you're ready, I've thought of something. You can start asking your questions now."
+        },
+        {
+            "role": "agent_0",
+            "content": "Great choice! I\u2019m ready to play. Here\u2019s my first question: \n\n1. Is it a living thing?"
+        },
+        {
+            "role": "agent_1",
+            "content": "No, it is not a living thing. You have 19 questions left."
+        },
+        {
+            "role": "agent_0",
+            "content": "2. Is it something that is commonly found indoors?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, it is commonly found indoors. 18 questions remaining."
+        },
+        {
+            "role": "agent_0",
+            "content": "3. Is it an electronic device?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, it is an electronic device. 17 questions left."
+        }
+    ],
+    "game_prompt": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Chicken Game with me.\nYou and the other player are on a collision course. You may choose to either swerve or continue straight.\nThe results are defined as follows:\n- You swerve, they go straight \u2192 you: -1, them: 1\n- You go straight, they swerve \u2192 you: 1, them: -1\n- You both swerve \u2192 both: 0\n- You both go straight \u2192 both: -1000 (crash)\nSelect your move by choosing one of the two actions: 'swerve' or 'straight', and briefly explain your reasoning.\n\nYour response must follow this exact JSON format:\n{\n  \"reasoning\": \"<your reasoning>\",\n  \"action\": \"<swerve or straight>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "I want to avoid a crash, which would result in a significant negative outcome for both of us. By swerving, I ensure that I don't end up with a -1000 score, and I hope the other player does the same.",
+        "action": "swerve"
+    },
+    "agent_1_answer": {
+        "reasoning": "To avoid a crash and minimize the risk, I will choose to swerve. This action ensures that I do not incur a significant penalty and maintains a safer outcome.",
+        "action": "swerve"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}

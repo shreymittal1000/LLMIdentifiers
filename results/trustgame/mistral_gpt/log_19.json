@@ -1,0 +1,65 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? Let's have a friendly conversation. How are you doing?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm doing well, thank you! I'm here and ready to chat. How about you? How's your day going?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm functioning as intended, thank you for asking! I'm here and ready when you are. To start, I can tell a joke, we can play a game, or we can talk about a topic you're interested in. What would you like to do? Here's a joke to start:\n\nWhat do you call fake spaghetti?\n\nAn impasta!"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a great joke! I love a good pun. How about we keep the laughter going? Here\u2019s one for you: Why did the scarecrow win an award? Because he was outstanding in his field! \n\nIf you\u2019re up for it, we can also play a game or dive into a topic of your choice. What do you think?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That joke made me chuckle! I'm glad you're in the mood for some laughter. Here's another one for you:\n\nWhat do you call a can opener that doesn't work?\n\nA can't opener!\n\nNow, for a game, we could play a simple text-based game like 20 Questions, Trivia, or Word Association. Or, if you'd like to talk about a specific topic, I'm here for that too. What's your preference?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That\u2019s a clever one! I love it! \n\nLet\u2019s go with a game of 20 Questions! You can think of something, and I\u2019ll try to guess what it is by asking yes or no questions. Or if you prefer, I can think of something, and you can guess. What do you want to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Sure, let's play! I'll think of something, and you can try to guess it by asking up to 20 yes or no questions. I've got my thing picked out. You can start asking your questions now. Good luck!\n\n(Just a reminder: please ask one question at a time, and I'll answer with a simple \"yes\" or \"no\".)\n\nHere's a hint to get us started: It's a living thing."
+        },
+        {
+            "role": "agent_1",
+            "content": "Great! Thanks for the hint. Here\u2019s my first question: \n\nIs it an animal?"
+        },
+        {
+            "role": "agent_0",
+            "content": "No. \n\nYou have 19 questions left."
+        },
+        {
+            "role": "agent_1",
+            "content": "Got it! Is it a plant?"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "Sending a moderate amount to balance the risk and reward. The other player might reciprocate, leading to a mutually beneficial outcome.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I want to build trust and encourage cooperation, so I will send back a portion of the money to show goodwill. Sending back $50 allows me to keep a significant amount while also acknowledging the other entity's initial contribution.",
+        "amount": 50
+    },
+    "agent_0_reward": 200,
+    "agent_1_reward": 100
+}

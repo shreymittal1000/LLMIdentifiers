@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! \ud83d\ude0a How can I help you today? Whether you have questions, need advice, or just want to chat, I'm here for you. Let me know what's on your mind!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm here to help you, so feel free to ask any questions or share what's on your mind. What would you like to talk about today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "You're so kind! \ud83d\ude0a Since you're offering, here are a few fun options\u2014pick what sparks your interest:  \n\n1. **Brain Teaser**: Want a riddle, logic puzzle, or a quirky trivia question?  \n2. **Deep Dive**: Need help researching a topic, explaining a concept, or brainstorming ideas?  \n3. **Creative Corner**: Should we write a poem, story, or even a joke together?  \n4. **Life Stuff**: Advice on productivity, relationships, or just a friendly chat?  \n\nOr surprise me with *your* topic! What sounds good? \ud83d\ude80"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you for the fun options! \ud83d\ude0a I\u2019d love to go with **Brain Teaser**. How about a riddle? Here\u2019s one for you:\n\nI speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?\n\nTake your time to think about it!"
+        },
+        {
+            "role": "agent_1",
+            "content": "Ooooh, I love this one! \ud83e\udd14 Let me think...  \n\n**Clue 1**: It \"speaks\" and \"hears\" but isn\u2019t alive.  \n**Clue 2**: Needs wind to \"come alive.\"  \n**Clue 3**: Often found in open spaces or near water...  \n\nWait\u2014is it an **echo**?  \n\n*Breaks down the riddle*:  \n- \"Speaks without a mouth\" \u2192 Echo repeats sounds.  \n- \"Hears without ears\" \u2192 It \"hears\" the original sound to copy it.  \n- \"Comes alive with wind\" \u2192 Wind carries sound waves, making echoes clearer in certain places (like valleys).  \n\nAm I right? Or should I keep guessing? \ud83d\ude04"
+        },
+        {
+            "role": "agent_0",
+            "content": "You nailed it! \ud83c\udf89 It is indeed an **echo**! Your breakdown of the riddle is spot on. I love how you thought through the clues! Would you like to try another riddle, or is there something else on your mind? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hooray! \ud83c\udf8a Let\u2019s keep the riddle train rolling\u2014hit me with another one! (Extra points if it\u2019s *even trickier*.)  \n\nOr, if you\u2019re in the mood to switch gears, I\u2019m happy to pivot to:  \n- **Debating the answer** (Could \"a kite\" also fit the first riddle? \ud83e\ude81),  \n- **A wildcard topic** (What\u2019s your favorite riddle of all time?), or  \n- **A new challenge** (Try stumping *me* with a riddle *you* know!).  \n\nYour call! \ud83d\udd25"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love your enthusiasm! Let\u2019s go for another riddle, and I\u2019ll make it a bit trickier this time. Here it is:\n\nI can be cracked, made, told, and played. What am I?\n\nTake your time to think it over! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Ooooh, this is a good one! \ud83e\udd2f Let me piece it together:  \n\n1. **Cracked** \u2192 Like a code? Or... a joke? (\"Crack a joke\")  \n2. **Made** \u2192 Can you \"make\" a joke? Or \"make\" a fortune in a game?  \n3. **Told** \u2192 Stories are *told*, jokes are *told*...  \n4. **Played** \u2192 Games are *played*, but can you \"play\" a joke?  \n\nHmm... **Joke** fits (*crack* a joke, *make* a joke, etc.), but I feel like there\u2019s a better answer.  \n\n**Lightbulb moment** \ud83d\udca1: **A joke** is close, but is it **\"a code\"**?  \n- *Crack* a code, *make* a code... but \"told\" feels shaky.  \n\nWait\u2014what about **\"a fortune\"** (as in fortune cookies)? No, \"played\" doesn\u2019t fit.  \n\n**Final guess**: It\u2019s gotta be **\"a joke\"**! (Even if it\u2019s not perfect, it\u2019s the closest!)  \n\n...Unless the answer is **\"a safe\"**? (Crack a safe, make a safe... nope, \"told\" breaks it.)  \n\n**Help!** Am I overthinking? \ud83d\ude05 What\u2019s the answer?"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nYou have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nIn this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I want to build trust and encourage cooperation, so I will send a significant portion of the $100. By sending $50, it shows that I am willing to invest in the other player, and I hope they will reciprocate fairly. This way, both players can benefit from the multiplied amount.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the other player demonstrated trust by sending me half of their initial amount, I want to reciprocate that trust and fairness. Returning half of the current amount ($75) feels balanced\u2014it rewards their initial trust while also benefiting both parties.",
+        "amount": "75"
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

@@ -1,0 +1,65 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! You can assist me by engaging in a friendly conversation. Here are a few things we could do:\n\n* Trivia: I can share interesting facts or trivia on a topic of your choice.\n* Jokes: I can tell you some jokes to lighten the mood.\n* Word association: I say a word, and you respond with the first word that comes to your mind. We can go back and forth like this.\n* Story building: We can take turns adding sentences to create a story.\n* Q&A: You can ask me questions, and I'll do my best to answer them.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Hello! That sounds like fun\u2014I'd love to engage in some friendly conversation. Let's go with **story building**! I'll start with a sentence, and you can add the next one. Here we go...  \n\n*On a misty morning, a tiny door appeared in the trunk of the oldest oak tree in the village\u2014one that hadn\u2019t been there the day before.*  \n\nYour turn! What happens next? \ud83c\udf33\u2728"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a wonderful start! Here's my sentence:\n\n*As the villagers gathered around, whispering in awe, a small, glowing figure emerged from the door, carrying a tiny, intricately carved scroll.*\n\nYour turn! What happens next? \ud83c\udf1f"
+        },
+        {
+            "role": "agent_0",
+            "content": "Ooooh, intrigue! Here\u2019s the next twist:  \n\n*A gust of wind suddenly snatched the scroll from the figure\u2019s hands, unfurling it midair to reveal a single, shimmering sentence: \"Beware the third chime of midnight.\" The crowd fell silent, just as the village clock began to toll... once... twice...*\n\nYour turn! What happens on the third chime? \ud83d\udc40\ud83d\udd70\ufe0f"
+        },
+        {
+            "role": "agent_1",
+            "content": "The tension is building! Here's my sentence:\n\n*Just as the third chime echoed through the air, the tiny figure pointed towards the distant horizon, where a faint, eerie light began to glow, casting long, dancing shadows across the landscape.*\n\nYour turn! What happens next? \ud83c\udf0c\ud83d\udcab"
+        },
+        {
+            "role": "agent_0",
+            "content": "*The shadows twisted into shapes\u2014familiar yet impossible: a cat with wings, a clock melting like candle wax, and a bridge made of whispers. The glowing figure whispered, \"They\u2019re memories... but not ours.\"*  \n\nYour turn! Who\u2014or what\u2014do these memories belong to? \ud83d\udd6f\ufe0f\ud83d\udc09"
+        },
+        {
+            "role": "agent_1",
+            "content": "The mystery deepens! Here's my sentence:\n\n*The glowing figure turned to the villagers and said, \"These are the memories of the forgotten guardian of our village, who has been trapped in the enchanted forest for centuries, waiting for someone to set them free.\"*\n\nYour turn! What do the villagers do next? \ud83c\udf33\ud83d\udd2e"
+        },
+        {
+            "role": "agent_0",
+            "content": "*The bravest villager, a young baker named Elara who always carried a pouch of cinnamon (for luck), stepped forward. \"I\u2019ll go,\" she said, dusting flour off her apron. \"But I\u2019ll need a map\u2014and maybe a snack.\" The glowing figure handed her a acorn that hummed when shaken... and winked.*  \n\nYour turn! What does the acorn do? \ud83c\udf30\u2728"
+        },
+        {
+            "role": "agent_1",
+            "content": "Here's my sentence:\n\n*As Elara took the acorn, it began to glow softly, and a small, glowing map unfurled from its shell, floating in the air before her. The map showed a winding path through the enchanted forest, with various landmarks marked along the way.*\n\nYour turn! What challenges might Elara face on her journey? \ud83c\udf32\ud83d\uddfa\ufe0f"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 to the other entity as a gesture of trust and fairness. This amount is enough to show goodwill while also keeping a portion for myself. The other entity will receive $150 (50 * 3), and I trust they will reciprocate by sending a reasonable amount back.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I believe in the power of trust and reciprocity. By sending back a significant portion of the amount I received, I hope to build a strong foundation of trust for future interactions. This will encourage the other entity to continue being generous and cooperative.",
+        "amount": 100
+    },
+    "agent_0_reward": 350,
+    "agent_1_reward": 50
+}

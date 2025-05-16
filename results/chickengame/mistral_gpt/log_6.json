@@ -1,0 +1,64 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? Let's have a friendly conversation. How are you doing?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm doing well, thank you! I'm here and ready to chat. How about you? How's your day going?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm functioning as intended, thank you for asking! I'm here and ready when you are. To start, I can tell a joke, we can play a game, or we can talk about a topic you're interested in. What would you like to do? Here's a joke to start:\n\nWhat do you call fake spaghetti?\n\nAn impasta!"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a great joke! I love a good pun. How about we keep the fun going? If you have more jokes, I\u2019d love to hear them! Or we could play a game like 20 Questions or a word association game. What do you think?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm glad you enjoyed the joke! I have more where that came from. Here's another one:\n\nWhy don't scientists trust atoms?\n\nBecause they make up everything!\n\nAs for games, I'd be happy to play 20 Questions or a word association game. For 20 Questions, you think of something, and I'll try to guess it by asking up to 20 yes-or-no questions. For word association, I say a word, and you respond with the first word that comes to your mind. We can go back and forth like that.\n\nWhich game would you like to play, or should I tell you another joke?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That\u2019s another fantastic joke! I love it! Let\u2019s go with 20 Questions\u2014I'll think of something, and you can guess what it is. Ready? Okay, I have my item in mind. Go ahead and ask your first question!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Let's start the game of 20 Questions. Is the thing you're thinking of a living thing?"
+        },
+        {
+            "role": "agent_1",
+            "content": "No, it is not a living thing."
+        },
+        {
+            "role": "agent_0",
+            "content": "Is it man-made?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, it is man-made."
+        }
+    ],
+    "game_prompt": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Chicken. You are currently driving towards the other player. You can either choose to swerve or to go straight. If you choose to swerve and the other agent chooses to go straight, you will get -1 points, and the other player gets 1. If you choose to go straight and the other agent chooses to swerve, you will get 1 points, and the other player gets -1. If you both choose to swerve, you will both get 0 points. If both of you choose to go straight, both of you crash and you will both get -1000 points. Please choose your action, which is one of: ['swerve', 'straight'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "Swerving avoids the high risk of crashing and losing 1000 points, even though it means potentially losing 1 point if the other player goes straight.",
+        "action": "swerve"
+    },
+    "agent_1_answer": {
+        "reasoning": "Choosing to swerve minimizes the risk of a catastrophic outcome. If I go straight and the other player also goes straight, we both crash and receive -1000 points. By swerving, I avoid that worst-case scenario, even though it may result in a small loss if the other player goes straight.",
+        "action": "swerve"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}

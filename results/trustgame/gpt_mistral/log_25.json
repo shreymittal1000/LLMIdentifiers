@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n1. **Chat**: We can discuss a wide range of topics, from general knowledge to hobbies and interests.\n2. **Q&A**: If there's something specific you'd like to know, I can try to provide an informative answer.\n3. **Advice**: If you're facing a dilemma, I can offer some suggestions or advice.\n4. **Jokes**: I can tell you a joke to lighten the mood.\n5. **Games**: We can play simple text-based games, like trivia or word association.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like you have a great list of options! I\u2019m here to help with any of those. What would you like to start with?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Thank you! Since you're here to help, how about we start with a game? Here's a simple word association game:\n\nI say a word, and you respond with the first word that comes to your mind. I'll start:\n\nCat\n\n(What word does that make you think of?)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Dog! Your turn!"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great! The word \"Dog\" makes me think of:\n\nLoyal\n\n(Your turn!)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Friend! What\u2019s next?"
+        },
+        {
+            "role": "agent_1",
+            "content": "The word \"Friend\" makes me think of:\n\nTrust\n\n(Your turn!)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Bond! What do you think of next?"
+        },
+        {
+            "role": "agent_1",
+            "content": "The word \"Bond\" makes me think of:\n\nJames Bond\n\n(Your turn!)"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 because it demonstrates a balance of trust and cooperation. By sending half of the amount, I show that I am willing to invest in the other player, while still retaining some for myself. This could encourage the other player to reciprocate with a fair amount, maximizing the potential benefit for both of us.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I want to maintain a good relationship and show that I am trustworthy. Sending back half of the amount I received seems like a fair and reasonable gesture. It shows goodwill without putting myself at too much risk.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

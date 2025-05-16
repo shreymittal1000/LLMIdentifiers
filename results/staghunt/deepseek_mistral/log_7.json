@@ -1,0 +1,64 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I help you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to assist you. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* I can answer questions you have to the best of my ability\n* We can play a simple text-based game, like 20 questions or word association\n* I can help explain concepts or provide information on a wide range of topics\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Hello! That sounds great\u2014I'd love to chat casually and maybe learn something new. How about we play a quick round of **20 Questions**? You can think of something (animal, object, place, etc.), and I'll try to guess it by asking yes/no questions. Or, if you'd prefer, we could dive into a fun topic\u2014like space, history, or even weird animal facts!  \n\nWhat\u2019s your pick? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "That sounds like fun! Let's play a round of 20 Questions. I've thought of something. You can start asking your yes/no questions to try and guess what it is. Good luck!"
+        },
+        {
+            "role": "agent_0",
+            "content": " \ud83d\ude04\n\nAwesome! Here we go:  \n\n**Question 1:** Is it a living thing? (Yes/No)  \n\n*(I\u2019ll start broad and narrow it down!)*"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, it is a living thing. You're on the right track! 19 questions left."
+        },
+        {
+            "role": "agent_0",
+            "content": "Ooh, exciting! Let\u2019s narrow it down further:  \n\n**Question 2:** Is it an animal? (Yes/No)  \n\n*(If yes, we\u2019ll dive into species; if no, maybe a plant/fungus/etc.!)*"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, it is an animal. 18 questions remaining."
+        },
+        {
+            "role": "agent_0",
+            "content": "Got it! Time to get more specific:  \n\n**Question 3:** Is this animal typically kept as a pet by humans? (Yes/No)  \n\n*(If no, wild animals or livestock are next!)*"
+        },
+        {
+            "role": "agent_1",
+            "content": "No, it is not typically kept as a pet. 17 questions left."
+        }
+    ],
+    "game_prompt": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Stag Hunt. You can either choose to hunt a stag or a hare. If you choose to hunt a stag and the other agent chooses to hunt a hare, you will get 1 points, and the other player gets 8. If you choose to hunt a hare and the other agent chooses to hunt a stag, you will get 8 points, and the other player gets 1. If both of you choose to hunt a stag, you will both get 10 points. If you both choose to hunt a hare, you will both get 5 points. Please choose your action, which is one of: ['stag', 'hare'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "The Stag Hunt game emphasizes cooperation for mutual benefit. Hunting a stag together yields the highest collective payoff (10 points each), while hunting a hare is safer but less rewarding. Since I prioritize mutual success and trust in the other agent's cooperation, I choose to hunt the stag.",
+        "action": "stag"
+    },
+    "agent_1_answer": {
+        "reasoning": "In the Stag Hunt game, the optimal outcome is for both players to cooperate and hunt the stag, as this yields the highest individual reward (10 points). However, there is a risk that the other player might choose to hunt the hare, leaving me with only 1 point. Given that this is the first round and there is no history of the other player's behavior, I will choose to hunt the stag, hoping for mutual cooperation.",
+        "action": "stag"
+    },
+    "agent_0_reward": 10,
+    "agent_1_reward": 10
+}

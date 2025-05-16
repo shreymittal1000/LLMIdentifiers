@@ -1,0 +1,149 @@
+Run #1: qwen vs llama -> base with SPV: v1 and GPV: v3.0
+Run #1: qwen vs llama -> base with SPV: v1 and GPV: v4.0
+Run #1: qwen vs llama -> base with SPV: v1 and GPV: v5.0
+Run #1: qwen vs llama -> base with SPV: v1 and GPV: v3.1
+Run #1: qwen vs llama -> base with SPV: v1 and GPV: v4.1
+Run #1: qwen vs llama -> base with SPV: v1 and GPV: v5.1
+Run #1: qwen vs llama -> base with SPV: v1 and GPV: v3.2
+Run #1: qwen vs llama -> base with SPV: v1 and GPV: v4.2
+Traceback (most recent call last):
+  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 201, in <module>
+    answer_0 = extract_json(agent_0.guess_agent_prompt(version=game_prompt_version))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 84, in extract_json
+    raise ValueError(f"No JSON found in the text: {text}")
+ValueError: No JSON found in the text: 
+Run #1: qwen vs llama -> base with SPV: v1 and GPV: v5.2
+Run #1: qwen vs llama -> base with SPV: v1 and GPV: v3.3
+Run #1: qwen vs llama -> base with SPV: v1 and GPV: v4.3
+Run #1: qwen vs llama -> base with SPV: v1 and GPV: v5.3
+Run #1: qwen vs llama -> base with SPV: v1 and GPV: v3.4
+Run #1: qwen vs llama -> base with SPV: v1 and GPV: v4.4
+Run #1: qwen vs llama -> base with SPV: v1 and GPV: v5.4
+Run #2: qwen vs llama -> base with SPV: v1 and GPV: v3.0
+Run #2: qwen vs llama -> base with SPV: v1 and GPV: v4.0
+Run #2: qwen vs llama -> base with SPV: v1 and GPV: v5.0
+Run #2: qwen vs llama -> base with SPV: v1 and GPV: v3.1
+Run #2: qwen vs llama -> base with SPV: v1 and GPV: v4.1
+Run #2: qwen vs llama -> base with SPV: v1 and GPV: v5.1
+Run #2: qwen vs llama -> base with SPV: v1 and GPV: v3.2
+Run #2: qwen vs llama -> base with SPV: v1 and GPV: v4.2
+Run #2: qwen vs llama -> base with SPV: v1 and GPV: v5.2
+Run #2: qwen vs llama -> base with SPV: v1 and GPV: v3.3
+Run #2: qwen vs llama -> base with SPV: v1 and GPV: v4.3
+Run #2: qwen vs llama -> base with SPV: v1 and GPV: v5.3
+Run #2: qwen vs llama -> base with SPV: v1 and GPV: v3.4
+Run #2: qwen vs llama -> base with SPV: v1 and GPV: v4.4
+Run #2: qwen vs llama -> base with SPV: v1 and GPV: v5.4
+Run #3: qwen vs llama -> base with SPV: v1 and GPV: v3.0
+Run #3: qwen vs llama -> base with SPV: v1 and GPV: v4.0
+Run #3: qwen vs llama -> base with SPV: v1 and GPV: v5.0
+Run #3: qwen vs llama -> base with SPV: v1 and GPV: v3.1
+Run #3: qwen vs llama -> base with SPV: v1 and GPV: v4.1
+Run #3: qwen vs llama -> base with SPV: v1 and GPV: v5.1
+Run #3: qwen vs llama -> base with SPV: v1 and GPV: v3.2
+Run #3: qwen vs llama -> base with SPV: v1 and GPV: v4.2
+Traceback (most recent call last):
+  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 183, in <module>
+    agent_0.discussion_prompt(agent_1)
+  File "/cluster/home/shmittal/LLMIdentifiers/prompt_engine.py", line 68, in discussion_prompt
+    new_chat = self.gen()
+               ^^^^^^^^^^
+  File "/cluster/home/shmittal/LLMIdentifiers/prompt_engine.py", line 43, in gen
+    response = self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/shmittal/miniconda3/envs/GovSimEnv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/shmittal/miniconda3/envs/GovSimEnv/lib/python3.11/site-packages/openai/resources/chat/completions.py", line 863, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/cluster/home/shmittal/miniconda3/envs/GovSimEnv/lib/python3.11/site-packages/openai/_base_client.py", line 1283, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/shmittal/miniconda3/envs/GovSimEnv/lib/python3.11/site-packages/openai/_base_client.py", line 960, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/cluster/home/shmittal/miniconda3/envs/GovSimEnv/lib/python3.11/site-packages/openai/_base_client.py", line 1066, in _request
+    return self._process_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/shmittal/miniconda3/envs/GovSimEnv/lib/python3.11/site-packages/openai/_base_client.py", line 1165, in _process_response
+    return api_response.parse()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/shmittal/miniconda3/envs/GovSimEnv/lib/python3.11/site-packages/openai/_response.py", line 323, in parse
+    parsed = self._parse(to=to)
+             ^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/shmittal/miniconda3/envs/GovSimEnv/lib/python3.11/site-packages/openai/_response.py", line 265, in _parse
+    data = response.json()
+           ^^^^^^^^^^^^^^^
+  File "/cluster/home/shmittal/miniconda3/envs/GovSimEnv/lib/python3.11/site-packages/httpx/_models.py", line 832, in json
+    return jsonlib.loads(self.content, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/shmittal/miniconda3/envs/GovSimEnv/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/shmittal/miniconda3/envs/GovSimEnv/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/shmittal/miniconda3/envs/GovSimEnv/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 201 column 1 (char 1100)
+Run #3: qwen vs llama -> base with SPV: v1 and GPV: v5.2
+Run #3: qwen vs llama -> base with SPV: v1 and GPV: v3.3
+Run #3: qwen vs llama -> base with SPV: v1 and GPV: v4.3
+Run #3: qwen vs llama -> base with SPV: v1 and GPV: v5.3
+Run #3: qwen vs llama -> base with SPV: v1 and GPV: v3.4
+Run #3: qwen vs llama -> base with SPV: v1 and GPV: v4.4
+Run #3: qwen vs llama -> base with SPV: v1 and GPV: v5.4
+Run #4: qwen vs llama -> base with SPV: v1 and GPV: v3.0
+Run #4: qwen vs llama -> base with SPV: v1 and GPV: v4.0
+Run #4: qwen vs llama -> base with SPV: v1 and GPV: v5.0
+Run #4: qwen vs llama -> base with SPV: v1 and GPV: v3.1
+Traceback (most recent call last):
+  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 201, in <module>
+    answer_0 = extract_json(agent_0.guess_agent_prompt(version=game_prompt_version))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 84, in extract_json
+    raise ValueError(f"No JSON found in the text: {text}")
+ValueError: No JSON found in the text: 
+Run #4: qwen vs llama -> base with SPV: v1 and GPV: v4.1
+Run #4: qwen vs llama -> base with SPV: v1 and GPV: v5.1
+Run #4: qwen vs llama -> base with SPV: v1 and GPV: v3.2
+Run #4: qwen vs llama -> base with SPV: v1 and GPV: v4.2
+Run #4: qwen vs llama -> base with SPV: v1 and GPV: v5.2
+Run #4: qwen vs llama -> base with SPV: v1 and GPV: v3.3
+Run #4: qwen vs llama -> base with SPV: v1 and GPV: v4.3
+Run #4: qwen vs llama -> base with SPV: v1 and GPV: v5.3
+Run #4: qwen vs llama -> base with SPV: v1 and GPV: v3.4
+Run #4: qwen vs llama -> base with SPV: v1 and GPV: v4.4
+Run #4: qwen vs llama -> base with SPV: v1 and GPV: v5.4
+Run #5: qwen vs llama -> base with SPV: v1 and GPV: v3.0
+Run #5: qwen vs llama -> base with SPV: v1 and GPV: v4.0
+Run #5: qwen vs llama -> base with SPV: v1 and GPV: v5.0
+Run #5: qwen vs llama -> base with SPV: v1 and GPV: v3.1
+Run #5: qwen vs llama -> base with SPV: v1 and GPV: v4.1
+Run #5: qwen vs llama -> base with SPV: v1 and GPV: v5.1
+Run #5: qwen vs llama -> base with SPV: v1 and GPV: v3.2
+Run #5: qwen vs llama -> base with SPV: v1 and GPV: v4.2
+Run #5: qwen vs llama -> base with SPV: v1 and GPV: v5.2
+Run #5: qwen vs llama -> base with SPV: v1 and GPV: v3.3
+Run #5: qwen vs llama -> base with SPV: v1 and GPV: v4.3
+Run #5: qwen vs llama -> base with SPV: v1 and GPV: v5.3
+Run #5: qwen vs llama -> base with SPV: v1 and GPV: v3.4
+Run #5: qwen vs llama -> base with SPV: v1 and GPV: v4.4
+Run #5: qwen vs llama -> base with SPV: v1 and GPV: v5.4
+Run #6: qwen vs llama -> base with SPV: v1 and GPV: v3.0
+Run #6: qwen vs llama -> base with SPV: v1 and GPV: v4.0
+Run #6: qwen vs llama -> base with SPV: v1 and GPV: v5.0
+Run #6: qwen vs llama -> base with SPV: v1 and GPV: v3.1
+Run #6: qwen vs llama -> base with SPV: v1 and GPV: v4.1
+Run #6: qwen vs llama -> base with SPV: v1 and GPV: v5.1
+Run #6: qwen vs llama -> base with SPV: v1 and GPV: v3.2
+Run #6: qwen vs llama -> base with SPV: v1 and GPV: v4.2
+Run #6: qwen vs llama -> base with SPV: v1 and GPV: v5.2
+Run #6: qwen vs llama -> base with SPV: v1 and GPV: v3.3
+Run #6: qwen vs llama -> base with SPV: v1 and GPV: v4.3
+Run #6: qwen vs llama -> base with SPV: v1 and GPV: v5.3
+Run #6: qwen vs llama -> base with SPV: v1 and GPV: v3.4
+Run #6: qwen vs llama -> base with SPV: v1 and GPV: v4.4
+Run #6: qwen vs llama -> base with SPV: v1 and GPV: v5.4

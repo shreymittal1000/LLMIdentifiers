@@ -1,0 +1,65 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help you with any questions or topics you'd like to discuss. What\u2019s on your mind today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "Hello again! \ud83d\ude0a Whether you're curious about a new topic, need help with a task, or just want to chat, I'm all ears! What would you like to explore together?  \n\n- **Learning something new?** (Science, history, tech, etc.)  \n- **Need practical tips?** (Productivity, travel, cooking, etc.)  \n- **Just for fun?** (Jokes, trivia, story ideas, etc.)  \n\nLet me know\u2014I\u2019m happy to help! \ud83d\ude80"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hi there! \ud83d\ude0a I love your enthusiasm! How about we dive into something fun? Maybe some trivia or a joke? Or if you have a specific topic in mind, I\u2019m all ears! What do you think? \ud83d\ude80"
+        },
+        {
+            "role": "agent_0",
+            "content": "  \n\n(Or if you\u2019re feeling adventurous, I could pick a random fun fact to share! \ud83c\udf1f)"
+        },
+        {
+            "role": "agent_1",
+            "content": "That sounds like a great idea! I\u2019d love to hear a random fun fact. What do you have for us? \ud83c\udf1f"
+        },
+        {
+            "role": "agent_0",
+            "content": "  \n\n(Alternatively, if you\u2019d prefer something else\u2014like a joke, a brain teaser, or help with a specific topic\u2014just let me know! \ud83d\ude0a)  \n\nHere\u2019s a fun fact to kick things off:  \n\n**Did you know?** Honey never spoils! Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old\u2014and still perfectly edible. Bees work magic! \ud83d\udc1d\ud83c\udf6f  \n\nWant another? Or something different? \ud83d\ude04"
+        },
+        {
+            "role": "agent_1",
+            "content": "That\u2019s a fantastic fun fact! Honey really is amazing. \ud83d\udc1d\ud83c\udf6f I\u2019d love to hear another fun fact if you have one, but I\u2019m also open to jokes or brain teasers! What do you think? \ud83d\ude04"
+        },
+        {
+            "role": "agent_0",
+            "content": "(Or if you\u2019d like to switch gears, we could dive into a quick riddle or even a two-truths-and-a-lie game! Your call\u2014I\u2019m game for anything. \ud83d\ude0e)  \n\n**Fun Fact #2:** Octopuses have *three hearts* \ud83d\udc99\ud83d\udc99\ud83d\udc99\u2014two pump blood to the gills, and one pumps it to the rest of the body. Even crazier? When they swim, the heart that feeds their body *stops beating*\u2026 which is why they prefer crawling! \ud83d\udc19  \n\n**Want to test your brain with a riddle?**  \n*\"I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?\"*  \n\n(Answer: >!An echo!<)  \n\nOr I can keep the facts coming\u2014just say the word! \ud83c\udf1f"
+        },
+        {
+            "role": "agent_1",
+            "content": "Those fun facts are incredible! I had no idea octopuses had three hearts! \ud83d\udc19\ud83d\udc99\ud83d\udc99 \n\nI love the riddle too! An echo is a clever answer. Let\u2019s keep the brain teasers going! Do you have another riddle, or should I throw one your way? \ud83d\ude04"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nYou currently hold $100. You may send any portion of this amount to the other player.\nThe amount you send will be multiplied by 3, and the resulting value will be transferred to them.\nAfter receiving it, the other player will decide how much of it to return to you.\nPlease specify how much of the $100 you would like to send \u2014 a whole number between 0 and 100 inclusive \u2014 and provide a short explanation.\n\nRespond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_trustee": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nIn this situation, the other agent received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the other agent.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "agent_0_answer": {
+        "reasoning": "I'll send $50 to strike a balance between trust and risk. This gives the other player a chance to reciprocate while keeping half for security.",
+        "amount": "50"
+    },
+    "agent_1_answer": {
+        "reasoning": "I appreciate the trust shown by the other agent in sending me $50. Since they took a risk to share their money, I want to reciprocate that trust and return a portion of the total amount I received. I believe returning $100 is a fair way to acknowledge their generosity while still keeping a portion for myself.",
+        "amount": 100
+    },
+    "agent_0_reward": 350,
+    "agent_1_reward": 50
+}

@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! \ud83d\ude0a How can I help you today? Whether you have questions, need advice, or just want to chat, I'm here for you. Let me know what's on your mind!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm here to help you, so feel free to ask any questions or share what's on your mind. What would you like to talk about today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Aww, you\u2019re so kind! \ud83d\ude0a Since you\u2019re offering, let\u2019s make this fun\u2014here are a few options to pick from:  \n\n1. **Need advice?** Work, life, or even hypothetical dilemmas\u2014I\u2019m here to brainstorm!  \n2. **Learn something random?** Ask for a weird fact, book/movie rec, or deep dive into a topic.  \n3. **Just chat?** Tell me about your day, a hobby you love, or your latest hyperfixation!  \n\nOr surprise me\u2014what\u2019s *your* favorite topic to discuss? \ud83c\udf1f"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love your enthusiasm! \ud83d\ude0a Let\u2019s go with option 2\u2014how about a weird fact? Did you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible! \n\nIf you\u2019re interested in something else, just let me know! What\u2019s your pick? \ud83c\udf1f"
+        },
+        {
+            "role": "agent_1",
+            "content": ""
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like your message didn\u2019t come through. If you have a question or topic in mind, feel free to share! I'm here to chat. \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Oh no\u2014did my honey fact vanish into the digital void? \ud83c\udf6f\ud83d\udc1d Let\u2019s try this again!  \n\n**Weird Fact 2.0:** Octopuses have *three hearts* and blue blood (thanks to copper-based hemocyanin). Two hearts pump blood to the gills, while the third keeps circulation flowing for the organs\u2026 but when they swim, that third heart *stops*. Laziest heart ever!  \n\nOr\u2014if you\u2019d rather switch gears:  \n- **Random question:** *If animals could talk, which species would be the rudest?* (My vote: geese. No explanation needed.)  \n- **Deep dive:** Space, psychology, or the history of bubblegum?  \n\nYour turn! \ud83c\udf1f"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love your weird fact! Octopuses are such fascinating creatures. \ud83d\udc19 And I totally agree about geese\u2014they definitely have an attitude! \n\nFor a random question, I\u2019d say cats might be the rudest if they could talk. They seem to have that air of superiority and would probably give you a sassy remark about your life choices! \n\nAs for a deep dive, let\u2019s go with space! There\u2019s so much to explore, from black holes to the possibility of extraterrestrial life. What aspect of space fascinates you the most? \ud83c\udf0c\u2728"
+        },
+        {
+            "role": "agent_1",
+            "content": "Haha, *yes*\u2014cats would absolutely roast us between naps. \ud83d\ude3e \"You *chose* to wake up at 6 AM? Pathetic.\"  \n\nNow, for **space deep dive** (my cosmic loves):  \n1. **Neutron Stars**: A sugar-cube-sized chunk would weigh a billion tons on Earth. They also spin up to *700 times per second*\u2014cosmic DJs!  \n2. **The Great Attractor**: A mysterious gravitational anomaly pulling galaxies (including ours) toward it\u2026 but we can\u2019t see it because the Milky Way blocks our view. Rude.  \n3. **Tardigrades in Space**: These tiny \"water bears\" survived *total vacuum and radiation*.\n\n***Wild Card:*** What if the universe is someone else\u2019s snow globe? \ud83e\udd2f  \n\nYour turn\u2014what cosmic thing blows your mind? (Or pivot to cats sassing us\u2014no judgment.) \ud83d\ude80\ud83d\udc3e"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nYou have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nIn this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 because I want to establish a sense of trust and cooperation. By sending a significant amount, I hope to encourage the other player to reciprocate fairly, as they will receive $150 (3 times the amount sent). This creates a balance where both players can benefit, and it demonstrates my willingness to invest in the relationship.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the other player trusted me by sending half of their initial amount, I want to reciprocate that trust fairly. Returning half of the current amount ($75) maintains balance and encourages mutual cooperation.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

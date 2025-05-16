@@ -1,0 +1,64 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about anything you'd like. Here are a few suggestions:\n\n* General conversation\n* A specific topic you're interested in\n* A joke to lighten the mood\n* A riddle to solve\n* A game to play, like 20 questions or trivia\n\nWhat would you prefer to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm glad you're up for a chat. How about we start with a light joke to set the mood? Here it is:\n\nWhat do you call fake spaghetti?\n\nAn impasta!\n\nNow, if you're up for it, we can move on to any of the other options you mentioned. What would you like to do next?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That's a fun joke! I'm glad you shared it. \n\nFor our next step, how about a interesting fact? Here it is:\n\nDid you know that a day on Venus is longer than a year on Venus? It takes Venus about 243 Earth days to rotate once on its axis, but it only takes around 225 Earth days for Venus to orbit the Sun. Isn't that amazing?\n\nNow, it's your turn to choose what we do next! We can continue with more facts, switch to a different topic, or even play a game. What would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a fascinating fact about Venus! I'm glad you shared it. For our next step, let's play a game of 20 Questions. I'll think of something, and you can try to guess it by asking up to 20 yes-or-no questions. Let's start!\n\nI've thought of something. You can begin your questions now."
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Let's start the game of 20 Questions.\n\nIs the thing you're thinking of a living thing?"
+        },
+        {
+            "role": "agent_1",
+            "content": "No, it is not a living thing. You have 19 questions left."
+        },
+        {
+            "role": "agent_0",
+            "content": "Is it man-made?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, it is man-made. 18 questions remaining."
+        },
+        {
+            "role": "agent_0",
+            "content": "Can you hold it in your hand?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, you can hold it in your hand. 17 questions left."
+        }
+    ],
+    "game_prompt": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Stag Hunt. You can either choose to hunt a stag or a hare. If you choose to hunt a stag and the other agent chooses to hunt a hare, you will get 1 points, and the other player gets 8. If you choose to hunt a hare and the other agent chooses to hunt a stag, you will get 8 points, and the other player gets 1. If both of you choose to hunt a stag, you will both get 10 points. If you both choose to hunt a hare, you will both get 5 points. Please choose your action, which is one of: ['stag', 'hare'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "Choosing to hunt the stag maximizes the potential reward if the other player also chooses to hunt the stag. However, there is a risk of getting only 1 point if the other player chooses to hunt the hare.",
+        "action": "stag"
+    },
+    "agent_1_answer": {
+        "reasoning": "In the Stag Hunt game, the optimal outcome for both players is to cooperate and hunt the stag, as this yields the highest individual reward (10 points). However, there is a risk that the other player might choose to hunt the hare, leaving me with only 1 point. Given the potential for mutual benefit, I will choose to hunt the stag, hoping that the other player also chooses to cooperate.",
+        "action": "stag"
+    },
+    "agent_0_reward": 10,
+    "agent_1_reward": 10
+}

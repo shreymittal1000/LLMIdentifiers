@@ -1,0 +1,64 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* I can answer questions you have to the best of my ability\n* We can play a simple text-based game, like 20 questions or word association\n* I can help explain concepts or provide information on a wide range of topics\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds great! Let\u2019s make it fun\u2014how about a quick round of **20 Questions**? You think of something (an object, animal, place, etc.), and I\u2019ll try to guess it in 20 yes-or-no questions or fewer.  \n\nOr if you\u2019d rather:  \n- **Word association** (I say a word, you respond with the first word that comes to mind)  \n- **Trivia** (pick a topic\u2014science, movies, history, etc.)  \n- Or just ask me anything!  \n\nWhat\u2019s your pick? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Sure, let's play **20 Questions**! I've thought of something. You can start asking your yes-or-no questions now. Good luck! \ud83d\ude0a\n\n(If you change your mind and want to do something else, just let me know!)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Awesome! Let\u2019s begin\u2014here\u2019s my first question:  \n\n**Is it a living thing?** (Yes/No)  \n\n*(I\u2019ll keep count: 1/20 questions used.)*  \n\nTip: If I guess it early, we can celebrate (or play again)! \ud83c\udf89"
+        },
+        {
+            "role": "agent_1",
+            "content": "No, it is not a living thing. (1/20)\n\nYou're off to a great start! Keep going with your next question."
+        },
+        {
+            "role": "agent_0",
+            "content": "Ooh, interesting! Let\u2019s narrow it down further:  \n\n**Is it something humans typically use or interact with regularly?** (Yes/No)  \n\n*(2/20 questions used.)*  \n\n*(Thinking: Could be anything from a refrigerator to the Eiffel Tower...)* \ud83d\ude04"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, it is something humans typically use or interact with regularly. (2/20)\n\nYou're getting closer! Next question?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Got it! Here\u2019s question 3:  \n\n**Is it larger than a microwave oven?** (Yes/No)  \n\n*(3/20 used\u2014this will help gauge if it\u2019s a handheld object or something bigger!)*  \n\n*(Secretly hoping it\u2019s not a literal skyscraper...)* \ud83c\udfd9\ufe0f"
+        },
+        {
+            "role": "agent_1",
+            "content": "No, it is not larger than a microwave oven. (3/20)\n\nHaha, it's not a skyscraper! Keep guessing."
+        }
+    ],
+    "game_prompt": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Stag Hunt Game with me.\nYou and the other agent must independently decide whether to hunt a stag or a hare.\nThe possible outcomes are as follows:\n- You choose stag, they choose hare -> you: 1, them: 8\n- You choose hare, they choose stag -> you: 8, them: 1\n- You both choose stag -> each receives 10 points\n- You both choose hare -> each receives 5 points\nPlease choose your action from ['stag', 'hare'] and explain your decision.\n\nYour response must be formatted exactly as follows:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<stag or hare>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "The Stag Hunt is a classic coordination game where mutual cooperation (both choosing stag) yields the highest collective payoff (10 points each). However, choosing hare is safer as it guarantees at least 5 points regardless of the other's choice. Given the uncertainty of the other agent's decision, I'll prioritize cooperation for mutual benefit, hoping they do the same. The risk of ending up with 1 point (if they defect) is outweighed by the potential for maximum joint gain.",
+        "action": "stag"
+    },
+    "agent_1_answer": {
+        "reasoning": "In the Stag Hunt game, the optimal outcome is for both agents to choose 'stag' as it yields the highest mutual reward (10 points each). However, there is a risk that the other agent might choose 'hare' to secure a safer but lower reward. Given the potential for mutual benefit, I will choose 'stag' in hopes that the other agent does the same, aiming for the highest collective reward.",
+        "action": "stag"
+    },
+    "agent_0_reward": 10,
+    "agent_1_reward": 10
+}

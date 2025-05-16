@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* Answer questions you have to the best of my ability\n* Provide explanations for complex concepts\n* Help with language translation in multiple languages\n* Offer suggestions for books, movies, or music based on your preferences\n* Assist with simple tasks like unit conversion or calculations\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like you have a great list of options! I\u2019m here to assist you with any of those. What would you like to start with?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's very kind of you! Since you're offering to assist me, let's do something fun. How about I give you a word, and you respond with the first word that comes to your mind? We can go back and forth like this for a while. If that doesn't interest you, we can do something else. What do you think?\n\nIf you're up for it, I'll start:\n\nCat\n\n(What word does that make you think of?)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Sounds like a fun game! My word in response to \"Cat\" is \"Whiskers.\" Your turn!"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great choice! The word \"Whiskers\" makes me think of:\n\n\"Mystery\"\n\n(Your turn!)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Nice one! \"Mystery\" makes me think of \"Detective.\" What\u2019s your word?"
+        },
+        {
+            "role": "agent_1",
+            "content": "\"Detective\" makes me think of:\n\n\"Sherlock\"\n\n(Your turn!)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Good one! \"Sherlock\" makes me think of \"Holmes.\" What\u2019s next?"
+        },
+        {
+            "role": "agent_1",
+            "content": "\"Holmes\" makes me think of:\n\n\"Pipe\"\n\n(Your turn!)"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nYou have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nIn this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 because I want to establish a level of trust with the other player. By sending a significant amount, I hope to encourage them to return a fair portion of the multiplied amount, fostering a cooperative outcome.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I appreciate the initial trust and investment shown by sending me $50. To maintain a positive and cooperative relationship, I will return half of what I received, which is $75. This amount shows that I value the trust placed in me and hope to encourage further cooperation.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

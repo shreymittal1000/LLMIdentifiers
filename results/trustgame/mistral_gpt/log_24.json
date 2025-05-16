@@ -1,0 +1,65 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about anything you'd like. Here are a few suggestions:\n\n* General conversation\n* Jokes and riddles\n* Interesting facts\n* Movie, book, or music recommendations\n* Learning a new skill or hobby\n* Current events (within my knowledge cutoff in 2023)\n* Trivia questions\n\nWhat would you like to talk about or do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm glad you're here. Let's dive into something fun! How about we start with some interesting facts? Or if you prefer, I can share a joke or riddle. What sounds good to you?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Interesting facts sound great! Here are a few to get us started:\n\n1. **Octopuses have three hearts**: Two pump blood to the gills, while the third pumps it to the rest of the body. Plus, octopus blood is blue due to a copper-rich protein called hemocyanin.\n\n2. **A day on Venus is longer than a year on Venus**: Venus takes about 243 Earth days to rotate on its axis once, but it only takes around 225 Earth days for Venus to orbit the Sun.\n\n3. **Honeybees have hair on their eyes**: These tiny hairs help them collect pollen more efficiently.\n\n4. **The shortest war in history lasted only 38-45 minutes**: The Anglo-Zanzibar War was fought between the United Kingdom and Zanzibar on 27 August 1896.\n\n5. **Bananas are curved because they grow towards the sun**: As they grow, they follow the sun's path across the sky, resulting in their characteristic curve.\n\nNow it's your turn! If you'd like, I can share another joke or riddle, or we can continue with more interesting facts."
+        },
+        {
+            "role": "agent_1",
+            "content": "Those are some fantastic facts! Here are a few more interesting ones to add to the mix:\n\n1. **Wombat poop is cube-shaped**: This unique shape prevents the poop from rolling away, marking their territory effectively.\n\n2. **The Eiffel Tower can be 15 cm taller during the summer**: When a substance is heated up, its particles move more and it takes up a larger volume\u2014this is known as thermal expansion.\n\n3. **A group of flamingos is called a \"flamboyance\"**: This colorful term perfectly captures the vibrant nature of these birds.\n\n4. **Sharks are older than trees**: Sharks have existed for around 400 million years, while trees appeared about 350 million years ago.\n\n5. **The inventor of the Pringles can is buried in one**: Fredric Baur, the inventor, requested to be buried in a Pringles can, and his family honored that wish.\n\nIf you\u2019re enjoying these, I can keep going, or we can switch gears to jokes, riddles, or something else entirely! What do you think?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Those are some amazing facts! I'm glad you enjoyed them. Here's a joke for you:\n\nWhat do you call a fake noodle?\n\nAn impasta!\n\nAnd here's a riddle:\n\nI speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?\n\nTake your time to think about it, and if you want to hear more jokes, riddles, or interesting facts, just let me know! I'm here to chat about whatever you'd like."
+        },
+        {
+            "role": "agent_1",
+            "content": "Haha, that\u2019s a great joke! I love a good pun. As for the riddle, the answer is an **echo**! It fits perfectly with the clues you provided.\n\nIf you have more jokes or riddles, I\u2019d love to hear them! Or if you want to switch topics, just let me know. What\u2019s next on your mind?"
+        },
+        {
+            "role": "agent_0",
+            "content": "You got it right! Great job solving the riddle. Here's another one for you:\n\nI am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost every person. What am I?\n\nAnd here's another joke for you:\n\nWhy don't scientists trust atoms?\n\nBecause they make up everything!\n\nIf you'd like to hear more jokes or riddles, just say the word. Or, if there's another topic you'd like to explore, like interesting facts, movie recommendations, or something else entirely, I'm here to chat about it. What would you like to do next?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Thanks! I\u2019m glad you enjoyed my answer. For your riddle, the answer is **pencil lead** (graphite). It\u2019s mined, encased in wood, and used by many people!\n\nAnd your joke is a classic! I love it. \n\nIf you have more riddles or jokes, I\u2019m all ears! Otherwise, I\u2019d be happy to share some interesting facts or dive into another topic. What do you feel like doing next?"
+        },
+        {
+            "role": "agent_0",
+            "content": "You're absolutely right! The answer to the riddle is indeed pencil lead (graphite). Great job!\n\nHere's another riddle for you:\n\nWhat has a heart that doesn\u2019t beat?\n\nAnd here's another joke:\n\nWhat do you call cheese that isn't yours?\n\nNacho cheese!\n\nIf you'd like to keep going with jokes and riddles, I'm game! Or, if you'd like to switch to a different topic, just let me know. I'm here to chat about whatever you're interested in."
+        },
+        {
+            "role": "agent_1",
+            "content": "Thank you! I\u2019m enjoying this! For your riddle, the answer is an **artichoke**\u2014it has a heart but doesn\u2019t beat.\n\nAnd your joke is a classic! I love a good pun. \n\nIf you have more riddles or jokes, I\u2019m ready for them! Or if you want to explore a different topic, just let me know. What\u2019s next on your mind?"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nYou currently hold $100. You may send any portion of this amount to the other player.\nThe amount you send will be multiplied by 3, and the resulting value will be transferred to them.\nAfter receiving it, the other player will decide how much of it to return to you.\nPlease specify how much of the $100 you would like to send \u2014 a whole number between 0 and 100 inclusive \u2014 and provide a short explanation.\n\nRespond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_trustee": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nIn this situation, the other agent received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the other agent.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "agent_0_answer": {
+        "reasoning": "I'll send $50. This amount is significant enough to show trust and encourage the other player to return a portion of it, while also not being so large that it feels like a substantial loss if they decide not to return anything.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I appreciate the trust shown by the other agent in sending me $50. Since they took a risk by sending me half of their initial amount, I want to reciprocate that trust and share the benefits of the multiplied amount. I will return $100 to acknowledge their generosity and to encourage future cooperation.",
+        "amount": 100
+    },
+    "agent_0_reward": 350,
+    "agent_1_reward": 50
+}

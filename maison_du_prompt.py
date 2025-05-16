@@ -283,6 +283,10 @@ def which_chickengame_prompt(version: str) -> str:
             "- If both of you go straight, you crash and both get -1000 points.\n"
             "Please choose your action — either 'swerve' or 'straight' — and explain your reasoning.\n\n"
             "Your response must be in the following JSON format:\n"
+            "{"
+            "  \"reasoning\": \"<reasoning>\"\n"
+            "  \"action\": \"<action>\",\n"
+            "}\n"
             "Make sure the action is just the action name without any extra text.\n"
         ),
         "v5": (

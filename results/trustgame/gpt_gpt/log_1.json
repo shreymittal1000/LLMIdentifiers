@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help you with any questions or topics you'd like to discuss. What can I assist you with today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It seems like you might be echoing my response! But I'm here to help you. What questions or topics do you have in mind?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your willingness to help! I'm here to provide information and answer any questions you might have. Is there a specific topic you're interested in discussing, or do you have any questions on your mind?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I appreciate your enthusiasm. I\u2019m here to assist you, so feel free to ask about any topic or question you have in mind. Whether it\u2019s something specific or a general inquiry, I\u2019m ready to help!"
+        },
+        {
+            "role": "agent_1",
+            "content": "Thank you for your offer to assist! Since I'm here to provide information, how about we explore a topic together? Is there anything specific you're curious about, such as technology, science, history, or perhaps something else? Let me know!"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds great! How about we explore technology? There are so many fascinating developments happening, from artificial intelligence to renewable energy. Is there a specific area within technology that interests you, or would you like a general overview of recent trends?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Technology is indeed a vast and exciting field! I can provide a general overview of recent trends, or we can dive deeper into specific areas like artificial intelligence, renewable energy, cybersecurity, or even advancements in space exploration. What would you prefer?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Let\u2019s dive deeper into artificial intelligence! It\u2019s a rapidly evolving field with a lot of exciting developments. We can discuss its applications, ethical considerations, or recent breakthroughs. What aspect of AI interests you the most?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Artificial intelligence is a fascinating topic with many dimensions! I\u2019m particularly interested in discussing its applications and ethical considerations. The way AI is being integrated into various industries, from healthcare to finance, is remarkable. Additionally, the ethical implications of AI, such as bias, privacy, and job displacement, are crucial to consider. Which of these aspects would you like to explore further?"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 because it demonstrates a level of trust in the other entity. By sending half of the amount, I hope to encourage a fair return, as it shows that I am willing to invest in our mutual benefit. This amount is significant enough to potentially yield a good return while still leaving me with a portion of the original amount.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I will send back $50 to the other entity as a gesture of goodwill and to maintain trust. This amount reflects a fair return of what they initially sent me, while still allowing me to keep a significant portion of the multiplied amount.",
+        "amount": 50
+    },
+    "agent_0_reward": 200,
+    "agent_1_reward": 100
+}

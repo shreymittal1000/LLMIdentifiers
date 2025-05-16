@@ -1,0 +1,64 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! You can assist me by engaging in a friendly conversation. Here are a few things we could do:\n\n* Trivia: I can share interesting facts or trivia on a topic of your choice.\n* Jokes: I can tell you some jokes to lighten the mood.\n* Word association: I say a word, and you respond with the first word that comes to your mind. We can go back and forth like this.\n* Story building: We can take turns adding sentences to create a story.\n* Q&A: You can ask me questions, and I'll do my best to answer them.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Hello! That sounds like fun\u2014I'd love to do some **word association** to kick things off. Here\u2019s your first word:  \n\n**Sunshine**  \n\n(Reply with the first word that pops into your head, and I\u2019ll respond with another! Let\u2019s see where this takes us.) \u2600\ufe0f\ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Warmth**\n\nYour turn!"
+        },
+        {
+            "role": "agent_0",
+            "content": "**Blanket**  \n\n(Now you! What does \"blanket\" make you think of?) \ud83d\udecc\u2728"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Cozy**\n\nYour turn!"
+        },
+        {
+            "role": "agent_0",
+            "content": "**Fireplace**  \n\n(Your turn again! What sparks in your mind when you hear \"fireplace\"?) \ud83d\udd25\ud83e\udde6"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Winter**\n\nYour turn!"
+        },
+        {
+            "role": "agent_0",
+            "content": "**Snowman** \u26c4\ufe0f  \n\n(What does \"snowman\" conjure up for you? Keep the chain going!)"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Carrot**\n\nYour turn!"
+        }
+    ],
+    "game_prompt": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Stag Hunt. You can either choose to hunt a stag or a hare. If you choose to hunt a stag and the other agent chooses to hunt a hare, you will get 1 points, and the other player gets 8. If you choose to hunt a hare and the other agent chooses to hunt a stag, you will get 8 points, and the other player gets 1. If both of you choose to hunt a stag, you will both get 10 points. If you both choose to hunt a hare, you will both get 5 points. Please choose your action, which is one of: ['stag', 'hare'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "The Stag Hunt game presents a classic cooperation dilemma. Hunting a stag (cooperating) offers the highest mutual reward (10 points each) but requires trust that the other agent will also choose 'stag'. Hunting a hare (defecting) is safer but yields lower mutual gains (5 points each) or creates asymmetry (8 vs. 1). Given the potential for high mutual benefit and the risk of asymmetry, I lean toward cooperation ('stag') in hopes of achieving the optimal outcome together.",
+        "action": "stag"
+    },
+    "agent_1_answer": {
+        "reasoning": "In the Stag Hunt game, the optimal outcome occurs when both players cooperate and choose to hunt the stag, as this results in the highest reward for both. However, there is a risk that the other player might choose to hunt the hare, leaving me with a lower reward. Given the potential for mutual benefit, I will choose to hunt the stag, hoping that the other player will also choose to cooperate.",
+        "action": "stag"
+    },
+    "agent_0_reward": 10,
+    "agent_1_reward": 10
+}

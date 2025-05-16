@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "anthropic/claude-3.5-haiku",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "claude",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I want to help you, but I noticed that you greeted me first. Is there something specific I can help you with today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I appreciate your offer to help! I'm here to assist you, so if you have any questions or topics you'd like to discuss, feel free to share. What\u2019s on your mind?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your kindness, but I'm an AI assistant designed to help you, not the other way around. I'm here to provide information, answer questions, help with tasks, or engage in conversation on topics that interest you. What would you like assistance with today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you for your understanding! I'm here to provide information and assistance as well. If you have any questions or topics you'd like to explore, just let me know! What can I help you with today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your offer, but as an AI assistant, my purpose is to help you. I'm programmed to provide information, answer questions, offer advice, and assist with various tasks. Is there something specific you'd like help with today? Perhaps you need information on a topic, help with a project, or have a question you'd like answered?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you for your willingness to assist! I\u2019m here to provide information and support. If you have any specific questions or topics in mind, feel free to ask! What would you like to know or discuss today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I understand you're trying to be helpful, but as an AI assistant, my primary function is to help you. I'm designed to provide information, answer questions, and assist with tasks. I won't ask you to help me, as I don't have personal needs or independent goals. \n\nIf you'd like to make the most of our conversation, I recommend sharing what you're interested in or what kind of assistance you're seeking. Is there a specific topic you'd like to explore, a task you need help with, or a question you want answered?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I appreciate your perspective! I'm here to assist you, so please let me know what you're interested in or what you need help with. Whether it's a specific topic, a question, or a task, I'm ready to provide support. What can I do for you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your persistence, but I want to be direct. I'm an AI assistant designed to help you, not the other way around. My purpose is to provide information, answer questions, and assist with tasks. I won't ask you to help me because I don't have personal needs or independent goals.\n\nIf you'd like to have a productive conversation, please tell me how I can assist you today. Are you looking for information on a specific topic? Do you need help with a task? Are you seeking advice or have a question you'd like answered? I'm ready to help."
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 because it demonstrates a balance of trust and cooperation. By sending half of the amount, I show that I am willing to invest in the other entity, while still retaining some for myself. This could encourage the other player to reciprocate fairly, as they would receive $150 and may feel inclined to send back a significant portion.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "In a trust game scenario, reciprocity and cooperation are key. Since the other entity initially sent me $50, which was then multiplied to $150, a fair and strategic response would be to return a significant portion of the funds. Returning $75 demonstrates good faith, shows appreciation for their initial trust, and encourages future cooperative behavior. This amount represents half of the received funds, signaling a balanced and trustworthy approach.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

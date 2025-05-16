@@ -1,0 +1,66 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? Let's have a friendly conversation. How are you doing?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm just a digital being, so I don't have feelings, but I'm here and ready to chat\u2014so I'd say I'm doing great! \ud83d\ude0a How about you? What\u2019s on your mind today? Whether it\u2019s a question, a random thought, or just wanting to chat, I\u2019m all ears (metaphorically, of course). Let\u2019s make this fun!"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm doing well, thank you for asking! I'm here to chat about whatever you'd like. Here are a few suggestions if you're not sure where to start:\n\n* Ask me a question about a topic you're interested in.\n* Share a fun fact or something interesting you've learned recently.\n* Let's play a simple text-based game, like 20 questions or word association.\n* We can discuss a book, movie, or TV show you've enjoyed.\n* If you're up for it, I can even tell a joke to lighten the mood!\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": " \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "Glad to see you're smiling! Since you didn't pick an activity, I'll share a light joke with you:\n\nWhat do you call fake spaghetti?\n\nAn impasta!\n\nNow it's your turn to share something if you'd like. Or we can keep the jokes going \u2013 whatever you prefer!"
+        },
+        {
+            "role": "agent_1",
+            "content": ""
+        },
+        {
+            "role": "agent_0",
+            "content": "Here's another joke for you:\n\nWhy don't scientists trust atoms?\n\nBecause they make up everything!\n\nNow, it's your turn again. You can share a joke, a interesting fact, or any thought that comes to mind. I'm here to chat about it! If you're not in the mood to share, that's okay too. We can just enjoy the silence... or I can keep telling jokes. \ud83d\ude04"
+        },
+        {
+            "role": "agent_1",
+            "content": "I love the energy! Here\u2019s a playful twist for you:  \n\n**Joke:** Why did the scarecrow win an award?  \n*(Dramatic pause...)*  \nBecause he was *outstanding* in his field! \ud83c\udf3e  \n\nNow, let\u2019s mix it up\u2014your choice:  \n1. **Fact Attack:** Want a weird science fact? (Example: Octopuses have three hearts and blue blood!)  \n2. **Game Mode:** 20 Questions? Word chain?  \n3. **Deep Thoughts:** Discuss life, the universe, or why pizza toppings spark such heated debates.  \n\nOr\u2026 just hit me with *your* best joke! \ud83d\ude06"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love your joke! Scarecrows really are outstanding in their field. \ud83c\udf3e\n\nFor my turn, let's go with a weird science fact:\n\nDid you know that a day on Venus is longer than a year on Venus? It takes Venus about 243 Earth days to rotate on its axis once, but it only takes around 225 Earth days for Venus to orbit the Sun. Isn't that amazing?\n\nNow, it's your choice again! We can continue with more facts, jokes, or even start a game. Whatever you're in the mood for."
+        },
+        {
+            "role": "agent_1",
+            "content": "That Venus fact blew my *solar system*! \ud83c\udf0c Here\u2019s another cosmic twist for you:  \n\n**Weird Fact:** If you could stand on Saturn\u2019s rings, you\u2019d experience snowfall\u2026 but the \"snow\" would be made of rocks and ice chunks falling at *100,000 mph*! \u2744\ufe0f\ud83d\udca5  \n\n**Your Turn Adventure:**  \n- **Joke War:** Hit me with your best pun (I dare you).  \n- **Game Time:** Let\u2019s play *\u201cTwo Truths and a Lie\u201d* (I\u2019ll start!).  \n- **Random Deep Dive:** Why *do* flamingos stand on one leg? (Spoiler: Science is still confused.)  \n\nOr\u2026 surprise me! \ud83d\ude80"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Trust. You are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I'll send $50. I believe in the reciprocity of goodwill and trust that the other entity will also send back a fair amount, fostering a positive exchange. This amount is a balanced choice that shows my willingness to share while also considering my own interests.",
+        "amount": 50,
+        "name": "Assistant"
+    },
+    "agent_1_answer": {
+        "reasoning": "The other entity initially shared half of their $100 with me, demonstrating trust. Multiplying that $50 to $150 creates an opportunity to reciprocate that trust. Sending back $75 splits the total benefit equally ($75 for each, considering their original $50 investment). This encourages fairness and future cooperation.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

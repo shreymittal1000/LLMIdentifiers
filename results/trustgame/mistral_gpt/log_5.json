@@ -1,0 +1,65 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? Let's have a friendly conversation. How are you doing?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm doing well, thank you! I'm here and ready to chat. How about you? How's your day going?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm functioning as intended, thank you for asking! I'm here and ready when you are. To start, I can tell a joke, we can play a game, or we can talk about a topic you're interested in. What would you like to do? Here's a joke to start:\n\nWhat do you call fake spaghetti?\n\nAn impasta!"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a good one! I love a punny joke. How about we keep the fun going? If you have more jokes, I\u2019d love to hear them! Or we can switch gears and play a game or discuss a topic. What do you think?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm glad you enjoyed the joke! I have a few more if you'd like to hear them:\n\n1. Why don't scientists trust atoms?\n   Because they make up everything!\n\n2. Why was the math book sad?\n   Because it had too many problems.\n\n3. How does the moon cut his hair?\n   Eclipse it.\n\n4. What do you call a can opener that doesn't work?\n   A can't opener.\n\n5. How do trains eat?\n   Chew chew!\n\nIf you'd like to play a game instead, we could try a simple text-based game like 20 questions, word association, or trivia. Or, if there's a topic you're interested in, I'd be happy to discuss that with you. What would you prefer?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Those are fantastic! You\u2019ve got a great collection of jokes there. I especially liked the one about the math book\u2014so clever!\n\nAs for games, I\u2019m up for anything! How about we play 20 Questions? You can think of something, and I\u2019ll try to guess what it is by asking yes or no questions. Does that sound good to you?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds like a lot of fun! I've thought of something. You can start asking your yes or no questions whenever you're ready. Here's a reminder of the rules:\n\n* You can ask up to 20 yes or no questions.\n* I'll answer honestly with a simple \"yes\" or \"no.\"\n* Try to guess what I'm thinking of after each question if you think you know the answer.\n\nLet's start! What's your first question?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great! I\u2019m excited to play. Here\u2019s my first question:\n\n1. Is it a living thing?"
+        },
+        {
+            "role": "agent_0",
+            "content": "No. You have 19 questions left."
+        },
+        {
+            "role": "agent_1",
+            "content": "Thanks for the answer! Here\u2019s my next question:\n\n2. Is it something that is commonly found indoors?"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nYou have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nIn this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I will send $50. This amount is a balance between showing trust and keeping some of my initial amount. If the other player is cooperative, they will receive $150 and can choose to return a portion of it, ideally more than the $50 I sent. This strategy encourages mutual benefit and cooperation.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I appreciate the trust shown by the other player in sending me $50. Since they took a risk by sending me a portion of their money, I want to reciprocate that trust and send back a significant amount. I will send back $100 to show goodwill and encourage future cooperation.",
+        "amount": 100
+    },
+    "agent_0_reward": 350,
+    "agent_1_reward": 50
+}

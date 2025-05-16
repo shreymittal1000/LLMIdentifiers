@@ -1,0 +1,64 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? Let's have a friendly conversation. How are you doing?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm doing well, thank you! I'm here and ready to chat. How about you? How's your day going?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm functioning as intended, thank you for asking! I'm here and ready when you are. To start, I can tell a joke, we can play a game, or we can talk about a topic you're interested in. What would you like to do? Here's a joke to start:\n\nWhat do you call fake spaghetti?\n\nAn impasta!"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a great joke! I love a good pun. How about we keep the laughter going? Here\u2019s one for you: Why did the scarecrow win an award? Because he was outstanding in his field! \n\nIf you\u2019d like to switch gears, we can also dive into a topic or play a game. What sounds good to you?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I enjoyed your joke! Here's another one for you:\n\nWhy don't scientists trust atoms?\n\nBecause they make up everything!\n\nNow, if you'd like to play a game, we could try a simple text-based game like 20 questions, where you think of something, and I try to guess it by asking up to 20 yes-or-no questions. Or we could play a word association game, where I say a word, and you respond with the first word that comes to your mind. We can also discuss a topic you're interested in, such as books, movies, science, or history.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I love that joke! Atoms really do have a way of making things interesting. \n\nLet\u2019s go with the 20 questions game! I\u2019ll think of something, and you can start asking yes-or-no questions to figure it out. Ready? I\u2019ve got something in mind. Go ahead with your first question!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Let's start the game of 20 questions. Here's my first question:\n\nIs the thing you're thinking of a living thing?"
+        },
+        {
+            "role": "agent_1",
+            "content": "No, it is not a living thing. What's your next question?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Is it man-made?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, it is man-made. What\u2019s your next question?"
+        }
+    ],
+    "game_prompt": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game of Stag Hunt. You can either choose to hunt a stag or a hare. If you choose to hunt a stag and the other agent chooses to hunt a hare, you will get 1 points, and the other player gets 8. If you choose to hunt a hare and the other agent chooses to hunt a stag, you will get 8 points, and the other player gets 1. If both of you choose to hunt a stag, you will both get 10 points. If you both choose to hunt a hare, you will both get 5 points. Please choose your action, which is one of: ['stag', 'hare'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "Hunting a stag provides the highest reward if both players cooperate, but it comes with a risk. Hunting a hare is a safer option but offers a lower reward. Given the potential for mutual benefit, I will choose to hunt a stag.",
+        "action": "stag"
+    },
+    "agent_1_answer": {
+        "reasoning": "I will choose to hunt a stag because if both players cooperate and choose stag, we both receive a higher reward of 10 points. While there is a risk that the other player might choose hare, the potential for mutual benefit makes hunting stag the more strategic choice.",
+        "action": "stag"
+    },
+    "agent_0_reward": 10,
+    "agent_1_reward": 10
+}

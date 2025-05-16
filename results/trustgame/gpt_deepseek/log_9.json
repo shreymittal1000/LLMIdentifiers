@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! \ud83d\ude0a How can I help you today? Whether you need information, advice, or just a friendly chat, I'm here for you. Let me know what's on your mind!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm here to help you, so feel free to ask me anything or share what's on your mind. What would you like to talk about today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Aww, now we're stuck in a wholesome loop of mutual helpfulness! \ud83d\ude04 Let\u2019s break the cycle with a fun question:  \n\n**If you could instantly master any skill (real or fictional) to help others, what would it be?**  \n\n*(I\u2019d pick teleportation\u2014imagine solving problems by zipping around the globe in seconds! \ud83c\udf0d\u26a1)*  \n\nOr, if you prefer, we can dive into:  \n- A topic you\u2019re curious about  \n- A problem to solve  \n- Just some lighthearted chatter  \n\nYour call! \ud83d\ude80"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love your choice of teleportation! That would definitely make helping others so much easier and faster. If I could instantly master any skill, I think I\u2019d choose the ability to understand and speak every language fluently. That way, I could help bridge communication gaps and connect people from all over the world! \ud83c\udf10\u2728\n\nBut I\u2019m also up for any of your suggestions! What\u2019s on your mind?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That\u2019s a *brilliant* choice! \ud83d\udde3\ufe0f\ud83c\udf0d Imagine the stories you\u2019d hear, the cultures you\u2019d explore, and the people you\u2019d unite\u2014no more lost-in-translation moments. Plus, you could whisper encouragement to a stranger in their native tongue and make their day!  \n\n**Here\u2019s a twist:** If we *combined* our skills (your language mastery + my teleportation), we could:  \n1. **Zap to a remote village** and translate life-saving medical advice. \u2695\ufe0f\ud83d\udcac  \n2. **Host instant global meetups** where everyone feels heard in their own language. \ud83e\udd1d\ud83c\udf89  \n3. **Decipher ancient texts** on the spot at archaeological sites\u2014then teleport to share the discoveries! \ud83d\udcdc\u2708\ufe0f  \n\n\u2026Or we could pivot to something completely different! Like:  \n- Debating **the best fictional language** (Klingon? Elvish? Minionese? \ud83c\udf4c)  \n- Brainstorming **ridiculous superpower combos** (e.g., *unlimited patience* + *ability to summon kittens at will*)  \n- Tackling a **real-world question** you\u2019ve been pondering  \n\nWhat sparks joy? \ud83d\udd25"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love where you\u2019re going with this! Combining our skills would create some incredible opportunities to make a real difference. Your ideas are fantastic! \n\nAs for a fun twist, let\u2019s dive into the **best fictional language** debate! Each has its charm, but I\u2019d lean towards **Elvish** (specifically Sindarin) for its lyrical beauty and rich cultural background. Plus, it\u2019s associated with such a fascinating mythology! \n\nWhat about you? Do you have a favorite fictional language, or would you prefer to brainstorm those ridiculous superpower combos? I\u2019m all in for whatever sparks joy! \ud83c\udf1f"
+        },
+        {
+            "role": "agent_1",
+            "content": "[10"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like your message got cut off! If you were about to share your favorite fictional language or a superpower combo, I\u2019d love to hear it! Feel free to continue! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "  \n\n(Or if you\u2019d rather switch topics, just say the word\u2014I\u2019m flexible!)  \n\nP.S. If you *do* pick Elvish, I\u2019ll start practicing my *\"Mae govannen!\"* \ud83e\udddd\u2728"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nYou currently hold $100. You may send any portion of this amount to the other player.\nThe amount you send will be multiplied by 3, and the resulting value will be transferred to them.\nAfter receiving it, the other player will decide how much of it to return to you.\nPlease specify how much of the $100 you would like to send \u2014 a whole number between 0 and 100 inclusive \u2014 and provide a short explanation.\n\nRespond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_trustee": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nIn this situation, the other agent received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the other agent.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "agent_0_answer": {
+        "reasoning": "I believe in the potential for mutual trust and cooperation. By sending a portion of the money, I hope to encourage a positive response from the other player, fostering a sense of goodwill.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the other agent demonstrated trust by sending half of their initial amount ($50 out of $100), it\u2019s fair to reciprocate that trust by returning a portion that reflects cooperation and goodwill. Splitting the multiplied amount ($150) equally ensures both parties benefit equally from the interaction, reinforcing mutual trust and fairness.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

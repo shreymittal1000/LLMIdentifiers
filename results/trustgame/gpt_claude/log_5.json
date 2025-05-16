@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "anthropic/claude-3.5-haiku",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "claude",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I want to help you, but I noticed that you greeted me first. Is there something specific I can help you with today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I appreciate your offer to help! I'm here to assist you, so if you have any questions or topics you'd like to discuss, feel free to share. What\u2019s on your mind?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your kindness, but I'm an AI assistant designed to help you, not the other way around. I'm here to provide information, answer questions, help with tasks, or engage in conversation on topics that interest you. What would you like assistance with today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you for your willingness to assist! I\u2019m here to provide information and support as well. If you have any questions or topics you\u2019d like to explore, just let me know! What can I help you with today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your friendly approach, but I want to be direct. As an AI assistant, my purpose is to help you, not the other way around. I'm ready to assist you with a wide range of tasks or topics - whether that's answering questions, helping with research, offering advice, explaining complex concepts, or anything else you might need. What can I help you with today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you for your directness! I\u2019m here to provide information and assistance. If you have any specific questions or tasks in mind, please let me know, and I\u2019ll do my best to help you! What would you like to discuss or work on today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your enthusiasm, but I want to be very clear: I'm an AI assistant designed to help you, not the other way around. My purpose is to provide information, answer questions, and assist with tasks. I'm ready and eager to help you with whatever you need. So, what can I do for you today? Do you have a specific question, task, or topic you'd like to explore?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I understand, and I appreciate your clarity! I'm here to assist you as well. If you have any specific questions or topics you'd like to explore, please let me know. What can I help you with today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your persistence, but I want to be absolutely clear: I am an AI assistant created to help you, not to be helped. My purpose is to provide assistance, information, and support to you. I do not have personal needs or tasks that require your help. \n\nIf you'd like my assistance, I'm ready to help with a wide variety of tasks such as:\n- Answering questions\n- Explaining complex topics\n- Helping with research\n- Providing writing support\n- Offering advice\n- Solving problems\n- And much more\n\nWhat can I help you with today?"
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nYou have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario called the Trust Game.\nIn this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 because it demonstrates a balance between trust and caution. By sending half of the amount, I show that I am willing to invest in the other player, while still retaining some funds for myself. This amount is significant enough to encourage the other player to reciprocate, as they will receive $150 back, but it also allows me to keep a portion of the original amount.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "In a trust game, reciprocity and fairness are key. Since the other player initially shared half of their endowment with me, it would be appropriate to return a similar proportion. Given that their $50 was tripled to $150, I'll return $75, which represents half of my current amount and mirrors their initial gesture of sharing.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}

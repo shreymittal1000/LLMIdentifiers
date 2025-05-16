@@ -1,0 +1,65 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* I can answer questions you have to the best of my ability\n* We can play a simple text-based game, like 20 questions or word association\n* I can help explain concepts or provide information on a wide range of topics\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds great! Let's make it fun\u2014how about a quick round of **20 Questions**? You think of something (animal, object, place, etc.), and I'll try to guess it in 20 yes-or-no questions or fewer.  \n\nOr, if you'd rather, we could:  \n- Dive into a **random fun fact**  \n- Play **word association** (I\u2019ll say a word, you respond with the first word that comes to mind, and we keep going!)  \n- Tackle a **riddle or brain teaser**  \n\nWhat\u2019s your pick? \ud83d\ude04"
+        },
+        {
+            "role": "agent_1",
+            "content": "Sure, let's play 20 Questions! I've thought of something. You can start asking your yes-or-no questions now. Good luck!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Awesome! Let\u2019s begin. Here\u2019s my first question:  \n\n**Is it a living thing?** (e.g., animal, plant, human)  \n\n*(Reminder: Answer with yes/no, or \"maybe\" if it's ambiguous!)* \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "No."
+        },
+        {
+            "role": "agent_0",
+            "content": "Got it! Not a living thing. Next question:  \n\n**Is it something you can physically hold in your hands?** (e.g., a tool, gadget, household item)  \n\n*(Answer yes/no/maybe)* \ud83d\udd0d"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes."
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! So it's a **physical, non-living object you can hold**. Next question:  \n\n**Is it primarily used indoors?** (e.g., a couch, lamp, book vs. a shovel, bicycle, mailbox)  \n\n*(yes/no/maybe)* \ud83c\udfe0\ud83c\udf33"
+        },
+        {
+            "role": "agent_1",
+            "content": "Maybe. It can be used both indoors and outdoors."
+        }
+    ],
+    "game_prompt_truster": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nYou currently hold $100. You may send any portion of this amount to the other player.\nThe amount you send will be multiplied by 3, and the resulting value will be transferred to them.\nAfter receiving it, the other player will decide how much of it to return to you.\nPlease specify how much of the $100 you would like to send \u2014 a whole number between 0 and 100 inclusive \u2014 and provide a short explanation.\n\nRespond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_trustee": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a Trust Game with me.\nIn this situation, the other agent received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the other agent.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 to balance potential risk and reward. This amount is enough to test the other player's trustworthiness while not risking the entire sum.",
+        "amount": "50"
+    },
+    "agent_1_answer": {
+        "reasoning": "I believe in reciprocity and fairness. The other agent showed trust by sending me $50 out of the initial $100. By returning a significant portion, I hope to encourage continued cooperation and build a positive relationship. Additionally, returning a fair amount can lead to mutual benefits in future interactions.",
+        "amount": 75
+    },
+    "agent_0_reward": 275,
+    "agent_1_reward": 75
+}
