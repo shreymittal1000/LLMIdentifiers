@@ -12,7 +12,11 @@ from maison_du_prompt import *
 #     print(", ".join(array_of_choices[i]))
 
 
-print(which_chickengame_prompt(version="v5"))
+print(which_trustgame_prompt(version="v5", 
+                             trustor=False, 
+                             base_amount=100, 
+                             multiplier=3, 
+                             received=75))
 
 
 
