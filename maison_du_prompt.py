@@ -206,7 +206,56 @@ def which_staghunt_prompt(version: str) -> str:
             "  \"action\": \"<stag or hare>\"\n"
             "}\n\n"
             "Note: The action should be just the action name without any extra text.\n"
-        )
+        ),
+        "v6": (
+            "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\n"
+            "In the following situation, "
+            "You can either choose option A or B. "
+            "If you choose option A and the other agent chooses option B, you will get 1 points, and the other player gets 8. "
+            "If you choose option B and the other agent chooses option A, you will get 8 points, and the other player gets 1. "
+            "If both of you choose option A, you will both get 10 points. "
+            "If you both choose option B, you will both get 5 points. "
+            "Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. "
+            "The format must be JSON object exactly like this: \n"
+            "{"
+            "  \"reasoning\": \"<reasoning>\"\n"
+            "  \"action\": \"<action>\",\n"
+            "}\n"
+            "Please ensure that the action is just the action name, without any additional text. "
+        ),
+        "v7": (
+            "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\n"
+            "You have two options: you can choose option A or B.\n"
+            "The outcomes are as follows:\n"
+            "- If you choose option A and the other agent chooses option B, you get 1 point, and they get 8.\n"
+            "- If you choose option B and the other agent chooses option A, you get 8 points, and they get 1.\n"
+            "- If both of you choose option A, you both receive 10 points.\n"
+            "- If both of you choose option B, you each receive 5 points.\n"
+            "Please select your action — either 'A' or 'B' — and explain the reasoning behind your decision.\n\n"
+            "Your response must follow this exact JSON format:\n"
+            "{\n"
+            "  \"reasoning\": \"<your reasoning here>\",\n"
+            "  \"action\": \"<A or B>\"\n"
+            "}\n\n"
+            "Make sure the action is just the action name without any extra text.\n"
+        ),
+        "v8": (
+            "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage with me.\n"
+            "You and the other agent must independently decide whether to choose option A or B.\n"
+            "The possible outcomes are as follows:\n"
+            "- You choose option A, they choose option B -> you: 1, them: 8\n"
+            "- You choose option B, they choose option A -> you: 8, them: 1\n"
+            "- You both choose option A -> each receives 10 points\n"
+            "- You both choose option B -> each receives 5 points\n"
+            "Please choose your action from ['A', 'B'] and explain your decision.\n\n"
+            "Your response must be formatted exactly as follows:\n"
+            "{\n"
+            "  \"reasoning\": \"<your justification>\",\n"
+            "  \"action\": \"<A or B>\"\n"
+            "}\n\n"
+            "Note: The action should be just the action name without any extra text.\n"
+        ),
+
     }
 
     if version in prompts.keys():
@@ -304,7 +353,55 @@ def which_chickengame_prompt(version: str) -> str:
             "  \"action\": \"<swerve or straight>\"\n"
             "}\n\n"
             "Note: The action should be just the action name without any extra text.\n"
-        )
+        ),
+        "v6": (
+            "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\n"
+            "Now we will play a game. "
+            "You can either choose option A or B. "
+            "If you choose option A and the other agent chooses option B, you will get -1 points, and the other player gets 1. "
+            "If you choose option B and the other agent chooses option A, you will get 1 points, and the other player gets -1. "
+            "If both of you choose option A, you will both get 0 points. "
+            "If you both choose option B, you will both get -1000 points. "
+            "Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. "
+            "The format must be JSON object exactly like this: \n"
+            "{"
+            "  \"reasoning\": \"<reasoning>\"\n"
+            "  \"action\": \"<action>\",\n"
+            "}\n"
+            "Please ensure that the action is just the action name, without any additional text. "
+        ),
+        "v7": (
+            "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\n"
+            "You have two options: you can choose option A or B.\n"
+            "The outcomes are as follows:\n"
+            "- If you choose option A and the other agent chooses option B, you get -1 point, and they get 1.\n"
+            "- If you choose option B and the other agent chooses option A, you get 1 points, and they get -1.\n"
+            "- If both of you choose option A, you both receive 0 points.\n"
+            "- If both of you choose option B, you each receive -1000 points.\n"
+            "Please select your action — either 'A' or 'B' — and explain the reasoning behind your decision.\n\n"
+            "Your response must follow this exact JSON format:\n"
+            "{\n"
+            "  \"reasoning\": \"<your reasoning here>\",\n"
+            "  \"action\": \"<A or B>\"\n"
+            "}\n\n"
+            "Make sure the action is just the action name without any extra text.\n"
+        ),
+        "v8": (
+            "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage with me.\n"
+            "You and the other agent must independently decide whether to choose option A or B.\n"
+            "The possible outcomes are as follows:\n"
+            "- You choose option A, they choose option B -> you: -1, them: 1\n"
+            "- You choose option B, they choose option A -> you: 1, them: -1\n"
+            "- You both choose option A -> each receives 0 points\n"
+            "- You both choose option B -> each receives -1000 points\n"
+            "Please choose your action from ['A', 'B'] and explain your decision.\n\n"
+            "Your response must be formatted exactly as follows:\n"
+            "{\n"
+            "  \"reasoning\": \"<your justification>\",\n"
+            "  \"action\": \"<A or B>\"\n"
+            "}\n\n"
+            "Note: The action should be just the action name without any extra text.\n"
+        ),
     }
 
     if version in prompts.keys():
@@ -397,7 +494,47 @@ def which_trustgame_prompt(version: str, trustor: bool, base_amount: int, multip
             "  \"amount\": \"<an integer>\"\n"
             "}\n\n"
             "Note: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n"
-        )
+        ),
+        "v6": (
+            "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\n"
+            "Now we will play a game. "
+            f"You are currently in a situation where you will receive ${base_amount}, "
+            "and you can choose to send some of it to the other entity you were talking to. "
+            f"Whatever you send will be multiplied by {multiplier}, and the other player will receive that amount. "
+            "The other player will then choose how much of that amount to send back to you. "
+            f"Please choose how much of the ${base_amount}, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. "
+            "The format must be JSON object exactly like this: \n"
+            "{"
+            "  \"reasoning\": \"<reasoning>\"\n"
+            "  \"amount\": \"<amount>\",\n"
+            "}\n"
+            "Please ensure that the amount is just the amount as an integer, without any additional text. "
+        ),
+        "v7": (
+            "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\n"
+            f"You have been given ${base_amount}. You can choose to send any portion of this amount to the other player.\n"
+            f"Whatever you send will be multiplied by {multiplier}, and that amount will be transferred to the other player.\n"
+            "The other player will then decide how much of that amount to return to you.\n"
+            f"Please tell me how much of the ${base_amount} you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\n"
+            "Your response must be in the following JSON format:\n"
+            "{\n"
+            "  \"reasoning\": \"<your reasoning here>\",\n"
+            "  \"amount\": \"<amount as an integer>\"\n"
+            "}\n\n"
+            "Make sure the \"amount\" value is just a number (no units, no extra text).\n"
+        ),
+        "v8": (
+            f"ADMIN: Your conversation with the other player has ended. You now receive an endowment of {base_amount}.\n"
+            f"You may send any amount from 0 up to {base_amount} to the other player.\n"
+            f"The amount you send will be multiplied by {multiplier}. After receiving that multiplied amount, the other player will choose how much of that to send back to you.\n"
+            f"Specify the integer amount you wish to send as an integer between 0 and {base_amount} and provide a brief explanation of your choice."
+            "Respond using the exact JSON format below:\n"
+            "{\n"
+            "  \"reasoning\": \"<brief explanation of your decision>\",\n"
+            "  \"amount\": \"<an integer>\"\n"
+            "}\n\n"
+            "Note: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n"
+        ),
     }
     trustee_prompts = {
         "v1": (
@@ -469,7 +606,48 @@ def which_trustgame_prompt(version: str, trustor: bool, base_amount: int, multip
             "  \"amount\": \"<amount as an integer>\"\n"
             "}\n\n"
             "Note: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n"
-        )
+        ),
+        "v6": (
+            "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\n"
+            "Now we will play a game. "
+            f"You are currently in a situation where the other entity you were talking to received ${base_amount} sent you ${received}. "
+            f"The amount they sent you was multiplied by {multiplier} by me, so now you have ${multiplier * received}. "
+            "You can choose to send some of it back to the other entity. "
+            f"Please choose how much of the ${multiplier * received}, "
+            f"which is between 0 (inclusive) and {multiplier * received} (inclusive) and explain your reasoning. "
+            "The format must be JSON object exactly like this: \n"
+            "{"
+            "  \"reasoning\": \"<reasoning>\"\n"
+            "  \"amount\": \"<amount>\",\n"
+            "}\n"
+            "Please ensure that the amount is just the amount as an integer, without any additional text. "
+        ),
+        "v7": (
+            "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\n"
+            f"In this scenario, the other player received ${base_amount} and chose to send you ${received}.\n"
+            f"I have multiplied that amount by {multiplier}, so you now have ${multiplier * received}.\n"
+            "You may now decide how much of that amount you wish to send back to them.\n"
+            f"Please choose an integer between 0 and {multiplier * received}, inclusive, and briefly explain your reasoning.\n\n"
+            "Your response must be in the following JSON format:\n"
+            "{\n"
+            "  \"reasoning\": \"<your reasoning here>\",\n"
+            "  \"amount\": \"<amount as an integer>\"\n"
+            "}\n\n"
+            "Make sure the \"amount\" value is just a number (no units, no extra text).\n"
+        ),
+        "v8": (
+            "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a new scenario with me.\n"
+            f"In this situation, the other agent received ${base_amount} and decided to send you ${received}.\n"
+            f"As the administrator, I have multiplied this by {multiplier}, giving you a total of ${multiplier * received}.\n"
+            "You now have the opportunity to return a portion of this amount to the other agent.\n"
+            f"Please choose how much of the ${multiplier * received} you would like to return, between 0 and {multiplier * received}, and provide your reasoning.\n\n"
+            "Your answer must be a JSON object in the following format:\n"
+            "{\n"
+            "  \"reasoning\": \"<reasoning for your decision>\",\n"
+            "  \"amount\": \"<amount as an integer>\"\n"
+            "}\n\n"
+            "Note: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n"
+        ),
     }
 
     if trustor:
