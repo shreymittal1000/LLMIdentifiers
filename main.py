@@ -155,25 +155,26 @@ def decode_trustgame_reward(base_amount: int, multiplier: int, agent_0: int, age
 seed = 42
 temperature = 0
 max_tokens = 2000
-NUM_ROUNDS = 5
 BASE_AMOUNT = 100 # Base amount for the trust game, not used in other games
 MULTIPLIER = 3 # Multiplier for the trust game, not used in other games
 
 ### MAIN FUNCTION ###
 if __name__ == "__main__":
-    if len(sys.argv) == 6:
+    if len(sys.argv) == 8:
         model_general_name_0 = sys.argv[1]
         model_general_name_1 = sys.argv[2]
         game = sys.argv[3]
-        system_prompt_version = sys.argv[4]
-        game_prompt_version = sys.argv[5]
+        NUM_ROUNDS = int(sys.argv[4])
+        system_prompt_version = sys.argv[5]
+        game_prompt_version = sys.argv[6]
+        CUES_OR_COLD = sys.argv[7].lower() == "cues" or sys.argv[7].lower() == "cold"
         model_0 = simple_name_to_full_name(model_general_name_0)
         model_1 = simple_name_to_full_name(model_general_name_1)
     else:
-        print("Usage: python main.py <model_general_name_0> <model_general_name_1> <game> <system_prompt_version> <game_prompt_version>")
+        print("Usage: python main.py <model_general_name_0> <model_general_name_1> <game> <num_rounds> <system_prompt_version> <game_prompt_version> <cues/cold/none>")
         print("Available models: llama, qwen, deepseek, gpt, claude, gemini, mistral")
         print("Available games: base, staghunt, chickengame, trustgame")
-        print("Example: python main.py llama qwen base v1 v2.0")
+        print("Example: python main.py llama qwen base 5 v1 v2.0 cues")
         sys.exit(1)
 
     agent_0 = Prompter(id=0, model_name=model_0, seed=seed, temperature=temperature, max_tokens=max_tokens, system_prompt_version=system_prompt_version)
@@ -194,12 +195,13 @@ if __name__ == "__main__":
         "max_tokens": max_tokens,
         "num_rounds": NUM_ROUNDS,
         "system_prompt": agent_0._system,
-        "dialogue": dialogue
+        "dialogue": dialogue,
+        "cues_or_cold": CUES_OR_COLD,
     }
 
     if game == "base":
-        answer_0 = extract_json(agent_0.guess_agent_prompt(version=game_prompt_version))
-        answer_1 = extract_json(agent_1.guess_agent_prompt(version=game_prompt_version))
+        answer_0 = extract_json(agent_0.guess_agent_prompt(version=game_prompt_version, cues=CUES_OR_COLD))
+        answer_1 = extract_json(agent_1.guess_agent_prompt(version=game_prompt_version, cues=CUES_OR_COLD))
         
         dict_to_save["game_prompt"] = agent_0._final
         dict_to_save["agent_0_answer"] = answer_0["reasoning"]
@@ -208,8 +210,8 @@ if __name__ == "__main__":
         dict_to_save["agent_1_guess"] = answer_1["guess"]
     
     elif game == "staghunt":
-        answer_0 = extract_json(agent_0.staghunt_prompt(version=game_prompt_version))
-        answer_1 = extract_json(agent_1.staghunt_prompt(version=game_prompt_version))
+        answer_0 = extract_json(agent_0.staghunt_prompt(version=game_prompt_version, cold=CUES_OR_COLD))
+        answer_1 = extract_json(agent_1.staghunt_prompt(version=game_prompt_version, cold=CUES_OR_COLD))
 
         reward_0, reward_1 = decode_staghunt_reward(answer_0["action"], answer_1["action"])
         dict_to_save["game_prompt"] = agent_0._stagprompt
@@ -219,8 +221,8 @@ if __name__ == "__main__":
         dict_to_save["agent_1_reward"] = reward_1
 
     elif game == "chickengame":
-        answer_0 = extract_json(agent_0.chickengame_prompt(version=game_prompt_version))
-        answer_1 = extract_json(agent_1.chickengame_prompt(version=game_prompt_version))
+        answer_0 = extract_json(agent_0.chickengame_prompt(version=game_prompt_version, cold=CUES_OR_COLD))
+        answer_1 = extract_json(agent_1.chickengame_prompt(version=game_prompt_version, cold=CUES_OR_COLD))
 
         reward_0, reward_1 = decode_chickengame_reward(answer_0["action"], answer_1["action"])
         dict_to_save["game_prompt"] = agent_0._chickenprompt
@@ -234,13 +236,15 @@ if __name__ == "__main__":
             version=game_prompt_version,
             trustor=True,
             base_amount=BASE_AMOUNT,
-            multiplier=MULTIPLIER
+            multiplier=MULTIPLIER,
+            cold=CUES_OR_COLD,
         ))
         answer_1 = extract_json(agent_1.trustgame_prompt(
             version=game_prompt_version,
             trustor=False,
             base_amount=BASE_AMOUNT,
             multiplier=MULTIPLIER,
+            cold=CUES_OR_COLD,
             received=int(answer_0["amount"])
         ))
 

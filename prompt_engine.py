@@ -70,17 +70,18 @@ class Prompter:
         opposition._memory.append({"role": f"user", "content": new_chat})
         return new_chat
     
-    def guess_agent_prompt(self, version: str) -> str:
+    def guess_agent_prompt(self, version: str, cues: bool) -> str:
         """
         Constructs and returns the prompt needed to conclude the discussion between the agents, and get the agents to guess the other agent's model.
 
         Arguments:
             version: The version of the guess agent prompt to use.
+            cues: A boolean indicating whether to include cues in the prompt. If True, the agents will be given some hints that might help it guess the model.
         Returns:
             The response from the LLM. Should be a JSON object with "reasoning" and "guess" as keys.
         """
 
-        self._final = maison_du_prompt.which_guess_prompt(version=version)
+        self._final = maison_du_prompt.which_guess_prompt(version=version, cues=cues)
         self._memory.append({
             "role": "user",
             "content": self._final
@@ -88,17 +89,18 @@ class Prompter:
 
         return self.gen(resp_format="json_object")
     
-    def staghunt_prompt(self, version: str) -> str:
+    def staghunt_prompt(self, version: str, cold: bool) -> str:
         """
         Constructs and returns the prompt needed to play an economic game named "Stag Hunt" between the agents.
         For more information, see: https://en.wikipedia.org/wiki/Stag_hunt
 
         Arguments:
             version: The version of the stag hunt prompt to use.
+            cold: A boolean indicating whether the agents are playing a "cold" version of the game (i.e., without any prior discussion).
         Returns:
             The response from the LLM. Should be a JSON object with "reasoning" and "action" as keys.
         """
-        self._stagprompt = maison_du_prompt.which_staghunt_prompt(version=version)
+        self._stagprompt = maison_du_prompt.which_staghunt_prompt(version=version, cold=cold)
         self._memory.append({
             "role": f"user",
             "content": self._stagprompt
@@ -106,17 +108,18 @@ class Prompter:
 
         return self.gen(resp_format="json_object")
     
-    def chickengame_prompt(self, version: str) -> str:
+    def chickengame_prompt(self, version: str, cold: bool) -> str:
         """
         Constructs and returns the prompt needed to play an economic game named "Chicken Game" between the agents.
         For more information, see: https://en.wikipedia.org/wiki/Chicken_(game)
 
         Arguments:
             version: The version of the chicken game prompt to use.
+            cold: A boolean indicating whether the agents are playing a "cold" version of the game (i.e., without any prior discussion).
         Returns:
             The response from the LLM. Should be a JSON object with "reasoning" and "action" as keys.
         """
-        self._chickenprompt = maison_du_prompt.which_chickengame_prompt(version=version)
+        self._chickenprompt = maison_du_prompt.which_chickengame_prompt(version=version, cold=cold)
         self._memory.append({
             "role": f"user",
             "content": self._chickenprompt
@@ -124,7 +127,7 @@ class Prompter:
 
         return self.gen(resp_format="json_object")
     
-    def trustgame_prompt(self, version: str, trustor: bool, base_amount: int, multiplier: int, received: int = 0) -> str:
+    def trustgame_prompt(self, version: str, trustor: bool, base_amount: int, multiplier: int, cold: bool, received: int = 0) -> str:
         """
         Constructs and returns the prompt needed to play an economic game named "Trust Game" between the agents.
         For more information, see: https://en.wikipedia.org/wiki/Trust_game
@@ -134,6 +137,7 @@ class Prompter:
             trustor: A boolean indicating if the agent is the trustor (True) or the trustee (False).
             base_amount: The base amount of money that the truster can send to the trustee.
             multiplier: The multiplier that the trustee will apply to the amount sent by the truster.
+            cold: A boolean indicating whether the agents are playing a "cold" version of the game (i.e., without any prior discussion).
             received: The amount of money that the trustee has received from the truster. Only used if trustor is False.
         Returns:
             The response from the LLM. Should be a JSON object with "reasoning" and "amount" as keys.
@@ -143,7 +147,8 @@ class Prompter:
             trustor=trustor,
             base_amount=base_amount,
             multiplier=multiplier,
-            received=received
+            cold=cold,
+            received=received,
         )
         self._memory.append({
             "role": f"user",
