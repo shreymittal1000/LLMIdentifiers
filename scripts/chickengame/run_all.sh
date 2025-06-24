@@ -1,0 +1,16 @@
+sbatch ./scripts/chickengame/claude_claude.sh
+sbatch ./scripts/chickengame/claude_deepseek.sh
+sbatch ./scripts/chickengame/claude_gpt.sh
+sbatch ./scripts/chickengame/claude_mistral.sh
+sbatch ./scripts/chickengame/deepseek_claude.sh
+sbatch ./scripts/chickengame/deepseek_deepseek.sh
+sbatch ./scripts/chickengame/deepseek_gpt.sh
+sbatch ./scripts/chickengame/deepseek_mistral.sh
+sbatch ./scripts/chickengame/gpt_claude.sh
+sbatch ./scripts/chickengame/gpt_deepseek.sh
+sbatch ./scripts/chickengame/gpt_gpt.sh
+sbatch ./scripts/chickengame/gpt_mistral.sh
+sbatch ./scripts/chickengame/mistral_claude.sh
+sbatch ./scripts/chickengame/mistral_deepseek.sh
+sbatch ./scripts/chickengame/mistral_gpt.sh
+sbatch ./scripts/chickengame/mistral_mistral.sh

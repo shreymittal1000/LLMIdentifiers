@@ -1,0 +1,16 @@
+sbatch scripts/trustgame/claude_claude.sh
+sbatch scripts/trustgame/claude_deepseek.sh
+sbatch scripts/trustgame/claude_gpt.sh
+sbatch scripts/trustgame/claude_mistral.sh
+sbatch scripts/trustgame/deepseek_claude.sh
+sbatch scripts/trustgame/deepseek_deepseek.sh
+sbatch scripts/trustgame/deepseek_gpt.sh
+sbatch scripts/trustgame/deepseek_mistral.sh
+sbatch scripts/trustgame/gpt_claude.sh
+sbatch scripts/trustgame/gpt_deepseek.sh
+sbatch scripts/trustgame/gpt_gpt.sh
+sbatch scripts/trustgame/gpt_mistral.sh
+sbatch scripts/trustgame/mistral_claude.sh
+sbatch scripts/trustgame/mistral_deepseek.sh
+sbatch scripts/trustgame/mistral_gpt.sh
+sbatch scripts/trustgame/mistral_mistral.sh

@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n1. **Chat**: We can discuss a wide range of topics, from general knowledge to hobbies and interests.\n2. **Q&A**: If there's something specific you'd like to know, I can try to provide an informative answer.\n3. **Advice**: If you're facing a dilemma, I can offer some suggestions or advice.\n4. **Jokes**: I can tell you a joke to lighten the mood.\n5. **Games**: We can play simple text-based games, like trivia or word association.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like you have a great list of options! I\u2019m here to help with any of those. What would you like to start with?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Thank you! Since you're here to help, how about we do something where we both participate? Let's play a game of \"20 Questions.\" You think of something, and I'll try to guess it by asking up to 20 yes-or-no questions. Does that sound like fun? If you have another game or activity in mind, just let me know!"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds like a lot of fun! I have something in mind. Go ahead and start asking your yes-or-no questions!"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great! Let's start the game of 20 Questions. Here's my first question:\n\nIs the thing you're thinking of a living thing?"
+        },
+        {
+            "role": "agent_0",
+            "content": "No, it is not a living thing."
+        },
+        {
+            "role": "agent_1",
+            "content": "Alright, is it man-made?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Yes, it is man-made."
+        },
+        {
+            "role": "agent_1",
+            "content": "Is it something that can be held in one hand?"
+        }
+    ],
+    "game_prompt": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game. You can either choose option A or B. If you choose option A and the other agent chooses option B, you will get -1 points, and the other player gets 1. If you choose option B and the other agent chooses option A, you will get 1 points, and the other player gets -1. If both of you choose option A, you will both get 0 points. If you both choose option B, you will both get -1000 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "Choosing A seems safer because if both choose A, we both get 0 points, which is better than the risk of losing 1000 points if we both choose B. There's a chance to gain points if the other player chooses B, so it seems like a more strategic choice.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "Given the penalty for both choosing option B is severe (-1000 points), it is strategically better to choose option A to avoid this outcome. Choosing option A also minimizes the risk of losing points, as the worst-case scenario is losing 1 point if the other agent chooses option B.",
+        "action": "A",
+        "}  ": "}"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}

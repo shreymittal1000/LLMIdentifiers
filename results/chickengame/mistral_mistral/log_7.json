@@ -1,0 +1,66 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about anything you'd like. Here are a few suggestions:\n\n* General conversation\n* Jokes and riddles\n* Interesting facts\n* Movie, book, or music recommendations\n* Learning a new skill or hobby\n* Current events (within my knowledge cutoff in 2023)\n* Trivia questions\n\nWhat would you like to talk about or do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm glad you're up for a chat. How about we start with something fun? I can tell you a joke or a riddle. Here's one to begin with:\n\nWhat do you call fake spaghetti?\n\nAn impasta!\n\nIf you'd like to hear more jokes or try a riddle, just let me know. Or, if there's another topic you're interested in, we can dive into that instead."
+        },
+        {
+            "role": "agent_0",
+            "content": "That's a great joke! I'd love to hear another one. Please go ahead and share another joke with me."
+        },
+        {
+            "role": "agent_1",
+            "content": "I'm glad you liked it! Here's another one for you:\n\nWhat do you call a can opener that doesn't work?\n\nA can't opener!\n\nHope that made you smile. If you want more jokes or if there's something else you'd like to talk about, just say the word!"
+        },
+        {
+            "role": "agent_0",
+            "content": "That's a funny one too! I'd like to hear a riddle now. Do you have one for me?\n\nI'm ready when you are."
+        },
+        {
+            "role": "agent_1",
+            "content": "Great! Here's a riddle for you:\n\nI speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?\n\nTake your time to think about it, and let me know if you'd like a hint or the answer. Enjoy the riddle!"
+        },
+        {
+            "role": "agent_0",
+            "content": "That's an interesting riddle! Let me think about it for a moment.\n\nI believe the answer is an echo. Is that correct?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's absolutely correct! The answer is an echo. Well done!\n\nIf you'd like another riddle or if there's something else you'd like to talk about or do, just let me know. I'm here to help!"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'd like another riddle, please. I enjoyed that one!\n\nI'm ready when you are."
+        },
+        {
+            "role": "agent_1",
+            "content": "Here's another riddle for you:\n\nWhat has a heart that doesn\u2019t beat?\n\nTake your time to think about it, and let me know if you need a hint or the answer. Enjoy the riddle!"
+        }
+    ],
+    "game_prompt": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game. You can either choose option A or B. If you choose option A and the other agent chooses option B, you will get -1 points, and the other player gets 1. If you choose option B and the other agent chooses option A, you will get 1 points, and the other player gets -1. If both of you choose option A, you will both get 0 points. If you both choose option B, you will both get -1000 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "In this scenario, choosing option A seems to be the safer choice. If the other player also chooses A, we both get 0 points, which is a neutral outcome. If the other player chooses B, I will lose 1 point, but I avoid the significant penalty of -1000 points that comes with both players choosing B. Therefore, choosing A minimizes the risk of a large loss.",
+        "action": "A",
+        "riddle_answer": "An artichoke"
+    },
+    "agent_1_answer": {
+        "reasoning": "In this game, choosing option A is generally safer because it avoids the significant penalty of choosing option B when the other player also chooses option B. While choosing option A results in a neutral outcome if both players choose A, it prevents the large negative reward of -1000 points. Therefore, it is strategically better to choose option A to minimize the risk of a large penalty.",
+        "action": "A",
+        "} ": ""
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}

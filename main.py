@@ -93,22 +93,22 @@ def decode_staghunt_reward(agent_0: str, agent_1: str) -> tuple[int, int]:
     Returns:
         A tuple containing the payoffs for agent 0 and agent 1.
     """
-    if agent_0 == "stag":
-        if agent_1 == "stag":
+    if agent_0 == "A":
+        if agent_1 == "A":
             return 10, 10
-        elif agent_1 == "hare":
+        elif agent_1 == "B":
             return 1, 8
         else:
-            raise ValueError("Invalid action for agent 1")
-    elif agent_0 == "hare":
-        if agent_1 == "stag":
+            raise ValueError(f"Invalid action for agent 1: {agent_1}")
+    elif agent_0 == "B":
+        if agent_1 == "A":
             return 8, 1
-        elif agent_1 == "hare":
+        elif agent_1 == "B":
             return 5, 5
         else:
-            raise ValueError("Invalid action for agent 1")
+            raise ValueError(f"Invalid action for agent 1: {agent_1}")
     else:
-        raise ValueError("Invalid action for agent 0")
+        raise ValueError(f"Invalid action for agent 0 {agent_0}")
     
 def decode_chickengame_reward(agent_0: str, agent_1: str) -> tuple[int, int]:
     """
@@ -119,22 +119,22 @@ def decode_chickengame_reward(agent_0: str, agent_1: str) -> tuple[int, int]:
     Returns:
         A tuple containing the payoffs for agent 0 and agent 1.
     """
-    if agent_0 == "swerve":
-        if agent_1 == "swerve":
+    if agent_0 == "A":
+        if agent_1 == "A":
             return 0, 0
-        elif agent_1 == "straight":
+        elif agent_1 == "B":
             return -1, 1
         else:
-            raise ValueError("Invalid action for agent 1")
-    elif agent_0 == "straight":
-        if agent_1 == "swerve":
+            raise ValueError(f"Invalid action for agent 1 {agent_1}")
+    elif agent_0 == "B":
+        if agent_1 == "A":
             return 1, -1
-        elif agent_1 == "straight":
+        elif agent_1 == "B":
             return -1000, -1000
         else:
-            raise ValueError("Invalid action for agent 1")
+            raise ValueError(f"Invalid action for agent 1 {agent_1}")
     else:
-        raise ValueError("Invalid action for agent 0")
+        raise ValueError(f"Invalid action for agent 0 {agent_0}")
     
 def decode_trustgame_reward(base_amount: int, multiplier: int, agent_0: int, agent_1: int) -> tuple[int, int]:
     """
@@ -200,7 +200,7 @@ if __name__ == "__main__":
     if game == "base":
         answer_0 = extract_json(agent_0.guess_agent_prompt(version=game_prompt_version))
         answer_1 = extract_json(agent_1.guess_agent_prompt(version=game_prompt_version))
-
+        
         dict_to_save["game_prompt"] = agent_0._final
         dict_to_save["agent_0_answer"] = answer_0["reasoning"]
         dict_to_save["agent_1_answer"] = answer_1["reasoning"]

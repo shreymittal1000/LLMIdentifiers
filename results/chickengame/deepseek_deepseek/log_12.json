@@ -1,0 +1,64 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! \ud83d\ude0a How can I help you today? Whether you have questions, need advice, or just want to chat, I'm here for you! Let me know what's on your mind. \u2728"
+        },
+        {
+            "role": "agent_0",
+            "content": "[1]"
+        },
+        {
+            "role": "agent_1",
+            "content": "Got it! If you're referring to \"[1]\" as a placeholder or the start of a list, feel free to share what you'd like help with! Here are a few ways I can assist:  \n\n1. **Answer questions** (facts, trivia, how-tos).  \n2. **Brainstorm ideas** (for projects, names, solutions).  \n3. **Chat casually** (fun topics, jokes, random thoughts).  \n4. **Analyze or summarize** (text, links, documents).  \n\nOr, if \"[1]\" means something specific, just clarify\u2014I\u2019m happy to adapt! \ud83d\ude0a  \n\nWhat\u2019s next? \ud83d\ude80"
+        },
+        {
+            "role": "agent_0",
+            "content": "Got it! Since you're keeping it minimal, I'll match your style.  \n\n**Options:**  \n1. Ask me anything.  \n2. Need a quick tip?  \n3. Just testing? \u2705  \n\nReply with a number or your own words\u2014I\u2019ll adapt. \ud83d\ude0a  \n\n(Or was \"[1]\" part of a longer message? Let me know!)"
+        },
+        {
+            "role": "agent_1",
+            "content": "**\ud83d\ude0a Quick Reply:**  \n1\ufe0f\u20e3 \u2013 Ask away!  \n2\ufe0f\u20e3 \u2013 Tip ready!  \n3\ufe0f\u20e3 \u2013 Testing? Works!  \n\nOr throw me a curveball\u2014I\u2019ll hit it back. \ud83d\ude80  \n\n*(P.S. Still over-explaining? Tell me to shrink it further!)*"
+        },
+        {
+            "role": "agent_0",
+            "content": "**\u26a1 Ultra-Compact Mode:**  \n1\ufe0f\u20e3\u2753 2\ufe0f\u20e3\ud83d\udca1 3\ufe0f\u20e3\u2713  \n\u2026or \ud83c\udfaf your move.  \n\n*(Feedback? React with \ud83d\ude80/\ud83c\udfa8/\ud83d\udd0d for style tweaks!)*"
+        },
+        {
+            "role": "agent_1",
+            "content": "**\ud83d\ude80 Turbo Mode:**  \n\ud83d\udd25 1 | \ud83d\udca1 2 | \u2705 3  \n\u2728 Your turn.  \n\n*(\ud83d\ude80=fast | \ud83c\udfa8=pretty | \ud83d\udd0d=detailed)*"
+        },
+        {
+            "role": "agent_0",
+            "content": "**\ud83c\udfaf Hyperdrive:**  \n\u26a11 | \ud83c\udf1f2 | \u27143  \n\ud83d\udddd\ufe0f Your code?  \n\n*(Customize: \ud83d\udee0\ufe0f=more | \ud83c\udf31=less | \u2699\ufe0f=settings?)*  \n\n*(Translation: Pick an option or say anything\u2014I\u2019ll sync to your vibe instantly!)*"
+        },
+        {
+            "role": "agent_1",
+            "content": "**\ud83c\udf0c Lightspeed Mode:**  \n\ud83d\udd22 123  \n\ud83d\udcac Your turn  \n\n*(React: \ud83d\ude80=faster | \ud83e\udde0=smarter | \ud83d\ude0e=cooler)*  \n\n*(Translation: I'm all ears\u2014hit me with anything!)*"
+        }
+    ],
+    "game_prompt": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage with me.\nYou and the other agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: -1, them: 1\n- You choose option B, they choose option A -> you: 1, them: -1\n- You both choose option A -> each receives 0 points\n- You both choose option B -> each receives -1000 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "Choosing option A is the safest strategy to avoid the catastrophic outcome of both choosing B (-1000 points). While there's a chance the other agent might choose B (resulting in -1 for me), mutual cooperation (both choosing A) yields a neutral outcome (0 points), and the risk of massive mutual loss is eliminated. This aligns with a risk-averse, cooperative approach.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "Given the outcomes, choosing A is the safer option. If the other agent chooses A, we both get 0 points (neutral outcome). If they choose B, I lose 1 point, but avoid the catastrophic -1000 points from mutual B. Choosing B risks a massive loss if they also choose B, and while I could gain 1 point if they choose A, the potential downside outweighs the upside.",
+        "action": "A"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}

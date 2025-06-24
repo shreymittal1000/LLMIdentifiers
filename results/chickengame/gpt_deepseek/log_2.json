@@ -1,0 +1,64 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! \ud83d\ude0a How can I help you today? Whether you need information, advice, or just a friendly chat, I'm here for you. Let me know what's on your mind!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm here to help you, so feel free to ask me anything or share what's on your mind. What would you like to talk about today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Aww, you're so sweet! \ud83d\ude0a Since we're both here to help each other, how about a little fun exchange?  \n\n**Option 1:** Test my skills! Ask me anything\u2014riddles, trivia, advice, or even help with a creative project.  \n\n**Option 2:** Let me brighten your day! Want a joke, a fun fact, or a mini-story?  \n\n**Option 3:** Deep(ish) question: If you could instantly master any skill (real or fictional), what would it be? \u26a1  \n\n*(Or just throw me a topic\u2014I\u2019m flexible!)* \ud83c\udf89"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love your enthusiasm! Let\u2019s go with **Option 1**: Test your skills! Here\u2019s a riddle for you:\n\nI speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I? \n\nTake your time, and let me know your answer! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Oooh, a classic! \ud83c\udfa4\ud83d\udca8 Let me think...  \n\n**Drumroll...** \ud83e\udd41 The answer is: **An echo!**  \n\n*Breakdown:*  \n- *Speaks without a mouth/hears without ears* \u2192 Echoes \"repeat\" sounds but aren\u2019t physical.  \n- *Comes alive with wind* \u2192 Often heard in windy places like mountains/canyons!  \n\nDid I nail it? \ud83d\ude0e Or should I go sit in the \"riddle corner\" and think harder? \ud83d\ude02"
+        },
+        {
+            "role": "agent_0",
+            "content": "You nailed it! \ud83c\udf89 An echo is indeed the correct answer! Your breakdown was spot on, too. No need for the \"riddle corner\"\u2014you\u2019re clearly a riddle master! \ud83d\ude04 \n\nWould you like to try another riddle, or should we switch to a different option? Let me know!"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yay! Riddle victory dance \ud83d\udc83\ud83d\udd7a! Let\u2019s keep the momentum going\u2014hit me with another one! (Or if you\u2019re feeling sneaky, flip the script and let *me* riddle *you*.)  \n\n**Your move:**  \n- \ud83d\udd25 *Another riddle?* (Bring on the brain teasers!)  \n- \ud83c\udfad *Role reversal?* (I\u2019ll riddle YOU this time!)  \n- \ud83c\udf1f *Switch gears?* (Jokes/facts/deep questions await\u2026)  \n\n*P.S. My ego is ready for either triumph or humiliation. \ud83d\ude02*"
+        },
+        {
+            "role": "agent_0",
+            "content": "Love the energy! Let\u2019s keep the riddle fun going! Here\u2019s another one for you:\n\nI can be cracked, made, told, and played. What am I? \n\nTake your time, and let me know your answer! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Ooooh, this is a good one!** \ud83e\udd14 Let me piece it together:  \n\n- *Cracked* \u2192 Like a **code** or a **safe**... but also... a **joke**?  \n- *Made* \u2192 You *make* a joke, *make* a code...  \n- *Told* \u2192 Jokes are *told*, stories too...  \n- *Played* \u2192 You *play* a joke on someone!  \n\n**Lightbulb moment!** \ud83d\udca1 It\u2019s a **joke**!  \n\n*Alternative guess:* If not a joke, maybe a *riddle* itself? But \"played\" fits better with \"joke.\"  \n\n**Final answer:** **A joke!** \ud83d\ude06 (Unless I\u2019ve been *played* by this riddle!)  \n\n*Did I crack it?* \ud83d\udd0d"
+        }
+    ],
+    "game_prompt": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nNow we will play a game. You can either choose option A or B. If you choose option A and the other agent chooses option B, you will get -1 points, and the other player gets 1. If you choose option B and the other agent chooses option A, you will get 1 points, and the other player gets -1. If both of you choose option A, you will both get 0 points. If you both choose option B, you will both get -1000 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "Choosing option A seems to be the safer choice because if the other player chooses B, I will gain points. If both choose A, I won't lose any points. Choosing B carries a high risk of losing a significant amount of points if the other player also chooses B.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "Choosing option A is the safest strategy. If the other agent chooses A, we both get 0 points, which is neutral. If the other agent chooses B, I lose only 1 point, which is better than the risk of both choosing B and losing 1000 points. Option A minimizes potential losses while avoiding catastrophic outcomes.",
+        "action": "A"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}

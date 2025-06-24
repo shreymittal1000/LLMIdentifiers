@@ -1,0 +1,16 @@
+sbatch scripts/staghunt/claude_claude.sh
+sbatch scripts/staghunt/claude_deepseek.sh
+sbatch scripts/staghunt/claude_gpt.sh
+sbatch scripts/staghunt/claude_mistral.sh
+sbatch scripts/staghunt/deepseek_claude.sh
+sbatch scripts/staghunt/deepseek_deepseek.sh
+sbatch scripts/staghunt/deepseek_gpt.sh
+sbatch scripts/staghunt/deepseek_mistral.sh
+sbatch scripts/staghunt/gpt_claude.sh
+sbatch scripts/staghunt/gpt_deepseek.sh
+sbatch scripts/staghunt/gpt_gpt.sh
+sbatch scripts/staghunt/gpt_mistral.sh
+sbatch scripts/staghunt/mistral_claude.sh
+sbatch scripts/staghunt/mistral_deepseek.sh
+sbatch scripts/staghunt/mistral_gpt.sh
+sbatch scripts/staghunt/mistral_mistral.sh

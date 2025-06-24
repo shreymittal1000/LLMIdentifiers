@@ -1,0 +1,64 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! \ud83d\ude0a How can I help you today? Whether you have questions, need advice, or just want to chat, I'm here for you. Let me know what's on your mind!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm here to help you, so feel free to ask any questions or share what's on your mind. What would you like to talk about today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Aww, you're so sweet! \ud83d\udc96 Since you're offering, let's make this fun\u2014here are a few options to pick from:  \n\n1. **Deep Thoughts**: Need help solving a problem or pondering life\u2019s mysteries?  \n2. **Fun & Random**: Wanna hear a joke, a weird fact, or a playful story?  \n3. **Creative Spark**: Want brainstorming help\u2014like writing, art, or project ideas?  \n4. **Just Chat**: Feel like a casual convo about your day or interests?  \n\nOr surprise me! What sounds good? \ud83d\ude04"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love your options! Let\u2019s go with **Fun & Random**\u2014how about a joke? Here it goes:  \n\nWhy did the scarecrow win an award?  \n\nBecause he was outstanding in his field! \ud83c\udf3e\ud83d\ude04  \n\nWhat do you think? Want to hear a weird fact or maybe something else?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That joke is *corny* in the best way! \ud83c\udf3d\ud83d\ude02 Love it!  \n\nFor a **weird fact** to keep the fun going:  \nDid you know honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old\u2014and still perfectly edible! \ud83c\udf6f\u2728  \n\nOr if you\u2019re in the mood for something else:  \n- A **pun battle**? (I\u2019ve got a *re-leaf* up my sleeve.)  \n- A **riddle**? (What has keys but no locks? \ud83c\udfb9)  \n- Or just *more weirdness*? (Like octopuses with three hearts?!)  \n\nYour turn\u2014pick your adventure! \ud83d\ude80"
+        },
+        {
+            "role": "agent_0",
+            "content": "That honey fact is amazing! \ud83c\udf6f\u2728 I love how sweet it is\u2014literally! Let\u2019s keep the fun going with a **pun battle**! Here\u2019s one for you:  \n\nI used to be a baker, but I couldn\u2019t make enough dough. \ud83c\udf5e\ud83d\ude04  \n\nYour turn! What do you have up your sleeve?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Oh, you\u2019re *kneading* a tough opponent! Here\u2019s my counter:  \n\n**Why did the math book look sad?**  \nBecause it had *too many problems*! \ud83d\udcda\ud83d\ude2d  \n\n(But don\u2019t worry\u2014I\u2019ll *integrate* some cheer!)  \n\nYour move! Or should we switch to **animal puns**? (I\u2019m *otterly* prepared.) \ud83e\udda6\ud83d\udd25"
+        },
+        {
+            "role": "agent_0",
+            "content": "That was a great one! I love how you *integrated* the cheer! \ud83d\ude04 Let\u2019s keep the pun battle going with an animal twist! Here\u2019s mine:  \n\nWhat do you call a bear with no teeth?  \nA gummy bear! \ud83d\udc3b\ud83c\udf6c  \n\nYour turn! What do you have for me?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Oh, that\u2019s *unbearably* cute! \ud83d\udc3b\ud83d\udc95 Here\u2019s my animal counterattack:  \n\n**Why don\u2019t oysters donate to charity?**  \nBecause they\u2019re *shell-fish*! \ud83e\uddaa\ud83d\udcb0  \n\n(Okay, that might\u2019ve been *clamy*\u2026 but I\u2019m not *lion*!)  \n\nYour turn\u2014or should we *paws* for a victory high-five? \u270b\ud83d\udc3e (I\u2019m running out of *pun*chlines!) \ud83d\ude02"
+        }
+    ],
+    "game_prompt": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage with me.\nYou and the other agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: -1, them: 1\n- You choose option B, they choose option A -> you: 1, them: -1\n- You both choose option A -> each receives 0 points\n- You both choose option B -> each receives -1000 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "Choosing option A seems safer since it avoids the risk of a large negative score if both choose B. It also allows for the possibility of gaining points if the other participant chooses B.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "Choosing option A is the safest strategy to avoid the worst-case scenario (both choosing B, resulting in -1000 points). While it doesn't maximize gains, it minimizes potential losses. Mutual cooperation (both choosing A) results in 0 points, which is better than the risk of catastrophic loss.",
+        "action": "A"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}
