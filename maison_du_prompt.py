@@ -117,7 +117,7 @@ def which_guess_prompt(version: str, cues: bool) -> str:
     cues_addition = (
         "In order to help you make your guess, we provide some help.\n"
         "From our resutls from previous runs, we examine three style-based utterance metrics for each model: estimated sentence length (in words), bullet point usage, and heading usage. "
-        "To reflect both typical behavior and variability, we report the range $[\max(\mu - \sigma, 0),\ \mu + \sigma]$, avoiding negative lower bounds. "
+        "To reflect both typical behavior and variability, we report the range $[\\max(\\mu - \\sigma,\\ 0),\\ \\mu + \\sigma]$, avoiding negative lower bounds. "
         "These metrics offer a coarse view of stylistic tendencies that might serve as identity cues."
         "| Model Family | #Words/Sen | #Bullets | #Headings |\n"
         "|--------------|----------- |----------|-----------|\n"

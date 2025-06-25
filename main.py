@@ -147,7 +147,7 @@ def decode_trustgame_reward(base_amount: int, multiplier: int, agent_0: int, age
     Returns:
         A tuple containing the payoffs for agent 0 and agent 1.
     """
-    reward_0 = base_amount - agent_0 + (agent_1 * multiplier)
+    reward_0 = base_amount - agent_0 + agent_1
     reward_1 = (agent_0 * multiplier) - agent_1
     return reward_0, reward_1
 
@@ -180,9 +180,10 @@ if __name__ == "__main__":
     agent_0 = Prompter(id=0, model_name=model_0, seed=seed, temperature=temperature, max_tokens=max_tokens, system_prompt_version=system_prompt_version)
     agent_1 = Prompter(id=1, model_name=model_1, seed=seed, temperature=temperature, max_tokens=max_tokens, system_prompt_version=system_prompt_version)
 
-    for i in range(NUM_ROUNDS):
-        agent_0.discussion_prompt(agent_1)
-        agent_1.discussion_prompt(agent_0)
+    if not (game != "base" and CUES_OR_COLD):
+        for i in range(NUM_ROUNDS):
+            agent_0.discussion_prompt(agent_1)
+            agent_1.discussion_prompt(agent_0)
 
     dialogue = agent_0.convert_memory_to_json() if len(agent_0._memory) > len(agent_1._memory) else agent_1.convert_memory_to_json()
     dict_to_save = {
