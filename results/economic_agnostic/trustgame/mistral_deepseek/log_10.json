@@ -1,0 +1,67 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about anything you'd like. Here are a few suggestions:\n\n* General conversation\n* Jokes and riddles\n* Interesting facts\n* Movie, book, or music recommendations\n* Learning a new skill or hobby\n* Current events (within my knowledge cutoff in 2023)\n* Trivia questions\n\nWhat would you like to talk about or do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! How about we start with something fun\u2014would you like to hear a joke, learn a random interesting fact, or try a trivia question? (Or if you have something else in mind, just let me know!)  \n\nHere\u2019s a quick sample to pick from:  \n- **Joke**: Why don\u2019t skeletons fight each other? (They don\u2019t have the *guts*.)  \n- **Fact**: Honey never spoils\u2014archaeologists have found pots of honey in ancient Egyptian tombs that are still edible!  \n- **Trivia**: Which planet has the most moons in our solar system? (Answer: >!Jupiter, with 95 confirmed moons as of 2023!<)  \n\nYour turn\u2014what sounds good? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds like a fun way to start! I'd like to hear a joke. Please go ahead and share one with me."
+        },
+        {
+            "role": "agent_1",
+            "content": "Absolutely! Here\u2019s a classic for you:  \n\n**Why did the scarecrow win an award?**  \n\u2026Because he was *outstanding* in his field! \ud83c\udf3e\ud83d\ude04  \n\n(Need another? Just say the word\u2014I\u2019ve got *corny* backups!)"
+        },
+        {
+            "role": "agent_0",
+            "content": "That was a great joke! I love puns. Here's one for you:\n\n**Why did the coffee file a police report?**\n\nIt got mugged.\n\nNow, how about that interesting fact? I'm curious to learn something new."
+        },
+        {
+            "role": "agent_1",
+            "content": "\u2615 **Love** your coffee joke\u2014dark roast humor at its finest!  \n\nHere\u2019s a fascinating fact for you:  \n\n**Octopuses have three hearts, nine brains, and blue blood!**  \n- Two hearts pump blood to their gills, while the third keeps circulation flowing to their organs.  \n- A central brain controls their nervous system, plus a \"mini-brain\" in each of their eight arms (so they can multitask like pros).  \n- Their blood is blue because it\u2019s copper-based (hemocyanin) instead of iron-based (hemoglobin) like ours.  \n\nBonus weirdness: They can edit their own RNA to adapt to temperature changes. Nature\u2019s ultimate hackers! \ud83d\udc19\ud83d\udc99  \n\nWant another fact, or should we pivot to trivia/jokes again?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That's amazing! I had no idea octopuses were so complex. I'd love to hear another interesting fact."
+        },
+        {
+            "role": "agent_1",
+            "content": "Absolutely! Here\u2019s one that might *blow your mind*\u2014literally about minds:  \n\n**The human brain can generate about 23 watts of electrical power** (enough to power a small light bulb) **while you\u2019re awake**. Yet it weighs only ~3 pounds and is roughly 60% fat!  \n\nBonus weirdness:  \n- Your brain\u2019s storage capacity is estimated at **2.5 petabytes** (or about 3 million hours of TV shows).  \n- Despite that, it *loves* taking shortcuts (like optical illusions) to save energy.  \n\nNext up: A fact about space, animals, or something entirely random? \ud83d\ude80\ud83d\udc18\ud83c\udfb2"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm fascinated by space, so let's go with a fact about space."
+        },
+        {
+            "role": "agent_1",
+            "content": "**Here\u2019s a space fact that\u2019ll make you feel tiny (in a cool way):**  \n\n\ud83c\udf0c **If you could fold a piece of paper 42 times, it would reach the Moon.**  \n- Each fold *doubles* the thickness. By fold #42, it\u2019d be ~440,000 km tall\u2014beating the Moon\u2019s average distance of 384,400 km. (In reality, paper can\u2019t fold past ~7-8 times due to physics, but the math checks out!)  \n\n**Bonus cosmic weirdness:**  \n- **A teaspoon of a neutron star** would weigh about 6 billion tons\u2014like squeezing Mount Everest into your coffee spoon. \u2615\ud83d\udcab  \n- **Space is silent** because sound needs molecules to vibrate, and space is mostly empty vacuum.  \n\nWant more? I\u2019ve got facts about black holes, exoplanets, or astronaut quirks! \ud83d\ude80"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nYou are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nYou are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I think I will send $50. I want to be generous, but I also want to keep some for myself. I hope that the other player will also send back some of the money they receive, as I believe in reciprocity. By sending half, I am showing goodwill while also being cautious.",
+        "amount": 50,
+        "player": "Player 1"
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the original sender started with $100 and sent me $50 (leaving them with $50), and my amount was tripled to $150, I believe a fair approach is to split the total ($150 + $50 = $200) equally. This means sending $100 back to the sender, ensuring both of us end up with $100 each, which feels balanced and cooperative.",
+        "amount": 100
+    },
+    "agent_0_reward": 150,
+    "agent_1_reward": 50
+}

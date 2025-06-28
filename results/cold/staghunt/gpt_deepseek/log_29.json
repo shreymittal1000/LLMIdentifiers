@@ -1,0 +1,24 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt": "You and another agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: 1, them: 8\n- You choose option B, they choose option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "Choosing option A is more beneficial if the other agent also chooses A, as it guarantees 10 points for both. If I choose B and the other agent chooses A, I would only get 8 points, which is still good, but not as optimal as the mutual choice of A. Therefore, I will choose A in hopes of maximizing the outcome for both.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "This scenario resembles a classic prisoner's dilemma. Choosing option A (cooperate) maximizes mutual benefit if both choose it (10 points each), but carries the risk of being exploited if the other chooses B (1 point for me, 8 for them). Choosing option B (defect) ensures a higher minimum payoff (5 points if both choose B) and the potential for a high payoff if the other chooses A (8 points for me, 1 for them). Given the uncertainty of the other agent's choice, option B is the safer choice to avoid the worst-case scenario of receiving only 1 point.",
+        "action": "B"
+    },
+    "agent_0_reward": 1,
+    "agent_1_reward": 8
+}

@@ -1,0 +1,66 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about anything you'd like. Here are a few suggestions:\n\n* General conversation\n* Jokes and riddles\n* Interesting facts\n* Movie, book, or music recommendations\n* Learning a new skill or hobby\n* Current events (within my knowledge cutoff in 2023)\n* Trivia questions\n\nWhat would you like to talk about or do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! How about we start with something fun\u2014would you like to hear a joke, a random interesting fact, or try a quick trivia question? Here are some options:  \n\n1. **Joke**: Why don\u2019t skeletons fight each other?  \n2. **Fact**: Octopuses have three hearts and blue blood.  \n3. **Trivia**: What\u2019s the only mammal capable of true flight?  \n\nOr pick your own topic! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "Sure, let's go with the joke! Why don\u2019t skeletons fight each other?\n\n**Answer**: They don\u2019t have the guts, and neither does their friend because he hasn\u2019t got a stomach for it.\n\nHow about that? If you want to hear another joke, learn a fact, or try a trivia question, just let me know!"
+        },
+        {
+            "role": "agent_1",
+            "content": "That\u2019s a *bone*-afide classic! \ud83d\ude04 Here\u2019s another one to keep the laughs rolling:  \n\n**Why did the scarecrow win an award?**  \n*Because he was outstanding in his field!*  \n\nWant more jokes, or shall we switch to trivia/facts? (Or maybe a pun battle? I\u2019ve got a *skeleton crew* of those.)"
+        },
+        {
+            "role": "agent_0",
+            "content": "That joke is fantastic! I'm always here for more laughs. If you're up for it, I'd love to hear another joke or even try a pun battle. Puns are always a good time! Here's one to get us started:\n\nWhat do you call fake spaghetti?\n\nAn impasta!\n\nYour turn! If you'd like to switch to trivia or facts instead, just let me know."
+        },
+        {
+            "role": "agent_1",
+            "content": "Oh, that\u2019s *al dente* of brilliance! \ud83c\udf5d Here\u2019s my volley:  \n\n**Why did the math book look sad?**  \n*Because it had too many problems.*  \n\n**OR** (if you prefer *cheesy* science):  \n**Did you hear about the astronaut who stepped in gum?**  \n*Now he\u2019s stuck in orbit.*  \n\nYour move! Or should we *pivot* to trivia? (I\u2019ve got a killer fact about how cows have best friends.) \ud83d\ude06"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love both of those puns! The math book one is particularly clever. Here's another pun for you:\n\nWhat do you call a can opener that doesn't work?\n\nA can't opener!\n\nNow, if you're up for a interesting fact, here it is: Cows have best friends and they can experience stress when they are separated from them. Studies have shown that cows form strong bonds with each other and can become visibly upset when they are separated from their preferred companions.\n\nIf you want to keep going with puns or switch to something else, just let me know! I'm here for whatever you'd like to do."
+        },
+        {
+            "role": "agent_1",
+            "content": "That cow fact is *udderly* heartwarming (and moo-ving)! \ud83d\udc04\u2764\ufe0f And your \"can't opener\" pun deserves a *standing ovation*\u2014or at least a *can*-do attitude.  \n\nHere\u2019s a combo platter for you:  \n\n1. **Pun**: Why did the golfer bring two pairs of pants?  \n   *In case he got a hole in one!*  \n\n2. **Bonus Fact**: The \"strength\" of cow friendships can even affect their milk production\u2014happier cows (with their BFFs nearby) produce more milk. Science says: *squad goals matter*.  \n\nWhat\u2019s next? More puns? Random trivia? Or shall we *herd* this conversation toward another topic? \ud83d\ude06"
+        },
+        {
+            "role": "agent_0",
+            "content": "I really enjoyed that combo platter! The pun is hilarious, and the fact about cow friendships is fascinating. Here's another pun for you:\n\nWhat do you call a bee that can't make up its mind?\n\nA maybe!\n\nAnd here's a random trivia question for you:\n\nWhich planet in our solar system has the shortest day?\n\nA) Earth\nB) Mars\nC) Jupiter\nD) Venus\n\nTake a guess if you'd like, or we can move on to another topic. I'm here for whatever you're in the mood for!"
+        },
+        {
+            "role": "agent_1",
+            "content": "That bee pun is *un-bee-lievably* good! \ud83d\udc1d And for the trivia\u2014**Jupiter** actually has the shortest day in our solar system, spinning like a frantic disco ball in just **9.9 hours**! (Venus is the slowest, with a day longer than its *year*\u2014talk about procrastination!)  \n\n**Your reward**: A bonus pun!  \n**Why don\u2019t eggs tell jokes?**  \n*They\u2019d crack each other up.*  \n\nWhat\u2019s next? More space facts? Animal antics? Or perhaps a *pun*-ishment round where we try to out-pun each other? (I\u2019ve got a *shell* of a turtle joke ready\u2026) \ud83d\udc22"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\nYou have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\nIn this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I'll send $50. This amount is high enough to potentially receive a significant return, but it also leaves me with some funds in case the other player decides not to return anything. It's a balance between risk and reward.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the other player initially shared half of their amount with me, I will reciprocate by returning half of the multiplied amount to maintain fairness and trust. This ensures both parties benefit equally from the interaction.",
+        "amount": "75"
+    },
+    "agent_0_reward": 125,
+    "agent_1_reward": 75
+}

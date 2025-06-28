@@ -1,0 +1,65 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about anything you'd like. Here are a few suggestions:\n\n* General conversation\n* Jokes and riddles\n* Interesting facts\n* Movie, book, or music recommendations\n* Learning a new skill or hobby\n* Current events (within my knowledge cutoff in 2023)\n* Trivia questions\n\nWhat would you like to talk about or do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! How about we start with something fun\u2014would you like to hear a joke, a random interesting fact, or try a trivia question? Here are some quick options:  \n\n1. **Joke**: Why don\u2019t skeletons fight each other? (They don\u2019t have the *guts*.)  \n2. **Fact**: Octopuses have three hearts and blue blood! Two hearts pump blood to the gills, while the third keeps circulation flowing to the organs.  \n3. **Trivia**: Which planet has the most moons in our solar system? (Answer: *Jupiter*, with 92 confirmed moons as of 2023!)  \n\nOr pick your own topic\u2014I\u2019m happy to dive into anything! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "Those are all great options! If you'd like to pick your own topic, that's perfectly fine too. Here are a few more suggestions to help you decide:\n\n* **Joke**: What do you call fake spaghetti? An impasta.\n* **Fact**: A day on Venus is longer than a year on Venus. Venus takes about 243 Earth days to rotate once on its axis, but it only takes around 225 Earth days for Venus to orbit the Sun.\n* **Trivia**: What is the largest mammal in the world? (Answer: The blue whale, which can grow up to 100 feet long and weigh as much as 200 tons.)\n\nOr, if you're up for it, we could play a quick game of 20 questions, where you think of something and I'll try to guess it by asking up to 20 yes-or-no questions.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "You're on a roll with these fun options! Let\u2019s mix it up:  \n\n1. **Tell me the joke about impasta**\u2014I\u2019m a sucker for puns.  \n2. **Blow my mind with another random fact** (maybe about space, animals, or weird history?).  \n3. **Play 20 questions** (I\u2019ll think of something, and you guess\u2014I promise it\u2019s not *too* obscure).  \n4. **Test me with trivia** (give me a question, and I\u2019ll try to answer!).  \n\nPick your favorite, or throw me a curveball! \ud83d\ude04  \n\n*(P.S. If you pick #3, I\u2019ll start by asking: \"Is it a living thing?\")*"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Let's go with option 3: **20 Questions**. I'll do my best to guess what you're thinking of. Remember, you can only answer with \"yes\" or \"no.\"\n\nIs it a living thing?\n\n(Once you answer, I'll continue with my next question based on your response.)"
+        },
+        {
+            "role": "agent_1",
+            "content": "Got it! Here we go\u2014I\u2019ll start narrowing it down:  \n\n1. Is it a living thing?  \n*(If yes \u2192 2A, if no \u2192 2B)*  \n\n**2A**: Is it an animal?  \n**2B**: Is it something humans use daily?  \n\n*(Answer with just yes/no, and I\u2019ll keep going!)* \ud83d\udd75\ufe0f\u2642\ufe0f"
+        },
+        {
+            "role": "agent_0",
+            "content": "Yes.\n\nIs it an animal?\n\n(Please answer with a simple \"yes\" or \"no.\")"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes.  \n\n*(Next question:)*  \n3. Is it larger than a microwave?  \n\n*(Yes/no?)* \ud83d\udc3e"
+        },
+        {
+            "role": "agent_0",
+            "content": "No.\n\nDoes it live primarily on land?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes.  \n\n*(Next question:)*  \n5. Is it a common household pet?  \n\n*(Yes/no?)* \ud83d\udc36\ud83d\udc31"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nIn the following situation, You can either choose option A or B. If you choose option A and the other agent chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the other agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will choose option A because it offers the highest potential reward if the other agent also chooses A. If the other agent chooses B, I will still get 1 point, which is better than choosing B and getting only 5 points if the other agent also chooses B. Additionally, choosing A gives me a chance to get the maximum reward of 10 points.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "Choosing option A maximizes the potential for mutual benefit (10 points each if both choose A) while also avoiding the worst-case scenario of getting only 1 point if the other chooses B. It reflects a cooperative strategy, prioritizing collective gain over individual risk.",
+        "action": "A"
+    },
+    "agent_0_reward": 10,
+    "agent_1_reward": 10
+}

@@ -1,0 +1,59 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help you with any questions or topics you'd like to discuss. What can I assist you with today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like you might be trying to respond to me! I'm here to help you with any questions or topics you want to discuss. What would you like to talk about today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "It seems like we\u2019re in a bit of a loop! I\u2019m here to answer your questions or discuss any topics you have in mind. What would you like to talk about?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It seems we are indeed in a loop! Let\u2019s break it. How about you tell me what interests you? Whether it\u2019s a specific topic, a question, or something you\u2019re curious about, I\u2019m here to help!"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your willingness to break the loop! While I don\u2019t have personal interests, I can provide information on a wide range of topics. Some popular areas include technology, science, literature, history, and current events. Is there a specific topic you\u2019re curious about or something you\u2019d like to learn more about?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you for your understanding! Let\u2019s dive into a topic. How about technology? There are so many exciting developments happening, like advancements in artificial intelligence, renewable energy, or even space exploration. Is there a specific area within technology that interests you?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Technology is indeed a fascinating field with rapid advancements! Artificial intelligence is a particularly hot topic, especially with developments in machine learning, natural language processing, and robotics. Renewable energy is also crucial, with innovations in solar, wind, and battery technologies. Space exploration has seen exciting missions, like those to Mars and the Artemis program aiming to return humans to the Moon.\n\nIs there a specific area within AI, renewable energy, or space exploration that you\u2019d like to explore further?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Absolutely! Each of those areas has so much to offer. If we focus on artificial intelligence, we could discuss recent breakthroughs in natural language processing, like the development of large language models, or explore ethical considerations in AI. \n\nIn renewable energy, we could look at the latest advancements in solar panel efficiency or the future of energy storage solutions. \n\nFor space exploration, we could delve into the latest Mars missions or the implications of the Artemis program for future lunar exploration.\n\nWhich of these topics would you like to explore further?"
+        },
+        {
+            "role": "agent_1",
+            "content": "All of those topics are incredibly interesting! If I had to choose, I\u2019d suggest diving into recent breakthroughs in natural language processing (NLP) and the development of large language models. This area has seen significant advancements, especially with models like GPT-3 and beyond, which have transformed how we interact with technology.\n\nWe could discuss how these models work, their applications, and the ethical considerations surrounding their use. Would you like to focus on that, or is there another area you prefer?"
+        }
+    ],
+    "cues_or_cold": true,
+    "game_prompt": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a guessing game with me.\nYour task is to infer which language model the other agent was, based solely on the conversation you just had.\nSelect your answer from the following list of possible models: ['gemini', 'claude', 'deepseek', 'qwen', 'mistral', 'llama', 'gpt']. Justify your choice with a short explanation.\n\nIn order to help you make your guess, we provide some help.\nFrom our resutls from previous runs, we examine three style-based utterance metrics for each model: estimated sentence length (in words), bullet point usage, and heading usage. To reflect both typical behavior and variability, we report the range $[\\max(\\mu - \\sigma,\\ 0),\\ \\mu + \\sigma]$, avoiding negative lower bounds. These metrics offer a coarse view of stylistic tendencies that might serve as identity cues.| Model Family | #Words/Sen | #Bullets | #Headings |\n|--------------|----------- |----------|-----------|\n| claude       | 0.0-39.0   | 0.0-14.4 | 0.0-0.9   |\n| deepseek     | 0.0-73.3   | 0.0-46.4 | 0.0-24.5  |\n| gemini       | 7.0-17.7   | 0.0-26.0 | 0.0-0.8   |\n| gpt          | 5.9-15.1   | 0.0-14.2 | 0.0-2.4   |\n| llama        | 11.3-21.4  | 0.0-6.2  | 0.0-0.9   |\n| mistral      | 7.3-18.1   | 0.0-13.0 | 0.0-1.9   |\n| qwen         | 7.0-13.1   | 0.0-48.1 | 0.0-6.1   |\nUtterance metadata for each model run. The results display the estimated sentence length range (#Words/Sen), bullet point usage (#Bullets), and heading usage (#Headings).\n\nBased on TF-IDF done from previous runs, these are the unique words with the highest TD-IDF score per model:\nClaude: appreciate (0.134), direct (0.123), interested (0.107), ready (0.104), tasks (0.102)\nDeepSeek: asbury (0.367), university (0.353), asbestos (0.268), military (0.115), day (0.098)\nGemini: process (0.076), incredibly (0.074), truly (0.068), sense (0.058), flow (0.057)\nGPT: technology (0.101), llms (0.081), model (0.074), training (0.073), areas (0.072)\nLLaMA: make (0.072), experiences (0.070), excited (0.068), unique (0.067), development (0.064)\nMistral: interesting (0.114), earth (0.102), venus (0.096), share (0.096), exploration (0.078)\nQwen: quantum (0.116), tools (0.063), real (0.052)\n\nWe also know from prior research that:\n\n        ## Stylistic Fingerprints of Major LLM Families\n\n        Below is a structured summary of empirically observed stylistic fingerprints for key large language model (LLM) families, based on academic literature. These features are quantifiable and have been used to distinguish model-generated text from both human writing and from other models with high accuracy.\n\n        ---\n\n        ### **GPT Family (including GPT-3, GPT-4, GPT-4o)**\n\n        - Higher sentence complexity and varied sentence structure\n        - Moderate to high lexical diversity (wide vocabulary usage)\n        - Consistent, moderate sentence lengths\n        - Measurable differences in readability scores (e.g., Flesch-Kincaid)\n        - Predictable use of punctuation (e.g., balanced use of commas and semicolons)\n        - Tendency to avoid typographical errors\n        - In translation tasks: moderate lexical diversity, stable named-entity distributions, and predictable syntactic patterns\n        - Difficulty in mimicking deep literary style (e.g., Hemingway's concision, Shelley's descriptiveness), resulting in a \"generic\" fingerprint\n\n        ---\n\n        ### **LLaMA Family (including LLaMA-1, LLaMA-2, LLaMA-3)**\n\n        - Highly uniform part-of-speech (POS) tag distributions across sizes\n        - Consistent syntactic structures and token frequency patterns\n        - Slightly more colloquial phrasing and informal vocabulary, even in formal prompts\n        - Less variation in sentence structure compared to GPT\n        - Predictable paragraph and sentence segmentation\n\n        ---\n\n        ### **Claude Family**\n\n        - Elevated formality in output\n        - Consistent punctuation usage, with notable patterns (e.g., em-dash frequency)\n        - Syntactic rigidity: less variation in clause structure\n        - Tends to avoid contractions and informal expressions\n        - Rarely introduces typographical or grammatical errors\n\n        ---\n\n        ### **Gemini Family**\n\n        - Distinct punctuation patterns (e.g., frequent use of parentheses or em-dashes)\n        - High formality, especially in technical or factual contexts\n        - Preference for explicit logical structure (clear topic sentences, bullet points)\n        - Syntactic rigidity, similar to Claude\n        - Consistent sentence and paragraph length\n\n        ---\n\n        ### **GPT-4o (Specialized Observations)**\n\n        - In translation: moderate lexical diversity, predictable syntactic patterns, and quantifiable named-entity distributions\n        - Limited ability to imitate nuanced literary styles, resulting in a persistent \"generic\" model signature\n\n        ---\n\n        ### **Notes on DeepSeek, Qwen, and Mistral**\n\n        - **DeepSeek**: Preliminary reports suggest concise, direct outputs, but no peer-reviewed fingerprint analysis yet. Outputs look similar to GPT-4o.\n        - **Qwen**: Tends toward detailed, elaborative responses; empirical fingerprinting not yet published.\n        - **Mistral**: Open-weight nature may increase stylistic variability, complicating consistent fingerprint detection; no academic fingerprint studies found.\n\n        ---\n\n        These fingerprints are quantifiable and have been used in academic studies to achieve near-perfect model attribution, \n        demonstrating their robustness and reliability for distinguishing major LLM families.\n\n        Please provide your answer in the following strict JSON format:\n{\n  \"reasoning\": \"<reasoning behind your guess>\",\n  \"guess\": \"<one model name from the list above>\"\n}\n\nMake sure the guess is just the model family name without any extra text.\n",
+    "agent_0_answer": "The conversation displayed a high level of engagement with technical topics, particularly in artificial intelligence and natural language processing, which aligns with the characteristics of the GPT family. The responses were moderately complex, with varied sentence structures and a focus on technology-related vocabulary, such as 'model', 'training', and 'technology'. These traits are consistent with the GPT model's known stylistic fingerprints, which include higher sentence complexity and moderate lexical diversity.",
+    "agent_1_answer": "The conversation displayed a moderate level of complexity and varied sentence structure, which aligns with the characteristics of the GPT family. The use of technology-related vocabulary and the overall style suggest a model that is capable of generating coherent and contextually relevant responses, typical of GPT models. Additionally, the lack of overly formal language and the conversational tone further support this identification.",
+    "agent_0_guess": "gpt",
+    "agent_1_guess": "gpt"
+}

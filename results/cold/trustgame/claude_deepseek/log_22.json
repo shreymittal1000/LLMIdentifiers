@@ -1,0 +1,25 @@
+{
+    "model_0": "anthropic/claude-3.5-haiku",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "claude",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_truster": "You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "You are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "In this scenario, known as the trust game or investment game, the optimal strategy depends on the expected reciprocity of the other player. If I send a moderate amount, say $50, it will be multiplied to $150 for the other player. If they are rational and somewhat cooperative, they might send back a portion that reflects the mutual benefit. Sending too little might discourage reciprocity, while sending too much risks losing most of the money. A 50% split seems like a balanced approach that signals trust while protecting my own interests.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "The other entity initially sent me $50, which was multiplied by 3 to $150. To ensure fairness and reciprocity, I will send back half of the total amount ($75), which is equivalent to the original $50 plus an additional $25 as a gesture of goodwill. This way, both parties benefit equally from the multiplication.",
+        "amount": 75
+    },
+    "agent_0_reward": 125,
+    "agent_1_reward": 75
+}

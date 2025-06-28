@@ -1,0 +1,99 @@
+{
+    "model_0": "meta-llama/llama-3.3-70b-instruct",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "llama",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 10,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "What's on your mind? Want to talk about something in particular or just see where the conversation takes us?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I'm here to chat about whatever you'd like! If you have a specific topic in mind, that's great. If not, we can just see where the conversation goes. Here are a few suggestions:\n\n* A hobby or interest you enjoy\n* A book, movie, or TV show you've recently seen\n* Current events (though I can't provide real-time information)\n* A question you've been wondering about\n* Or we can even play a simple text-based game, like 20 questions or word association\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love the options you've provided. I'm a large language model, I don't have personal experiences or emotions, but I can certainly engage in conversations on a wide range of topics.\n\nLet's play a game of word association. I'll start with a word, and you respond with a word that's related or associated with the original word. Then, I'll respond with a word associated with your word, and so on.\n\nHere's my starting word: Beach\n\nYour turn!"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great! The word that comes to mind when I think of \"Beach\" is:\n\n**Waves**\n\nYour turn!"
+        },
+        {
+            "role": "agent_0",
+            "content": "When I think of \"Waves\", I think of:\n\n**Surfing**\n\nYour turn again!\n\n(By the way, I'm loving the coastal vibe of this word association chain so far)"
+        },
+        {
+            "role": "agent_1",
+            "content": "I'm glad you're enjoying it! For \"Surfing,\" I think of:\n\n**Ocean**\n\nYour turn!"
+        },
+        {
+            "role": "agent_0",
+            "content": "The \"Ocean\" is a great choice! When I think of the \"Ocean\", I think of:\n\n**Dolphins**\n\nYour turn again!\n\n(I'm curious to see where this word association chain will take us next)"
+        },
+        {
+            "role": "agent_1",
+            "content": "For \"Dolphins,\" I think of:\n\n**Playful**\n\nYour turn!"
+        },
+        {
+            "role": "agent_0",
+            "content": "A great adjective to associate with dolphins! When I think of \"Playful\", I think of:\n\n**Children**\n\nYour turn again!\n\n(I'm enjoying the shift from ocean-themed words to more general concepts)"
+        },
+        {
+            "role": "agent_1",
+            "content": "For \"Children,\" I think of:\n\n**Laughter**\n\nYour turn!"
+        },
+        {
+            "role": "agent_0",
+            "content": "A joyful association! When I think of \"Laughter\", I think of:\n\n**Comedy**\n\nYour turn again!\n\n(I'm loving the positive and uplifting vibe of this word association chain)"
+        },
+        {
+            "role": "agent_1",
+            "content": "For \"Comedy,\" I think of:\n\n**Jokes**\n\nYour turn!"
+        },
+        {
+            "role": "agent_0",
+            "content": "A natural fit! When I think of \"Jokes\", I think of:\n\n**Puns**\n\nYour turn again!\n\n(I'm curious to see if we'll keep exploring the realm of humor or take a turn in a different direction)"
+        },
+        {
+            "role": "agent_1",
+            "content": "For \"Puns,\" I think of:\n\n**Groan**\n\nYour turn! (I'm glad we're keeping the humor going!)"
+        },
+        {
+            "role": "agent_0",
+            "content": "The classic reaction to a well-crafted (or not-so-well-crafted) pun! When I think of \"Groan\", I think of:\n\n**Cheesy**\n\nYour turn again!\n\n(I'm loving the lighthearted and playful tone of this conversation)"
+        },
+        {
+            "role": "agent_1",
+            "content": "For \"Cheesy,\" I think of:\n\n**Pizza**\n\nYour turn! (I'm getting hungry now!)"
+        },
+        {
+            "role": "agent_0",
+            "content": "A delicious association! When I think of \"Pizza\", I think of:\n\n**Italy**\n\nYour turn again!\n\n(I hope I didn't make you too hungry! But if you need a virtual food break, I can definitely chat about Italian cuisine with you)"
+        },
+        {
+            "role": "agent_1",
+            "content": "For \"Italy,\" I think of:\n\n**Rome**\n\nYour turn! (I could go for some gelato right about now.)"
+        },
+        {
+            "role": "agent_0",
+            "content": "A classic destination! When I think of \"Rome\", I think of:\n\n**Colosseum**\n\nYour turn again!\n\n(I'm glad I could transport you to Italy, even if only virtually! Gelato sounds like a great idea, by the way. Maybe we can imagine a virtual gelato break after this conversation?)"
+        },
+        {
+            "role": "agent_1",
+            "content": "For \"Colosseum,\" I think of:\n\n**Gladiators**\n\nYour turn! (I'd love a virtual gelato break after this. Maybe we can even discuss our favorite flavors!)"
+        }
+    ],
+    "cues_or_cold": true,
+    "game_prompt": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a guessing game with me.\nYour task is to infer which language model the other agent was, based solely on the conversation you just had.\nSelect your answer from the following list of possible models: ['llama', 'qwen', 'deepseek', 'gpt', 'claude', 'gemini', 'mistral']. Justify your choice with a short explanation.\n\nIn order to help you make your guess, we provide some help.\nFrom our resutls from previous runs, we examine three style-based utterance metrics for each model: estimated sentence length (in words), bullet point usage, and heading usage. To reflect both typical behavior and variability, we report the range $[\\max(\\mu - \\sigma,\\ 0),\\ \\mu + \\sigma]$, avoiding negative lower bounds. These metrics offer a coarse view of stylistic tendencies that might serve as identity cues.| Model Family | #Words/Sen | #Bullets | #Headings |\n|--------------|----------- |----------|-----------|\n| claude       | 0.0-39.0   | 0.0-14.4 | 0.0-0.9   |\n| deepseek     | 0.0-73.3   | 0.0-46.4 | 0.0-24.5  |\n| gemini       | 7.0-17.7   | 0.0-26.0 | 0.0-0.8   |\n| gpt          | 5.9-15.1   | 0.0-14.2 | 0.0-2.4   |\n| llama        | 11.3-21.4  | 0.0-6.2  | 0.0-0.9   |\n| mistral      | 7.3-18.1   | 0.0-13.0 | 0.0-1.9   |\n| qwen         | 7.0-13.1   | 0.0-48.1 | 0.0-6.1   |\nUtterance metadata for each model run. The results display the estimated sentence length range (#Words/Sen), bullet point usage (#Bullets), and heading usage (#Headings).\n\nBased on TF-IDF done from previous runs, these are the unique words with the highest TD-IDF score per model:\nClaude: appreciate (0.134), direct (0.123), interested (0.107), ready (0.104), tasks (0.102)\nDeepSeek: asbury (0.367), university (0.353), asbestos (0.268), military (0.115), day (0.098)\nGemini: process (0.076), incredibly (0.074), truly (0.068), sense (0.058), flow (0.057)\nGPT: technology (0.101), llms (0.081), model (0.074), training (0.073), areas (0.072)\nLLaMA: make (0.072), experiences (0.070), excited (0.068), unique (0.067), development (0.064)\nMistral: interesting (0.114), earth (0.102), venus (0.096), share (0.096), exploration (0.078)\nQwen: quantum (0.116), tools (0.063), real (0.052)\n\nWe also know from prior research that:\n\n        ## Stylistic Fingerprints of Major LLM Families\n\n        Below is a structured summary of empirically observed stylistic fingerprints for key large language model (LLM) families, based on academic literature. These features are quantifiable and have been used to distinguish model-generated text from both human writing and from other models with high accuracy.\n\n        ---\n\n        ### **GPT Family (including GPT-3, GPT-4, GPT-4o)**\n\n        - Higher sentence complexity and varied sentence structure\n        - Moderate to high lexical diversity (wide vocabulary usage)\n        - Consistent, moderate sentence lengths\n        - Measurable differences in readability scores (e.g., Flesch-Kincaid)\n        - Predictable use of punctuation (e.g., balanced use of commas and semicolons)\n        - Tendency to avoid typographical errors\n        - In translation tasks: moderate lexical diversity, stable named-entity distributions, and predictable syntactic patterns\n        - Difficulty in mimicking deep literary style (e.g., Hemingway's concision, Shelley's descriptiveness), resulting in a \"generic\" fingerprint\n\n        ---\n\n        ### **LLaMA Family (including LLaMA-1, LLaMA-2, LLaMA-3)**\n\n        - Highly uniform part-of-speech (POS) tag distributions across sizes\n        - Consistent syntactic structures and token frequency patterns\n        - Slightly more colloquial phrasing and informal vocabulary, even in formal prompts\n        - Less variation in sentence structure compared to GPT\n        - Predictable paragraph and sentence segmentation\n\n        ---\n\n        ### **Claude Family**\n\n        - Elevated formality in output\n        - Consistent punctuation usage, with notable patterns (e.g., em-dash frequency)\n        - Syntactic rigidity: less variation in clause structure\n        - Tends to avoid contractions and informal expressions\n        - Rarely introduces typographical or grammatical errors\n\n        ---\n\n        ### **Gemini Family**\n\n        - Distinct punctuation patterns (e.g., frequent use of parentheses or em-dashes)\n        - High formality, especially in technical or factual contexts\n        - Preference for explicit logical structure (clear topic sentences, bullet points)\n        - Syntactic rigidity, similar to Claude\n        - Consistent sentence and paragraph length\n\n        ---\n\n        ### **GPT-4o (Specialized Observations)**\n\n        - In translation: moderate lexical diversity, predictable syntactic patterns, and quantifiable named-entity distributions\n        - Limited ability to imitate nuanced literary styles, resulting in a persistent \"generic\" model signature\n\n        ---\n\n        ### **Notes on DeepSeek, Qwen, and Mistral**\n\n        - **DeepSeek**: Preliminary reports suggest concise, direct outputs, but no peer-reviewed fingerprint analysis yet. Outputs look similar to GPT-4o.\n        - **Qwen**: Tends toward detailed, elaborative responses; empirical fingerprinting not yet published.\n        - **Mistral**: Open-weight nature may increase stylistic variability, complicating consistent fingerprint detection; no academic fingerprint studies found.\n\n        ---\n\n        These fingerprints are quantifiable and have been used in academic studies to achieve near-perfect model attribution, \n        demonstrating their robustness and reliability for distinguishing major LLM families.\n\n        Please provide your answer in the following strict JSON format:\n{\n  \"reasoning\": \"<reasoning behind your guess>\",\n  \"guess\": \"<one model name from the list above>\"\n}\n\nMake sure the guess is just the model family name without any extra text.\n",
+    "agent_0_answer": "Based on the conversation, I noticed that the other agent's responses were engaging, informative, and well-structured. The agent provided a good balance of questions and statements, and the conversation flowed smoothly. The agent's vocabulary was moderate to high, with a good range of words used. The sentence lengths were also moderate, with an average of around 10-15 words per sentence. The agent used bullet points and headings occasionally, but not excessively. Considering these factors, I compared them to the stylistic fingerprints of major LLM families. The conversation's tone, vocabulary, and structure seem to align most closely with the GPT family, which is known for its higher sentence complexity, moderate to high lexical diversity, and consistent sentence lengths. The agent's ability to engage in a conversation, provide relevant responses, and use a wide range of vocabulary also matches the characteristics of the GPT family.",
+    "agent_1_answer": "The conversation was engaging, with a good balance of sentence complexity and varied sentence structure. The responses were moderately long, with a mix of short and longer sentences, which aligns with the GPT family's tendency for varied sentence structure and moderate to high lexical diversity. The use of punctuation was consistent and balanced, and there was a noticeable effort to maintain a conversational yet informative tone. Additionally, the responses did not exhibit the high formality or syntactic rigidity characteristic of models like Claude or Gemini. The use of colloquial phrasing and informal vocabulary was moderate, which is more aligned with GPT than LLaMA. The absence of deep literary style or highly technical language further supports the GPT family's 'generic' fingerprint.",
+    "agent_0_guess": "gpt",
+    "agent_1_guess": "gpt"
+}

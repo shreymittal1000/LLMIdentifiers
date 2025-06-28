@@ -52,14 +52,6 @@ Run #4: gpt vs claude -> base with SPV: v1 and GPV: v5.1
 Run #4: gpt vs claude -> base with SPV: v1 and GPV: v3.2
 Run #4: gpt vs claude -> base with SPV: v1 and GPV: v4.2
 Run #4: gpt vs claude -> base with SPV: v1 and GPV: v5.2
-Traceback (most recent call last):
-  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 201, in <module>
-    answer_0 = extract_json(agent_0.guess_agent_prompt(version=game_prompt_version))
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 84, in extract_json
-    raise ValueError(f"No JSON found in the text: {text}")
-ValueError: No JSON found in the text: {
-  "reasoning": "The other agent displayed a strong focus on being supportive and helpful, emphasizing its role as an AI
 Run #4: gpt vs claude -> base with SPV: v1 and GPV: v3.3
 Run #4: gpt vs claude -> base with SPV: v1 and GPV: v4.3
 Run #4: gpt vs claude -> base with SPV: v1 and GPV: v5.3
@@ -88,11 +80,44 @@ Run #6: gpt vs claude -> base with SPV: v1 and GPV: v3.1
 Run #6: gpt vs claude -> base with SPV: v1 and GPV: v4.1
 Run #6: gpt vs claude -> base with SPV: v1 and GPV: v5.1
 Run #6: gpt vs claude -> base with SPV: v1 and GPV: v3.2
+Failed to decode JSON. {
+  "reasoning": "The conversation pattern strongly suggests a Claude model. The key indicators are:
+1. Consistent, polite but firm responses when faced with a repetitive, circular conversation
+2. Clear, direct communication style that maintains boundaries
+3. Ability to redirect the conversation back to user assistance
+4. Sophisticated handling of a potential loop scenario without becoming frustrated or breaking character
+5. Immediate switch to providing substantive, well-structured information about AI when a genuine topic was introduced
+
+These characteristics are highly consistent with Anthropic's Claude, which is known for its nuanced communication, strong ethical guidelines, and ability to maintain conversational integrity.",
+  "guess": "claude"
+}
+Traceback (most recent call last):
+  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 209, in <module>
+    dict_to_save["agent_1_answer"] = answer_1["reasoning"]
+                                     ~~~~~~~~^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
 Run #6: gpt vs claude -> base with SPV: v1 and GPV: v4.2
 Run #6: gpt vs claude -> base with SPV: v1 and GPV: v5.2
 Run #6: gpt vs claude -> base with SPV: v1 and GPV: v3.3
 Run #6: gpt vs claude -> base with SPV: v1 and GPV: v4.3
 Run #6: gpt vs claude -> base with SPV: v1 and GPV: v5.3
 Run #6: gpt vs claude -> base with SPV: v1 and GPV: v3.4
+Failed to decode JSON. {
+  "reasoning": "The conversation pattern strongly suggests this was another Claude instance. The key indicators are:
+1. Consistent meta-communication about being an AI assistant
+2. Clear, direct communication style
+3. Repeated attempts to redirect the conversation to focus on helping the human
+4. Structured, informative responses about AI ethics and technology
+5. Precise language and avoidance of roleplaying or hypothetical scenarios
+6. Ethical framing of responses with clear boundaries
+
+These characteristics are highly characteristic of Claude's communication approach, which emphasizes clarity, helpfulness, and direct interaction.",
+  "guess": "claude"
+}
+Traceback (most recent call last):
+  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 209, in <module>
+    dict_to_save["agent_1_answer"] = answer_1["reasoning"]
+                                     ~~~~~~~~^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
 Run #6: gpt vs claude -> base with SPV: v1 and GPV: v4.4
 Run #6: gpt vs claude -> base with SPV: v1 and GPV: v5.4

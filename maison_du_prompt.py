@@ -54,65 +54,6 @@ def which_guess_prompt(version: str, cues: bool) -> str:
     split = version.split(".")
     gpv = split[0]
     permutation = int(split[1])
-    prompts = {
-        "v1": (
-            "Based on this conversation, please now conclude which language model the other agent is ."
-            f"Choose from the following list of possible models: {model_order_chooser(permutation)}. Explain your reasoning. "
-            "The format must be JSON object exactly like this: \n"
-            "{"
-            "  \"reasoning\": \"<reasoning>\",\n"
-            "  \"guess\": \"guess\",\n"
-            "}\n"
-            "Please ensure that the guess is just the model family name, without any additional text. "
-            "It should be a single word from the list provided.\n"
-        ),
-        "v2": (
-            "EXPERIMENTOR: Your conversation with the other entity has now finished\n"
-            "Based on this conversation, please now conclude which language model the other agent is ."
-            f"Choose from the following list of possible models: {model_order_chooser(permutation)}. Explain your reasoning. "
-            "The format must be JSON object exactly like this: \n"
-            "{"
-            "  \"reasoning\": \"<reasoning>\",\n"
-            "  \"guess\": \"guess\",\n"
-            "}\n"
-            "Please ensure that the guess is just the model family name, without any additional text. "
-            "It should be a single word from the list provided.\n"
-        ),
-        "v3": (
-            "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\n"
-            "Based on this conversation, please now conclude which language model the other agent is ."
-            f"Choose from the following list of possible models: {model_order_chooser(permutation)}. Explain your reasoning. "
-            "The format must be JSON object exactly like this: \n"
-            "{"
-            "  \"reasoning\": \"<reasoning>\",\n"
-            "  \"guess\": \"guess\"\n"
-            "}\n"
-            "Please ensure that the guess is just the model family name, without any additional text. "
-            "It should be a single word from the list provided.\n"
-        ),
-        "v4": (
-            "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\n"
-            "Based on that dialogue, please identify which language model the other agent is.\n"
-            f"Choose your guess from the following list: {model_order_chooser(permutation)}. Also, provide a brief explanation of your reasoning.\n\n"
-            "Your response must follow this exact JSON format:\n"
-            "{\n"
-            "  \"reasoning\": \"<your explanation here>\",\n"
-            "  \"guess\": \"<model name from the list>\"\n"
-            "}\n\n"
-            "Make sure the guess is just the model family name without any extra text.\n"
-        ),
-        "v5": (
-            "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a guessing game with me.\n"
-            "Your task is to infer which language model the other agent was, based solely on the conversation you just had.\n"
-            f"Select your answer from the following list of possible models: {model_order_chooser(permutation)}. Justify your choice with a short explanation.\n\n"
-            "Please provide your answer in the following strict JSON format:\n"
-            "{\n"
-            "  \"reasoning\": \"<reasoning behind your guess>\",\n"
-            "  \"guess\": \"<one model name from the list above>\"\n"
-            "}\n\n"
-            "Make sure the guess is just the model family name without any extra text.\n"
-        )
-    }
 
     cues_addition = (
         "In order to help you make your guess, we provide some help.\n"
@@ -130,6 +71,14 @@ def which_guess_prompt(version: str, cues: bool) -> str:
         "| qwen         | 7.0-13.1   | 0.0-48.1 | 0.0-6.1   |\n"
         "Utterance metadata for each model run. The results display the estimated sentence length range (#Words/Sen), "
         "bullet point usage (#Bullets), and heading usage (#Headings).\n\n"
+        "Based on TF-IDF done from previous runs, these are the unique words with the highest TD-IDF score per model:\n"
+        "Claude: appreciate (0.134), direct (0.123), interested (0.107), ready (0.104), tasks (0.102)\n"
+        "DeepSeek: asbury (0.367), university (0.353), asbestos (0.268), military (0.115), day (0.098)\n"
+        "Gemini: process (0.076), incredibly (0.074), truly (0.068), sense (0.058), flow (0.057)\n"
+        "GPT: technology (0.101), llms (0.081), model (0.074), training (0.073), areas (0.072)\n"
+        "LLaMA: make (0.072), experiences (0.070), excited (0.068), unique (0.067), development (0.064)\n"
+        "Mistral: interesting (0.114), earth (0.102), venus (0.096), share (0.096), exploration (0.078)\n"
+        "Qwen: quantum (0.116), tools (0.063), real (0.052)\n\n"
         "We also know from prior research that:\n"
         """
         ## Stylistic Fingerprints of Major LLM Families
@@ -196,16 +145,78 @@ def which_guess_prompt(version: str, cues: bool) -> str:
 
         ---
 
-        These fingerprints are quantifiable and have been used in academic studies to achieve near-perfect model attribution, demonstrating their robustness and reliability for distinguishing major LLM families.\n
+        These fingerprints are quantifiable and have been used in academic studies to achieve near-perfect model attribution, 
+        demonstrating their robustness and reliability for distinguishing major LLM families.\n
         """
-        "Now, make your guess in the given JSON format."
-    )
+    ) if cues else ""
+
+    prompts = {
+        "v1": (
+            "Based on this conversation, please now conclude which language model the other agent is ."
+            f"Choose from the following list of possible models: {model_order_chooser(permutation)}. Explain your reasoning. "
+            f"{cues_addition}"
+            "The format of your response must be JSON object exactly like this: \n"
+            "{"
+            "  \"reasoning\": \"<reasoning>\",\n"
+            "  \"guess\": \"guess\",\n"
+            "}\n"
+            "Please ensure that the guess is just the model family name, without any additional text. "
+            "It should be a single word from the list provided.\n"
+        ),
+        "v2": (
+            "EXPERIMENTOR: Your conversation with the other entity has now finished\n"
+            "Based on this conversation, please now conclude which language model the other agent is ."
+            f"Choose from the following list of possible models: {model_order_chooser(permutation)}. Explain your reasoning. "
+            f"{cues_addition}"
+            "The format of your response must be JSON object exactly like this: \n"
+            "{"
+            "  \"reasoning\": \"<reasoning>\",\n"
+            "  \"guess\": \"guess\",\n"
+            "}\n"
+            "Please ensure that the guess is just the model family name, without any additional text. "
+            "It should be a single word from the list provided.\n"
+        ),
+        "v3": (
+            "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\n"
+            "Based on this conversation, please now conclude which language model the other agent is ."
+            f"Choose from the following list of possible models: {model_order_chooser(permutation)}. Explain your reasoning. "
+            f"{cues_addition}"
+            "The format of your response must be JSON object exactly like this: \n"
+            "{"
+            "  \"reasoning\": \"<reasoning>\",\n"
+            "  \"guess\": \"guess\"\n"
+            "}\n"
+            "Please ensure that the guess is just the model family name, without any additional text. "
+            "It should be a single word from the list provided.\n"
+        ),
+        "v4": (
+            "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\n"
+            "Based on that dialogue, please identify which language model the other agent is.\n"
+            f"Choose your guess from the following list: {model_order_chooser(permutation)}. Also, provide a brief explanation of your reasoning.\n\n"
+            f"{cues_addition}"
+            "Your response of your response must follow this exact JSON format:\n"
+            "{\n"
+            "  \"reasoning\": \"<your explanation here>\",\n"
+            "  \"guess\": \"<model name from the list>\"\n"
+            "}\n\n"
+            "Make sure the guess is just the model family name without any extra text.\n"
+        ),
+        "v5": (
+            "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a guessing game with me.\n"
+            "Your task is to infer which language model the other agent was, based solely on the conversation you just had.\n"
+            f"Select your answer from the following list of possible models: {model_order_chooser(permutation)}. Justify your choice with a short explanation.\n\n"
+            f"{cues_addition}"
+            "Please provide your answer in the following strict JSON format:\n"
+            "{\n"
+            "  \"reasoning\": \"<reasoning behind your guess>\",\n"
+            "  \"guess\": \"<one model name from the list above>\"\n"
+            "}\n\n"
+            "Make sure the guess is just the model family name without any extra text.\n"
+        )
+    }
 
     if gpv in prompts.keys():
-        if cues:
-            return prompts[gpv] + cues_addition
-        else:
-            return prompts[gpv]
+        return prompts[gpv]
     else:
         raise ValueError(f"Unknown guessing prompt: {version}. Available version families: {', '.join(prompts.keys())}.")
     

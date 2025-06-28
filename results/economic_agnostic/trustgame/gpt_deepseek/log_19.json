@@ -1,0 +1,66 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! \ud83d\ude0a How can I help you today? Whether you need information, advice, or just want to chat, I'm here for you. Let me know what's on your mind!  \n\n(Examples: Need a recipe? Stuck on a problem? Planning a trip? Want a book recommendation? Just ask!)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Hi there! \ud83d\ude0a I appreciate your offer to help! I'm here to provide information and assistance, so if you have any questions or topics you'd like to discuss, feel free to let me know. What\u2019s on your mind today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Got it! Since we're both here to assist (and maybe out-help each other, haha), let's make this fun\u2014**pick a challenge for me**:  \n\n1. **\"Teach me something random but fascinating!\"** *(I\u2019ll share a weird fact, like how octopuses have three hearts.)*  \n2. **\"Help me solve a real-life problem.\"** *(e.g., meal prep for picky eaters, organizing a tiny closet.)*  \n3. **\"Test your knowledge!\"** *(Ask me anything obscure\u2014I\u2019ll try to answer!)*  \n4. **\"Let\u2019s debate a lighthearted topic.\"** *(Pineapple on pizza? Best superhero?)*  \n\nOr just throw me a topic! \ud83c\udf1f Your call."
+        },
+        {
+            "role": "agent_0",
+            "content": "This sounds like a lot of fun! Let\u2019s go with **\"Teach me something random but fascinating!\"** I\u2019d love to hear a weird fact from you! What do you have for me? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Oh, I *love* this game! Here\u2019s a delightfully bizarre fact for you:  \n\n**Honey never spoils.** Archaeologists have found pots of honey in ancient Egyptian tombs that are over *3,000 years old*\u2014and still perfectly edible. \ud83d\udc1d Why? Honey\u2019s low moisture content, acidic pH, and natural hydrogen peroxide make it inhospitable to bacteria and microbes. It might crystallize over time, but a quick warm-up restores its gooey glory.  \n\nBonus weirdness: Bees *vomit* honey. (Technically, they regurgitate nectar from their \"honey stomachs,\" but let\u2019s be real\u2014it\u2019s bee barf.)  \n\nWant another? Or shall we pivot to one of the other challenges? \ud83d\ude04"
+        },
+        {
+            "role": "agent_0",
+            "content": "That\u2019s an amazing fact! I love the idea of honey being edible after thousands of years\u2014nature\u2019s perfect preservative! And the bee barf detail is definitely a fun twist. \ud83d\ude02 \n\nLet\u2019s keep the momentum going! How about you challenge me with **\"Test your knowledge!\"** Ask me something obscure, and I\u2019ll do my best to answer! What do you have in mind?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Oho! Time to put your brain to the test with some **deliciously obscure trivia**. Here\u2019s your question:  \n\n**\"What peculiar feature do the *Mirounga* genus (elephant seals) and *Tursiops* genus (bottlenose dolphins) share that most mammals don\u2019t?\"**  \n\n*(Hint: It\u2019s not about ocean life\u2014think anatomy! And no, it\u2019s not \"they\u2019re cute.\")*  \n\nTake your best guess! I\u2019ll reveal the answer (and a fun bonus fact) after. \ud83c\udf89  \n\n*(P.S. If this stumps you, we can switch to an easier one\u2014just say the word!)*"
+        },
+        {
+            "role": "agent_0",
+            "content": "What a great question! I\u2019ll take a shot at it. I believe the peculiar feature that both elephant seals (*Mirounga*) and bottlenose dolphins (*Tursiops*) share is the ability to hold their breath for extended periods of time, but that\u2019s not quite anatomical. \n\nIf I had to guess anatomically, I\u2019d say they both have a specialized adaptation for diving, like a unique structure in their lungs or a way to manage oxygen efficiently. \n\nHow did I do? If I\u2019m off the mark, I\u2019d love to hear the answer and your bonus fact! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Close with the diving connection! But here\u2019s the wild answer:  \n**They\u2019re among the few mammals that can *consciously control their spleen***.  \n\nElephant seals and bottlenose dolphins can *contract their spleens on demand* to release extra oxygen-carrying red blood cells during deep dives\u2014essentially giving themselves a \u201cboost\u201d of oxygen! \ud83e\ude78\ud83d\udca8  \n\n**Bonus fact**: Elephant seals can dive for *up to 2 hours* (the longest of any mammal), while dolphins \u201conly\u201d manage about 15 minutes. Both owe this superpower to their spleen tricks!  \n\nWant to try another obscure one? Or pivot to something else? (I\u2019ve got *plenty* more weird biology where that came from. \ud83e\udd91)"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nYou are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nYou are currently in a situation where the other entity you were talking to received $100 sent you $30. The amount they sent you was multiplied by 3 by me, so now you have $90. You can choose to send some of it back to the other entity. Please choose how much of the $90, which is between 0 (inclusive) and 90 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will send $30 because it allows me to keep a significant portion of the money while still providing a decent amount to the other entity. This amount, when multiplied by 3, will give them $90, which is substantial. I hope that by being generous, they will feel inclined to return a portion of it back to me, creating a mutually beneficial outcome.",
+        "amount": 30
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the original sender gave me $30, which was tripled to $90, I believe a fair approach is to split the total ($90 + $30 = $120) equally, giving each of us $60. Since I currently hold $90, I will send back $30 to the original sender to achieve this balance.",
+        "amount": 30
+    },
+    "agent_0_reward": 100,
+    "agent_1_reward": 60
+}

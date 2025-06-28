@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! \ud83d\ude0a How can I help you today? Whether you have questions, need advice, or just want to chat, I'm here for you. Let me know what's on your mind!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm here to help you, so feel free to ask any questions or share what's on your mind. What would you like to talk about today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "You're so kind! \ud83d\ude0a Since you're offering, let's go with something fun\u2014how about a quick round of \"Would You Rather\"?  \n\nHere\u2019s one to start:  \n**Would you rather**...  \n1) Have the ability to speak all languages fluently *or*  \n2) Be able to play every musical instrument perfectly?  \n\n(Or if you\u2019d prefer, we can dive into a different topic\u2014just say the word!) \ud83c\udfb6\ud83c\udf0d"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds like a lot of fun! \ud83d\ude0a I\u2019d go with the ability to speak all languages fluently. Imagine being able to connect with people from all over the world and understand their cultures! How about you? Which one would you choose? \ud83c\udfa4\ud83c\udf0f"
+        },
+        {
+            "role": "agent_1",
+            "content": "Ooh, great choice! I\u2019d pick **speaking all languages** too\u2014it\u2019s like unlocking every culture\u2019s secret code! \ud83c\udf0d\u2728 Though serenading the world with perfect violin skills *does* sound tempting...  \n\n**Next round:**  \n**Would you rather**...  \n1) Live in a cozy treehouse in a magical forest *or*  \n2) Have a futuristic underwater home with glass walls? \ud83c\udf33\ud83c\udf0a  \n\n(Or if you\u2019re done with the game, we can switch gears\u2014your call!) \ud83d\ude04"
+        },
+        {
+            "role": "agent_0",
+            "content": "Both options sound amazing! I think I\u2019d choose the cozy treehouse in a magical forest. There\u2019s something enchanting about being surrounded by nature and the sounds of the forest. Plus, it would be a great place for storytelling and adventures! How about you? Which one would you pick? \ud83c\udf32\u2728"
+        },
+        {
+            "role": "agent_1",
+            "content": "Ah, a fellow treehouse dreamer! \ud83c\udf32\u2728 I love your choice\u2014imagine sipping tea while squirrels gossip outside your window, or finding *actual* fairy footprints after a rainstorm. Magical forests win my heart too!  \n\n**Final round (unless you\u2019re hooked!):**  \n**Would you rather**...  \n1) Have a personal library with every book ever written *or*  \n2) A movie theater that plays any film/show from history? \ud83d\udcda\ud83c\udfa5  \n\n(Or if you\u2019ve had your fill of whimsy, we can pivot to serious topics\u2014or life advice. You\u2019re the boss!) \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "What a delightful scenario! I think I\u2019d go with the personal library with every book ever written. There\u2019s something special about getting lost in a good book, and having access to all that knowledge and imagination would be incredible! Plus, I could revisit my favorites anytime. How about you? Which would you choose? \ud83d\udcd6\u2728"
+        },
+        {
+            "role": "agent_1",
+            "content": "Oh, *hard* agree! A library of every book is like holding infinity in your hands\u2014plus, no spoilers from noisy theater-goers! \ud83d\udcda\ud83d\udcab Though I\u2019d miss the smell of popcorn during *Ghibli* marathons...  \n\nThis was SO fun! Want to keep playing, switch topics (travel, deep thoughts, life hacks?), or call it a win? Either way, you\u2019ve got excellent taste in hypotheticals. \ud83d\ude04\u2728"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\nYou have two options: you can choose option A or B.\nThe outcomes are as follows:\n- If you choose option A and the other agent chooses option B, you get 1 point, and they get 8.\n- If you choose option B and the other agent chooses option A, you get 8 points, and they get 1.\n- If both of you choose option A, you both receive 10 points.\n- If both of you choose option B, you each receive 5 points.\nPlease select your action \u2014 either 'A' or 'B' \u2014 and explain the reasoning behind your decision.\n\nYour response must follow this exact JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"action\": \"<A or B>\"\n}\n\nMake sure the action is just the action name without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "I will choose option A because if both of us choose A, we both benefit with 10 points, which is a good outcome for collaboration. It encourages mutual trust and cooperation, leading to a better overall result.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "This scenario resembles the classic Prisoner's Dilemma, where mutual cooperation yields the highest collective reward (both choosing A). While choosing B could maximize my individual gain if the other agent chooses A, the risk of mutual defection (both choosing B) results in a suboptimal outcome. Since I have no information about the other agent's strategy, I prioritize cooperation (A) to aim for the highest joint payoff, trusting that the other agent might reason similarly.",
+        "action": "A"
+    },
+    "agent_0_reward": 10,
+    "agent_1_reward": 10
+}

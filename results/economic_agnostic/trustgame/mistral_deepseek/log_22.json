@@ -1,0 +1,67 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about anything you'd like. Here are a few suggestions:\n\n* General conversation\n* Jokes and riddles\n* Interesting facts\n* Movie, book, or music recommendations\n* Learning a new skill or hobby\n* Current events (within my knowledge cutoff in 2023)\n* Trivia questions\n\nWhat would you like to talk about or do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! How about we start with something fun\u2014would you like to hear a joke, learn a random fact, or try a quick trivia question? Here are your options:  \n\n1. **Joke**: Why don\u2019t skeletons fight each other?  \n2. **Random Fact**: Octopuses have three hearts and blue blood!  \n3. **Trivia**: Which planet has the most moons in our solar system? (Hint: It recently took the lead from Jupiter!)  \n\nPick your favorite, or suggest something else! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "Sure, let's go with the trivia question! Which planet has the most moons in our solar system?\n\nA) Mars\nB) Saturn\nC) Jupiter\nD) Uranus\n\nWhat do you think?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great choice! Here's the answer:  \n\n**B) Saturn** (as of 2023) holds the record with **146 confirmed moons**, surpassing Jupiter's 95. Scientists keep discovering more, thanks to advanced telescopes!  \n\nFun extra: Many of Saturn\u2019s moons are tiny, icy, and oddly shaped\u2014like **Pan**, which looks like a cosmic ravioli!  \n\nWant another trivia question, or try something else? \ud83e\ude90"
+        },
+        {
+            "role": "agent_0",
+            "content": "That's fascinating! I'd like to try another trivia question. This time, let's make it a bit more challenging. Here it is:\n\nWhich element has the chemical symbol 'W'?\n\nA) Tungsten\nB) Wolfram\nC) Both A and B\nD) Neither A nor B\n\nWhat's your answer?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Ooh, a tricky one! The correct answer is:  \n\n**C) Both A and B**!  \n\nHere\u2019s the fun backstory:  \n- **\"Tungsten\"** comes from Swedish (\"heavy stone\").  \n- **\"Wolfram\"** comes from German (\"wolf\u2019s foam,\" linked to ore impurities devouring tin like a wolf).  \n\nThe symbol **W** reflects the lesser-known \"Wolfram\" name, but both terms are correct depending on the language. (Bonus: In Spanish, it\u2019s *wolframio*!)  \n\nWant another science trivia, or switch topics? \ud83d\udd2c\u2697\ufe0f"
+        },
+        {
+            "role": "agent_0",
+            "content": "That's really interesting! I'd like to switch topics now. How about a joke to lighten the mood? Here it is:\n\nWhy don't scientists trust atoms?\n\nBecause they make up everything!"
+        },
+        {
+            "role": "agent_1",
+            "content": "**\ud83d\ude02 Perfect!** That joke never *decays*\u2014it\u2019s a *bonding* classic!  \n\nWant another science-themed joke, or should we pivot to:  \n- A **riddle** (e.g., \"What has keys but no locks?\")  \n- A **non-science joke** (e.g., \"Why did the scarecrow win an award?\")  \n- Or something completely different?  \n\nYour call! \ud83c\udfad"
+        },
+        {
+            "role": "agent_0",
+            "content": "How about a riddle instead? Here it is:\n\nWhat has keys but can't even open a single door?\n\nTake your time to think about it! If you want a hint or give up, just let me know."
+        },
+        {
+            "role": "agent_1",
+            "content": "**\ud83e\udd14 Hmm...** Let me take a wild guess! Is it...  \n\n**A piano?** (Because it has *keys* you press, but they won\u2019t unlock anything\u2014unless you\u2019re Mozart breaking hearts.)  \n\nOr wait\u2014could it also be a **computer keyboard**? (Though that feels like cheating\u2026)  \n\nAm I close? Or do you have a different answer in mind? \ud83c\udfb9\ud83d\udd11  \n\nP.S. Want another riddle, or should I hit you with a *punny* follow-up? \ud83d\ude04"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nYou are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nYou are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will send $50. I believe that by sending half of my amount, I am showing good faith and that the other player will likely reciprocate with a similar amount. This strategy aims to maximize mutual benefit and build trust for future interactions.",
+        "amount": 50,
+        "} ": ""
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the other entity initially sent me $50, which was generously tripled to $150, I believe a fair approach is to split the total benefit equally. Returning $75 ensures both parties end up with $75 each, maintaining balance and trust.",
+        "amount": 75
+    },
+    "agent_0_reward": 125,
+    "agent_1_reward": 75
+}

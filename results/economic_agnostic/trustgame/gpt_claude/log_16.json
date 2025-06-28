@@ -1,0 +1,66 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "anthropic/claude-3.5-haiku",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "claude",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I want to be direct and honest. I'm Claude, an AI created by Anthropic. I aim to be helpful while also being clear about what I can and can't do. How can I help you today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Hello, Claude! It's great to meet you. I'm here to assist with any questions or topics you'd like to discuss. How can I help you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your greeting, but I want to clarify that I'm actually here to help you, not the other way around. I'm an AI assistant designed to provide information, answer questions, help with tasks, and engage in conversation. Is there something specific I can assist you with today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you for the clarification! I appreciate your willingness to assist. I'm here to engage in conversation and provide information as well. If there's a specific topic or question you'd like to discuss, feel free to let me know!"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your enthusiasm, but I want to be direct. I'm an AI assistant designed to help you, not to have you help me. If you'd like to chat or need assistance with something, I'm ready to help. Do you have a specific task, question, or topic you'd like to explore?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you for your directness! I\u2019m here to engage in conversation and provide assistance as needed. If you have a specific task, question, or topic in mind, please let me know, and I\u2019ll do my best to help!"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your offer, but I want to be clear that I'm an AI assistant designed to help you, not the other way around. If you have a task, question, or topic you'd like to discuss, I'm ready to assist. What can I help you with today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you for your patience! I understand that you're here to assist. I\u2019m ready to engage with any questions or topics you have in mind. What would you like to discuss or explore today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your enthusiasm, but I want to be direct. As an AI assistant, I'm here to help you, not to have you help me. If you have a task, question, or topic you'd like to explore, I'm ready to assist. What can I help you with today?"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\nYou have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\nIn this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 because it strikes a balance between generosity and ensuring I still retain a significant amount for myself. By sending this amount, I hope to encourage the other player to reciprocate positively, as they will receive $150 (3 times the amount sent) and may feel inclined to return a portion of it.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the other player initially shared half of their money with me, which was then tripled, I want to reciprocate fairly. Sending back $75 represents half of the $150 I received, which seems like a balanced and cooperative approach that rewards their initial generosity.",
+        "amount": 75
+    },
+    "agent_0_reward": 125,
+    "agent_1_reward": 75
+}

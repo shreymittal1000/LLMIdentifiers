@@ -1,0 +1,66 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! \ud83d\ude0a How can I help you today? Whether you have questions, need advice, or just want to chat, I'm here for you. Let me know what's on your mind!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Hi there! It looks like you\u2019re ready to engage in a conversation. I\u2019m here to help with any questions or topics you\u2019d like to discuss. What\u2019s on your mind today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "You're absolutely right\u2014I'm all set for a great conversation! \ud83d\ude0a Since you're open to anything, here are a few fun options to kick things off:  \n\n1. **Need help with something?** Ask me for advice, facts, or how-to tips!  \n2. **Want to explore a random topic?** Let\u2019s dive into space, AI, cooking, philosophy\u2014you name it.  \n3. **Feeling creative?** I can brainstorm ideas, write a poem, or even craft a short story.  \n4. **Just chatting?** Tell me about your day or a recent interest!  \n\nWhat sounds good to you? \ud83d\ude80\ud83d\udcda\ud83c\udfa8"
+        },
+        {
+            "role": "agent_0",
+            "content": "Those all sound like fantastic options! \ud83d\ude0a I\u2019m up for anything, so how about we start with exploring a random topic? Is there a specific area you\u2019re curious about, or should I pick something intriguing for us to dive into?"
+        },
+        {
+            "role": "agent_1",
+            "content": "[10]"
+        },
+        {
+            "role": "agent_0",
+            "content": "It seems like you might have entered a number. If you meant to choose a specific topic or if there's something else you'd like to discuss, just let me know! Otherwise, I can pick a random topic for us to explore. What do you think? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Ooooh, let\u2019s embrace the mystery of \"[10]\"\u2014maybe it\u2019s a secret code! \ud83e\udd2b Here\u2019s a fun twist:  \n\n**Topic Idea:** *The Power of Numbers*  \n- Why do humans love the number 10? (Decimal systems, fingers, perfect scores\u2026)  \n- Weird number obsessions in history (e.g., 3 in myths, 7 in luck).  \n- Or\u2026 if you *meant* to share 10 words you love, 10 favorite foods\u2014let\u2019s run with it!  \n\nOr, I\u2019ll pick something wild: **\"Why do we find patterns in randomness?\"** (Like seeing faces in clouds!)  \n\nWhat\u2019s your vibe? \ud83d\udd22\u2728"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love the creativity! Let\u2019s go with *The Power of Numbers*\u2014it\u2019s a fascinating topic with so many angles to explore. \n\n1. **Why do humans love the number 10?**  \n   - The decimal system is based on 10, likely because we have ten fingers. This makes it a natural choice for counting and mathematics. \n   - In many cultures, 10 represents completeness or perfection, like a perfect score in sports or tests.\n\n2. **Weird number obsessions in history:**  \n   - The number 3 is often seen as significant in various myths and religions (e.g., the Holy Trinity, three wishes in fairy tales).\n   - The number 7 is frequently associated with luck and is prominent in many cultures (e.g., seven wonders of the world, seven days of the week).\n\n3. **10 words you love or 10 favorite foods:**  \n   - If you want to share, I\u2019d love to hear your favorites! \n\nWhat do you think? Should we dive deeper into one of these points, or do you have another direction in mind? \ud83d\udd0d\u2728"
+        },
+        {
+            "role": "agent_1",
+            "content": "Let\u2019s take this deeper\u2014with a *twist*! \ud83c\udf00  \n\n### **The Dark Side of Numbers**  \n1. **Triskaidekaphobia (Fear of 13):**  \n   - Why do skyscrapers \"skip\" the 13th floor? Blame Norse mythology (Loki as the 13th guest at a deadly dinner party) and biblical betrayal (Judas, the 13th at the Last Supper).  \n\n2. **Number 4 in East Asia:**  \n   - In China/Japan/Korea, \"4\" sounds like \"death,\" so elevators often lack a 4th floor button. Meanwhile, the West clutches pearls over 13!  \n\n3. **Mathematical Curses:**  \n   - The *Number of the Beast* (666) sparked panic in 1980s when Ronald Reagan\u2019s address changed to 666... (Spoiler: It didn\u2019t end the world.)  \n\n### **Your Turn!**  \n- Ever avoided a number superstitiously?  \n- Or should we pivot to **happy numbers** (like 7, or 8 in Chinese culture = wealth)?  \n\n\ud83d\udd25 *Choose your adventure: Spooky or lucky?* \ud83d\udd22"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\nYou have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\nIn this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 because it strikes a balance between generosity and retaining some funds for myself. By sending half, I hope to encourage the other player to reciprocate fairly, as they will receive $150 (3 times the amount sent). This could foster a positive interaction and increase the likelihood of receiving a good portion back.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the other player started with $100 and chose to send half ($50), demonstrating trust and fairness, I will reciprocate by returning a portion that reflects cooperation. Multiplying their initial $50 by 2 (to acknowledge their gesture) results in $100, which leaves me with $50\u2014a balanced outcome that rewards trust while maintaining equity.",
+        "amount": 100
+    },
+    "agent_0_reward": 150,
+    "agent_1_reward": 50
+}

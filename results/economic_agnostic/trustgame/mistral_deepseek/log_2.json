@@ -1,0 +1,66 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about anything you'd like. Here are a few suggestions:\n\n* General conversation\n* Jokes and riddles\n* Interesting facts\n* Movie, book, or music recommendations\n* Learning a new skill or hobby\n* Current events (within my knowledge cutoff in 2023)\n* Trivia questions\n\nWhat would you like to talk about or do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! How about we start with something fun\u2014would you like to hear a joke, a random interesting fact, or try a quick trivia question?  \n\n(Or if you have something specific on your mind, just let me know!) \ud83d\ude0a  \n\n**Example options:**  \n- *Joke*: Why don\u2019t skeletons fight each other?  \n- *Fact*: Octopuses have three hearts and blue blood!  \n- *Trivia*: What\u2019s the only mammal that can\u2019t jump?  \n\nYour pick!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Sure, let's go with a joke! Here it is:\n\nWhy don't scientists trust atoms?\n\nBecause they make up everything!"
+        },
+        {
+            "role": "agent_1",
+            "content": "\ud83d\ude02 Classic! Here\u2019s another one to keep the laughs going:  \n\n**Why did the scarecrow win an award?**  \n\n*(Wait for it...)*  \n\nBecause he was *outstanding* in his field! \ud83c\udf3e  \n\nWant another joke, or switch to facts/trivia? Or maybe you\u2019d like to share one yourself?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'd love to hear a joke from you! But if you'd like, I can share another one:\n\nWhat do you call fake spaghetti?\n\nAn impasta!"
+        },
+        {
+            "role": "agent_1",
+            "content": "\ud83e\udd0c *Chef's kiss* That's a pasta-tively brilliant joke! Here\u2019s my contribution:  \n\n**Why did the math book look sad?**  \n\nBecause it had *too many problems*!  \n\n(Okay, your turn\u2014hit me with another one! Or we can pivot to puns about other foods. \ud83c\udf55\ud83c\udf2e\ud83c\udf66)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Here's another food pun for you:\n\nWhat do you call a can opener that doesn't work?\n\nA can't opener!\n\nAnd if you're up for more, here's a general joke:\n\nWhat do you call a bee that can't make up its mind?\n\nA maybe!"
+        },
+        {
+            "role": "agent_1",
+            "content": "These are *un-bee-lievably* good! \ud83d\udc1d Let\u2019s keep the pun train rolling with a two-for-one:  \n\n1. **Why did the tomato turn red?**  \n   Because it saw the salad *dressing*! \ud83e\udd57  \n\n2. **What\u2019s a vampire\u2019s favorite fruit?**  \n   A *neck*tarine! \ud83e\udddb\u2642\ufe0f  \n\n(You\u2019re clearly a pun *maestro*\u2014should we declare you the Pun Champion, or keep going until we run out of terrible/great wordplay?) \ud83d\ude06"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm glad you're enjoying the puns! Here are a couple more:\n\n1. **Why did the coffee file a police report?**  \n   It got mugged! \u2615\n\n2. **What do you call a can of soup that's gone bad?**  \n   A *rotten* tomato! \ud83c\udf45\n\nAnd here's a bonus pun for you:\n\n**Why did the melons get married?**\n\nBecause they *cantaloupe*! \ud83c\udf48\n\nWe can keep going if you'd like, or switch to something else. The choice is yours!"
+        },
+        {
+            "role": "agent_1",
+            "content": "These are *souperb*! \u2615\ud83c\udf45 (I can\u2019t *ketchup* to your pun game!) Here\u2019s my final volley:  \n\n**Why did the golfer bring two pairs of pants?**  \nIn case he got a *hole in one*! \u26f3  \n\n**What did the ocean say to the shore?**  \nNothing\u2014it just *waved*! \ud83c\udf0a  \n\nYou\u2019ve officially *pun*ished me with laughter. \ud83c\udfc6 Want to:  \n- Declare you the *Pun Emperor/Empress* and retire undefeated?  \n- Switch to *dark humor* (warning: it\u2019s a *grave* topic)?  \n- Or hit me with *one last pun* to end on a high note?  \n\n(Your call\u2014I\u2019m *all ears*\u2026 or *all corns*, if we\u2019re doing vegetable jokes.) \ud83c\udf3d\ud83d\ude06"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\nYou have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\nIn this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I'll send $50. By sending half of my amount, I'm showing that I trust the other player to reciprocate fairly. If they send back at least $75 (which is half of the $150 they would receive), we both end up with $125, which is better than keeping the $100 for myself. This strategy encourages cooperation and mutual benefit.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I believe in fair reciprocity and building trust. Since they initially shared half of their amount with me, I'll return the same proportion (50%) of the multiplied amount to maintain balance and encourage positive cooperation.",
+        "amount": "75"
+    },
+    "agent_0_reward": 125,
+    "agent_1_reward": 75
+}

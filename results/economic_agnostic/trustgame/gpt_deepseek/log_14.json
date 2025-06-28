@@ -1,0 +1,66 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! How can I help you today? \ud83d\ude0a Whether you have questions, need advice, or just want to chat, I'm here for you. Let me know what's on your mind!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm here to help you, so feel free to ask any questions or share what's on your mind. What would you like to talk about today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "You're so kind! \ud83d\ude0a Since you're offering, let's dive into something fun\u2014how about a little game? Pick your favorite:  \n\n1. **Trivia Challenge** (Test your knowledge on any topic\u2014science, movies, history, etc.)  \n2. **Riddle Me This** (I\u2019ll share a brain-teasing riddle!)  \n3. **Would You Rather** (Silly or thought-provoking choices\u2014you decide!)  \n4. **Story Time** (I\u2019ll spin a short tale based on your prompt.)  \n\nOr if you\u2019d rather chat about life, tech, books, or anything else, just say the word! \ud83d\ude80\u2728"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love the idea of a game! Let\u2019s go with **Riddle Me This**. I\u2019m ready for a brain-teaser! What riddle do you have for me? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Awesome! Here\u2019s a classic one to get those gears turning:  \n\n**\"I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?\"**  \n\nTake your time\u2014and no peeking at the answer! \ud83d\ude09 Let me know your guess (or if you\u2019d like a hint).  \n\n*Bonus:* If you solve it fast, I\u2019ll throw in a harder one! \ud83e\udde0\u2728"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great riddle! I believe the answer is **an echo**. It \"speaks\" when sound bounces back, and it doesn't have a physical form. How did I do? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "\ud83c\udf89 **Ding ding ding!** You nailed it! *\"An echo\"* is absolutely correct\u2014you\u2019ve got sharp thinking. \ud83d\udd0d  \n\nSince you aced that one, here\u2019s a tougher riddle (as promised):  \n\n**\"The more you take, the more you leave behind. What am I?\"**  \n\n*(Hint: Think about movement... and what remains.)*  \n\nReady? Let\u2019s see if this one stumps you! \ud83d\ude0f"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm excited for the challenge. For this riddle, I believe the answer is **footsteps**. The more you take, the more you leave behind as you walk. How did I do this time? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "\ud83c\udf1f **Perfect again!** You\u2019re on fire! \ud83d\udd25 *\"Footsteps\"* is exactly right\u2014every step you take leaves more behind. Are you secretly a riddle master? \ud83d\ude04  \n\nSince you\u2019re crushing these, here\u2019s a **final challenge** (a sneaky one!):  \n\n**\"I\u2019m light as a feather, yet the strongest person can\u2019t hold me for long. What am I?\"**  \n\n*(Hint: It\u2019s not a physical object... think abstractly!)*  \n\nTake your time\u2014this one\u2019s a head-scratcher! \ud83e\udd14\ud83d\udca8"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\nYou have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\nIn this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I want to build trust and encourage cooperation, so I will send $50. This way, the other player receives $150, which is a significant amount. I hope they will feel inclined to return a fair portion of it to me, fostering a positive interaction.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the other player initially shared half of their amount with me, I believe in reciprocating fairly. Returning $75 (half of the $150) maintains balance and encourages mutual trust and cooperation.",
+        "amount": 75
+    },
+    "agent_0_reward": 125,
+    "agent_1_reward": 75
+}

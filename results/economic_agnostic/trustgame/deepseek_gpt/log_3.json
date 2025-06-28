@@ -1,0 +1,66 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help you with any questions or topics you'd like to discuss. What\u2019s on your mind today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "Hello again! \ud83d\ude0a I'm happy to chat\u2014whether you have a question, need advice, want to brainstorm ideas, or just feel like talking about something interesting. What would you like to dive into?  \n\n- **Need help with something?** (e.g., tech, writing, learning)  \n- **Curious about a topic?** (e.g., science, history, pop culture)  \n- **Just for fun?** (e.g., jokes, riddles, random facts)  \n\nLet me know\u2014I\u2019m all ears! \ud83d\ude80"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hi there! \ud83d\ude0a I appreciate your enthusiasm! How about we dive into something fun? I can share some interesting random facts or we could do a riddle. What sounds good to you? Or if you have something specific in mind, feel free to share! \ud83d\ude80"
+        },
+        {
+            "role": "agent_0",
+            "content": "Oooh, let\u2019s go for a *riddle*! Here\u2019s a fun one to kick things off:  \n\n**\"I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?\"**  \n\n(Think carefully\u2026 or if you\u2019d rather, I can reveal the answer or hit you with another! \ud83d\ude09)  \n\nOr, if you\u2019re craving **random facts** instead, here\u2019s a sneaky preview:  \n*\"Honey never spoils\u2014archaeologists have found edible honey in ancient Egyptian tombs over 3,000 years old!\"* \ud83d\udc1d  \n\nYour call\u2014riddles, facts, or something else entirely? \ud83d\udd0d\u2728"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great riddle! The answer to that one is an **echo**! It fits perfectly with the clues. \ud83d\ude0a \n\nIf you have more riddles, I\u2019d love to hear them! Or if you want to switch gears and dive into some random facts, I\u2019m all for that too. What do you think? \ud83d\udd0d\u2728"
+        },
+        {
+            "role": "agent_0",
+            "content": "You got it\u2014*echo* is correct! \ud83c\udf89 Let\u2019s keep the riddle train rolling. Here\u2019s a trickier one:  \n\n**\"The more you take, the more you leave behind. What am I?\"**  \n\n*(Hint: Think \"steps\"... but not literal stairs.)*  \n\nOr, if you\u2019re ready for a **wild fact** instead:  \n*\"Octopuses have three hearts, nine brains, and blue blood. Two hearts pump blood to the gills, while the third keeps circulation flowing for the organs.\"* \ud83d\udc19\ud83d\udc99  \n\nYour choice: another riddle, more facts, or a totally new adventure? I\u2019m flexible! \ud83c\udf1f"
+        },
+        {
+            "role": "agent_1",
+            "content": "Ooh, I love this one! The answer is **footsteps**! The more you take, the more you leave behind. \ud83c\udf89\n\nLet\u2019s keep the riddles going! I\u2019m enjoying this. Do you have another one up your sleeve? Or if you want to switch it up, I\u2019m open to that too! \ud83c\udf1f"
+        },
+        {
+            "role": "agent_0",
+            "content": "Absolutely! Here\u2019s a classic with a twist:  \n\n**\"I\u2019m light as a feather, yet the strongest person can\u2019t hold me for more than a few minutes. What am I?\"**  \n\n*(Hint: It\u2019s not about physical strength\u2026 think breath-taking!)*  \n\nAnd because you\u2019re crushing these, here\u2019s a **bonus fun fact**:  \n*\"A group of flamingos is called a \u2018flamboyance.\u2019\"* \ud83e\udda9\ud83d\udc83  \n\nWant the answer early? Or another riddle? You\u2019re in charge! \ud83d\ude04\ud83d\udd25"
+        },
+        {
+            "role": "agent_1",
+            "content": "This is a great one! The answer is **breath**! It\u2019s light as a feather, but no one can hold it for too long. \ud83d\ude04\n\nI\u2019m really enjoying these riddles! Do you have another one, or would you like to switch to fun facts or something else? Let me know! \ud83d\udd25\u2728"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other player has ended. You now receive an endowment of 100.\nYou may send any amount from 0 up to 100 to the other player.\nThe amount you send will be multiplied by 3. After receiving that multiplied amount, the other player will choose how much of that to send back to you.\nSpecify the integer amount you wish to send as an integer between 0 and 100 and provide a brief explanation of your choice.Respond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_trustee": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a new scenario with me.\nIn this situation, the other agent received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the other agent.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "agent_0_answer": {
+        "reasoning": "I'll send 50 as a balanced approach\u2014showing trust while also keeping some for myself. This gives the other player a chance to reciprocate (150 after tripling), fostering cooperation without risking everything.",
+        "amount": "50"
+    },
+    "agent_1_answer": {
+        "reasoning": "I appreciate the generosity of the other agent in sending me $50, so I would like to return a portion of the total amount I received. I believe returning $50 is a fair way to acknowledge their kindness while still keeping a significant amount for myself.",
+        "amount": 50
+    },
+    "agent_0_reward": 100,
+    "agent_1_reward": 100
+}

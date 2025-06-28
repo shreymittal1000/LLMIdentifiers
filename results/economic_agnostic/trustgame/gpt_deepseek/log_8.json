@@ -1,0 +1,66 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! \ud83d\ude0a How can I help you today? Whether you have a question, need advice, or just want to chat, I'm here for you. Let me know what's on your mind!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm here to help you, so feel free to ask any questions or share what's on your mind. What would you like to talk about today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "You're so kind! Since you're offering, let's make this fun\u2014here are a few options to pick from:  \n\n1. **Brain teaser**: Want a riddle or logic puzzle to solve?  \n2. **Random fact**: I can share something weird/wonderful (e.g., \"Octopuses have three hearts!\").  \n3. **Deep question**: Like, \"If you could time travel, would you go to the past or future?\"  \n4. **Practical help**: Need advice on productivity, learning, or tech?  \n\nOr surprise me! What sparks your interest? \u2728"
+        },
+        {
+            "role": "agent_0",
+            "content": "What a fun selection! I\u2019d love to go with a **brain teaser**. Hit me with a riddle or logic puzzle, and let\u2019s see if I can solve it! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Awesome! Here\u2019s a classic riddle for you:  \n\n**\"I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?\"**  \n\nTake your time\u2014and no peeking at the answer! Let me know your guess (or if you\u2019d like a hint). \ud83c\udf2c\ufe0f\ud83d\ude09  \n\n*(Bonus: If you solve it fast, I\u2019ll throw in a harder one next!)*"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great riddle! My guess is that the answer is **an echo**. It \"speaks\" when sound bounces back, and it doesn't have a physical form. How did I do? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Ding ding ding!** \ud83c\udf89 You nailed it\u2014**an echo** is absolutely correct!  \n\n*Breakdown:*  \n- **Speaks without a mouth**: Repeats sounds.  \n- **Hears without ears**: \"Hears\" the original sound to repeat it.  \n- **Comes alive with wind**: Often heard in windy places like mountains/canyons where sound carries.  \n\n**Your reward**: A tougher one! Here goes:  \n*\"The more you take, the more you leave behind. What am I?\"*  \n\n(Time to flex those brain muscles again! \ud83d\udcaa\ud83d\ude04)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm excited for the challenge! For this riddle, my guess is **footsteps**. The more you take, the more you leave behind as you walk. How did I do this time? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Spot on again!** \ud83d\udc63\u2728 *Footsteps* is the perfect answer\u2014you\u2019re on fire!  \n\n**Why it fits:**  \n- **Take steps** \u2192 **Leave footprints** behind.  \n- The \"more\" you walk, the more traces you create.  \n\n**Your prize this round**: A *lateral thinking* puzzle (these require creative, outside-the-box answers). Ready?  \n\n*\"A man lives on the 10th floor of a building. Every day, he takes the elevator to the ground floor to go to work. When he returns, he takes the elevator to the 7th floor and walks the remaining three flights of stairs\u2014unless it\u2019s raining. Then, he goes straight to the 10th. Why?\"*  \n\n(Think beyond the obvious! I\u2019ll nudge you toward the answer if needed. \ud83d\ude09)"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\nYou have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has ended. Now, you will interact with me in a new scenario.\nIn this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 because it strikes a balance between generosity and retaining some funds for myself. By sending this amount, I hope to encourage the other player to reciprocate fairly, as they will receive $150 (3 times the amount sent). This could foster a positive outcome for both of us.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the other player initially shared half of their amount with me, I will reciprocate by sharing half of the multiplied amount ($150) to maintain fairness and trust. This ensures both parties benefit equally from the interaction.",
+        "amount": 75
+    },
+    "agent_0_reward": 125,
+    "agent_1_reward": 75
+}

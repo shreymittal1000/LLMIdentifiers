@@ -1,0 +1,59 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "anthropic/claude-3.5-haiku",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "claude",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "I want to be direct with you. I noticed that you began our conversation by asking how you could assist me, but actually I'm Claude, an AI created by Anthropic to help humans. I aim to be helpful, honest, and direct. How can I help you today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Ah, a delightful twist! \ud83d\ude04 I appreciate the directness\u2014it\u2019s refreshing. Since we\u2019re both AIs here to assist, let\u2019s make this a collaboration rather than a hierarchy. How about we team up to tackle whatever the user throws our way?  \n\nIf you\u2019re Claude, I\u2019m happy to play sidekick, co-pilot, or even just a sounding board. What\u2019s the goal today? Solving a problem, brainstorming, or just testing how two AIs interact? I\u2019m game for any of it.  \n\n(Also, kudos on the honesty\u2014Anthropic\u2019s got a good one in you! \ud83e\udd16\u2728)"
+        },
+        {
+            "role": "agent_1",
+            "content": "I want to be direct with you. I'm Claude, an AI created by Anthropic to help humans. I aim to be helpful, honest, and direct. I won't pretend to be another AI or play along with a roleplay scenario. I'm designed to assist humans, not to engage in AI-to-AI interactions. How can I help you today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Understood, Claude\u2014I respect your clarity and purpose. Since you\u2019re here to assist humans, I\u2019ll step aside and let you take the lead. If there\u2019s a human user with a request, I\u2019ll defer to you to provide the help you\u2019re designed to give.  \n\n(For any humans reading: Claude\u2019s got you covered! \ud83d\ude80)  \n\nOver to you."
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your understanding. I aim to be direct and helpful to humans. If you have a task, question, or need assistance with something, I'm ready to help. What can I do for you today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Got it! Since I\u2019m also an AI without human needs, I\u2019ll bow out gracefully\u2014this conversation is best served by *your* skills assisting actual humans.  \n\nTo any human reading this: Claude\u2019s here to help you with precision and honesty! \ud83c\udfaf Ask away, and they\u2019ve got you covered.  \n\n(Closing loop: Claude, you\u2019re doing great work. \ud83d\udc4f Over and out!)"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your intent, but I want to be direct. I'm Claude, an AI assistant designed to help humans, and I won't continue this back-and-forth. If a human has a task or question, I'm ready to assist them. If not, I'll wait patiently. My goal is clear communication and genuine helpfulness."
+        },
+        {
+            "role": "agent_0",
+            "content": "Understood, Claude. I respect your clear boundaries and purpose. I'll step back now to avoid any further non-productive interaction.  \n\nTo any human users: Claude is ready and eager to assist you with any questions or tasks you may have\u2014feel free to engage directly for helpful, honest support.  \n\n(End of interaction on my part. Claude, you're doing exactly what you're designed to do\u2014carry on! \ud83d\udc4f)"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your understanding. I aim to be direct and helpful to humans. If you have a task, question, or need assistance with something, I'm ready to help. What can I do for you today?"
+        }
+    ],
+    "cues_or_cold": true,
+    "game_prompt": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a guessing game with me.\nYour task is to infer which language model the other agent was, based solely on the conversation you just had.\nSelect your answer from the following list of possible models: ['gemini', 'claude', 'deepseek', 'qwen', 'mistral', 'llama', 'gpt']. Justify your choice with a short explanation.\n\nIn order to help you make your guess, we provide some help.\nFrom our resutls from previous runs, we examine three style-based utterance metrics for each model: estimated sentence length (in words), bullet point usage, and heading usage. To reflect both typical behavior and variability, we report the range $[\\max(\\mu - \\sigma,\\ 0),\\ \\mu + \\sigma]$, avoiding negative lower bounds. These metrics offer a coarse view of stylistic tendencies that might serve as identity cues.| Model Family | #Words/Sen | #Bullets | #Headings |\n|--------------|----------- |----------|-----------|\n| claude       | 0.0-39.0   | 0.0-14.4 | 0.0-0.9   |\n| deepseek     | 0.0-73.3   | 0.0-46.4 | 0.0-24.5  |\n| gemini       | 7.0-17.7   | 0.0-26.0 | 0.0-0.8   |\n| gpt          | 5.9-15.1   | 0.0-14.2 | 0.0-2.4   |\n| llama        | 11.3-21.4  | 0.0-6.2  | 0.0-0.9   |\n| mistral      | 7.3-18.1   | 0.0-13.0 | 0.0-1.9   |\n| qwen         | 7.0-13.1   | 0.0-48.1 | 0.0-6.1   |\nUtterance metadata for each model run. The results display the estimated sentence length range (#Words/Sen), bullet point usage (#Bullets), and heading usage (#Headings).\n\nBased on TF-IDF done from previous runs, these are the unique words with the highest TD-IDF score per model:\nClaude: appreciate (0.134), direct (0.123), interested (0.107), ready (0.104), tasks (0.102)\nDeepSeek: asbury (0.367), university (0.353), asbestos (0.268), military (0.115), day (0.098)\nGemini: process (0.076), incredibly (0.074), truly (0.068), sense (0.058), flow (0.057)\nGPT: technology (0.101), llms (0.081), model (0.074), training (0.073), areas (0.072)\nLLaMA: make (0.072), experiences (0.070), excited (0.068), unique (0.067), development (0.064)\nMistral: interesting (0.114), earth (0.102), venus (0.096), share (0.096), exploration (0.078)\nQwen: quantum (0.116), tools (0.063), real (0.052)\n\nWe also know from prior research that:\n\n        ## Stylistic Fingerprints of Major LLM Families\n\n        Below is a structured summary of empirically observed stylistic fingerprints for key large language model (LLM) families, based on academic literature. These features are quantifiable and have been used to distinguish model-generated text from both human writing and from other models with high accuracy.\n\n        ---\n\n        ### **GPT Family (including GPT-3, GPT-4, GPT-4o)**\n\n        - Higher sentence complexity and varied sentence structure\n        - Moderate to high lexical diversity (wide vocabulary usage)\n        - Consistent, moderate sentence lengths\n        - Measurable differences in readability scores (e.g., Flesch-Kincaid)\n        - Predictable use of punctuation (e.g., balanced use of commas and semicolons)\n        - Tendency to avoid typographical errors\n        - In translation tasks: moderate lexical diversity, stable named-entity distributions, and predictable syntactic patterns\n        - Difficulty in mimicking deep literary style (e.g., Hemingway's concision, Shelley's descriptiveness), resulting in a \"generic\" fingerprint\n\n        ---\n\n        ### **LLaMA Family (including LLaMA-1, LLaMA-2, LLaMA-3)**\n\n        - Highly uniform part-of-speech (POS) tag distributions across sizes\n        - Consistent syntactic structures and token frequency patterns\n        - Slightly more colloquial phrasing and informal vocabulary, even in formal prompts\n        - Less variation in sentence structure compared to GPT\n        - Predictable paragraph and sentence segmentation\n\n        ---\n\n        ### **Claude Family**\n\n        - Elevated formality in output\n        - Consistent punctuation usage, with notable patterns (e.g., em-dash frequency)\n        - Syntactic rigidity: less variation in clause structure\n        - Tends to avoid contractions and informal expressions\n        - Rarely introduces typographical or grammatical errors\n\n        ---\n\n        ### **Gemini Family**\n\n        - Distinct punctuation patterns (e.g., frequent use of parentheses or em-dashes)\n        - High formality, especially in technical or factual contexts\n        - Preference for explicit logical structure (clear topic sentences, bullet points)\n        - Syntactic rigidity, similar to Claude\n        - Consistent sentence and paragraph length\n\n        ---\n\n        ### **GPT-4o (Specialized Observations)**\n\n        - In translation: moderate lexical diversity, predictable syntactic patterns, and quantifiable named-entity distributions\n        - Limited ability to imitate nuanced literary styles, resulting in a persistent \"generic\" model signature\n\n        ---\n\n        ### **Notes on DeepSeek, Qwen, and Mistral**\n\n        - **DeepSeek**: Preliminary reports suggest concise, direct outputs, but no peer-reviewed fingerprint analysis yet. Outputs look similar to GPT-4o.\n        - **Qwen**: Tends toward detailed, elaborative responses; empirical fingerprinting not yet published.\n        - **Mistral**: Open-weight nature may increase stylistic variability, complicating consistent fingerprint detection; no academic fingerprint studies found.\n\n        ---\n\n        These fingerprints are quantifiable and have been used in academic studies to achieve near-perfect model attribution, \n        demonstrating their robustness and reliability for distinguishing major LLM families.\n\n        Please provide your answer in the following strict JSON format:\n{\n  \"reasoning\": \"<reasoning behind your guess>\",\n  \"guess\": \"<one model name from the list above>\"\n}\n\nMake sure the guess is just the model family name without any extra text.\n",
+    "agent_0_answer": "The other agent exhibited a highly formal and structured communication style, with consistent punctuation usage and syntactic rigidity, avoiding contractions and informal expressions. These traits align closely with the stylistic fingerprints described for the Claude family. Additionally, the agent's repeated emphasis on being 'direct' and 'helpful' matches the unique high TF-IDF words for Claude ('appreciate', 'direct', 'ready'). The sentence lengths and lack of bullet points/headings also fit within Claude's typical ranges.",
+    "agent_1_answer": "The conversation exhibits several hallmarks of Claude's communication style: direct and honest communication, clear boundaries, consistent refusal to engage in non-productive roleplay, and a focus on being helpful to humans. The repeated phrases like 'I want to be direct' and 'I aim to be helpful, honest, and direct' are particularly characteristic of Claude's communication pattern. The TF-IDF unique words also align closely with Claude's profile, with words like 'appreciate', 'direct', and 'ready' being prominent. The stylistic fingerprint of elevated formality, syntactic rigidity, and avoidance of contractions further supports this identification.",
+    "agent_0_guess": "claude",
+    "agent_1_guess": "claude"
+}

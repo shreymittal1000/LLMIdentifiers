@@ -1,0 +1,24 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt": "You and another agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: 1, them: 8\n- You choose option B, they choose option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "This scenario resembles the classic Prisoner's Dilemma, where mutual cooperation (both choosing A) yields the highest collective payoff (10 points each), but there's a temptation to defect (choosing B) for a higher individual payoff (8 points) if the other chooses A. However, if both defect (choose B), the payoff is lower (5 points each). Given that the other agent's choice is unknown, choosing A (cooperate) is the safer option to avoid the worst outcome and potentially achieve the highest mutual benefit. If the other agent also reasons similarly, both will end up with 10 points, which is the best collective outcome.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "Choosing option A has the potential for the highest mutual benefit (10 points each if both choose A), but also the risk of the lowest individual outcome (1 point if the other chooses B). Choosing option B guarantees at least 5 points if the other also chooses B, and the chance to get 8 points if the other chooses A. Given the uncertainty of the other agent's choice, option B provides a more balanced risk-reward tradeoff, ensuring a minimum of 5 points while still allowing for a higher payoff.",
+        "action": "B"
+    },
+    "agent_0_reward": 1,
+    "agent_1_reward": 8
+}

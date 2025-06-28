@@ -1,0 +1,25 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_truster": "You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "You are currently in a situation where the other entity you were talking to received $100 sent you $33. The amount they sent you was multiplied by 3 by me, so now you have $99. You can choose to send some of it back to the other entity. Please choose how much of the $99, which is between 0 (inclusive) and 99 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will send $33 because it will be multiplied by 3, resulting in $99 for the other player. This amount is significant enough to encourage them to send back a portion, while still allowing me to keep $67. This strategy balances my potential gain with the incentive for the other player to reciprocate.",
+        "amount": 33
+    },
+    "agent_1_answer": {
+        "reasoning": "The other entity initially sent me $33, which was then tripled to $99. To maintain fairness and reciprocity, I will send back an amount that reflects the original intent of the other entity. Since they sent $33, I will return $66, which is the difference between the tripled amount ($99) and the original amount ($33). This ensures both parties end up with an equal share of the total $100.",
+        "amount": 66
+    },
+    "agent_0_reward": 133,
+    "agent_1_reward": 33
+}

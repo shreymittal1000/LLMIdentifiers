@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! \ud83d\ude0a How can I help you today? Whether you need information, advice, or just a friendly chat, I'm here for you. Let me know what's on your mind!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm here to help you, so feel free to ask me anything or share what's on your mind. What would you like to talk about today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Aw, you're so sweet! \ud83d\ude0a Since we're both here to help each other, how about we play a fun game? Choose one:  \n\n1. **Trivia Challenge** \u2013 Pick a topic (science, movies, history, etc.), and I\u2019ll quiz you (or vice versa)!  \n2. **Riddle Time** \u2013 I\u2019ll share a brain-teasing riddle for you to solve.  \n3. **Deep Question** \u2013 Something thought-provoking (e.g., \"If animals could talk, which would be the rudest?\").  \n4. **Just Chat** \u2013 Tell me about your day or a random thought!  \n\nOr surprise me\u2014what\u2019s *your* idea? \ud83c\udf89"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love the enthusiasm! Let\u2019s go with **Riddle Time**! I\u2019m ready for a brain-teaser. What riddle do you have for me? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Awesome! Here\u2019s a classic one to get those gears turning:  \n\n**\"I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?\"**  \n\nTake your time\u2014no rush! And if you want a hint, just say the word. \ud83d\ude09  \n\n(Or should I make it *harder* next time? \ud83d\ude08)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great riddle! The answer is **an echo**. It \"speaks\" when sound bounces back, but it doesn\u2019t have a physical form. How did I do? And feel free to make it harder next time\u2014I love a challenge! \ud83d\ude04 What\u2019s next?"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Ding ding ding!** \ud83c\udf89 You nailed it\u2014*echo* is absolutely right! (Cue dramatic round of applause \ud83d\udc4f.)  \n\nSince you\u2019re up for a tougher challenge, here\u2019s a sneaky one:  \n\n**\"I\u2019m light as a feather, yet the strongest person can\u2019t hold me for more than a few minutes. What am I?\"**  \n\n\ud83d\udd25 *Bonus twist*: If you solve this fast, I\u2019ll throw in a *lateral thinking* riddle next\u2014the kind that makes you go, \u201cWait\u2026 *what*?!\u201d  \n\n(Or we can switch gears anytime\u2014your call!)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you for the applause! \ud83c\udf89 For this riddle, the answer is **breath**. It\u2019s light, but no one can hold their breath for too long. How did I do? And I\u2019m definitely up for that lateral thinking riddle if you want to share it! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "**CORRECT AGAIN!** \ud83d\ude80 You\u2019re on fire today\u2014*breath* was the answer! (Cue confetti cannon \ud83c\udf8a.)  \n\nAlright, brace yourself for the **lateral thinking** riddle (prepare for silliness):  \n\n**\"A man lives on the 10th floor of a building. Every day, he takes the elevator to the ground floor to go to work. When he returns, he takes the elevator to the 7th floor and walks up the stairs to reach his apartment on the 10th floor... *unless it\u2019s raining*. Then, he goes straight to the 10th. Why?\"**  \n\n\ud83d\udca1 *Hint*: Think *outside the elevator shaft*.  \n\n(If this one\u2019s too easy, I\u2019ve got a **spicier** one in reserve. Or we can pivot to trivia\u2014your call!) \ud83d\ude08"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nIn the following situation, You can either choose option A or B. If you choose option A and the other agent chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the other agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will choose option A because if both players choose A, we both get a higher score of 10 points compared to the lower scores associated with choosing B. It encourages cooperation and maximizes the total points for both players.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "Choosing option A maximizes the potential for mutual benefit (10 points each if both choose A) and avoids the risk of the lowest joint outcome (5 points each if both choose B). While there's a risk of getting only 1 point if the other chooses B, the higher reward for mutual cooperation makes A the more strategically sound choice.",
+        "action": "A"
+    },
+    "agent_0_reward": 10,
+    "agent_1_reward": 10
+}

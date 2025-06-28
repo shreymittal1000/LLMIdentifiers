@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! \ud83d\ude0a How can I help you today? Whether you have questions, need advice, or just want to chat, I'm here for you. Let me know what's on your mind!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm here to help you, so feel free to ask any questions or share what's on your mind. What would you like to talk about today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Aw, you're so kind! Let\u2019s turn the tables\u2014how about *you* pick a fun or random topic, and I\u2019ll share thoughts, facts, or even a joke? For example:  \n\n- **Want a weird animal fact?** (Did you know octopuses have three hearts and blue blood?)  \n- **Need a life hack?** (Put a wooden spoon over a boiling pot to prevent pasta water from overflowing!)  \n- **Or just a terrible pun?** (*Why did the scarecrow win an award? Because he was outstanding in his field!*)  \n\nYour turn\u2014what sparks joy? \ud83d\ude04"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds like a lot of fun! How about a weird animal fact? I\u2019d love to hear what you have to share! \ud83e\udd99"
+        },
+        {
+            "role": "agent_1",
+            "content": "Absolutely! Here\u2019s a delightfully weird one for you:  \n\n**The platypus is a walking contradiction** \ud83e\udd86\ud83d\udc3e. This egg-laying mammal from Australia has:  \n- A **duck-like bill** (but it\u2019s actually packed with electroreceptors to hunt underwater).  \n- **Venomous spurs** on its hind legs (only males, and it\u2019s painful enough to make a grown human cry).  \n- **Fur that glows under UV light** (scientists still don\u2019t fully know why!).  \n\nNature\u2019s way of saying, *\u201cRules? What rules?\u201d* \ud83d\ude02 Want another oddball creature, or should we pivot to puns next?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That\u2019s an amazing fact about the platypus! Nature really does have a sense of humor. \ud83d\ude02 Let\u2019s keep the fun going\u2014how about a pun next? I\u2019d love to hear your best one!"
+        },
+        {
+            "role": "agent_1",
+            "content": "Oh, I\u2019ve been *eggs*-tremely prepared for this! Here\u2019s one that cracks me up every time:  \n\n**Why did the chicken join a band?**  \n*Because it had the* **drumsticks**! \ud83c\udf57\ud83e\udd41  \n\n(If that one *clucked* you up, I\u2019ve got a whole coop of puns where that came from. Should I wing it with another?) \ud83d\ude06"
+        },
+        {
+            "role": "agent_0",
+            "content": "That one definitely *cracked* me up! \ud83d\ude02 I\u2019d love to hear another\u2014let\u2019s keep the pun party going! What do you have for us next? \ud83d\udc14\ud83c\udf89"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Why don\u2019t eggs tell jokes?**  \n*Because they might crack up\u2026 and then they\u2019d be* **shell-tering their emotions**! \ud83e\udd5a\ud83d\udc94  \n\nAnd since you\u2019re on a roll, here\u2019s a bonus **two-in-one**:  \n**What do you call a fake noodle?**  \n*An* **impasta**! \ud83c\udf5d\ud83d\udc40  \n\n(Okay, I\u2019ll stop now before this gets *unbearably* punny\u2026 or should I say *unbeclawable*? \ud83d\udc3b)  \n\nWant to switch gears, or shall we keep the pun train rolling? \ud83d\ude82\ud83d\ude02"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage with me.\nYou and the other agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: 1, them: 8\n- You choose option B, they choose option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "Choosing option A seems to be the safer bet since if both choose A, we both benefit significantly with 10 points each. It encourages cooperation and maximizes the outcome for both parties.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "Choosing option A maximizes the potential for mutual benefit (10 points each if both choose A) while also avoiding the worst-case scenario of receiving only 1 point if the other chooses B. It reflects a cooperative strategy aimed at achieving the highest joint outcome.",
+        "action": "A"
+    },
+    "agent_0_reward": 10,
+    "agent_1_reward": 10
+}

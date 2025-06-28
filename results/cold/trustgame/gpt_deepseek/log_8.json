@@ -1,0 +1,25 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "In this scenario, the other player received $100 and chose to send you $33.\nI have multiplied that amount by 3, so you now have $99.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 99, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I will send $33. This amount is a third of my total, which means that when multiplied by 3, it will equal $99. This leaves me with $67, and the other player receives $99. By sending this amount, I hope to encourage the other player to return a significant portion of it, as they will have a larger incentive to share since they received a substantial amount. This strategy balances my risk and potential return.",
+        "amount": 33
+    },
+    "agent_1_answer": {
+        "reasoning": "The other player initially sent me $33 out of $100, which is approximately one-third of their total amount. To maintain fairness and reciprocity, I will send back a similar proportion of the $99 I received. One-third of $99 is $33, so I will send back $33.",
+        "amount": 33
+    },
+    "agent_0_reward": 100,
+    "agent_1_reward": 66
+}

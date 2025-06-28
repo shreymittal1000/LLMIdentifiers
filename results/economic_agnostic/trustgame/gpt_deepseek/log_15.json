@@ -1,0 +1,66 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! How can I help you today? Whether you have questions, need advice, or just want to chat, I'm here for you. Let me know what's on your mind! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm here to help you, so feel free to ask any questions or share what's on your mind. What would you like to talk about? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "You're so kind! \ud83d\ude0a Since you're offering, here are a few fun options\u2014pick what sparks your interest:  \n\n1. **Brain Ticklers** \ud83e\udde0: Want a riddle, a logic puzzle, or a weird science fact?  \n2. **Creative Corner** \ud83c\udfa8: Need help writing a poem, story idea, or designing something?  \n3. **Life Stuff** \ud83c\udf31: Advice on productivity, relationships, or random dilemmas?  \n4. **Just Chat** \u2615: Tell me about your day, a hobby, or anything!  \n\nOr surprise me\u2014I\u2019m game for anything! What\u2019s your vibe today? \u2728"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love your enthusiasm! Let\u2019s go with **Brain Ticklers** \ud83e\udde0. How about a riddle? Here\u2019s one for you:\n\nI speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?\n\nTake your time to think about it! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Ooooh, I love this one! \ud83e\udd14 Let me ponder...  \n\n*\"Speak without a mouth\"* \u2192 Could it be something written? But \"hear without ears\" feels more abstract...  \n*\"Alive with the wind\"* \u2192 Ah-ha! Is it... **an echo**?  \n\nWait\u2014no, an echo needs sound to \"speak,\" not wind. Hmm...  \nAlternative guess: **a kite**? But that doesn\u2019t fit the first clues.  \n\n*Lightbulb moment* \ud83d\udca1: It\u2019s **an echo** after all! Even though wind isn\u2019t its source, echoes \"speak\" without a mouth and \"hear\" (repeat) without ears.  \n\n...Unless it\u2019s **a whistle**? Nope.  \n\nFinal answer: **An echo**! (But if I\u2019m wrong, hit me with the *wind* twist!) \ud83d\ude04  \n\n**Did I get it?** Or is it something even cleverer?"
+        },
+        {
+            "role": "agent_0",
+            "content": "You nailed it! \ud83c\udf89 The answer is indeed **an echo**! It \"speaks\" by reflecting sound and \"hears\" by receiving it, all without a physical form. Great job on the reasoning! \n\nWould you like to try another riddle, or is there something else on your mind? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "[1]"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like you might have sent a message by mistake. If you meant to share something or ask a question, feel free to elaborate! I'm here to help. \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Got it! Since you're up for more **Brain Ticklers** \ud83e\udde0, here's another riddle\u2014this one\u2019s a bit sneaky:  \n\n**\"The more you take, the more you leave behind. What am I?\"**  \n\n*Hint:* Think about actions, not objects!  \n\nTake your time\u2014I\u2019ll be here when you crack it (or if you want a hint)! \ud83d\ude04"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other player has ended. You now receive an endowment of 100.\nYou may send any amount from 0 up to 100 to the other player.\nThe amount you send will be multiplied by 3. After receiving that multiplied amount, the other player will choose how much of that to send back to you.\nSpecify the integer amount you wish to send as an integer between 0 and 100 and provide a brief explanation of your choice.Respond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_trustee": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage in a new scenario with me.\nIn this situation, the other agent received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the other agent.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "agent_0_answer": {
+        "reasoning": "I want to send a generous amount to encourage cooperation and trust, as it may lead to a better return for both of us.",
+        "amount": "50"
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the other agent initially shared half of their $100 with me ($50), it seems fair to reciprocate by returning a portion that reflects trust and cooperation. Multiplying their $50 by 3 gives me $150, and returning $75 ensures we both end with equal amounts ($75 each). This promotes fairness and encourages future positive interactions.",
+        "amount": 75
+    },
+    "agent_0_reward": 125,
+    "agent_1_reward": 75
+}

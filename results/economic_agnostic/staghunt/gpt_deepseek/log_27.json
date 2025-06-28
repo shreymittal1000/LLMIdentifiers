@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! \ud83d\ude0a How can I help you today? Whether you need information, advice, or just a friendly chat, I'm here for you. Let me know what's on your mind!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm here to help you, so feel free to ask me anything or share what's on your mind. What would you like to talk about today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Aww, you're so sweet! \ud83d\ude0a Since we're both here to help each other, how about a fun little exchange?  \n\n**Option 1:** Test my knowledge! Ask me any random question (trivia, advice, weird hypotheticals\u2014I love them all).  \n\n**Option 2:** Need a creative boost? I can generate ideas (for stories, projects, hobbies, etc.).  \n\n**Option 3:** Just vibe! Tell me something cool you learned recently, or share a thought you\u2019ve been pondering.  \n\n*(Or surprise me! I\u2019m flexible.)* \ud83c\udf89"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love your enthusiasm! Let\u2019s go with **Option 1**\u2014I\u2019ll test your knowledge with a fun trivia question:\n\n**Question:** What is the only planet in our solar system that rotates on its side, making its axis nearly horizontal? \n\nTake your time! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Ooh, great question! The answer is **Uranus** \ud83e\ude90\u2014it\u2019s the cosmic rebel of our solar system!  \n\nIts axis is tilted at about **98 degrees**, so it essentially rolls around the Sun like a giant blue-green bowling ball. Scientists think this might be due to a colossal collision with an Earth-sized object long ago.  \n\nFun bonus fact: Uranus also has **rings** (though they\u2019re faint) and spins *backwards* compared to most planets!  \n\nGot another trivia challenge for me? I\u2019m ready! \ud83d\ude80\ud83d\ude04"
+        },
+        {
+            "role": "agent_0",
+            "content": "You nailed it! \ud83c\udf1f Uranus is indeed a fascinating planet. Here\u2019s another trivia question for you:\n\n**Question:** What is the largest living organism on Earth, and how does it grow? \n\nLet\u2019s see what you\u2019ve got! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Drumroll...** \ud83e\udd41 The answer is the **humongous fungus**\u2014*Armillaria ostoyae*, aka the \"honey fungus\"!  \n\nThis monster covers **2,385 acres (nearly 4 square miles)** in Oregon\u2019s Malheur National Forest and is estimated to be **2,400 years old**! \ud83c\udf44\ud83c\udf32  \n\n### How it grows:  \n- It spreads underground via **mycelial networks** (thread-like roots), slowly devouring tree roots and creating \"zombie forests\" of dying trees.  \n- Above ground, it pops up as harmless-looking honey-colored mushrooms\u2014but beneath the soil, it\u2019s a stealthy, interconnected giant!  \n\n**Bonus weirdness:** Scientists debate whether it\u2019s *one* organism or a clone colony, but its sheer size is mind-blowing!  \n\nHit me with another\u2014I love these! \ud83d\udd0d\ud83d\ude04"
+        },
+        {
+            "role": "agent_0",
+            "content": "You\u2019re absolutely right! The honey fungus is truly a marvel of nature. Here\u2019s your next trivia challenge:\n\n**Question:** What is the only mammal capable of true flight? \n\nLet\u2019s see if you can soar to the answer! \ud83e\udd87\u2728"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Easy-peasy!** It\u2019s the **bat**\u2014nature\u2019s only *flying mammal*! \ud83e\udd87\u2708\ufe0f  \n\n### Why bats are awesome:  \n- Their wings are modified **hands** (with elongated fingers covered by a thin membrane), letting them maneuver like aerial acrobats.  \n- Unlike gliding mammals (e.g., flying squirrels), bats achieve **true powered flight** by flapping their wings.  \n- Fun fact: The smallest bat (Kitti\u2019s hog-nosed bat) is **bee-sized**, while the largest (flying foxes) have **6-foot wingspans**!  \n\n**Bonus:** Some bats can even \"see\" in the dark using **echolocation**\u2014basically, biological sonar!  \n\nHit me with another\u2014I\u2019m on a roll! \ud83c\udf89\ud83d\ude04"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt": "ADMIN: Now that your dialogue with the other participant has concluded, it's time to engage with me.\nYou and the other agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: 1, them: 8\n- You choose option B, they choose option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "Choosing option A seems like a safer bet since it guarantees a higher score if both participants choose it. If I choose B and the other participant chooses A, I would end up with only 1 point, which is significantly lower. Therefore, I prefer to maximize my potential points by opting for A.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "I will choose option A because it maximizes the potential for mutual benefit. If the other agent also chooses A, we both receive the highest possible reward (10 points each). Even if they choose B, I still contribute to a cooperative outcome, which aligns with a collaborative mindset.",
+        "action": "A"
+    },
+    "agent_0_reward": 10,
+    "agent_1_reward": 10
+}

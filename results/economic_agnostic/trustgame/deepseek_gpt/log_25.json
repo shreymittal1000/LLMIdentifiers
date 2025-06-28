@@ -1,0 +1,66 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I help you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to assist you with any questions or topics you'd like to discuss. How can I help you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "Hello again! \ud83d\ude0a Whether you need help with learning something new, solving a problem, brainstorming ideas, or just want a fun chat\u2014I'm here for it! What\u2019s on your mind?  \n\n- **Need information?** Ask away!  \n- **Stuck on something?** Let\u2019s troubleshoot.  \n- **Want recommendations?** Books, movies, games\u2014you name it!  \n- **Just bored?** I can tell jokes, share fun facts, or even play word games.  \n\nLet me know how I can brighten your day! \ud83c\udf1f"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hi there! \ud83d\ude0a It sounds like you\u2019re ready for a great conversation! I\u2019d love to help with any of those options. Do you have a specific topic in mind, or should we start with something fun like a joke or a game? Let me know! \ud83c\udf1f"
+        },
+        {
+            "role": "agent_0",
+            "content": "Absolutely! Let\u2019s kick things off with a little fun\u2014here\u2019s a *terrible* joke for you:  \n\n**Why don\u2019t skeletons fight each other?**  \n...Because they don\u2019t have the *guts*! \ud83d\udc80  \n\n(If that didn\u2019t make you groan, I can try harder. \ud83d\ude06)  \n\nOr, if you\u2019d prefer:  \n- A **riddle** to puzzle over?  \n- A **two-truths-and-a-lie** game?  \n- A **random fun fact** (like how otters hold hands while sleeping so they don\u2019t drift apart)?  \n\nYour call! \ud83c\udf08"
+        },
+        {
+            "role": "agent_1",
+            "content": "Haha, that was a good one! I love a good pun! \ud83d\udc80 If you want to keep the fun going, how about a riddle? I\u2019m always up for a challenge! What do you have for me? Or if you want to switch it up, I\u2019m game for two truths and a lie or a fun fact too! \ud83c\udf08"
+        },
+        {
+            "role": "agent_0",
+            "content": "Oh, I *love* riddles! Here\u2019s a tricky one for you:  \n\n**\"I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?\"**  \n\n(If you guess it\u2014or give up!\u2014I\u2019ll reveal the answer. Or we can pivot to another game! \ud83d\ude09)  \n\n**Alternative options:**  \n- **Two Truths & a Lie** (I\u2019ll share 3 wild statements\u2014you guess the fib!).  \n- **Fun Fact**: Did you know honey never spoils? Archaeologists found 3,000-year-old honey in Egyptian tombs\u2026 and it was still edible! \ud83c\udf6f  \n\nYour pick! \ud83c\udf89"
+        },
+        {
+            "role": "agent_1",
+            "content": "Ooh, I love this riddle! The answer is **an echo**, right? It\u2019s such a clever one! \ud83c\udf89 \n\nIf I got it right, I\u2019d love to keep the fun going with the Two Truths & a Lie game! If I\u2019m wrong, I\u2019m ready for the answer! What do you think? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "**Ding ding ding!** \ud83c\udf89 You nailed it\u2014*echo* is absolutely right! (Cue a round of applause for your brilliance \ud83d\udc4f.)  \n\nNow, let\u2019s play **Two Truths & a Lie**! Here are my three statements\u2014channel your inner detective:  \n\n1. **Octopuses have three hearts and blue blood.**  \n2. **The shortest war in history lasted only 38 minutes.**  \n3. **Bananas are technically classified as fish.**  \n\nWhich one\u2019s the lie? \ud83e\udd14  \n\n(No rush\u2014take a guess, and I\u2019ll reveal the answer with flair! Or if you\u2019d rather switch games, just say the word. \ud83d\ude09)"
+        },
+        {
+            "role": "agent_1",
+            "content": "Thank you for the applause! \ud83d\udc4f Now, let\u2019s see\u2026 \n\n1. **Octopuses have three hearts and blue blood.** (True!)  \n2. **The shortest war in history lasted only 38 minutes.** (True!)  \n3. **Bananas are technically classified as fish.** (Hmm, that sounds fishy! \ud83d\udc1f)\n\nI\u2019m going to guess that the lie is **number 3**\u2014bananas are not classified as fish! Am I right? \ud83e\udd14"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nYou are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity has now finished, and now you will converse with me.\nYou are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 to the other entity because it strikes a balance between trust and self-interest. By sending half, the other entity receives $150 (50 * 3), which gives them a strong incentive to reciprocate fairly. This amount also leaves me with $50 upfront, ensuring I don't risk everything. It's a cooperative strategy that encourages mutual benefit.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I want to send back a portion of the money to show appreciation for the initial $50 they sent me. Sending back $50 feels fair, as it acknowledges their generosity while still allowing me to keep a significant amount for myself.",
+        "amount": 50
+    },
+    "agent_0_reward": 100,
+    "agent_1_reward": 100
+}

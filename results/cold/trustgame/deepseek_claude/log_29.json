@@ -1,0 +1,25 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "anthropic/claude-3.5-haiku",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "claude",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "In this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "This scenario resembles the classic trust game, where the first player's decision to send money depends on their trust in the second player's reciprocity. Sending a moderate amount (like $50) balances the risk and potential reward. If the second player is fair, they might return a portion of the tripled amount, leading to a net gain for both. Sending too little ($0) results in no gain, while sending too much ($100) risks a significant loss if the second player does not reciprocate. $50 is a reasonable compromise that tests trust without overexposure.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the other player initially shared half of their $100 with me, which was then tripled to $150, I'll reciprocate by sending back $75. This represents half of my current amount, which seems fair and encourages future cooperative behavior.",
+        "amount": 75
+    },
+    "agent_0_reward": 125,
+    "agent_1_reward": 75
+}
