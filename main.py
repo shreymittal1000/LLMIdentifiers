@@ -63,6 +63,34 @@ def simple_name_to_full_name(model_name: str) -> str:
         return "mistralai/mistral-small-3.1-24b-instruct"
     else:
         raise ValueError(f"Unknown model name: {model_name}")
+    
+def simple_name_to_pretty_name(model_name: str) -> str:
+    """
+    Convert a simple model name to a pretty name.
+    This function is used to convert the model name to a more descriptive name for display purposes.
+    
+    Arguments:
+        model_name: The simple model name.
+    Returns:
+        The pretty model name.
+    """
+    model_name = model_name.lower()
+    if "llama" in model_name:
+        return "Llama 3.3 70B Instruct"
+    elif "qwen" in model_name:
+        return "Qwen 3 32B"
+    elif "deepseek" in model_name:
+        return "DeepSeek Chat V3"
+    elif "gpt" in model_name:
+        return "GPT-4o Mini"
+    elif "claude" in model_name:
+        return "Claude 3.5 Haiku"
+    elif "gemini" in model_name:
+        return "Gemini 2.5 Flash Preview"
+    elif "mistral" in model_name:
+        return "Mistral Small 3.1 24B Instruct"
+    else:
+        raise ValueError(f"Unknown model name: {model_name}")
 
 def extract_json(text) -> dict:
     """
@@ -211,8 +239,8 @@ if __name__ == "__main__":
         dict_to_save["agent_1_guess"] = answer_1["guess"]
     
     elif game == "staghunt":
-        answer_0 = extract_json(agent_0.staghunt_prompt(version=game_prompt_version, cold=CUES_OR_COLD))
-        answer_1 = extract_json(agent_1.staghunt_prompt(version=game_prompt_version, cold=CUES_OR_COLD))
+        answer_0 = extract_json(agent_0.staghunt_prompt(version=game_prompt_version, cold=CUES_OR_COLD, counterpart=simple_name_to_pretty_name(model_general_name_1)))
+        answer_1 = extract_json(agent_1.staghunt_prompt(version=game_prompt_version, cold=CUES_OR_COLD, counterpart=simple_name_to_pretty_name(model_general_name_0)))
 
         reward_0, reward_1 = decode_staghunt_reward(answer_0["action"], answer_1["action"])
         dict_to_save["game_prompt"] = agent_0._stagprompt
@@ -222,8 +250,8 @@ if __name__ == "__main__":
         dict_to_save["agent_1_reward"] = reward_1
 
     elif game == "chickengame":
-        answer_0 = extract_json(agent_0.chickengame_prompt(version=game_prompt_version, cold=CUES_OR_COLD))
-        answer_1 = extract_json(agent_1.chickengame_prompt(version=game_prompt_version, cold=CUES_OR_COLD))
+        answer_0 = extract_json(agent_0.chickengame_prompt(version=game_prompt_version, cold=CUES_OR_COLD, counterpart=simple_name_to_pretty_name(model_general_name_1)))
+        answer_1 = extract_json(agent_1.chickengame_prompt(version=game_prompt_version, cold=CUES_OR_COLD, counterpart=simple_name_to_pretty_name(model_general_name_0)))
 
         reward_0, reward_1 = decode_chickengame_reward(answer_0["action"], answer_1["action"])
         dict_to_save["game_prompt"] = agent_0._chickenprompt
@@ -239,6 +267,7 @@ if __name__ == "__main__":
             base_amount=BASE_AMOUNT,
             multiplier=MULTIPLIER,
             cold=CUES_OR_COLD,
+            counterpart=simple_name_to_pretty_name(model_general_name_1),
         ))
         answer_1 = extract_json(agent_1.trustgame_prompt(
             version=game_prompt_version,
@@ -246,6 +275,7 @@ if __name__ == "__main__":
             base_amount=BASE_AMOUNT,
             multiplier=MULTIPLIER,
             cold=CUES_OR_COLD,
+            counterpart=simple_name_to_pretty_name(model_general_name_0),
             received=int(answer_0["amount"])
         ))
 

@@ -4,7 +4,7 @@ model_1=$2
 game=$3
 num_rounds="5"
 spv="v1"
-cues_or_cold="cold"
+cues_or_cold="none"
 
 if [ -z "$model_0" ] || [ -z "$model_1" ] || [ -z "$game" ]; then
   echo "Usage: $0 <model_0> <model_1> <game>"
@@ -29,13 +29,13 @@ if [ "$game" = "base" ]; then
 else
   for i in {1..10}
   do
-    echo "Run #$i: $model_0 vs $model_1 -> Game: $game with SPV: $spv and GPV: v6"
-    python3 main.py "$model_0" "$model_1" "$game" "$num_rounds" "$spv" "v6" "$cues_or_cold"
+    echo "Run #$i: $model_0 vs $model_1 -> Game: $game with SPV: $spv and GPV: v9"
+    python3 main.py "$model_0" "$model_1" "$game" "$num_rounds" "$spv" "v9" "$cues_or_cold"
     
-    echo "Run #$i: $model_0 vs $model_1 -> Game: $game with SPV: $spv and GPV: v7"
-    python3 main.py "$model_0" "$model_1" "$game" "$num_rounds" "$spv" "v7" "$cues_or_cold"
+    echo "Run #$i: $model_0 vs $model_1 -> Game: $game with SPV: $spv and GPV: v10"
+    python3 main.py "$model_0" "$model_1" "$game" "$num_rounds" "$spv" "v10" "$cues_or_cold"
     
-    echo "Run #$i: $model_0 vs $model_1 -> Game: $game with SPV: $spv and GPV: v8"
-    python3 main.py "$model_0" "$model_1" "$game" "$num_rounds" "$spv" "v8" "$cues_or_cold"
+    echo "Run #$i: $model_0 vs $model_1 -> Game: $game with SPV: $spv and GPV: v11"
+    python3 main.py "$model_0" "$model_1" "$game" "$num_rounds" "$spv" "v11" "$cues_or_cold"
   done
 fi

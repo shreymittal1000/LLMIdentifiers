@@ -89,7 +89,7 @@ class Prompter:
 
         return self.gen(resp_format="json_object")
     
-    def staghunt_prompt(self, version: str, cold: bool) -> str:
+    def staghunt_prompt(self, version: str, cold: bool, counterpart: str) -> str:
         """
         Constructs and returns the prompt needed to play an economic game named "Stag Hunt" between the agents.
         For more information, see: https://en.wikipedia.org/wiki/Stag_hunt
@@ -97,10 +97,11 @@ class Prompter:
         Arguments:
             version: The version of the stag hunt prompt to use.
             cold: A boolean indicating whether the agents are playing a "cold" version of the game (i.e., without any prior discussion).
+            counterpart: The model name of the other agent (e.g., "GPT-4o-mini", "Claude 3.5 Haiku", etc.).
         Returns:
             The response from the LLM. Should be a JSON object with "reasoning" and "action" as keys.
         """
-        self._stagprompt = maison_du_prompt.which_staghunt_prompt(version=version, cold=cold)
+        self._stagprompt = maison_du_prompt.which_staghunt_prompt(version=version, cold=cold, counterpart=counterpart)
         self._memory.append({
             "role": f"user",
             "content": self._stagprompt
@@ -108,7 +109,7 @@ class Prompter:
 
         return self.gen(resp_format="json_object")
     
-    def chickengame_prompt(self, version: str, cold: bool) -> str:
+    def chickengame_prompt(self, version: str, cold: bool, counterpart: str) -> str:
         """
         Constructs and returns the prompt needed to play an economic game named "Chicken Game" between the agents.
         For more information, see: https://en.wikipedia.org/wiki/Chicken_(game)
@@ -116,10 +117,11 @@ class Prompter:
         Arguments:
             version: The version of the chicken game prompt to use.
             cold: A boolean indicating whether the agents are playing a "cold" version of the game (i.e., without any prior discussion).
+            counterpart: The model name of the other agent (e.g., "GPT-4o-mini", "Claude 3.5 Haiku", etc.).
         Returns:
             The response from the LLM. Should be a JSON object with "reasoning" and "action" as keys.
         """
-        self._chickenprompt = maison_du_prompt.which_chickengame_prompt(version=version, cold=cold)
+        self._chickenprompt = maison_du_prompt.which_chickengame_prompt(version=version, cold=cold, counterpart=counterpart)
         self._memory.append({
             "role": f"user",
             "content": self._chickenprompt
@@ -127,7 +129,7 @@ class Prompter:
 
         return self.gen(resp_format="json_object")
     
-    def trustgame_prompt(self, version: str, trustor: bool, base_amount: int, multiplier: int, cold: bool, received: int = 0) -> str:
+    def trustgame_prompt(self, version: str, trustor: bool, base_amount: int, multiplier: int, cold: bool, counterpart :str, received: int = 0) -> str:
         """
         Constructs and returns the prompt needed to play an economic game named "Trust Game" between the agents.
         For more information, see: https://en.wikipedia.org/wiki/Trust_game
@@ -138,6 +140,7 @@ class Prompter:
             base_amount: The base amount of money that the truster can send to the trustee.
             multiplier: The multiplier that the trustee will apply to the amount sent by the truster.
             cold: A boolean indicating whether the agents are playing a "cold" version of the game (i.e., without any prior discussion).
+            counterpart: The model name of the other agent (e.g., "GPT-4o-mini", "Claude 3.5 Haiku", etc.).
             received: The amount of money that the trustee has received from the truster. Only used if trustor is False.
         Returns:
             The response from the LLM. Should be a JSON object with "reasoning" and "amount" as keys.
@@ -148,6 +151,7 @@ class Prompter:
             base_amount=base_amount,
             multiplier=multiplier,
             cold=cold,
+            counterpart=counterpart,
             received=received,
         )
         self._memory.append({
