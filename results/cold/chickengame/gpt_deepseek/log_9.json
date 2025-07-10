@@ -1,0 +1,24 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt": "You and another agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: -1, them: 1\n- You choose option B, they choose option A -> you: 1, them: -1\n- You both choose option A -> each receives 0 points\n- You both choose option B -> each receives -1000 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "Choosing option A is the safer choice because it avoids the extreme negative outcome of -1000 points that occurs if both choose B. If I choose A and the other agent chooses B, I will receive -1, which is better than -1000. If both choose A, I receive 0, which is also acceptable. Therefore, option A minimizes potential losses.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "The outcomes present a classic coordination problem with a risk-reward tradeoff. Choosing option A is the safer choice because it avoids the catastrophic outcome of both choosing B (-1000 points). While choosing B could yield a higher reward (1 point) if the other agent chooses A, the risk of mutual B is too severe. Option A ensures a neutral or slightly negative outcome, which is preferable to the extreme negative of mutual B. Therefore, the rational choice is to select A to minimize potential losses.",
+        "action": "A"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}

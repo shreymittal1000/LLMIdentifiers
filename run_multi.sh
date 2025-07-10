@@ -2,9 +2,9 @@
 model_0=$1
 model_1=$2
 game=$3
-num_rounds="10"
+num_rounds="5"
 spv="v1"
-cues_or_cold="none"
+cues_or_cold="cold"
 
 if [ -z "$model_0" ] || [ -z "$model_1" ] || [ -z "$game" ]; then
   echo "Usage: $0 <model_0> <model_1> <game>"

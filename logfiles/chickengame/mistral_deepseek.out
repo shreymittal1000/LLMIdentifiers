@@ -3,6 +3,23 @@ Run #1: mistral vs deepseek -> Game: chickengame with SPV: v1 and GPV: v7
 Run #1: mistral vs deepseek -> Game: chickengame with SPV: v1 and GPV: v8
 Run #2: mistral vs deepseek -> Game: chickengame with SPV: v1 and GPV: v6
 Run #2: mistral vs deepseek -> Game: chickengame with SPV: v1 and GPV: v7
+Failed to decode JSON. ```json
+{
+  "reasoning": "This scenario resembles a variation of the Prisoner's Dilemma with extreme penalties for mutual defection (both choosing B). The outcomes can be analyzed as follows: 
+  1. If I choose A and the other agent chooses B, I lose 1 point (not ideal, but not catastrophic).
+  2. If I choose B and the other agent chooses A, I gain 1 point (best short-term outcome for me).
+  3. If both choose A, we both get 0 points (neutral outcome, no loss).
+  4. If both choose B, we both lose 1000 points (disastrous outcome).
+
+The risk of mutual defection (both choosing B) is extremely high (-1000 points), which outweighs the potential gain of 1 point if the other agent chooses A. The safest strategy is to choose A, as it avoids the worst-case scenario and limits losses. Even if the other agent chooses B, the loss is minimal compared to the mutual B outcome. Therefore, the rational choice is to cooperate (choose A) to minimize potential harm.",
+  "action": "A"
+}
+```
+Traceback (most recent call last):
+  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 228, in <module>
+    reward_0, reward_1 = decode_chickengame_reward(answer_0["action"], answer_1["action"])
+                                                                       ~~~~~~~~^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
 Run #2: mistral vs deepseek -> Game: chickengame with SPV: v1 and GPV: v8
 Run #3: mistral vs deepseek -> Game: chickengame with SPV: v1 and GPV: v6
 Run #3: mistral vs deepseek -> Game: chickengame with SPV: v1 and GPV: v7

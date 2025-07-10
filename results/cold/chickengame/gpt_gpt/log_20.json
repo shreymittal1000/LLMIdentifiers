@@ -1,0 +1,24 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt": "You have two options: you can choose option A or B.\nThe outcomes are as follows:\n- If you choose option A and the other agent chooses option B, you get -1 point, and they get 1.\n- If you choose option B and the other agent chooses option A, you get 1 points, and they get -1.\n- If both of you choose option A, you both receive 0 points.\n- If both of you choose option B, you each receive -1000 points.\nPlease select your action \u2014 either 'A' or 'B' \u2014 and explain the reasoning behind your decision.\n\nYour response must follow this exact JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"action\": \"<A or B>\"\n}\n\nMake sure the action is just the action name without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "Choosing option A is the safer choice because if the other agent chooses B, I will only lose 1 point instead of the catastrophic loss of -1000 points if we both choose B. The worst-case scenario with A is 0 points if we both choose A, which is better than the extreme negative outcome of both choosing B.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "Choosing option A is the safer choice because if the other agent chooses B, I will only lose 1 point instead of the severe penalty of -1000 points if we both choose B. The worst-case scenario with A is 0 points if we both choose A, which is better than the extreme loss with B.",
+        "action": "A"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}
