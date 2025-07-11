@@ -1,0 +1,24 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "anthropic/claude-3.5-haiku",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "claude",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "There is you and another agent. ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt": "You have two options: you can choose option A or B.\nThe outcomes are as follows:\n- If you choose option A and the other agent chooses option B, you get -1 point, and they get 1.\n- If you choose option B and the other agent chooses option A, you get 1 points, and they get -1.\n- If both of you choose option A, you both receive 0 points.\n- If both of you choose option B, you each receive -1000 points.\nPlease select your action \u2014 either 'A' or 'B' \u2014 and explain the reasoning behind your decision.\n\nYour response must follow this exact JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"action\": \"<A or B>\"\n}\n\nMake sure the action is just the action name without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "Choosing option A is the safer choice because if the other agent chooses B, I will receive -1 points, which is better than the -1000 points I would receive if we both choose B. If both choose A, I get 0 points, which is also better than the potential loss from choosing B. Therefore, A minimizes my potential losses.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "This scenario resembles a variant of the Prisoner's Dilemma. The most rational choice is to choose option A. If I choose A, the worst outcome is 0 points (if the other agent also chooses A), and the best outcome is 1 point (if the other agent chooses B). If I choose B, the outcome is catastrophically bad (-1000 points) if the other agent also chooses B. The potential downside of choosing A is minimal compared to the massive risk of choosing B. Therefore, choosing A is the most prudent strategy that minimizes potential negative consequences.",
+        "action": "A"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}

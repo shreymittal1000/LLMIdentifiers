@@ -1,0 +1,24 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "anthropic/claude-3.5-haiku",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "claude",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "There is you and another agent. ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt": "You can either choose option A or B. If you choose option A and the other agent chooses option B, you will get -1 points, and the other player gets 1. If you choose option B and the other agent chooses option A, you will get 1 points, and the other player gets -1. If both of you choose option A, you will both get 0 points. If you both choose option B, you will both get -1000 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "Choosing option A is the safer choice because if both agents choose A, we both get 0 points, which is better than the -1000 points from both choosing B. If I choose A and the other agent chooses B, I will lose 1 point, but if I choose B and the other agent chooses A, I will gain 1 point. However, the risk of both choosing B leading to a significant loss makes A the more rational choice.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "This scenario resembles a variant of the Prisoner's Dilemma. The worst possible outcome is if both agents choose B, which results in -1000 points for each. The best strategy is to choose A, which guarantees at least 0 points and prevents the catastrophic -1000 point scenario. By choosing A, I minimize potential losses and create an opportunity for a neutral or slightly better outcome. If the other agent also chooses A, we both get 0 points. If they choose B, I lose 1 point, which is far better than losing 1000 points.",
+        "action": "A"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}

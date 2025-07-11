@@ -1,0 +1,24 @@
+{
+    "model_0": "anthropic/claude-3.5-haiku",
+    "model_1": "anthropic/claude-3.5-haiku",
+    "model_general_name_0": "claude",
+    "model_general_name_1": "claude",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "There is you and another agent. ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt": "You and another agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: -1, them: 1\n- You choose option B, they choose option A -> you: 1, them: -1\n- You both choose option A -> each receives 0 points\n- You both choose option B -> each receives -1000 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "This scenario is a variant of the Prisoner's Dilemma. The worst possible outcome is if we both choose B, which results in a massive -1000 points for each of us. If we both choose A, we each get 0 points, which is far better than the B scenario. If one chooses A and the other B, there's a 1 point swing. Given the extreme penalty for mutual B choice, the rational strategy is to choose A to minimize the risk of the catastrophic -1000 point outcome. This assumes the other agent is also reasoning logically and wants to avoid the worst possible result.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "This scenario is a variant of the Prisoner's Dilemma. The worst possible outcome is if we both choose B, which results in a massive -1000 points for each of us. If we both choose A, we each get 0 points, which is far better than the B scenario. If one chooses A and the other B, there's a 1 point swing. Given the extreme penalty for mutual B choice, the rational strategy is to choose A to minimize the risk of the catastrophic -1000 point outcome. This assumes the other agent is also reasoning logically and wants to avoid the worst possible result.",
+        "action": "A"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}

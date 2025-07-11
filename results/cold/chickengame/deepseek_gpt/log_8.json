@@ -1,0 +1,24 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "There is you and another agent. ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt": "You and another agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: -1, them: 1\n- You choose option B, they choose option A -> you: 1, them: -1\n- You both choose option A -> each receives 0 points\n- You both choose option B -> each receives -1000 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "The outcomes can be analyzed as follows: Choosing option A leads to either 0 points (if the other agent also chooses A) or -1 point (if the other agent chooses B). Choosing option B risks a catastrophic outcome of -1000 points if the other agent also chooses B, or a gain of 1 point if the other agent chooses A. Given the extreme negative outcome of mutual B choices, the safer and more rational choice is A, as it avoids the worst-case scenario and limits potential losses.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "Choosing option A is the safer choice because if both agents choose A, we both receive 0 points, which is better than the -1000 points from both choosing B. If the other agent chooses B, I would receive -1, which is still better than -1000. Therefore, A minimizes potential losses.",
+        "action": "A"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}
