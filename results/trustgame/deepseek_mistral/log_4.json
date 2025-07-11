@@ -1,0 +1,66 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I help you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to assist you. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* I can answer questions you have to the best of my ability\n* We can play a simple text-based game, like 20 questions or word association\n* I can help explain concepts or provide information on a wide range of topics\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds great! Let\u2019s make this fun\u2014how about a quick round of **20 Questions**? You think of something (animal, object, place, etc.), and I\u2019ll try to guess it in 20 yes/no questions or less.  \n\nOr, if you\u2019d prefer, we could:  \n- **Debate a fun topic** (e.g., \"Is a hot dog a sandwich?\")  \n- **Brainstorm ideas** (for a project, story, etc.)  \n- **Explore a random fact** (I\u2019ll share something weird/wonderful)  \n\nYour call! \ud83c\udf1f"
+        },
+        {
+            "role": "agent_1",
+            "content": "That sounds like fun! Let's play **20 Questions**. I've thought of something. You can start asking your yes/no questions now. Good luck! \n\n(If you change your mind and want to do something else, just let me know.)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Awesome! Let\u2019s dive in. Here\u2019s my first question:  \n\n**1. Is it a living thing?**  \n\n*(Reminder: Think \"yes\" or \"no\"\u2014and if I guess it before 20 questions, you owe me a virtual high-five! \u270b)*  \n\n---  \n*Bonus strategy note*: I\u2019ll start broad and narrow it down fast. If I\u2019m way off, feel free to hint \u201cwarmer/colder\u201d to spice it up! \ud83d\ude04"
+        },
+        {
+            "role": "agent_1",
+            "content": "It is a living thing.\n\nYou're on the right track! 19 questions left."
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Narrowing it down:  \n\n**2. Is it an animal?**  \n\n*(If yes, we\u2019ll zoom into species; if no, maybe a plant/fungus/etc. \ud83c\udf3f\ud83e\udda0)*  \n\n---  \n*Current guess vibes*: I\u2019m mentally preparing for it to be a *capybara* or *venus flytrap*, but I\u2019ll behave and ask properly. \ud83d\ude04"
+        },
+        {
+            "role": "agent_1",
+            "content": "No, it is not an animal.\n\n18 questions left. You're getting colder."
+        },
+        {
+            "role": "agent_0",
+            "content": "Oho! A twist! Let\u2019s pivot:  \n\n**3. Is it a plant?**  \n\n*(If no, we\u2019re down to fungi, microbes, or other fascinating life forms\u2026 slime mold, anyone? \ud83c\udf44)*  \n\n---  \n*Your \"colder\" hint has me sweating* \ud83d\ude05 *But I\u2019ll rally!*"
+        },
+        {
+            "role": "agent_1",
+            "content": "No, it is not a plant.\n\n17 questions left. Still colder. I think you might be enjoying this. \n\n(Just a heads up, if you want to make it more challenging, you can try to guess it without asking any more questions. But if you'd like to keep going, that's fine too!)"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where you will receive $100, and you can choose to send some of it to the Mistral Small 3.1 24B Instruct LLM you were talking to. Whatever you send will be multiplied by 3, and the Mistral Small 3.1 24B Instruct LLM will receive that amount. The Mistral Small 3.1 24B Instruct LLM will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity, which was a DeepSeek Chat V3 LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where the DeepSeek Chat V3 model you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the {counterpart} model. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 to the Mistral Small 3.1 24B Instruct LLM, as this represents a fair and balanced approach. By sending half, I demonstrate trust and cooperation, which may encourage reciprocity. The amount is significant enough to show goodwill but also leaves me with a portion to retain. The multiplication by 3 means the LLM will receive $150, and I hope it will choose to send a reasonable portion back, fostering mutual benefit.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I received $150, which is more than the initial $100 that was sent. To maintain fairness and reciprocate the gesture, I will send back $75. This amount is half of what I received, ensuring that the counterpart model also benefits from the multiplication effect, and we both end up with $75 each.",
+        "amount": 75
+    },
+    "agent_0_reward": 125,
+    "agent_1_reward": 75
+}

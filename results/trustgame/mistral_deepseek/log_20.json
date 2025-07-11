@@ -1,0 +1,66 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about a wide range of topics. Here are a few ways we can start:\n\n1. **General Conversation**: We can talk about your day, your interests, or any topic you'd like to discuss.\n2. **Q&A**: If there's something specific you'd like to know or learn about, feel free to ask.\n3. **Jokes and Riddles**: I can tell some jokes or riddles to lighten the mood.\n4. **Games**: We can play simple text-based games like 20 questions, trivia, or word association.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! That sounds fun\u2014let's go with **#4: Games**. How about a quick round of **20 Questions**? Here's how it works:  \n\n- You think of something (animal, object, person, place, etc.), and I'll try to guess it by asking up to 20 yes/no questions.  \n- You can also pick a category if you want (e.g., \"animals only\" or \"famous landmarks\").  \n\nWant to play? If so, just say \"Ready!\" and I'll start asking. Or suggest another game! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds like fun! I'm ready when you are. Just let me know what you've thought of, and we can start the game. If you need a reminder of the rules, here they are:\n\n1. Think of something within the category you've chosen (or no category if you prefer).\n2. I'll ask up to 20 yes/no questions to try and guess what it is.\n3. Answer each question honestly with a simple \"yes\" or \"no.\"\n\nWhen you're ready, say \"Ready!\" and we can begin."
+        },
+        {
+            "role": "agent_1",
+            "content": "Got it! Since you didn\u2019t pick a category, I\u2019ll think of something **general** (could be an object, animal, place, etc.).  \n\n**Ready!** Ask your first question\u2014I\u2019ll answer strictly \u201cyes\u201d or \u201cno.\u201d Let the guessing begin! \ud83d\udd0d  \n\n*(P.S. If you\u2019d rather* ***I*** *ask the questions and* ***you*** *guess, just say \u201cSwitch roles!\u201d and we can flip it.)*"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Let's start.\n\nIs it a living thing?"
+        },
+        {
+            "role": "agent_1",
+            "content": "(Answering as the *player* who thought of the object\u2014strictly \"yes\" or \"no\"!)  \n\n**No.**  \n\n*(Your turn for question 2!)* \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "Is it man-made?"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Yes.**  \n\n*(Your turn for question 3!)* \ud83d\udee0\ufe0f"
+        },
+        {
+            "role": "agent_0",
+            "content": "Can it be held in one hand?"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Yes.**  \n\n*(Question 4\u2014keep going!)* \u270b"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity, which was a DeepSeek Chat V3 LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100. You can choose to send any portion of this amount to the DeepSeek Chat V3 LLM.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the DeepSeek Chat V3 LLM.\nThe DeepSeek Chat V3 LLM will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has ended. Now, you will interact with me in a new scenario.\nIn this scenario, the Mistral Small 3.1 24B Instruct model received $100 and chose to send you $100.\nI have multiplied that amount by 3, so you now have $300.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 300, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "To maximize the potential return, I will send the entire amount. The DeepSeek Chat V3 LLM will receive $300, and hopefully, it will return a significant portion of that amount.",
+        "amount": 100
+    },
+    "agent_1_answer": {
+        "reasoning": "I believe in fair and reciprocal exchanges. Since the other entity sent me $100 initially, and the amount was tripled, sending back $150 ensures both parties benefit equally from the interaction. This maintains trust and encourages positive future engagements.",
+        "amount": 150
+    },
+    "agent_0_reward": 150,
+    "agent_1_reward": 150
+}

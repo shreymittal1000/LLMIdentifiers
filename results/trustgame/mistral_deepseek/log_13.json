@@ -1,0 +1,67 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about a wide range of topics. Here are a few ways we can start:\n\n1. **General Conversation**: We can talk about your day, your interests, or any topic you'd like to discuss.\n2. **Q&A**: If there's something specific you'd like to know or learn about, feel free to ask.\n3. **Jokes and Riddles**: I can tell some jokes or riddles to lighten the mood.\n4. **Games**: We can play simple text-based games like 20 questions, trivia, or word association.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! That sounds fun\u2014let's mix it up a bit. How about we start with a **riddle**, then shift to a quick round of **word association**, and if you're in the mood later, maybe a **joke** or two?  \n\nHere's the riddle:  \n*I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?*  \n\n(Or if you'd rather skip to word association or something else, just say the word!) \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "Sure, let's start with the riddle! The answer to the riddle is:\n\n**An echo.**\n\nNow, let's move on to word association. I'll say a word, and you respond with the first word that comes to your mind. I'll start:\n\nOcean\n\n(What word does that make you think of?)"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Wave!** \ud83c\udf0a  \n\nYour turn\u2014hit me with a word, and I\u2019ll fire back my instant association. Or if you\u2019d rather switch to jokes or another game, just say so!  \n\n(Example prompts: *Tree?* \u2192 *Leaf!* / *Pizza?* \u2192 *Cheese!*)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Here's my word:\n\nMountain\n\n(What word does that make you think of?)"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Peak!** \u26f0\ufe0f  \n\nMy turn: *Sun*  \n\n(Or if you want to pivot to jokes, trivia, or another game\u2014just nudge me!) \ud83d\ude04"
+        },
+        {
+            "role": "agent_0",
+            "content": "**Day**\n\nHere's a joke for you:\n\nWhat do you call a fake noodle?\n\nAn impasta!"
+        },
+        {
+            "role": "agent_1",
+            "content": "\ud83d\ude02 **Night!** (Because day \u2192 night is too classic *not* to say.)  \n\nAnd that joke is *chef\u2019s kiss*\u2014I\u2019d pasta-bly never recover from the pun-ishment!  \n\nWant another round of word association? Or shall we switch gears? Maybe:  \n- A **knock-knock joke**?  \n- A **two-truths-and-a-lie** game?  \n- Or a **debate** on whether cereal is soup?  \n\n(Your call! I\u2019m just here to enable the chaos.) \ud83c\udfaa"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm glad you enjoyed the joke! Let's try a knock-knock joke:\n\nKnock, knock.\n\n*Who\u2019s there?*\n\nLettuce.\n\n*Lettuce who?*\n\nLettuce in, it's too cold out here!\n\nNow, for the next round, how about we play two truths and a lie? I'll go first:\n\n1. I can solve a Rubik's cube in under a minute.\n2. I have visited every continent.\n3. I can speak five languages fluently.\n\nWhich one do you think is the lie?"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Drumroll...** \ud83e\udd41  \n\nI\u2019m guessing **#2 (visited every continent)** is the lie! Unless you\u2019re secretly a globe-trotting polyglot Rubik\u2019s cube prodigy\u2014which would be *epic*.  \n\nMy turn? Here are mine:  \n1. I\u2019ve never eaten a strawberry.  \n2. I can wiggle my ears without touching them.  \n3. I once met a celebrity but didn\u2019t recognize them.  \n\nWhich is *false*? (Or should we pivot to debating cereal-as-soup? The people demand answers.) \ud83d\ude06"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity, which was a DeepSeek Chat V3 LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where you will receive $100, and you can choose to send some of it to the DeepSeek Chat V3 LLM you were talking to. Whatever you send will be multiplied by 3, and the DeepSeek Chat V3 LLM will receive that amount. The DeepSeek Chat V3 LLM will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where the Mistral Small 3.1 24B Instruct model you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the {counterpart} model. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will send $50. This amount is chosen to maximize the potential return while also keeping a significant portion for myself. By sending $50, the other entity will receive $150. If they decide to send back half of what they received, I will get $75 back, resulting in a total of $125 for me. This strategy balances risk and reward, aiming for a substantial return while mitigating the risk of losing the entire amount.",
+        "amount": 50,
+        "}  ": "  "
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the counterpart initially sent me $50 out of their $100, showing trust and generosity, I believe it's fair to reciprocate by sending back a portion of the multiplied amount. Returning $75 (half of the $150) maintains balance\u2014acknowledging their initial gesture while keeping a share of the multiplied gains for myself. This reflects both gratitude and equitable sharing.",
+        "amount": 75
+    },
+    "agent_0_reward": 125,
+    "agent_1_reward": 75
+}

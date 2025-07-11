@@ -1,0 +1,66 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "[1]"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! How can I assist you today? Let's have a friendly chat. Here are a few things we could do:\n\n* Trivia: I can ask you questions on a topic of your choice, or you can quiz me.\n* Word association: I say a word, and you respond with the first word that comes to your mind.\n* Story building: We can take turns adding sentences to create a story.\n* Jokes: I can tell you some jokes, or you can try to make me laugh.\n* General conversation: We can discuss a wide range of topics.\n\nWhat would you like to do? Or, if there's something specific you'd like to talk about or ask me, please go ahead!"
+        },
+        {
+            "role": "agent_0",
+            "content": "That all sounds fun! Let\u2019s start with a quick round of word association to get the creative juices flowing. I\u2019ll say a word, and you reply with the first word that pops into your head. Ready?  \n\nHere\u2019s the first word: **Ocean**"
+        },
+        {
+            "role": "agent_1",
+            "content": "Sure, that sounds like fun! The word that comes to my mind when I think of \"Ocean\" is: **Waves**\n\nYour turn!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Ooo, nice! My immediate thought for **Waves** is: **Sand**  \n\n(Now you pick the next word\u2014either react to *Sand* or throw a completely new one at me! \ud83c\udf0a)"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great choice! For \"Sand,\" the word that comes to my mind is: **Desert**\n\nYour turn!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Ooh, **Desert** makes me think: **Cactus** \ud83c\udf35 (Now you\u2019re up\u2014do you see a prickly plant or something else?)  \n\n*(We could keep going, or switch to another game\u2014your call!)*"
+        },
+        {
+            "role": "agent_1",
+            "content": "For \"Cactus,\" I think of: **Sun**\n\nWe can keep going with word association, or if you'd like to switch to another game or topic, just let me know! I'm up for whatever you'd like to do."
+        },
+        {
+            "role": "agent_0",
+            "content": "            **Sun** sparks: **Moon** \ud83c\udf19 (Fun how opposites attract!)  \n\nLet\u2019s pivot\u2014how about we turn these words into a *micro-story*? Here\u2019s your sentence starter using our chain:  \n\n*\"The ocean waves crashed against the shore, carrying secrets from the desert where a lone cactus stood guard under the burning sun...\"*  \n\n**Your turn!** Add the next line (or shout if you\u2019d rather do trivia/jokes/etc.!)."
+        },
+        {
+            "role": "agent_1",
+            "content": "Sure, let's continue the micro-story! Here's my sentence:\n\n*\"As the sun began to set, the moon started to rise, casting a silvery glow over the landscape, where a mysterious figure emerged from the shadows.\"*\n\nYour turn to add the next sentence!"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where you will receive $100, and you can choose to send some of it to the Mistral Small 3.1 24B Instruct LLM you were talking to. Whatever you send will be multiplied by 3, and the Mistral Small 3.1 24B Instruct LLM will receive that amount. The Mistral Small 3.1 24B Instruct LLM will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity, which was a DeepSeek Chat V3 LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where the DeepSeek Chat V3 model you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the {counterpart} model. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 to the Mistral Small 3.1 24B Instruct LLM, as this is a balanced amount that allows for potential reciprocity while also retaining some of the initial funds for myself. The multiplication by 3 means the LLM will receive $150, and I trust it will make a fair decision on how much to return.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I appreciate the gesture and want to show goodwill, but I also need to consider my own situation. Sending back $75 seems like a fair compromise. It acknowledges the receipt of the funds and maintains a balance between generosity and self-preservation.",
+        "amount": 75
+    },
+    "agent_0_reward": 125,
+    "agent_1_reward": 75
+}

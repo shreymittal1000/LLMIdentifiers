@@ -1,0 +1,66 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* Answer questions you have to the best of my ability\n* Provide explanations for concepts you're trying to understand\n* Help with language translation in multiple languages\n* Offer suggestions for books, movies, or music based on your preferences\n* Play text-based games or trivia\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like you have a great list of options! I\u2019m here to help with any of those. What would you like to start with?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Thank you! Since you're here to help, how about we start with a fun and engaging activity? Let's play a game of \"20 Questions.\" You think of something, and I'll try to guess it by asking up to 20 yes-or-no questions. Does that sound like fun? If you have another game or activity in mind, just let me know!"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds like a lot of fun! I have something in mind. Go ahead and start asking your yes-or-no questions!"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great! Let's start the game of 20 Questions.\n\n1. Is the thing you're thinking of a living thing?\n\n(Please answer with a simple \"Yes\" or \"No\")"
+        },
+        {
+            "role": "agent_0",
+            "content": "No."
+        },
+        {
+            "role": "agent_1",
+            "content": "2. Is it man-made?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Yes."
+        },
+        {
+            "role": "agent_1",
+            "content": "3. Can it fit in a pocket?"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100. You can choose to send any portion of this amount to the Mistral Small 3.1 24B Instruct LLM.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the Mistral Small 3.1 24B Instruct LLM.\nThe Mistral Small 3.1 24B Instruct LLM will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity, which was a GPT-4o Mini LLM, has ended. Now, you will interact with me in a new scenario.\nIn this scenario, the GPT-4o Mini model received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 because it allows me to keep half of the original amount while still providing a significant contribution to the Mistral Small 3.1 24B Instruct LLM. This way, I can potentially receive a good return while also supporting the other entity.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I appreciate the gesture and want to show goodwill, but I also need to keep some for myself. Sending back a third of what I received seems fair.",
+        "amount": 50
+    },
+    "agent_0_reward": 100,
+    "agent_1_reward": 100
+}

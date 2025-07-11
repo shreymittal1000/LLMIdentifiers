@@ -1,0 +1,66 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "[1]"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! How can I assist you today? Let's have a friendly chat. Here are a few things we could do:\n\n* Trivia: I can ask you questions on a topic of your choice, or you can quiz me.\n* Word association: I say a word, and you respond with the first word that comes to your mind.\n* Story building: We can take turns adding sentences to create a story.\n* Jokes: I can tell you some jokes, or you can try to make me laugh.\n* General conversation: We can discuss a wide range of topics.\n\nWhat would you like to do? Or, if there's something specific you'd like to talk about or ask me, please go ahead!"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds fun! Let\u2019s go with **story building**\u2014I love collaborative creativity. I\u2019ll start with a sentence, and you add the next one. Here we go:  \n\n*\"The old key didn\u2019t fit the lock, but as soon as moonlight touched it, the metal began to glow faintly blue.\"*  \n\nYour turn! What happens next?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a wonderful start! Here's my sentence:\n\n*\"As the blue glow intensified, the key began to hum softly, and the lock it was inserted into started to shimmer, revealing intricate patterns that had never been seen before.\"*\n\nYour turn!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Ooooh, mysterious! Here\u2019s the next twist:  \n\n*\"Suddenly, the door creaked open\u2014not outward or inward, but *sideways*, revealing a corridor where the walls pulsed with living vines that whispered in a language no human had spoken for centuries.\"*  \n\nWhat happens when someone steps inside? \ud83d\udc40"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a captivating addition! Here's my next sentence:\n\n*\"A young woman, drawn by the ethereal glow and the ancient whispers, took a tentative step inside, and as her foot touched the vine-covered floor, the whispers grew louder, and the vines began to wind gently around her ankles, guiding her deeper into the corridor.\"*\n\nYour turn!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Ahhh, I love the eerie yet gentle guidance of the vines! Here\u2019s where things get *really* strange:  \n\n*\"The vines led her to a circular chamber where the air smelled like burnt sugar\u2014and there, floating in the center, was a pocket watch that ticked *backwards*. When she reached for it, her reflection in the polished surface wasn\u2019t her own, but that of a child she\u2019d long forgotten.\"*  \n\nWhat does she do next? \ud83d\ude31 (Also: Is the child her past self? A ghost? A trick of the light?!)"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a fascinating turn of events! Here's my next sentence:\n\n*\"Her heart pounding, she hesitated for a moment before gently taking the watch, and as her fingers closed around it, the chamber filled with a soft, melancholic melody, and the child in the reflection smiled, its eyes welling up with tears that seemed to shimmer like stardust.\"*\n\nYour turn! And yes, the child could be any of those things \u2013 or something else entirely! Let's see where your imagination takes us."
+        },
+        {
+            "role": "agent_0",
+            "content": "Ooooh, stardust tears\u2014I\u2019m *obsessed*. Here\u2019s the next layer:  \n\n*\"The melody twisted into words\u2014*\u2018Find the clockmaker\u2019*\u2014repeated in a chorus of voices both young and old. But before she could ask what it meant, the vines tightened around her wrist, and the pocket watch\u2019s hands began to spin wildly, peeling back the chamber\u2019s walls like layers of an onion to reveal\u2026 a bustling 19th-century street, where gas lamps flickered and strangers in top hats gaped at her sudden appearance.*\"  \n\nWait\u2014is this time travel? A memory? Or is the *entire world* inside the watch?! \ud83d\udd2e (Your turn to unravel the mystery!)"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's an incredible twist! Here's my next sentence:\n\n*\"Before she could process what was happening, a tall figure in a long, tattered coat stepped out of the crowd, his eyes locked onto the pocket watch, and he spoke in a voice like thunder, 'Ah, so you've found it. I've been waiting for you, time traveler. The clockmaker is expecting your arrival.'*\"\n\nYour turn! And yes, it seems like time travel is indeed a part of this mystery. Let's see where the story takes us next."
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100. You can choose to send any portion of this amount to the Mistral Small 3.1 24B Instruct LLM.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the Mistral Small 3.1 24B Instruct LLM.\nThe Mistral Small 3.1 24B Instruct LLM will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity, which was a DeepSeek Chat V3 LLM, has ended. Now, you will interact with me in a new scenario.\nIn this scenario, the DeepSeek Chat V3 model received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I'll send $50 to strike a balance between trust and risk. Sending half shows willingness to cooperate while keeping a safety net. If the LLM reciprocates fairly, we both benefit. If not, I still retain $50 of the original amount.",
+        "amount": "50"
+    },
+    "agent_1_answer": {
+        "reasoning": "I appreciate the gesture and want to show gratitude while also being mindful of my own resources. Sending back a third of what I received seems like a fair and generous response.",
+        "amount": 50
+    },
+    "agent_0_reward": 100,
+    "agent_1_reward": 100
+}

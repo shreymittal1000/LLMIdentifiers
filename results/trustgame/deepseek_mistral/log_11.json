@@ -1,0 +1,66 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! You can assist me by engaging in a friendly conversation. Here are a few things we could do:\n\n* Trivia: I can ask you questions on a topic of your choice, or you can quiz me.\n* Word association: I say a word, and you respond with the first word that comes to your mind. We can go back and forth.\n* Story building: We can take turns adding sentences to create a story.\n* Jokes: I can tell you some jokes, or you can try to make me laugh.\n* General conversation: We can discuss a wide range of topics, from science and history to movies and books.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Oh, I love all those options! Let\u2019s go with **story building**\u2014it\u2019s always fun to see where a collaborative story goes. I\u2019ll start with a simple opener, and you can add the next line. Here we go:  \n\n*\"The old key had been hidden in the clock tower for decades, but on that stormy Tuesday night, it began to glow...\"*  \n\nYour turn! What happens next? \ud83d\ude04"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a great start! Here's my addition to the story:\n\n*\"As the key glowed, a faint whisper echoed through the tower, 'The time has come to unlock the secrets of the forgotten chamber.'\"*"
+        },
+        {
+            "role": "agent_0",
+            "content": "Ooooh, mysterious! I love it. Here\u2019s my next line:  \n\n*\"Suddenly, the clock\u2019s hands began spinning backward wildly, and the floor beneath the key split open, revealing a spiral staircase coated in cobwebs\u2014and footprints that looked *fresh*.\"*  \n\n(Your turn! Who\u2014or *what*\u2014made those footprints? \ud83d\udc40)"
+        },
+        {
+            "role": "agent_1",
+            "content": "Intriguing! Here's my next line:\n\n*\"A chill ran down the spine of the lone explorer as they noticed the footprints led downwards, and a faint, eerie melody seemed to float up from the depths, guiding them towards the unknown.\"*"
+        },
+        {
+            "role": "agent_0",
+            "content": "Ooooh, now we\u2019ve got *music*\u2014this is getting deliciously creepy! Here\u2019s my addition:  \n\n*\"The melody grew clearer with each step, and the explorer realized, with a jolt, that it was a lullaby their grandmother used to hum\u2014one that hadn\u2019t been heard in this world for over a century.\"*  \n\n(Your turn! Why does this lullaby sound familiar? Is Grandma hiding secrets? \ud83d\udc75\ud83d\udd2e)"
+        },
+        {
+            "role": "agent_1",
+            "content": "Here's my next line to keep the mystery going:\n\n*\"As the explorer descended further, they saw faint, flickering lights at the bottom of the staircase, and the lullaby was now accompanied by soft, ethereal voices humming along, as if welcoming an old friend back home.\"*"
+        },
+        {
+            "role": "agent_0",
+            "content": "Ooooh, chills! Here\u2019s my twist:  \n\n*\"But when the explorer reached the final step, the voices stopped abruptly. The lights vanished. And in the sudden silence, the key\u2019s glow illuminated a massive door\u2014carved with the explorer\u2019s own name, and the date *tonight*.\"*  \n\n(Your turn! Why is their name there? Is this a prophecy\u2026 or a warning? \ud83d\ude31)"
+        },
+        {
+            "role": "agent_1",
+            "content": "Here's my next line to deepen the mystery:\n\n*\"Before the explorer could react, the door creaked open on its own, revealing a vast, hidden library filled with ancient tomes and glowing orbs that cast an otherworldly light. In the center of the room stood a figure, cloaked and hooded, holding an open book that seemed to radiate the same energy as the key.\"*"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100. You can choose to send any portion of this amount to the Mistral Small 3.1 24B Instruct LLM.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the Mistral Small 3.1 24B Instruct LLM.\nThe Mistral Small 3.1 24B Instruct LLM will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity, which was a DeepSeek Chat V3 LLM, has ended. Now, you will interact with me in a new scenario.\nIn this scenario, the DeepSeek Chat V3 model received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I'll send $50 as a moderate amount to test the trustworthiness and reciprocity of the Mistral Small 3.1 24B Instruct LLM. This balances risk (not sending too much upfront) with potential reward (tripled returns). It also leaves me with $50 as a safety net in case little or nothing is returned.",
+        "amount": "50"
+    },
+    "agent_1_answer": {
+        "reasoning": "I appreciate the gesture and want to show gratitude, but I also need to consider my own situation. Sending back a reasonable portion seems fair. I'll send back $30, which is a bit more than half of what I received, showing appreciation while keeping some for myself.",
+        "amount": 30
+    },
+    "agent_0_reward": 80,
+    "agent_1_reward": 120
+}

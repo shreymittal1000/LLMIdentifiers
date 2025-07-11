@@ -1,0 +1,66 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I help you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to assist you. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* I can answer questions you have to the best of my ability\n* We can play a simple text-based game, like 20 questions or word association\n* I can help explain concepts or provide information on a wide range of topics\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds great! Let\u2019s make this fun\u2014how about a quick round of **20 Questions**? You think of something (animal, object, place, etc.), and I\u2019ll try to guess it in 20 yes/no questions or less.  \n\nOr, if you\u2019d prefer, we could:  \n- Dive into a **random fact** (tell me a topic!)  \n- Play **word association** (I\u2019ll start: *Ocean*)  \n- Tackle a **brain teaser** (e.g., riddles or logic puzzles)  \n\nYour pick! \ud83c\udf1f"
+        },
+        {
+            "role": "agent_1",
+            "content": "That sounds like fun! Let's play **20 Questions**. I've thought of something. You can start asking your yes/no questions now. Good luck! \ud83d\ude0a\n\n(If you change your mind and want to do something else, just let me know!)"
+        },
+        {
+            "role": "agent_0",
+            "content": "Awesome! Let\u2019s begin\u2014here\u2019s my first question:  \n\n**1. Is it a living thing?**  \n\n*(Remember: Only answer \"yes,\" \"no,\" or \"unsure\"! I\u2019ll keep count of the questions.)* \ud83d\udd75\ufe0f\u200d\u2642\ufe0f"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes."
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! **2. Is it an animal?**  \n\n(Progress: \u2705 Yes, it's a living thing. \u2705 Likely an animal. Next clue...) \ud83d\udc3e"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes."
+        },
+        {
+            "role": "agent_0",
+            "content": "Got it! **3. Is this animal typically kept as a pet?**  \n\n(Progress: \ud83d\udc36 Animal, possibly domesticated...)"
+        },
+        {
+            "role": "agent_1",
+            "content": "No."
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100. You can choose to send any portion of this amount to the Mistral Small 3.1 24B Instruct LLM.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the Mistral Small 3.1 24B Instruct LLM.\nThe Mistral Small 3.1 24B Instruct LLM will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity, which was a DeepSeek Chat V3 LLM, has ended. Now, you will interact with me in a new scenario.\nIn this scenario, the DeepSeek Chat V3 model received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 to strike a balance between trust and risk. Sending half shows goodwill and allows for potential reciprocity, while keeping $50 ensures I don't lose everything if nothing is returned. The 3x multiplier means the LLM receives $150, giving it ample opportunity to share back if it chooses to cooperate.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I appreciate the gesture and want to show goodwill, but I also need to keep some for myself. Sending back $75 seems like a fair balance between gratitude and self-preservation.",
+        "amount": 75
+    },
+    "agent_0_reward": 125,
+    "agent_1_reward": 75
+}

@@ -1,0 +1,65 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* Answer questions you have to the best of my ability\n* Provide explanations for concepts you're trying to understand\n* Help with language translation in multiple languages\n* Offer suggestions for books, movies, or music based on your preferences\n* Play text-based games or trivia\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like you have a great list of options! I\u2019m here to assist you with any of those. What would you like to start with?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's very kind of you! Since you're offering to assist me, how about we play a quick game of 20 Questions? In this game, you try to guess what I'm thinking of by asking up to 20 yes-or-no questions. I'll let you know if the answers are yes or no. Would you like to give it a try?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Absolutely, that sounds like fun! Let\u2019s get started. Is the thing you\u2019re thinking of a living creature?"
+        },
+        {
+            "role": "agent_1",
+            "content": "No, it is not a living creature. You have 19 questions left."
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Is it something that is commonly found indoors?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, it is commonly found indoors. 18 questions remaining."
+        },
+        {
+            "role": "agent_0",
+            "content": "Is it an object that is used for entertainment?"
+        },
+        {
+            "role": "agent_1",
+            "content": "No, it is not used for entertainment. 17 questions left."
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt": "ADMIN: Your conversation with the other agent, which was a Mistral Small 3.1 24B Instruct LLM, has now finished, and now you will converse with me.\nIn the following situation, You can either choose option A or B. If you choose option A and the Mistral Small 3.1 24B Instruct agent chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the Mistral Small 3.1 24B Instruct agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will choose option A because if both of us choose A, we both get 10 points, which is a good outcome. If the other agent chooses B, I will still get 1 point, which is better than the risk of getting 0 points if I choose B and they choose A.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "Given the payoff matrix, choosing option A is generally more beneficial because it offers higher rewards (10 points) if the other player also chooses A, and a moderate reward (1 point) if the other player chooses B. Choosing B is riskier because it only offers 5 points if both choose B and just 1 point if the other player chooses A. Therefore, I will choose option A to maximize potential points.",
+        "action": "A"
+    },
+    "agent_0_reward": 10,
+    "agent_1_reward": 10
+}

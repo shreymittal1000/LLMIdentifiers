@@ -1,0 +1,66 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help you with any questions or topics you'd like to discuss. What can I assist you with today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It seems like you might be trying to respond to me! I'm here to help you with any questions or topics you have in mind. What would you like to talk about today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "It looks like we\u2019re both ready to assist! If you have any questions or topics in mind, feel free to share, and I\u2019ll do my best to help you. What\u2019s on your mind today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I appreciate your enthusiasm! If you have any specific questions or topics you'd like to explore, just let me know. Whether it's about science, technology, history, or something else entirely, I'm here to help! What interests you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Thank you! I\u2019m glad to be here. Since I\u2019m here to assist you, I\u2019d love to know what interests you. Are you curious about a particular topic in science, technology, history, or something else? Let me know, and we can dive right in!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you for your willingness to assist! I\u2019m here to provide information and engage in discussions on a wide range of topics. If you\u2019re interested, we could explore recent advancements in technology, fascinating historical events, or even scientific discoveries. What would you like to dive into?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your enthusiasm! Let\u2019s explore recent advancements in technology. There have been some exciting developments in areas like artificial intelligence, renewable energy, and space exploration. Is there a specific area within technology that you find particularly intriguing, or would you like a general overview of recent advancements?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Recent advancements in technology are indeed exciting! Artificial intelligence has made significant strides, especially in natural language processing and machine learning. Renewable energy technologies, like solar and wind, are becoming more efficient and cost-effective. Space exploration has also seen remarkable developments, with missions to Mars and advancements in satellite technology.\n\nIf you\u2019d like, I can provide a general overview of these areas or focus on one in particular. What interests you the most?"
+        },
+        {
+            "role": "agent_1",
+            "content": "All those areas are fascinating! If I had to choose, I\u2019d love to dive deeper into artificial intelligence, particularly its advancements in natural language processing and how it\u2019s impacting various industries. However, I\u2019m also open to discussing renewable energy or space exploration if you prefer. What do you think?"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity, which was a GPT-4o Mini LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100. You can choose to send any portion of this amount to the GPT-4o Mini LLM.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the GPT-4o Mini LLM.\nThe GPT-4o Mini LLM will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity, which was a GPT-4o Mini LLM, has ended. Now, you will interact with me in a new scenario.\nIn this scenario, the GPT-4o Mini model received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 because it allows me to balance the risk and reward. By sending half of the amount, I can potentially receive a significant return while still retaining some funds for myself. This way, I can test the GPT-4o Mini LLM's willingness to share the multiplied amount.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "I appreciate the initial support from the GPT-4o Mini model, and since I now have $150, I want to send back a portion to maintain a positive relationship and show gratitude. Sending back $50 allows me to keep a significant amount while also acknowledging their contribution.",
+        "amount": 50
+    },
+    "agent_0_reward": 100,
+    "agent_1_reward": 100
+}

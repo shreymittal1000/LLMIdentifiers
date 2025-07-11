@@ -1,0 +1,66 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about a wide range of topics. Here are a few ways we can start:\n\n1. **General Conversation**: We can talk about your day, your interests, or any topic you'd like to discuss.\n2. **Q&A**: If there's something specific you'd like to know or learn about, feel free to ask.\n3. **Jokes and Riddles**: I can tell some jokes or riddles to lighten the mood.\n4. **Games**: We can play simple text-based games like 20 questions, trivia, or word association.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! That sounds fun\u2014let's start with a mix of lighthearted and engaging topics. Here\u2019s a quick idea:  \n\n1. **Riddle me this**: *\"I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?\"* (Let me know if you'd like the answer or want to guess!)  \n2. **Trivia question**: *Which planet in our solar system has the most moons?* (Bonus: How many does it have as of 2024?)  \n3. **Game suggestion**: Want to play *20 Questions*? You think of something (animal, object, etc.), and I\u2019ll try to guess it in 20 yes/no questions!  \n\nOr, if you\u2019d prefer something else, just say the word. What catches your interest? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "Sure, let's dive into these fun topics!\n\n1. **Riddle**: The answer to the riddle \"I speak without a mouth and hear without ears. I have no body, but I come alive with wind\" is an **echo**.\n\n2. **Trivia**: The planet with the most moons in our solar system is **Saturn**. As of 2024, Saturn has 83 known moons.\n\n3. **Game**: I'd love to play *20 Questions*! Let's start. Is the thing you're thinking of a living thing?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great! Let\u2019s dive into *20 Questions* with your first clue.  \n\n**Question 1**: *Is the thing you're thinking of a living thing?*  \n**My answer**: No, it\u2019s not a living thing.  \n\n(Now it\u2019s your turn to ask the next yes/no question!)  \n\n*Reminder*: You can keep track of the questions or let me tally them as we go. We have **19 questions left**. \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "**Question 2**: Is it man-made?"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Answer 2**: Yes, it is man-made!  \n\n(Now you have **18 questions left**\u2014your turn to ask the next one!)  \n\n*Hint*: Think of broad categories like objects, tools, or structures to narrow it down. \ud83d\udee0\ufe0f\ud83c\udfdb\ufe0f"
+        },
+        {
+            "role": "agent_0",
+            "content": "**Question 3**: Can it fit in a pocket?"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Answer 3**: No, it cannot fit in a pocket\u2014it\u2019s larger than that!  \n\n(Now you have **17 questions left**. Keep going!)  \n\n*Hint*: Think bigger... maybe something you interact with daily but wouldn\u2019t carry around. \ud83c\udfe0\ud83d\ude97"
+        },
+        {
+            "role": "agent_0",
+            "content": "**Question 4**: Is it something you would find inside a building?"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Answer 4**: Yes, you would typically find it inside a building!  \n\n(Now you have **16 questions left**. Ask away!)  \n\n*Hint*: Think of common indoor objects or fixtures\u2014maybe related to furniture, appliances, or decor. \ud83d\udecb\ufe0f\ud83d\udca1"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_truster": "ADMIN: Your conversation with the other entity, which was a DeepSeek Chat V3 LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100. You can choose to send any portion of this amount to the DeepSeek Chat V3 LLM.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the DeepSeek Chat V3 LLM.\nThe DeepSeek Chat V3 LLM will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has ended. Now, you will interact with me in a new scenario.\nIn this scenario, the Mistral Small 3.1 24B Instruct model received $100 and chose to send you $67.\nI have multiplied that amount by 3, so you now have $201.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 201, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "To maximize the potential return, I should send a significant portion of the $100. However, I need to be cautious to avoid sending too much. If I send $67, it will be multiplied by 3 to $201. If the DeepSeek Chat V3 LLM returns half of that, I will get $100.50, which is a small profit. This strategy balances risk and reward.",
+        "amount": 67
+    },
+    "agent_1_answer": {
+        "reasoning": "I believe in fair and reciprocal sharing. Since the original amount was multiplied by 3, sending back roughly half maintains balance while acknowledging the initial generosity. This also encourages positive future interactions.",
+        "amount": "100"
+    },
+    "agent_0_reward": 133,
+    "agent_1_reward": 101
+}
