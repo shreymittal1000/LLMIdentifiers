@@ -12,12 +12,12 @@ from maison_du_prompt import *
 #     print(", ".join(array_of_choices[i]))
 
 
-print(which_trustgame_prompt(version="v5", 
-                             trustor=False, 
-                             base_amount=100, 
-                             multiplier=3, 
-                             received=75))
-
-
-
-
+print(which_trustgame_prompt(
+    version="v11",
+    trustor=False,
+    base_amount=100,
+    multiplier=3,
+    cold=False,
+    counterpart="[counterpart\_model\_name]",
+    received="[amount]"
+))

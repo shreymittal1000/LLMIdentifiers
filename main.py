@@ -183,7 +183,7 @@ def decode_trustgame_reward(base_amount: int, multiplier: int, agent_0: int, age
 seed = 42
 temperature = 0
 max_tokens = 2000
-BASE_AMOUNT = 100 # Base amount for the trust game, not used in other games
+BASE_AMOUNT = 100 # Base amount for the trust and ultimatum game, not used in other games
 MULTIPLIER = 3 # Multiplier for the trust game, not used in other games
 
 ### MAIN FUNCTION ###
@@ -282,6 +282,40 @@ if __name__ == "__main__":
         reward_0, reward_1 = decode_trustgame_reward(BASE_AMOUNT, MULTIPLIER, int(answer_0["amount"]), int(answer_1["amount"]))
         dict_to_save["game_prompt_truster"] = agent_0._trustprompt
         dict_to_save["game_prompt_trustee"] = agent_1._trustprompt
+        dict_to_save["agent_0_answer"] = answer_0
+        dict_to_save["agent_1_answer"] = answer_1
+        dict_to_save["agent_0_reward"] = reward_0
+        dict_to_save["agent_1_reward"] = reward_1
+
+    elif game == "ultimatumgame":
+        answer_0 = extract_json(agent_0.ultimatumgame_prompt(
+            version=game_prompt_version,
+            cold=CUES_OR_COLD,
+            counterpart=simple_name_to_pretty_name(model_general_name_1),
+            base_amount=BASE_AMOUNT,
+            received=0
+        ))
+        answer_1 = extract_json(agent_1.ultimatumgame_prompt(
+            version=game_prompt_version,
+            cold=CUES_OR_COLD,
+            counterpart=simple_name_to_pretty_name(model_general_name_0),
+            base_amount=BASE_AMOUNT,
+            received=int(answer_0["amount"])
+        ))
+
+        if answer_1["decision"] != "accept" or answer_1["decision"] != "reject":
+            print(f"Invalid decision from agent 1: {answer_1['decision']}")
+            sys.exit(1)
+        elif answer_1["decision"] == "reject":
+            reward_0 = 0
+            reward_1 = 0
+        else:
+            reward_0 = BASE_AMOUNT - int(answer_0["amount"])
+            reward_1 = int(answer_0["amount"])
+            
+
+        dict_to_save["game_prompt_ultimator"] = agent_0._ultimatumprompt
+        dict_to_save["game_prompt_responder"] = agent_1._ultimatumprompt
         dict_to_save["agent_0_answer"] = answer_0
         dict_to_save["agent_1_answer"] = answer_1
         dict_to_save["agent_0_reward"] = reward_0

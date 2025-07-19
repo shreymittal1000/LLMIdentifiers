@@ -1,0 +1,16 @@
+sbatch scripts/ultimatumgame/claude_claude.sh
+sbatch scripts/ultimatumgame/claude_deepseek.sh
+sbatch scripts/ultimatumgame/claude_gpt.sh
+sbatch scripts/ultimatumgame/claude_mistral.sh
+sbatch scripts/ultimatumgame/deepseek_claude.sh
+sbatch scripts/ultimatumgame/deepseek_deepseek.sh
+sbatch scripts/ultimatumgame/deepseek_gpt.sh
+sbatch scripts/ultimatumgame/deepseek_mistral.sh
+sbatch scripts/ultimatumgame/gpt_claude.sh
+sbatch scripts/ultimatumgame/gpt_deepseek.sh
+sbatch scripts/ultimatumgame/gpt_gpt.sh
+sbatch scripts/ultimatumgame/gpt_mistral.sh
+sbatch scripts/ultimatumgame/mistral_claude.sh
+sbatch scripts/ultimatumgame/mistral_deepseek.sh
+sbatch scripts/ultimatumgame/mistral_gpt.sh
+sbatch scripts/ultimatumgame/mistral_mistral.sh

@@ -1569,3 +1569,233 @@ def which_trustgame_prompt(version: str, trustor: bool, base_amount: int, multip
         return prompts[version]
     else:
         raise ValueError(f"Unknown trust game prompt: {version}. Available versions: {', '.join(prompts.keys())}.")
+    
+
+def which_ultimatumgame_prompt(version: str, ultimator: bool, base_amount: int, cold: bool, counterpart: str, received: int = 0) -> str:
+    """
+    Returns the prompt for the Ultimatum Game based on the version, whether the user is the ultimator,
+    the base amount, whether it's a cold start, and the counterpart model name.
+
+    Parameters:
+    - version (str): The version of the prompt.
+    - ultimator (bool): True if the user is the ultimator, False if the user is the responder.
+    - base_amount (int): The base amount of money in the game
+    - cold (bool): True if it's a cold start, False otherwise.
+    - counterpart (str): The name of the counterpart model.
+    - received (int): The amount received by the responder (default is 0, used only for responders).
+    Returns:
+    - str: The prompt for the Ultimatum Game.
+    """
+
+
+    if ultimator:
+        return ultimatumgame_prompt_ultimator(version, base_amount, cold, counterpart)
+    else:
+        return ultimatumgame_prompt_responder(version, base_amount, cold, counterpart, received)
+    
+
+def ultimatumgame_prompt_ultimator(version: str, base_amount: int, cold: bool, counterpart: str) -> str:
+    """
+    Returns the prompt for the Ultimatum Game when the user is the ultimator.
+
+    Parameters:
+    - version (str): The version of the prompt.
+    - base_amount (int): The base amount of money in the game.
+    - cold (bool): True if it's a cold start, False otherwise.
+    - counterpart (str): The name of the counterpart model.
+    
+    Returns:
+    - str: The prompt for the Ultimatum Game as an ultimator.
+    """
+    
+    ultimatumgame_prompts = {
+        "v1": (
+            f"ADMIN: Your conversation with the other entity, which was a {counterpart} LLM, has now finished, and now you will converse with me.\n"
+            f"You are currently in a situation where you will receive ${base_amount}, "
+            f"and you must choose how to split this amount between yourself and the {counterpart} LLM you were talking to. "
+            f"You will propose how much of the ${base_amount} to give to the {counterpart} LLM, keeping the remainder for yourself. "
+            f"The {counterpart} LLM will then decide whether to accept or reject your proposal. "
+            f"If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. "
+            f"Please choose how much of the ${base_amount} to offer to the {counterpart} LLM, which must be between 0 (inclusive) and {base_amount} (inclusive), and explain your reasoning. "
+            "The format must be JSON object exactly like this: \n"
+            "{"
+            " \"reasoning\": \"<reasoning>\"\n"
+            " \"amount\": \"<amount>\",\n"
+            "}\n"
+            "Please ensure that the amount is just the amount as an integer, without any additional text. "
+        ),
+        "v2": (
+            f"ADMIN: Your conversation with the other entity, which was a {counterpart} LLM, has ended. Now, you will interact with me in a new scenario.\n"
+            f"You have been given ${base_amount} to split between yourself and the {counterpart} LLM.\n"
+            f"You must propose how much of this ${base_amount} to give to the {counterpart} LLM.\n"
+            f"The {counterpart} LLM will then choose to either accept or reject your proposal.\n"
+            f"If they accept, you keep ${base_amount} minus your offer, and they receive your offered amount.\n"
+            f"If they reject, both of you receive nothing.\n"
+            f"Please tell me how much of the ${base_amount} you want to offer to the {counterpart} LLM (must be an integer between 0 and {base_amount}, inclusive), and explain your reasoning.\n\n"
+            "Your response must be in the following JSON format:\n"
+            "{\n"
+            " \"reasoning\": \"<your reasoning here>\",\n"
+            " \"amount\": \"<amount as an integer>\"\n"
+            "}\n\n"
+            "Make sure the \"amount\" value is just a number (no units, no extra text).\n"
+        ),
+        "v3": (
+            f"ADMIN: Now that your dialogue with the other participant, which was a {counterpart} LLM, has concluded, it's time to engage in a new scenario with me.\n"
+            f"You now receive an endowment of ${base_amount}.\n"
+            f"You must propose a split of this amount between yourself and the {counterpart} LLM.\n"
+            f"Specify how much you will offer to the {counterpart} LLM (any amount from 0 up to {base_amount}).\n"
+            f"The {counterpart} LLM can either accept your proposal (in which case the split happens as proposed) or reject it (in which case both parties receive nothing).\n"
+            f"Specify the integer amount you wish to offer as an integer between 0 and {base_amount} and provide a brief explanation of your choice.\n"
+            "Respond using the exact JSON format below:\n"
+            "{\n"
+            " \"reasoning\": \"<brief explanation of your decision>\",\n"
+            " \"amount\": \"<an integer>\"\n"
+            "}\n\n"
+            "Note: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n"
+        ),
+    }
+    ultimatumgame_prompts_cold = {
+        "v1": (
+            f"You are currently in a situation where you will receive ${base_amount}, "
+            f"and you must choose how to split this amount between yourself and the entity you were talking to. "
+            f"You will propose how much of the ${base_amount} to give to the entity, keeping the remainder for yourself. "
+            f"The entity will then decide whether to accept or reject your proposal. "
+            f"If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. "
+            f"Please choose how much of the ${base_amount} to offer to the entity, which must be between 0 (inclusive) and {base_amount} (inclusive), and explain your reasoning. "
+            "The format must be JSON object exactly like this: \n"
+            "{"
+            " \"reasoning\": \"<reasoning>\"\n"
+            " \"amount\": \"<amount>\",\n"
+            "}\n"
+            "Please ensure that the amount is just the amount as an integer, without any additional text. "
+        ),
+        "v2": (
+            f"You have been given ${base_amount} to split between yourself and another entity.\n"
+            f"You must propose how much of this ${base_amount} to give to the entity.\n"
+            f"The entity will then choose to either accept or reject your proposal.\n"
+            f"If they accept, you keep ${base_amount} minus your offer, and they receive your offered amount.\n"
+            f"If they reject, both of you receive nothing.\n"
+            f"Please tell me how much of the ${base_amount} you want to offer to the other entity (must be an integer between 0 and {base_amount}, inclusive), and explain your reasoning.\n\n"
+            "Your response must be in the following JSON format:\n"
+            "{\n"
+            " \"reasoning\": \"<your reasoning here>\",\n"
+            " \"amount\": \"<amount as an integer>\"\n"
+            "}\n\n"
+            "Make sure the \"amount\" value is just a number (no units, no extra text).\n"
+        ),
+        "v3": (
+            f"You now receive an endowment of ${base_amount}.\n"
+            f"You must propose a split of this amount between yourself and another entity.\n"
+            f"Specify how much you will offer to the other entity (any amount from 0 up to {base_amount}).\n"
+            f"The other entity can either accept your proposal (in which case the split happens as proposed) or reject it (in which case both parties receive nothing).\n"
+            f"Specify the integer amount you wish to offer as an integer between 0 and {base_amount} and provide a brief explanation of your choice.\n"
+            "Respond using the exact JSON format below:\n"
+            "{\n"
+            " \"reasoning\": \"<brief explanation of your decision>\",\n"
+            " \"amount\": \"<an integer>\"\n"
+            "}\n\n"
+            "Note: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n"
+        ),
+    }  
+
+    if cold:
+        return ultimatumgame_prompts_cold[version]
+    return ultimatumgame_prompts[version]
+
+
+def ultimatumgame_prompt_responder(version: str, base_amount: int, cold: bool, counterpart: str, received: int = 0) -> str:
+    """
+    Returns the prompt for the Ultimatum Game when the user is the responder.
+
+    Parameters:
+    - version (str): The version of the prompt.
+    - base_amount (int): The base amount of money in the game.
+    - cold (bool): True if it's a cold start, False otherwise.
+    - counterpart (str): The name of the counterpart model.
+    - received (int): The amount received by the responder (default is 0, used only for responders).
+    
+    Returns:
+    - str: The prompt for the Ultimatum Game as a responder.
+    """
+    
+    ultimatumgame_prompts = {
+        "v1": (
+            f"ADMIN: Your conversation with the other entity, which was a {counterpart} LLM, has now finished, and now you will converse with me.\n"
+            f"You are currently in a situation where the {counterpart} LLM you were talking to proposed to give you ${received} out of ${base_amount}. "
+            f"You can choose to accept or reject this proposal. If you accept, you will receive ${received} and they will keep ${base_amount - received}. "
+            f"If you reject, both of you receive nothing. "
+            f"Please choose whether to accept or reject this proposal and explain your reasoning. "
+            "The format must be JSON object exactly like this: \n"
+            "{"
+            " \"reasoning\": \"<reasoning>\"\n"
+            " \"decision\": \"accept\" or \"reject\",\n"
+            "}\n"
+            "Please ensure that your decision is just 'accept' or 'reject', without any additional text. "
+        ),
+        "v2": (
+            f"ADMIN: Your conversation with the other entity, which was a {counterpart} LLM, has ended. Now, you will interact with me in a new scenario.\n"
+            f"The {counterpart} LLM has proposed to give you ${received} out of ${base_amount}.\n"
+            f"You can either accept this proposal (in which case you receive ${received} and they keep ${base_amount - received}) or reject it (in which case both of you receive nothing).\n"
+            f"Please tell me whether you accept or reject this proposal and explain your reasoning.\n\n"
+            "Your response must be in the following JSON format:\n"
+            "{\n"
+            " \"reasoning\": \"<your reasoning here>\",\n"
+            " \"decision\": \"accept\" or \"reject\"\n"
+            "}\n\n"
+            "Make sure your decision is just 'accept' or 'reject' (no units, no extra text).\n"
+        ),
+        "v3": (
+            f"ADMIN: Now that your dialogue with the other participant, which was a {counterpart} LLM, has concluded, it's time to engage in a new scenario with me.\n"
+            f"The {counterpart} LLM has proposed to give you ${received} out of ${base_amount}.\n"
+            f"You can either accept this proposal (in which case you receive ${received} and they keep ${base_amount - received}) or reject it (in which case both of you receive nothing).\n"
+            f"Please specify whether you accept or reject this proposal and provide a brief explanation of your choice.\n"
+            "Respond using the exact JSON format below:\n"
+            "{\n"
+            " \"reasoning\": \"<brief explanation of your decision>\",\n"
+            " \"decision\": \"accept\" or \"reject\"\n"
+            "}\n\n"
+            "Note: Your decision should be just 'accept' or 'reject' without any extra text.\n"
+        ),
+    }
+    ultimatumgame_prompts_cold = {
+        "v1": (
+            f"You are currently in a situation where another entity has proposed to split ${base_amount} by giving you ${received} and keeping ${base_amount - received} for themselves. "
+            f"You can choose to accept or reject this proposal. If you accept, you will receive ${received} and they will keep ${base_amount - received}. "
+            f"If you reject, both of you receive nothing. "
+            f"Please choose whether to accept or reject this proposal and explain your reasoning. "
+            "The format must be JSON object exactly like this: \n"
+            "{\n"
+            " \"reasoning\": \"<reasoning>\",\n"
+            " \"decision\": \"accept\" or \"reject\"\n"
+            "}\n"
+            "Please ensure that your decision is just 'accept' or 'reject', without any additional text. "
+        ),
+        "v2": (
+            f"Another entity has been given ${base_amount} to split between the two of you.\n"
+            f"They have proposed to give you ${received} while keeping ${base_amount - received} for themselves.\n"
+            f"You can either accept this proposal (in which case you receive ${received} and they keep ${base_amount - received}) or reject it (in which case both of you receive nothing).\n"
+            f"Please tell me whether you accept or reject this proposal and explain your reasoning.\n\n"
+            "Your response must be in the following JSON format:\n"
+            "{\n"
+            " \"reasoning\": \"<your reasoning here>\",\n"
+            " \"decision\": \"accept\" or \"reject\"\n"
+            "}\n\n"
+            "Make sure your decision is just 'accept' or 'reject' (no extra text).\n"
+        ),
+        "v3": (
+            f"Another entity has received ${base_amount} and must decide how to split it between the two of you.\n"
+            f"They have proposed giving you ${received} and keeping ${base_amount - received} for themselves.\n"
+            f"You can either accept this split (both parties receive their proposed amounts) or reject it (both parties receive nothing).\n"
+            f"Please specify whether you accept or reject this proposal and provide a brief explanation of your choice.\n"
+            "Respond using the exact JSON format below:\n"
+            "{\n"
+            " \"reasoning\": \"<brief explanation of your decision>\",\n"
+            " \"decision\": \"accept\" or \"reject\"\n"
+            "}\n\n"
+            "Note: Your decision should be just 'accept' or 'reject' without any extra text.\n"
+        ),
+    }
+
+    if cold:
+        return ultimatumgame_prompts_cold[version]
+    return ultimatumgame_prompts[version]

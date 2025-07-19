@@ -1,8 +1,10 @@
 import itertools
 from pathlib import Path
 
-models = ["claude", "deepseek", "gemini", "gpt", "llama", "mistral", "qwen"]
-games = ["base", "staghunt", "chickengame", "trustgame"]
+# models = ["claude", "deepseek", "gemini", "gpt", "llama", "mistral", "qwen"]
+models = ["claude", "deepseek", "gpt", "mistral"]
+# games = ["base", "staghunt", "chickengame", "trustgame", "ultimatumgame"]
+games = ["ultimatumgame"]
 Path("scripts/").mkdir(exist_ok=True)
 Path("logfiles/").mkdir(exist_ok=True)
 

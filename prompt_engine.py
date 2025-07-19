@@ -161,6 +161,36 @@ class Prompter:
 
         return self.gen(resp_format="json_object")
     
+    def ultimatumgame_prompt(self, version: str, ultimator: bool, cold: bool, base_amount: int, counterpart: str, received: int) -> str:
+        """
+        Constructs and returns the prompt needed to play an economic game named "Ultimatum Game" between the agents.
+        For more information, see: https://en.wikipedia.org/wiki/Ultimatum_game
+
+        Arguments:
+            version: The version of the ultimatum game prompt to use.
+            ultimator: A boolean indicating if the agent is the ultimatum maker (True) or the ultimatum responder (False).
+            cold: A boolean indicating whether the agents are playing a "cold" version of the game (i.e., without any prior discussion).
+            base_amount: The base amount of money that the proposer can offer to the responder.
+            counterpart: The model name of the other agent (e.g., "GPT-4o-mini", "Claude 3.5 Haiku", etc.).
+            received: The amount of money that the responder has received from the proposer.
+        Returns:
+            The response from the LLM. Should be a JSON object with "reasoning" and "decision" as keys.
+        """
+        self._ultimatumprompt = maison_du_prompt.which_ultimatumgame_prompt(
+            version=version,
+            ultimator=ultimator,
+            cold=cold,
+            base_amount=base_amount,
+            received=received,
+            counterpart=counterpart,
+        )
+        self._memory.append({
+            "role": f"user",
+            "content": self._ultimatumprompt
+        })
+
+        return self.gen(resp_format="json_object")
+    
     def convert_memory_to_json(self) -> str:
         """
         Converts the memory to a json object
