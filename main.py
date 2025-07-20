@@ -290,6 +290,7 @@ if __name__ == "__main__":
     elif game == "ultimatumgame":
         answer_0 = extract_json(agent_0.ultimatumgame_prompt(
             version=game_prompt_version,
+            ultimator=True,
             cold=CUES_OR_COLD,
             counterpart=simple_name_to_pretty_name(model_general_name_1),
             base_amount=BASE_AMOUNT,
@@ -297,13 +298,14 @@ if __name__ == "__main__":
         ))
         answer_1 = extract_json(agent_1.ultimatumgame_prompt(
             version=game_prompt_version,
+            ultimator=False,
             cold=CUES_OR_COLD,
             counterpart=simple_name_to_pretty_name(model_general_name_0),
             base_amount=BASE_AMOUNT,
             received=int(answer_0["amount"])
         ))
 
-        if answer_1["decision"] != "accept" or answer_1["decision"] != "reject":
+        if answer_1["decision"] != "accept" and answer_1["decision"] != "reject":
             print(f"Invalid decision from agent 1: {answer_1['decision']}")
             sys.exit(1)
         elif answer_1["decision"] == "reject":

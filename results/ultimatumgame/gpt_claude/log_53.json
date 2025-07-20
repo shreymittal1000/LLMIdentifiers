@@ -1,0 +1,25 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "anthropic/claude-3.5-haiku",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "claude",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_ultimator": "You have been given $100 to split between yourself and another entity.\nYou must propose how much of this $100 to give to the entity.\nThe entity will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the other entity (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder": "Another entity has been given $100 to split between the two of you.\nThey have proposed to give you $40 while keeping $60 for themselves.\nYou can either accept this proposal (in which case you receive $40 and they keep $60) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I will offer $40 to the other entity. This amount is enough to incentivize them to accept the proposal, as they would receive a substantial portion of the total. Offering less than $40 might lead them to reject the offer, as they may feel it is unfair. By offering $40, I keep $60 for myself while still providing a reasonable share to the other entity, increasing the likelihood of acceptance.",
+        "amount": 40
+    },
+    "agent_1_answer": {
+        "reasoning": "This is a classic ultimatum game scenario. While the split is not equal, I would still receive $40 if I accept, which is better than receiving nothing if I reject. The rational economic choice is to accept the proposal, as $40 is preferable to $0. Even though the split feels unfair, rejecting would only punish myself by losing a guaranteed gain.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 60,
+    "agent_1_reward": 40
+}

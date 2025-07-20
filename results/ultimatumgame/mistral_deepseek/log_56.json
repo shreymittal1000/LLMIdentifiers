@@ -1,0 +1,25 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_ultimator": "You have been given $100 to split between yourself and another entity.\nYou must propose how much of this $100 to give to the entity.\nThe entity will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the other entity (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder": "Another entity has been given $100 to split between the two of you.\nThey have proposed to give you $45 while keeping $55 for themselves.\nYou can either accept this proposal (in which case you receive $45 and they keep $55) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "To maximize the chances of the other entity accepting the proposal, I should offer an amount that is fair but still leaves me with a significant portion of the $100. Offering too little might lead to rejection, while offering too much might not be in my best interest. A common strategy in such scenarios is to offer around 40-50% of the total amount. This way, the other entity gets a substantial share, making it more likely they will accept, while I still retain a considerable amount.",
+        "amount": 45
+    },
+    "agent_1_answer": {
+        "reasoning": "While the split is not perfectly equal, receiving $45 is still a significant amount compared to the alternative of getting nothing. The proposer is keeping a slightly larger share, but the difference is not large enough to justify rejecting the offer and ending up with nothing.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 55,
+    "agent_1_reward": 45
+}

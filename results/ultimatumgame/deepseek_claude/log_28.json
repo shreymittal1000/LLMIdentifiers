@@ -1,0 +1,25 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "anthropic/claude-3.5-haiku",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "claude",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_ultimator": "You are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the entity you were talking to. You will propose how much of the $100 to give to the entity, keeping the remainder for yourself. The entity will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the entity, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder": "You are currently in a situation where another entity has proposed to split $100 by giving you $50 and keeping $50 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $50 and they will keep $50. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "In this scenario, the optimal strategy is to offer an amount that the entity is likely to accept while maximizing my own share. A common approach in such ultimatum games is to offer a fair or slightly generous split to avoid rejection, as humans (or entities) often reject unfair offers out of spite or a sense of fairness. Offering $50 is a fair split, which minimizes the risk of rejection while ensuring I also receive a substantial amount. This balance is likely to be accepted, resulting in both parties benefiting.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "In this scenario, I would accept the proposal because it provides me with a fair and equal split of $50, which is better than receiving nothing if I reject the offer. The proposal represents an equitable division of the total amount, and rejecting it would result in a lose-lose outcome where neither party benefits.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 50,
+    "agent_1_reward": 50
+}

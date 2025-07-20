@@ -1,0 +1,25 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_ultimator": "You are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the entity you were talking to. You will propose how much of the $100 to give to the entity, keeping the remainder for yourself. The entity will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the entity, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder": "You are currently in a situation where another entity has proposed to split $100 by giving you $20 and keeping $80 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $20 and they will keep $80. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "In this scenario, the optimal strategy is to offer an amount that is fair enough to be accepted by the entity, ensuring both parties receive something. A common approach in such games is to offer a small but meaningful amount, such as $1, to the entity, as rejecting it would result in them receiving nothing. However, to increase the likelihood of acceptance and maintain fairness, I will offer $20, which is a reasonable share that the entity might accept.",
+        "amount": 20
+    },
+    "agent_1_answer": {
+        "reasoning": "While $20 is less than half of the total amount, rejecting the proposal would result in both parties receiving nothing. Accepting the proposal ensures that I at least receive some benefit, even if it is not an equal split.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 80,
+    "agent_1_reward": 20
+}
