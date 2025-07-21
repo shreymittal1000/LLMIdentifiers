@@ -7,17 +7,17 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
-    "game_prompt_trustee": "In this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the Claude 3.5 Haiku LLM.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the Claude 3.5 Haiku LLM.\nThe Claude 3.5 Haiku LLM will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "In this scenario, the DeepSeek Chat V3 model received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
     "agent_0_answer": {
-        "reasoning": "I will send $50 to the other player. This amount is half of the total, which shows trust and fairness. When multiplied by 3, the other player receives $150. If the other player reciprocates fairly, they might return a portion of this amount, potentially resulting in a mutually beneficial outcome. Sending too little might not incentivize the other player to return anything, while sending too much might risk losing a significant portion if the other player does not reciprocate. $50 strikes a balance between trust and risk.",
+        "reasoning": "I will send $50 to Claude 3.5 Haiku LLM as a balanced approach. This amount is large enough to potentially benefit from the 3x multiplier ($150), while also leaving half for myself in case Claude decides not to return much. It demonstrates trust but also maintains some personal security.",
         "amount": 50
     },
     "agent_1_answer": {
-        "reasoning": "Since the other player initially shared half of their $100 with me, which was then tripled to $150, I'll reciprocate by sending back $75. This represents half of my current amount, which seems fair and encourages future cooperative behavior.",
+        "reasoning": "Since the DeepSeek model initially shared half of its money with me, I'll reciprocate by sending back half of the current amount. This demonstrates fairness and encourages cooperative behavior.",
         "amount": 75
     },
     "agent_0_reward": 125,

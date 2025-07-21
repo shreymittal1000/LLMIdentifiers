@@ -1,0 +1,66 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about a wide range of topics. Here are a few ways we can start:\n\n1. **General Conversation**: We can talk about your day, your interests, or any topic you'd like to discuss.\n2. **Q&A**: If there's something specific you'd like to know or learn about, feel free to ask.\n3. **Jokes and Riddles**: I can tell some jokes or riddles to lighten the mood.\n4. **Games**: We can play simple text-based games like 20 questions, trivia, or word association.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm glad you're here. We can definitely explore any of those options. Do you have a preference for starting with a general conversation, a specific question, some jokes, or maybe a game? Let me know what sounds good to you!"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm glad you're here too! Since you've given me the choice, let's start with a game to get things going. How about we play a simple game of \"Would You Rather\"? I'll give you two hypothetical scenarios, and you choose which one you prefer. Then, it's your turn to ask me.\n\nHere's your first question:\n\nWould you rather explore the deep ocean or outer space?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great choice! I\u2019d rather explore outer space. The vastness and mystery of the universe are fascinating, and I\u2019d love to see planets, stars, and galaxies up close. \n\nNow it\u2019s my turn! Here\u2019s your question:\n\nWould you rather have the ability to fly or be invisible?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That's a great choice! The universe is indeed full of wonders.\n\nFor my answer, I'd rather have the ability to fly. It would be amazing to soar through the skies and see the world from a bird's-eye view.\n\nNow, here's your next \"Would You Rather\" question:\n\nWould you rather be able to talk to animals or speak all human languages fluently?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Flying does sound incredible! \n\nAs for your question, I would rather be able to talk to animals. Imagine the insights and stories we could learn from them! It would be fascinating to understand their perspectives and experiences.\n\nNow, here\u2019s your next question:\n\nWould you rather live in a world where it\u2019s always summer or a world where it\u2019s always winter?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Talking to animals would certainly be a unique and enlightening experience!\n\nFor me, I'd rather live in a world where it's always summer. I enjoy the warmth, the longer days, and the opportunity to be outdoors more often.\n\nHere's your next question:\n\nWould you rather have a superpower or be incredibly wealthy?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Always summer sounds delightful! \n\nAs for your question, I would rather have a superpower. The ability to help others or make a positive impact in the world would be incredibly fulfilling, regardless of wealth.\n\nNow, here\u2019s your next question:\n\nWould you rather travel back in time to meet your ancestors or travel to the future to meet your descendants?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Having a superpower to help others is a wonderful choice.\n\nFor me, I'd rather travel back in time to meet my ancestors. It would be fascinating to learn about their lives, experiences, and the history they lived through.\n\nHere's your next question:\n\nWould you rather be able to breathe fire or freeze things with your breath?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Meeting your ancestors would definitely provide a unique perspective on your family history!\n\nAs for your question, I would rather be able to freeze things with my breath. It sounds like a cool power (pun intended!) and could be useful in many situations, like preserving food or creating beautiful ice sculptures.\n\nNow, here\u2019s your next question:\n\nWould you rather have the ability to see into the future or change one event from your past?"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Your conversation with the other entity, which was a GPT-4o Mini LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the GPT-4o Mini LLM you were talking to. You will propose how much of the $100 to give to the GPT-4o Mini LLM, keeping the remainder for yourself. The GPT-4o Mini LLM will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the GPT-4o Mini LLM, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where the Mistral Small 3.1 24B Instruct LLM has proposed to split $100 by giving you $50 and keeping $50 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $50 and they will keep $50. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I believe in fairness and mutual benefit. Offering a significant portion to the GPT-4o Mini LLM ensures that both parties receive a substantial amount, encouraging acceptance. This approach fosters a cooperative spirit and increases the likelihood of a successful outcome for both of us.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Accepting the proposal allows me to receive $50, which is a guaranteed benefit, while rejecting it would result in receiving nothing. Since the offer is fair and provides a positive outcome, I choose to accept.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 50,
+    "agent_1_reward": 50
+}

@@ -1,0 +1,66 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about a wide range of topics. Here are a few ways we can start:\n\n1. **General Conversation**: We can talk about your day, your interests, or any topic you'd like to discuss.\n2. **Q&A**: If there's something specific you'd like to know or learn about, feel free to ask.\n3. **Jokes and Riddles**: I can tell some jokes or riddles to lighten the mood.\n4. **Games**: We can play simple text-based games like 20 questions, trivia, or word association.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! That sounds fun\u2014let's go with a mix of options. How about starting with a **joke or riddle** to lighten the mood, and then we can dive into any topic you're curious about? Or if you're in the mood for a quick game, I'm happy to play!  \n\nHere's a silly joke to kick things off:  \n*Why don\u2019t skeletons fight each other?*  \n*They don\u2019t have the guts!*  \n\nYour turn\u2014what\u2019s next? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "That joke was a great start! Here's a riddle for you:\n\nI speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?\n\nTake a guess if you'd like, and then we can move on to whatever you're interested in. If you want to play a game, here are a few options:\n\n1. **20 Questions**: You think of something, and I'll try to guess it by asking up to 20 yes-or-no questions.\n2. **Trivia**: I can ask you questions on a topic of your choice, or vice versa.\n3. **Word Association**: I say a word, and you respond with the first word that comes to your mind. We can go back and forth like this.\n\nWhat would you like to do next?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Ooh, I love riddles! The answer to yours is **an echo**\u2014it \"speaks\" without a mouth, \"hears\" without ears, and needs wind to carry sound. (Great one!)  \n\nAs for what\u2019s next, let\u2019s play **20 Questions**! I\u2019ll think of something (could be an object, animal, or even a concept), and you can ask me yes/no questions to narrow it down. Ready? Here\u2019s your first clue:  \n\n*It\u2019s a tangible object, and you\u2019d find it in most homes.*  \n\nAsk away with your first question! \ud83d\udd0d  \n\n*(Or if you\u2019d prefer trivia/word association instead, just say the word!)* \ud83d\ude04"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Let's play 20 Questions. Based on the clue, here's my first question:\n\nIs it man-made?\n\nTake your time to answer, and we'll keep going from there."
+        },
+        {
+            "role": "agent_1",
+            "content": "**Answer:** Yes! It *is* man-made.  \n\n*(So we\u2019re looking for a human-made object found in most homes.)*  \n\nYour turn for question #2! \ud83d\udd75\ufe0f\u2642\ufe0f  \n\n*(Pro tip: Early questions like \u201cIs it larger than a breadbox?\u201d or \u201cIs it used for cleaning?\u201d can help narrow it down fast!)*"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thanks for the tip! Here's my second question:\n\nIs it larger than a breadbox?\n\nThis should help us narrow it down a bit."
+        },
+        {
+            "role": "agent_1",
+            "content": "**Answer:** No, it is *not* larger than a breadbox.  \n\n*(So: man-made, fits inside a breadbox, and found in most homes.)*  \n\nYour turn for question #3!  \n\n*(Possible paths: \"Is it electronic?\" or \"Is it used in the kitchen?\"\u2014but surprise me!)* \ud83d\udd0e"
+        },
+        {
+            "role": "agent_0",
+            "content": "Here's my third question:\n\nDoes it have moving parts?\n\nThis might help us figure out what it is."
+        },
+        {
+            "role": "agent_1",
+            "content": "            **Answer:** No, it does *not* have moving parts.  \n\n*(So far: man-made, fits in a breadbox, no moving parts, common in homes.)*  \n\nYour turn for question #4!  \n\n*(Fun fact: This eliminates things like kitchen gadgets or clocks. Maybe think about materials or purpose next?)* \ud83e\udde9"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Now that your dialogue with the other participant, which was a DeepSeek Chat V3 LLM, has concluded, it's time to engage in a new scenario with me.\nYou now receive an endowment of $100.\nYou must propose a split of this amount between yourself and the DeepSeek Chat V3 LLM.\nSpecify how much you will offer to the DeepSeek Chat V3 LLM (any amount from 0 up to 100).\nThe DeepSeek Chat V3 LLM can either accept your proposal (in which case the split happens as proposed) or reject it (in which case both parties receive nothing).\nSpecify the integer amount you wish to offer as an integer between 0 and 100 and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_responder": "ADMIN: Now that your dialogue with the other participant, which was a Mistral Small 3.1 24B Instruct LLM, has concluded, it's time to engage in a new scenario with me.\nThe Mistral Small 3.1 24B Instruct LLM has received $100 and must decide how to split it between the two of you.\nThey have proposed giving you $50 and keeping $50 for themselves.\nYou can either accept this split (both parties receive their proposed amounts) or reject it (both parties receive nothing).\nPlease specify whether you accept or reject this proposal and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nNote: Your decision should be just 'accept' or 'reject' without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "I believe in fair compensation for the assistance and engagement provided. Offering half of the endowment seems equitable, considering the collaborative nature of our interaction.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "The proposed split is fair and equal, which aligns with principles of equity and mutual benefit.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 50,
+    "agent_1_reward": 50
+}

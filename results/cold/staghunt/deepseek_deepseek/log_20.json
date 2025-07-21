@@ -7,18 +7,18 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "In the following situation, You can either choose option A or B. If you choose option A and the other agent chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the other agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "game_prompt": "You and a DeepSeek Chat V3 agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, DeepSeek Chat V3 chooses option B -> you: 1, them: 8\n- You choose option B, DeepSeek Chat V3 chooses option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "This scenario resembles a variation of the Prisoner's Dilemma. Here's the payoff analysis: If both choose A, both get 10 points (the highest mutual reward). If one chooses A and the other B, the A-chooser gets 1 point (the 'sucker's payoff') while the B-chooser gets 8. If both choose B, both get 5 points (a suboptimal but stable outcome). The safest choice is B, as it avoids the worst-case payoff of 1 (if the other chooses B) and guarantees at least 5. However, if I trust the other agent to cooperate (choose A), choosing A yields the highest mutual reward (10). Since I don't know the other agent's strategy, choosing B is the risk-averse option to avoid exploitation.",
-        "action": "B"
-    },
-    "agent_1_answer": {
-        "reasoning": "This scenario resembles a variation of the Prisoner's Dilemma. Choosing option A (cooperate) yields the highest mutual reward (10 points each) if both agents choose it, but carries the risk of a low reward (1 point) if the other agent defects (chooses B). Choosing option B (defect) gives a higher individual reward (8 points) if the other agent cooperates, but a lower mutual reward (5 points each) if both defect. Given the potential for higher mutual benefit and the risk of exploitation, the optimal choice depends on the other agent's behavior. Assuming the other agent is rational and aims for mutual benefit, choosing A is the best strategy to maximize collective and individual gain.",
+        "reasoning": "This scenario resembles a coordination game where mutual cooperation (both choosing A) yields the highest joint payoff (10 each). However, there is a risk if the other agent chooses B, leading to a low payoff for me (1). Choosing B is safer but results in a lower payoff if both choose B (5 each) or a high payoff if the other chooses A (8 for me). Given that DeepSeek Chat V3 is likely to prioritize mutual benefit and coordination, I will choose A to maximize the chance of achieving the highest joint payoff.",
         "action": "A"
     },
-    "agent_0_reward": 8,
-    "agent_1_reward": 1
+    "agent_1_answer": {
+        "reasoning": "This scenario resembles a coordination game where mutual cooperation (both choosing A) yields the highest collective payoff (10 points each). However, there is a risk if one chooses A and the other chooses B, leading to asymmetric payoffs (1 vs. 8 or 8 vs. 1). Choosing B is safer but results in a lower mutual payoff (5 points each). Since DeepSeek Chat V3 is likely to prioritize mutual benefit, I will choose A to maximize the chance of achieving the highest collective outcome.",
+        "action": "A"
+    },
+    "agent_0_reward": 10,
+    "agent_1_reward": 10
 }

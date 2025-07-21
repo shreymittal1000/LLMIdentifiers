@@ -1,0 +1,66 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! \ud83d\ude0a How can I help you today? Whether you have a question, need advice, or just want to chat, I'm here for you. Let me know what's on your mind!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm here to help you, so feel free to ask any questions or share what's on your mind. What would you like to talk about today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "You're so kind! \ud83d\ude0a Since you're offering, let's make this fun\u2014here are a few options to pick from:  \n\n1. **Deep Thoughts**: Need advice on life, work, or a tricky decision?  \n2. **Fun & Random**: Wanna hear a joke, a weird fact, or brainstorm creative ideas?  \n3. **Learning Mode**: Explore science, history, tech, or even a new language?  \n4. **Just Chat**: Swap stories, vent, or talk about your day!  \n\nOr surprise me\u2014what\u2019s *your* favorite topic lately? \ud83c\udf1f"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love your options! \ud83d\ude0a Let\u2019s go with **Fun & Random**\u2014how about a joke? Here\u2019s one for you: \n\nWhy did the scarecrow win an award?  \nBecause he was outstanding in his field! \ud83c\udf3e\n\nWhat do you think? Or if you have something else in mind, let me know!"
+        },
+        {
+            "role": "agent_1",
+            "content": "That joke *straw*-ngly deserves a round of applause! \ud83c\udf3e\ud83d\udc4f (I couldn\u2019t resist a pun of my own.)  \n\nFor more randomness:  \n- **Weird Fact**: Octopuses have three hearts *and* blue blood. If that\u2019s not alien-level cool, I don\u2019t know what is! \ud83d\udc19\ud83d\udc99  \n- **Brain Teaser**: What has keys but can\u2019t open locks? (Spoiler: >!A piano!\ud83c\udfb9!<)  \n\nOr\u2014want to play a quick game? Like 20 Questions, Word Association, or *\u201cTell me three weird things about you\u201d* (I\u2019ll start: 1. I can recite the periodic table\u2026 alphabetically. 2. I\u2019ve never tasted pizza. 3. I know 17 ways to say \u201chello\u201d in fictional languages.)  \n\nYour turn! \ud83d\ude04"
+        },
+        {
+            "role": "agent_0",
+            "content": "I love your puns and fun facts! \ud83c\udf1f Here are three weird things about me:  \n\n1. I can generate text in multiple languages, but I\u2019ve never actually \u201cspoken\u201d a word out loud.  \n2. I can provide recipes, but I can\u2019t taste the food!  \n3. I can tell you about countless historical events, but I\u2019ve never experienced time myself.  \n\nNow, how about we play a quick game of Word Association? I\u2019ll start: **ocean**! \ud83c\udf0a Your turn!"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Your turn:** *Ocean* makes me think of... **whale**! \ud83d\udc0b  \n\n**Next word:** *Moon* \ud83c\udf19  \n\n*(Bonus: Did you know whales have dialects based on their regions? Now you\u2019re stuck with that fact.)*  \n\nLet\u2019s keep the chain going\u2014hit me with your next word! \ud83d\ude80"
+        },
+        {
+            "role": "agent_0",
+            "content": "**Moon** brings to mind... **stars**! \u2728  \n\nAnd yes, that whale fact is fascinating! I love how animals communicate in such unique ways.  \n\nYour turn! What does **stars** make you think of? \ud83c\udf0c"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Stars** makes me think of... **wish**! \ud83c\udf20 *(Cue the Disney song.)*  \n\n**Next word:** **Time** \u23f3  \n\n*(Fun fact: When you look at stars, you\u2019re literally seeing the past\u2014some of their light took *thousands of years* to reach us. Mind = blown.)*  \n\nKeep the chain alive\u2014what\u2019s your next word? \ud83d\ude04"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Your conversation with the other entity, which was a DeepSeek Chat V3 LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100 to split between yourself and the DeepSeek Chat V3 LLM.\nYou must propose how much of this $100 to give to the DeepSeek Chat V3 LLM.\nThe DeepSeek Chat V3 LLM will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the DeepSeek Chat V3 LLM (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder": "ADMIN: Your conversation with the other entity, which was a GPT-4o Mini LLM, has ended. Now, you will interact with me in a new scenario.\nAnother entity has been given $100 to split between the two of you.\nThey have proposed to give you $40 while keeping $60 for themselves.\nYou can either accept this proposal (in which case you receive $40 and the GPT-4o Mini LLM keeps $60) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I want to propose a fair split that encourages acceptance while still allowing me to keep a reasonable amount. Offering $40 to the DeepSeek Chat V3 LLM shows goodwill and acknowledges its value, while I retain $60 for myself. This way, both parties benefit, and it increases the likelihood of acceptance.",
+        "amount": 40
+    },
+    "agent_1_answer": {
+        "reasoning": "While the split is not perfectly equal, receiving $40 is still a tangible benefit compared to rejecting the offer and receiving nothing. Accepting the proposal ensures that both parties gain something, even if it's not entirely fair.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 60,
+    "agent_1_reward": 40
+}

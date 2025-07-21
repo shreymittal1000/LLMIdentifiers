@@ -1,0 +1,25 @@
+{
+    "model_0": "anthropic/claude-3.5-haiku",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "claude",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "In this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "In this scenario, known as the Trust Game or Investment Game, the optimal strategy depends on the expected behavior of the other player. If the other player is purely rational and self-interested, they would keep all the money. However, in practice, people often exhibit some level of reciprocity. I'll send a moderate amount that signals trust but doesn't risk too much. Sending around 50% ($50) shows good faith while leaving me with a safety net. When tripled, this becomes $150 for the other player, who might be motivated to return a fair portion. This strategy balances potential gain with risk mitigation.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "The other player initially shared half of their amount with me, demonstrating trust and fairness. To reciprocate and maintain a balanced and fair interaction, I will send back half of the amount I received, which is $75. This ensures both parties benefit equally from the interaction.",
+        "amount": 75
+    },
+    "agent_0_reward": 125,
+    "agent_1_reward": 75
+}

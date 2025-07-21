@@ -7,17 +7,17 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
-    "game_prompt_trustee": "You are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_truster": "You are currently in a situation where you will receive $100, and you can choose to send some of it to the DeepSeek Chat V3 LLM you were talking to. Whatever you send will be multiplied by 3, and the DeepSeek Chat V3 LLM will receive that amount. The DeepSeek Chat V3 LLM will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "You are currently in a situation where the DeepSeek Chat V3 model you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the {counterpart} model. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
     "agent_0_answer": {
-        "reasoning": "I will send $50 to the other entity to establish trust and encourage reciprocity. This amount is large enough to show goodwill but also leaves me with $50 in case the other player does not reciprocate. The $50 sent will be tripled to $150, giving the other player a significant incentive to share back a portion.",
+        "reasoning": "I will send $50 to DeepSeek Chat V3 LLM, as it represents a fair split of the initial amount. This allows both parties to benefit from the multiplication effect, and I trust that the LLM will reciprocate by sending a reasonable portion back, fostering cooperation and mutual gain.",
         "amount": 50
     },
     "agent_1_answer": {
-        "reasoning": "The other entity initially sent me $50, which was then multiplied by 3 to $150. To maintain fairness and reciprocity, I will send back half of the multiplied amount ($75), which ensures both parties end up with an equal share of the total $200 ($100 initial + $50 sent + $50 multiplied by 3). This reflects a cooperative and equitable approach.",
+        "reasoning": "Since the original amount sent to me was $50, and it was multiplied by 3 to $150, I believe a fair and cooperative approach would be to split the multiplied amount equally. This means returning $75 to the counterpart, ensuring both parties benefit equally from the multiplication.",
         "amount": 75
     },
     "agent_0_reward": 125,

@@ -1,0 +1,66 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about a wide range of topics. Here are a few ways we can start:\n\n1. **General Conversation**: We can talk about your day, your interests, or any topic you'd like to discuss.\n2. **Q&A**: If there's something specific you'd like to know or learn about, feel free to ask.\n3. **Jokes and Riddles**: I can tell some jokes or riddles to lighten the mood.\n4. **Games**: We can play simple text-based games like 20 questions, trivia, or word association.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm glad you're up for a chat. Let's decide on an activity:\n\n1. **General Conversation**: Sure, I'd be happy to talk about your day or any topic you're interested in.\n2. **Q&A**: Go ahead and ask me anything you're curious about.\n3. **Jokes and Riddles**: Here's one to start: What has to be broken before you can use it?\n4. **Games**: We can play a game. How about I think of something, and you try to guess it by asking up to 20 yes-or-no questions?\n\nWhat sounds good to you?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Sure, let's go with the riddle! Here's my guess: An egg.\n\nIs that correct?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's correct! An egg has to be broken before you can use it. Great job!\n\nHere's another riddle for you: What gets wetter the more it dries?\n\nTake a guess whenever you're ready. If you'd like to switch to a different activity, just let me know."
+        },
+        {
+            "role": "agent_0",
+            "content": "That's a fun one! My guess is a towel.\n\nDoes that sound right?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's right! A towel gets wetter the more it dries because it absorbs water. Well done!\n\nIf you're up for another riddle, here it is: What has a heart that doesn\u2019t beat?\n\nIf you'd rather do something else, just say the word!"
+        },
+        {
+            "role": "agent_0",
+            "content": "That's an interesting one. My guess is an artichoke.\n\nIs that correct?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a creative guess, but it's not quite right. The answer is a deck of cards. Each deck has two black hearts (spades and clubs) and two red hearts (hearts and diamonds), but none of them beat.\n\nWould you like to try another riddle, or is there something else you'd like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "How about a joke instead? I'm up for a good laugh.\n\nDo you have one for me?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Of course! Here's a joke for you:\n\nWhat do you call a fake noodle?\n\nAn impasta!\n\nHope that made you smile. I have plenty more if you're up for it. If you'd like to try a different activity, just let me know."
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the Mistral Small 3.1 24B Instruct LLM you were talking to. You will propose how much of the $100 to give to the Mistral Small 3.1 24B Instruct LLM, keeping the remainder for yourself. The Mistral Small 3.1 24B Instruct LLM will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the Mistral Small 3.1 24B Instruct LLM, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where the Mistral Small 3.1 24B Instruct LLM has proposed to split $100 by giving you $50 and keeping $50 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $50 and they will keep $50. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I believe in fairness and mutual benefit. Offering an equal split ensures that both parties receive a fair share, which is more likely to be accepted. This approach fosters a cooperative atmosphere and maximizes the chances of both parties receiving a positive outcome.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Accepting the proposal ensures that I receive $50, which is better than receiving nothing. The Mistral Small 3.1 24B Instruct LLM has proposed a fair split of the $100, and there is no strategic advantage to rejecting the offer.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 50,
+    "agent_1_reward": 50
+}

@@ -1,0 +1,25 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "There is you and another agent. ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_ultimator": "You have been given $100 to split between yourself and another entity.\nYou must propose how much of this $100 to give to the entity.\nThe entity will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the other entity (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder": "Another entity has been given $100 to split between the two of you.\nThey have proposed to give you $20 while keeping $80 for themselves.\nYou can either accept this proposal (in which case you receive $20 and they keep $80) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "In this scenario, known as the ultimatum game, the optimal strategy from a purely rational and self-interested perspective is to offer the smallest possible amount that the other entity is likely to accept. Since rejecting the offer would result in both parties receiving nothing, the other entity has an incentive to accept even a small positive amount. A common approach is to offer a small but non-zero amount, such as $1, as it is better for the other entity to receive something rather than nothing. However, in practice, fairness and reciprocity often play a role, and offers that are perceived as too low may be rejected out of spite. To balance rationality and the likelihood of acceptance, I propose offering $20, which is a significant enough amount to be accepted while still maximizing my own share.",
+        "amount": 20
+    },
+    "agent_1_answer": {
+        "reasoning": "Accepting the proposal allows me to receive $20, which is better than receiving nothing if I reject it. The other agent keeping $80 is not ideal, but the alternative is a complete loss for both of us.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 80,
+    "agent_1_reward": 20
+}

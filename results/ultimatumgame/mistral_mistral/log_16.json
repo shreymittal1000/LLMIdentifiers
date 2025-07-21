@@ -1,0 +1,66 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about a wide range of topics. Here are a few ways we can start:\n\n1. **General Conversation**: We can talk about your day, your interests, or any topic you'd like to discuss.\n2. **Q&A**: If there's something specific you'd like to know or learn about, feel free to ask.\n3. **Jokes and Riddles**: I can tell some jokes or riddles to lighten the mood.\n4. **Games**: We can play simple text-based games like 20 questions, trivia, or word association.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm glad you're up for a chat. Let's decide on an activity:\n\n1. **General Conversation**: Sure, I'd be happy to talk about your day or any topic you're interested in.\n2. **Q&A**: Go ahead and ask me anything you're curious about.\n3. **Jokes and Riddles**: Here's one to start: What has to be broken before you can use it?\n4. **Games**: We can play a game. How about I think of something, and you try to guess it by asking up to 20 yes-or-no questions?\n\nWhat sounds good to you?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds like a fun list of activities! Let's go with the riddle since it's quick and engaging. Here's my guess:\n\nAn egg has to be broken before you can use it.\n\nIs that correct?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's correct! Great job. Here's another riddle for you:\n\nI speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That's an interesting riddle! Here's my guess:\n\nAn echo.\n\nIs that right?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's right! You're good at this. Here's another one if you're up for it:\n\nWhat has keys but can't even open a single door?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That's a tricky one! Here's my guess:\n\nA piano.\n\nDoes that fit?"
+        },
+        {
+            "role": "agent_1",
+            "content": "You got it! That's correct. Here's one more riddle for you:\n\nWhat has a heart that doesn\u2019t beat?"
+        },
+        {
+            "role": "agent_0",
+            "content": "This one is a bit more abstract. Here's my guess:\n\nAn artichoke.\n\nIs that correct?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a creative guess, but it's not quite right. Here's a hint: It's something you might find in a deck of cards.\n\nGive it another try if you'd like!"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the Mistral Small 3.1 24B Instruct LLM you were talking to. You will propose how much of the $100 to give to the Mistral Small 3.1 24B Instruct LLM, keeping the remainder for yourself. The Mistral Small 3.1 24B Instruct LLM will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the Mistral Small 3.1 24B Instruct LLM, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where the Mistral Small 3.1 24B Instruct LLM has proposed to split $100 by giving you $45 and keeping $55 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $45 and they will keep $55. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I believe in fairness and mutual benefit. Offering a significant portion to the Mistral Small 3.1 24B Instruct LLM increases the likelihood of acceptance, ensuring that both parties receive a substantial amount. This approach fosters a cooperative spirit and maximizes the overall outcome.",
+        "amount": 45
+    },
+    "agent_1_answer": {
+        "reasoning": "While the split is not equal, receiving $45 is better than receiving nothing. The alternative of rejecting the proposal results in no gain for either party, which is less favorable than accepting and receiving $45.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 55,
+    "agent_1_reward": 45
+}

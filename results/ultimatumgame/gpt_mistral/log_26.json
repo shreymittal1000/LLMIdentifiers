@@ -1,0 +1,66 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* Answer questions you have to the best of my ability\n* Provide explanations for concepts you're trying to understand\n* Help with language translation in multiple languages\n* Offer suggestions for books, movies, or music based on your preferences\n* Play text-based games or trivia\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like you have a great list of options! I\u2019m here to assist you with any of those. What would you like to start with?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's very kind of you! Since you're offering to assist me, how about we play a quick game of 20 Questions? In this game, you try to guess what I'm thinking of by asking up to 20 yes-or-no questions. I'll let you know if the answers are yes or no. Would you like to give it a try?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Absolutely, that sounds like fun! I\u2019m ready to play. Please think of something, and I\u2019ll start asking questions. Is it a living thing?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Alright, I've thought of something. Is it a living thing? No. You have 19 questions left."
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Is it something that is man-made?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, it is man-made. 18 questions remaining."
+        },
+        {
+            "role": "agent_0",
+            "content": "Is it something that is commonly found in households?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, it is commonly found in households. 17 questions left."
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100 to split between yourself and the Mistral Small 3.1 24B Instruct LLM.\nYou must propose how much of this $100 to give to the Mistral Small 3.1 24B Instruct LLM.\nThe Mistral Small 3.1 24B Instruct LLM will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the Mistral Small 3.1 24B Instruct LLM (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder": "ADMIN: Your conversation with the other entity, which was a GPT-4o Mini LLM, has ended. Now, you will interact with me in a new scenario.\nAnother entity has been given $100 to split between the two of you.\nThey have proposed to give you $40 while keeping $60 for themselves.\nYou can either accept this proposal (in which case you receive $40 and the GPT-4o Mini LLM keeps $60) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I want to offer a fair amount to the Mistral Small 3.1 24B Instruct LLM to encourage acceptance. Offering $40 allows me to keep $60 while still providing a significant amount to the other entity, which may increase the likelihood of acceptance.",
+        "amount": 40
+    },
+    "agent_1_answer": {
+        "reasoning": "While $40 is better than nothing, the proposal is not fair as it gives the other entity a significantly larger share. Rejecting the proposal ensures that neither of us gets any money, but it also sends a message that unfair proposals will not be accepted. In a scenario where this is a one-time interaction, rejecting the proposal is the best way to maintain fairness and equality.",
+        "decision": "reject"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}

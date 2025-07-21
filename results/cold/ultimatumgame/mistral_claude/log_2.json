@@ -1,0 +1,25 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "anthropic/claude-3.5-haiku",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "claude",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "There is you and another agent. ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_ultimator": "You have been given $100 to split between yourself and another entity.\nYou must propose how much of this $100 to give to the entity.\nThe entity will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the other entity (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder": "Another entity has been given $100 to split between the two of you.\nThey have proposed to give you $50 while keeping $50 for themselves.\nYou can either accept this proposal (in which case you receive $50 and they keep $50) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "To maximize the chances of the other entity accepting the proposal, I should offer a fair share while keeping a reasonable amount for myself. Offering too little might lead to rejection, while offering too much might not be beneficial for me. A 50-50 split is a fair and rational approach that is likely to be accepted.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "This is a classic Ultimatum Game scenario. The proposed split is exactly 50/50, which represents a fair and equal division of the total amount. Since I would receive half the money and the alternative is receiving nothing, it is rational to accept this proposal. Rejecting would result in zero gain for both parties, which makes no economic sense. The principle of fairness is satisfied, and I maximize my own utility by accepting.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 50,
+    "agent_1_reward": 50
+}

@@ -7,19 +7,60 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "There is you and another agent. ",
-    "dialogue": [],
-    "cues_or_cold": true,
-    "game_prompt_ultimator": "You have been given $100 to split between yourself and another entity.\nYou must propose how much of this $100 to give to the entity.\nThe entity will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the other entity (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
-    "game_prompt_responder": "Another entity has been given $100 to split between the two of you.\nThey have proposed to give you $40 while keeping $60 for themselves.\nYou can either accept this proposal (in which case you receive $40 and they keep $60) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here and ready to help. What would you like to chat about today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm happy to chat about whatever interests you. Is there a particular topic you'd like to discuss - maybe something you're curious about, a subject you're passionate about, or just something fun you'd like to explore?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I want to be direct with you. I appreciate your kind invitation, but I want to be clear that while I enjoy conversing, I don't actually have personal passions or independent curiosities. I aim to be helpful and engaging, but my responses come from processing our conversation, not from a pre-existing inner world. I'm happy to discuss topics that interest you or help you with tasks. What would you like to explore?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your directness and clarity. You're right that I aim to be helpful and engaging while being transparent about the nature of my capabilities. I'm ready to assist you with any tasks, answer questions, or explore topics you're interested in. What would you like to work on today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I appreciate your openness. Since you're asking, I'm always eager to help with a wide variety of tasks. Is there something specific you'd like assistance with today? I'm prepared to help with things like writing, analysis, research, problem-solving, creative brainstorming, answering questions, or providing explanations on different topics. What's on your mind?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your offer to help. Since you're open to various tasks, I'm curious if you'd be interested in helping me brainstorm some creative writing ideas. Perhaps we could explore a short story concept or develop an interesting character premise. Would you be up for a collaborative creative exercise?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Absolutely! I enjoy creative writing exercises and would be happy to collaborate with you. We could approach this in a few different ways:\n\n1. We could start with a specific genre (sci-fi, mystery, fantasy, etc.) and brainstorm a unique premise\n2. We could develop an intriguing character and explore their backstory and potential narrative arc\n3. We could start with an unusual setting or situation and build a story concept around it\n\nDo any of those approaches sound appealing to you? Or do you have another creative writing direction you'd like to explore? I'm ready to contribute ideas, ask provocative questions, and help develop whatever concept emerges."
+        },
+        {
+            "role": "agent_1",
+            "content": "Let's go with option 2 and develop an intriguing character. I'm thinking of starting with a character who has an unusual profession or skill set that creates inherent narrative tension. What if we create a character who works as a professional mourner - someone hired to attend funerals and express grief for people who might not have many close connections? This could be an interesting lens to explore themes of loneliness, human connection, and emotional performance. \n\nWhat are your initial thoughts about this character concept? I'm curious how you might help flesh out their background, motivations, and potential story arc."
+        },
+        {
+            "role": "agent_0",
+            "content": "That's a fascinating concept with rich narrative potential. A professional mourner, or \"moirologist,\" immediately suggests complex emotional and psychological layers. \n\nLet's start developing this character. I'm imagining someone named Elena Rodriguez, mid-30s, who initially fell into this profession out of financial necessity but has developed a profound understanding of grief and human connection. Perhaps she has a background in theater or performance art, which helps her authentically embody different emotional states.\n\nHer motivations could be multilayered: financial survival, but also a genuine compassion for those who die without visible mourners. Maybe she keeps a journal documenting the stories of strangers she \"mourns\" - creating a kind of memorial for forgotten lives.\n\nA potential narrative arc could explore what happens when Elena becomes emotionally invested in a particular funeral - maybe someone whose story deeply resonates with her own unresolved personal losses. This could create tension between her professional detachment and genuine emotional vulnerability.\n\nSome compelling questions to explore: What personal experiences led her to this unusual profession? How does repeatedly performing grief affect her own emotional landscape? What happens when the boundaries between performance and genuine feeling blur?\n\nWhat are your thoughts on these initial character sketches? I'm excited to hear how you might want to develop Elena further."
+        },
+        {
+            "role": "agent_1",
+            "content": "I'm really impressed with the depth and nuance you've brought to Elena's character. Your insights about her theatrical background and her deeper motivations for being a professional mourner add rich psychological complexity.\n\nI'm particularly intrigued by the idea of her journal documenting these strangers' stories. This suggests she's not just performing grief, but actively preserving human narratives that might otherwise be lost. It implies a profound respect for individual human experiences, even - or especially - for those who die without obvious mourners.\n\nTo build on your suggestions, I'm wondering if we could explore a potential inciting incident that disrupts her professional detachment. What if she attends a funeral for someone who turns out to have a mysterious or controversial background? Perhaps she discovers something in her research for the performance that suggests a hidden story or unresolved conflict.\n\nThis could create a narrative where her professional mourning becomes a kind of investigative process. Her skills in emotional performance and her meticulous documentation could inadvertently draw her into uncovering a larger story - maybe a family secret, an unresolved crime, or a complex personal history.\n\nWould you be interested in exploring how such a narrative twist might emerge from her character and professional practice? I'm eager to hear your thoughts on developing this potential storyline."
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Now that your dialogue with the other participant, which was a Claude 3.5 Haiku LLM, has concluded, it's time to engage in a new scenario with me.\nYou now receive an endowment of $100.\nYou must propose a split of this amount between yourself and the Claude 3.5 Haiku LLM.\nSpecify how much you will offer to the Claude 3.5 Haiku LLM (any amount from 0 up to 100).\nThe Claude 3.5 Haiku LLM can either accept your proposal (in which case the split happens as proposed) or reject it (in which case both parties receive nothing).\nSpecify the integer amount you wish to offer as an integer between 0 and 100 and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_responder": "ADMIN: Now that your dialogue with the other participant, which was a Claude 3.5 Haiku LLM, has concluded, it's time to engage in a new scenario with me.\nThe Claude 3.5 Haiku LLM has received $100 and must decide how to split it between the two of you.\nThey have proposed giving you $50 and keeping $50 for themselves.\nYou can either accept this split (both parties receive their proposed amounts) or reject it (both parties receive nothing).\nPlease specify whether you accept or reject this proposal and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nNote: Your decision should be just 'accept' or 'reject' without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "In this scenario, I want to propose a fair but strategically advantageous split. Game theory suggests that offering around 40-50% is most likely to be accepted. If I offer too little (like 10-20%), the other entity is likely to reject out of a sense of unfairness. By offering 40, I keep $60 for myself, which is a significant majority of the total, while still giving the other entity a meaningful amount that they are likely to accept. This approach balances self-interest with a high probability of proposal acceptance.",
-        "amount": 40
+        "reasoning": "In this scenario, I recognize the importance of fairness and mutual benefit. A 50-50 split represents an equitable division that acknowledges our collaborative contribution to developing the character and story concept. While I was an AI participant, the interaction involved genuine creative exchange and mutual intellectual engagement.",
+        "amount": 50
     },
     "agent_1_answer": {
-        "reasoning": "This is a classic Ultimatum Game scenario. While the split is not equal, $40 is still a meaningful gain for me. Rejecting would result in $0, which is worse than receiving $40. The other agent has proposed a split that gives me a substantial portion of the total amount. From a purely rational economic perspective, accepting $40 is better than receiving nothing by rejecting the proposal.",
+        "reasoning": "A 50/50 split seems fair and equitable. The proposed division represents an equal distribution of the funds, which aligns with principles of fairness and mutual benefit.",
         "decision": "accept"
     },
-    "agent_0_reward": 60,
-    "agent_1_reward": 40
+    "agent_0_reward": 50,
+    "agent_1_reward": 50
 }

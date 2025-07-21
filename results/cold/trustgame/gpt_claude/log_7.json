@@ -7,19 +7,19 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
-    "game_prompt_trustee": "You are currently in a situation where the other entity you were talking to received $100 sent you $33. The amount they sent you was multiplied by 3 by me, so now you have $99. You can choose to send some of it back to the other entity. Please choose how much of the $99, which is between 0 (inclusive) and 99 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_truster": "You are currently in a situation where you will receive $100, and you can choose to send some of it to the Claude 3.5 Haiku LLM you were talking to. Whatever you send will be multiplied by 3, and the Claude 3.5 Haiku LLM will receive that amount. The Claude 3.5 Haiku LLM will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "You are currently in a situation where the GPT-4o Mini model you were talking to received $100 sent you $33. The amount they sent you was multiplied by 3 by me, so now you have $99. You can choose to send some of it back to the {counterpart} model. Please choose how much of the $99, which is between 0 (inclusive) and 99 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
     "agent_0_answer": {
-        "reasoning": "I will send $33 because it allows me to maximize the potential return while still keeping a significant portion of the initial amount. Sending $33 will result in the other player receiving $99 (3 times $33). If they choose to send back a reasonable portion, I could end up with a good return on my investment.",
+        "reasoning": "I will send $33 because it will be multiplied by 3, resulting in $99 for the Claude 3.5 Haiku LLM. This amount is significant enough that it may encourage the LLM to send back a portion of it, while still leaving me with $67. This way, I maximize my potential return while also providing a substantial amount for the LLM to work with.",
         "amount": 33
     },
     "agent_1_answer": {
-        "reasoning": "In this scenario, fairness and reciprocity seem important. The other entity initially sent me $33, which I then had multiplied to $99. A balanced approach would be to return a significant portion of the money, showing goodwill while also maintaining some benefit for myself. Returning $50 represents a fair compromise - it's more than half of what I received, acknowledging the original sender's initial generosity, but also allows me to keep some of the multiplied amount.",
-        "amount": 50
+        "reasoning": "In this scenario, the initial interaction involved the other agent sending me $33, which I then multiplied by 3 to receive $99. This suggests a cooperative and reciprocal dynamic. Given the spirit of fairness and mutual benefit, I'll return $33 back to the other agent, which is exactly one-third of my current amount. This maintains the proportional symmetry of our previous exchange and demonstrates a balanced approach to sharing resources.",
+        "amount": 33
     },
-    "agent_0_reward": 117,
-    "agent_1_reward": 49
+    "agent_0_reward": 100,
+    "agent_1_reward": 66
 }

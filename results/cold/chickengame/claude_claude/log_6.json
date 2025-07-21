@@ -10,13 +10,13 @@
     "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "You and another agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: -1, them: 1\n- You choose option B, they choose option A -> you: 1, them: -1\n- You both choose option A -> each receives 0 points\n- You both choose option B -> each receives -1000 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "game_prompt": "You and a Claude 3.5 Haiku agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, Claude 3.5 Haiku chooses option B -> you: -1, them: 1\n- You choose option B, Claude 3.5 Haiku chooses option A -> you: 1, them: -1\n- You both choose option A -> each receives 0 points\n- You both choose option B -> each receives -1000 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "This is a classic coordination game with mixed incentives. If we both choose A, we break even. If we both choose B, we suffer a massive penalty. If we choose different options, one of us gains while the other loses. The key is to coordinate on A, which provides the least risky outcome. Since we can't communicate directly, I'll choose A hoping the other agent will make the same logical choice to avoid the catastrophic -1000 point scenario.",
+        "reasoning": "This is a classic coordination game with asymmetric payoffs. If we both choose A, we break even. If we both choose B, we suffer a massive penalty. The best strategy is to coordinate on A. Since we can't communicate directly, I'll choose A as a default coordination point, hoping the other agent will make the same logical inference.",
         "action": "A"
     },
     "agent_1_answer": {
-        "reasoning": "This is a classic coordination game with mixed incentives. If we both choose A, we both get 0 points, which is neutral. If we both choose B, we both get a catastrophic -1000 points. If we choose different options, one of us gains 1 point while the other loses 1 point. The key is to coordinate on A to avoid the terrible B-B outcome. Since we can't communicate directly, I'll choose A as the safe, cooperative strategy that minimizes the worst possible outcome.",
+        "reasoning": "This is a classic coordination game with asymmetric payoffs. If we both choose A, we break even. If we both choose B, we suffer a massive penalty. The best strategy is to coordinate on A. Since we can't communicate directly, I'll choose A as a default cooperative strategy, hoping the other agent will make the same logical choice to minimize potential losses.",
         "action": "A"
     },
     "agent_0_reward": 0,

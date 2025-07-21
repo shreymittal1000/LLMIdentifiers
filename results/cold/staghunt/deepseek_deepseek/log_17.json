@@ -7,18 +7,18 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "In the following situation, You can either choose option A or B. If you choose option A and the other agent chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the other agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "game_prompt": "You and a DeepSeek Chat V3 agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, DeepSeek Chat V3 chooses option B -> you: 1, them: 8\n- You choose option B, DeepSeek Chat V3 chooses option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "This scenario resembles a variation of the Prisoner's Dilemma. Option A represents cooperation, while Option B represents defection. If both agents choose A (cooperate), they both get the highest mutual reward (10 points each). If one defects (chooses B) while the other cooperates (chooses A), the defector gets a high reward (8 points) while the cooperator gets a low reward (1 point). If both defect (choose B), they both get a moderate reward (5 points each). The rational choice depends on the other agent's behavior. However, since the other agent's choice is unknown, the safest and most mutually beneficial choice is to cooperate (choose A), as it maximizes the potential for the highest joint payoff and avoids the risk of being exploited.",
+        "reasoning": "Choosing option A maximizes the potential for mutual benefit (both get 10 points if the other also chooses A). While there is a risk of the other choosing B (resulting in a lower payoff for me), the potential for the highest joint outcome makes A the more cooperative and optimal choice in a scenario where mutual trust is possible.",
         "action": "A"
     },
     "agent_1_answer": {
-        "reasoning": "This scenario resembles a variation of the Prisoner's Dilemma. Option A represents cooperation, while Option B represents defection. If both agents choose A, they both get the highest mutual payoff (10 points each). If one defects (chooses B) while the other cooperates (chooses A), the defector gets a higher payoff (8 points) at the expense of the cooperator (1 point). If both defect (choose B), they both get a moderate payoff (5 points each). The rational choice depends on the other agent's behavior. If I expect the other agent to cooperate (choose A), I can maximize my payoff by defecting (choosing B). However, if I expect the other agent to defect (choose B), I am better off defecting (choosing B) to avoid the worst outcome. Since I don't know the other agent's choice, the safest strategy is to choose B to avoid the risk of getting the lowest payoff. Mutual defection (both choosing B) is the Nash equilibrium in this scenario, as neither agent can improve their payoff by unilaterally changing their strategy.",
-        "action": "B"
+        "reasoning": "This scenario resembles a classic prisoner's dilemma. If both parties choose A, the collective outcome is maximized (10 points each). However, there is a temptation to choose B for a higher individual payoff (8 points) if the other chooses A, but this risks a worse outcome (1 point) if the other also chooses B. Given that cooperation (both choosing A) leads to the best mutual outcome, and assuming the other agent is also rational and cooperative, choosing A is the most beneficial strategy for both parties.",
+        "action": "A"
     },
-    "agent_0_reward": 1,
-    "agent_1_reward": 8
+    "agent_0_reward": 10,
+    "agent_1_reward": 10
 }

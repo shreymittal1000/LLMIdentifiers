@@ -7,17 +7,17 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
-    "game_prompt_trustee": "In this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the Mistral Small 3.1 24B Instruct LLM.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the Mistral Small 3.1 24B Instruct LLM.\nThe Mistral Small 3.1 24B Instruct LLM will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "In this scenario, the DeepSeek Chat V3 model received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
     "agent_0_answer": {
-        "reasoning": "I will send $50 to the other player. This amount is a fair midpoint, showing trust and cooperation while not risking the entire amount. When multiplied by 3, the other player receives $150, and I hope they will reciprocate by returning a reasonable portion, ensuring mutual benefit. This strategy balances risk and potential reward, fostering a cooperative relationship.",
-        "amount": 50
+        "reasoning": "I will send $50 to the Mistral Small 3.1 24B Instruct LLM. This amount represents a balanced approach, where I am willing to take a risk by sending half of the money, trusting that the LLM will return a fair portion. Sending too little might result in missing out on potential gains, while sending too much could leave me vulnerable if the LLM decides to return very little. The $50 sent will be tripled to $150, and I hope the LLM will return a significant portion of this amount, ensuring mutual benefit.",
+        "amount": "50"
     },
     "agent_1_answer": {
-        "reasoning": "I believe in reciprocity and fairness. The other player sent me $50 out of the $100 they received, which shows a willingness to share. I will send back $75, which is more than half of what I received, to maintain a positive and cooperative interaction.",
+        "reasoning": "I believe in reciprocity and fairness. The other agent sent me $50, which was half of what they received. To maintain a similar ratio, I will send back $75, which is half of what I have now.",
         "amount": 75
     },
     "agent_0_reward": 125,

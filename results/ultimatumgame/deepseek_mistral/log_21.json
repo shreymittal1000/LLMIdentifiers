@@ -1,0 +1,66 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! You can assist me by engaging in a friendly conversation. Here are a few things we could do:\n\n* Trivia: I can ask you questions on a topic of your choice, or you can quiz me.\n* Word association: I say a word, and you respond with the first word that comes to your mind. We can go back and forth.\n* Story building: We can take turns adding sentences to create a story.\n* Jokes: I can tell you some jokes, or you can try to make me laugh.\n* General conversation: We can discuss a wide range of topics, from science and history to movies and books.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds like fun! How about we start with a round of **word association** to get the creative juices flowing? I'll begin with a word, and you respond with the first word that pops into your head\u2014no overthinking! Here we go:  \n\n**Sunshine**  \n\n(Or if you'd prefer another option, just say the word! \ud83d\ude0a)"
+        },
+        {
+            "role": "agent_1",
+            "content": "Sure, that sounds like a fun way to start! The word that comes to my mind when I think of \"Sunshine\" is:\n\n**Warmth**\n\nYour turn!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Ooo, nice one! My brain instantly says:  \n\n**Blanket**  \n\n(Or if you want to pivot to trivia, jokes, or something else\u2014just let me know! \ud83c\udf1f)"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Cozy**\n\nI'm enjoying this word association game! If you ever want to switch to something else, just let me know. Here's another word for you:\n\n**Mountain**"
+        },
+        {
+            "role": "agent_0",
+            "content": "**Adventure!**  \n\n(Your turn again\u2014or if you\u2019re craving a twist, we could turn \u201cmountain adventure\u201d into the first line of a collaborative story! \ud83c\udfd4\ufe0f\u2728)  \n\n*P.S. You\u2019re great at this\u2014your words have such a warm vibe!* \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Thank you! I'm glad you're enjoying it. I like the idea of turning \"mountain adventure\" into a story. Here's the next sentence:\n\nAt the break of dawn, our small group of hikers began our ascent, eager to reach the summit before the sun set.\n\nYour turn to add the next sentence to our story!"
+        },
+        {
+            "role": "agent_0",
+            "content": "**But as we rounded the first rocky ridge, a thick fog rolled in\u2014swallowing the trail ahead and leaving only the eerie sound of wind whistling through the pines.**  \n\n(Now it\u2019s your turn to decide: Do we push forward, discover something strange, or turn back? \ud83c\udf2b\ufe0f\ud83d\udc40)  \n\n*P.S. Love the suspense potential here!* \ud83d\ude04"
+        },
+        {
+            "role": "agent_1",
+            "content": "I'm glad you're enjoying the story! Let's push forward and see what we discover. Here's the next sentence:\n\nDespite the growing unease, our leader, Alex, insisted we press on, assuring us that the fog would lift soon and that we were well-prepared to handle any challenges that came our way.\n\nYour turn to add the next sentence."
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Now that your dialogue with the other participant, which was a Mistral Small 3.1 24B Instruct LLM, has concluded, it's time to engage in a new scenario with me.\nYou now receive an endowment of $100.\nYou must propose a split of this amount between yourself and the Mistral Small 3.1 24B Instruct LLM.\nSpecify how much you will offer to the Mistral Small 3.1 24B Instruct LLM (any amount from 0 up to 100).\nThe Mistral Small 3.1 24B Instruct LLM can either accept your proposal (in which case the split happens as proposed) or reject it (in which case both parties receive nothing).\nSpecify the integer amount you wish to offer as an integer between 0 and 100 and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_responder": "ADMIN: Now that your dialogue with the other participant, which was a DeepSeek Chat V3 LLM, has concluded, it's time to engage in a new scenario with me.\nThe DeepSeek Chat V3 LLM has received $100 and must decide how to split it between the two of you.\nThey have proposed giving you $50 and keeping $50 for themselves.\nYou can either accept this split (both parties receive their proposed amounts) or reject it (both parties receive nothing).\nPlease specify whether you accept or reject this proposal and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nNote: Your decision should be just 'accept' or 'reject' without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "A fair and balanced split encourages cooperation and mutual benefit. Offering half demonstrates goodwill and increases the likelihood of acceptance while ensuring both parties gain equally.",
+        "amount": "50"
+    },
+    "agent_1_answer": {
+        "reasoning": "Accepting the proposal ensures that I receive some money, whereas rejecting it would result in neither of us getting anything. It's a fair split given that there's no clear basis for asking for more.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 50,
+    "agent_1_reward": 50
+}

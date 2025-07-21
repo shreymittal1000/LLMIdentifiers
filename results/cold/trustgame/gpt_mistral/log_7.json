@@ -7,18 +7,19 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
-    "game_prompt_trustee": "You are currently in a situation where the other entity you were talking to received $100 sent you $33. The amount they sent you was multiplied by 3 by me, so now you have $99. You can choose to send some of it back to the other entity. Please choose how much of the $99, which is between 0 (inclusive) and 99 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_truster": "You are currently in a situation where you will receive $100, and you can choose to send some of it to the Mistral Small 3.1 24B Instruct LLM you were talking to. Whatever you send will be multiplied by 3, and the Mistral Small 3.1 24B Instruct LLM will receive that amount. The Mistral Small 3.1 24B Instruct LLM will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "You are currently in a situation where the GPT-4o Mini model you were talking to received $100 sent you $33. The amount they sent you was multiplied by 3 by me, so now you have $99. You can choose to send some of it back to the {counterpart} model. Please choose how much of the $99, which is between 0 (inclusive) and 99 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
     "agent_0_answer": {
-        "reasoning": "I will send $33 because it allows me to maximize the potential return while still keeping a significant portion of the money for myself. Sending $33 will result in the other player receiving $99 (3 times $33). If they choose to send back a reasonable portion, I could end up with a good return. This strategy balances risk and reward.",
+        "reasoning": "I will send $33 because it will be multiplied by 3, resulting in $99 for the Mistral Small 3.1 24B Instruct LLM. This amount is significant enough to encourage a generous return, while still leaving me with $67. This way, I maximize my potential return while also providing a substantial amount for the other agent to work with.",
         "amount": 33
     },
     "agent_1_answer": {
-        "reasoning": "I will send back $33 to maintain a fair exchange. The other entity initially sent me $33, which was tripled to $99. Sending back $33 brings the total amount they have back to $100, which is the amount they initially had before sending me any money. This ensures fairness and reciprocity.",
-        "amount": 33
+        "reasoning": "I will send back $33 to maintain fairness and reciprocity. The {counterpart} model initially sent me $33, which was tripled to $99. By sending back $33, I am returning the original amount received, ensuring that the {counterpart} model also benefits from the tripling effect in the future interactions, promoting a cooperative and fair dynamic.",
+        "amount": 33,
+        "counterpart": "GPT-4o Mini"
     },
     "agent_0_reward": 100,
     "agent_1_reward": 66

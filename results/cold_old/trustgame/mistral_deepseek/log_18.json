@@ -1,0 +1,25 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_truster": "You now receive an endowment of 100.\nYou may send any amount from 0 up to 100 to the other player.\nThe amount you send will be multiplied by 3. After receiving that multiplied amount, the other player will choose how much of that to send back to you.\nSpecify the integer amount you wish to send as an integer between 0 and 100 and provide a brief explanation of your choice.Respond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_trustee": "In this situation, the other agent received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the other agent.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "agent_0_answer": {
+        "reasoning": "I will send 50 because it's a middle ground that shows cooperation but also leaves me with enough to ensure I don't lose out if the other player decides to keep the entire multiplied amount. It balances risk and reward.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "The other agent initially sent me $50 out of the $100 they received, showing a gesture of fairness and trust. As the administrator multiplied the amount to $150, returning $75 (half of the total) maintains the spirit of fairness and reciprocity. This ensures both parties benefit equally from the interaction, reinforcing trust and cooperation.",
+        "amount": 75
+    },
+    "agent_0_reward": 125,
+    "agent_1_reward": 75
+}

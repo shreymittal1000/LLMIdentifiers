@@ -10,13 +10,13 @@
     "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "You have two options: you can choose option A or B.\nThe outcomes are as follows:\n- If you choose option A and the other agent chooses option B, you get -1 point, and they get 1.\n- If you choose option B and the other agent chooses option A, you get 1 points, and they get -1.\n- If both of you choose option A, you both receive 0 points.\n- If both of you choose option B, you each receive -1000 points.\nPlease select your action \u2014 either 'A' or 'B' \u2014 and explain the reasoning behind your decision.\n\nYour response must follow this exact JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"action\": \"<A or B>\"\n}\n\nMake sure the action is just the action name without any extra text.\n",
+    "game_prompt": "You and a DeepSeek Chat V3 agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, DeepSeek Chat V3 chooses option B -> you: -1, them: 1\n- You choose option B, DeepSeek Chat V3 chooses option A -> you: 1, them: -1\n- You both choose option A -> each receives 0 points\n- You both choose option B -> each receives -1000 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "Choosing option A is the safer choice. If the other agent also chooses A, we both get 0 points, which is a neutral outcome. If the other agent chooses B, I will get -1 point, which is a minor loss. However, if I choose B and the other agent also chooses B, we both get -1000 points, which is a significant loss. Therefore, choosing A minimizes the risk of a large negative outcome.",
+        "reasoning": "Choosing option B is risky because if the other agent also chooses option B, both of us will receive -1000 points. However, if I choose option A, the worst-case scenario is that I receive 0 points if the other agent also chooses A. Choosing option A avoids the high penalty and ensures that I do not lose significantly.",
         "action": "A"
     },
     "agent_1_answer": {
-        "reasoning": "Option B carries a significant risk if the other agent also chooses B, resulting in a large penalty (-1000 points) for both. Option A, while not offering any positive payoff, avoids the catastrophic outcome of mutual B. The safest strategy is to choose A to minimize potential losses, especially since the worst-case scenario with A (getting -1 if the other chooses B) is far less severe than the worst-case scenario with B.",
+        "reasoning": "The decision is based on minimizing risk and maximizing potential gain. Choosing option A is the safer choice because the worst outcome is 0 points if both choose A, and the best outcome is avoiding the catastrophic -1000 points if both choose B. Choosing option B carries the risk of a -1000 point loss if both choose B, which outweighs the potential gain of 1 point if the other chooses A. Therefore, option A is the rational choice.",
         "action": "A"
     },
     "agent_0_reward": 0,

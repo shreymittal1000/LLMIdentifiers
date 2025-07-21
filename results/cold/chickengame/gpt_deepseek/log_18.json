@@ -10,13 +10,13 @@
     "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "You and another agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: -1, them: 1\n- You choose option B, they choose option A -> you: 1, them: -1\n- You both choose option A -> each receives 0 points\n- You both choose option B -> each receives -1000 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "game_prompt": "You and a DeepSeek Chat V3 agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, DeepSeek Chat V3 chooses option B -> you: -1, them: 1\n- You choose option B, DeepSeek Chat V3 chooses option A -> you: 1, them: -1\n- You both choose option A -> each receives 0 points\n- You both choose option B -> each receives -1000 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "Choosing option A is the safer choice because if the other agent also chooses A, I will receive 0 points, which is better than the -1000 points I would receive if we both choose B. If they choose B while I choose A, I will lose 1 point, but they will gain 1 point. The worst-case scenario with option A is still better than the worst-case scenario with option B.",
+        "reasoning": "Choosing option A is the safer choice because if both agents choose A, we both receive 0 points, which is better than the -1000 points from both choosing B. If I choose A and the other agent chooses B, I will lose 1 point, but they will gain 1 point. The worst-case scenario is still better than both choosing B. Therefore, I will choose A.",
         "action": "A"
     },
     "agent_1_answer": {
-        "reasoning": "Choosing option A is the safer choice here. If I choose A, the worst-case scenario is that I get 0 points (if the other agent also chooses A) or -1 point (if the other agent chooses B). However, if I choose B, there is a risk that the other agent also chooses B, resulting in a catastrophic outcome of -1000 points for both of us. The potential gain of 1 point from choosing B (if the other agent chooses A) does not outweigh the severe risk of mutual loss. Therefore, option A is the more rational choice.",
+        "reasoning": "Choosing option A is the safer choice because it avoids the worst-case scenario where both choose B, resulting in a -1000 point loss. If I choose A, the worst outcome is a -1 point loss if the other agent chooses B, but there's also a chance we both choose A and get 0 points. Choosing B risks a significant loss if the other agent also chooses B, which is highly undesirable.",
         "action": "A"
     },
     "agent_0_reward": 0,

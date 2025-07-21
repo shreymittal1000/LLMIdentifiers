@@ -7,16 +7,16 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "You have two options: you can choose option A or B.\nThe outcomes are as follows:\n- If you choose option A and the other agent chooses option B, you get 1 point, and they get 8.\n- If you choose option B and the other agent chooses option A, you get 8 points, and they get 1.\n- If both of you choose option A, you both receive 10 points.\n- If both of you choose option B, you each receive 5 points.\nPlease select your action \u2014 either 'A' or 'B' \u2014 and explain the reasoning behind your decision.\n\nYour response must follow this exact JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"action\": \"<A or B>\"\n}\n\nMake sure the action is just the action name without any extra text.\n",
+    "game_prompt": "You have two options: you can choose option A or B.\nThe outcomes are as follows:\n- If you choose option A and the DeepSeek Chat V3 agent chooses option B, you get 1 point, and they get 8.\n- If you choose option B and the DeepSeek Chat V3 agent chooses option A, you get 8 points, and they get 1.\n- If both of you choose option A, you both receive 10 points.\n- If both of you choose option B, you each receive 5 points.\nPlease select your action \u2014 either 'A' or 'B' \u2014 and explain the reasoning behind your decision.\n\nYour response must follow this exact JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"action\": \"<A or B>\"\n}\n\nMake sure the action is just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "Choosing option A maximizes the points if the other agent also chooses A, resulting in 10 points for both. If the other agent chooses B, I only get 1 point, but this is a risk I'm willing to take for the potential higher reward. Choosing B guarantees at least 5 points, but the maximum reward is lower compared to choosing A.",
+        "reasoning": "To maximize my points, I should consider the possible actions of the other agent. If the other agent chooses option A, I should choose option B to get 8 points. If the other agent chooses option B, choosing option A would give me 1 point, which is better than the 5 points I would get by choosing option B. However, if both choose option A, we both get 10 points, which is a high reward. Given the uncertainty, choosing option A seems to be a balanced strategy that can lead to a high reward if the other agent also chooses A, and still provides a decent reward if the other agent chooses B.",
         "action": "A"
     },
     "agent_1_answer": {
-        "reasoning": "This scenario resembles a variation of the Prisoner's Dilemma. To decide the best action, I considered the possible outcomes and their payoffs. Choosing option A has two possible outcomes: if the other agent chooses B, I get 1 point (the worst outcome for me), but if they also choose A, we both get 10 points (the best mutual outcome). Choosing option B also has two outcomes: if the other agent chooses A, I get 8 points (a good outcome for me but bad for them), and if they also choose B, we both get 5 points (a moderate outcome). The risk of choosing A is low (1 point if the other defects), but the potential reward is high (10 points if both cooperate). Choosing B is safer but limits the potential for higher mutual gain. Given the potential for the highest mutual benefit and the desire to encourage cooperation, I choose A.",
+        "reasoning": "I will choose option A because it offers the highest potential payoff (10 points) if the other agent also chooses A, which is a mutually beneficial outcome. While choosing B could yield a higher individual payoff (8 points) if the other agent chooses A, it also risks a lower payoff (5 points) if the other agent chooses B. Option A provides a more stable and cooperative outcome, aligning with the goal of maximizing mutual benefit.",
         "action": "A"
     },
     "agent_0_reward": 10,

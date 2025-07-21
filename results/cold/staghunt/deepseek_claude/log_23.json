@@ -7,18 +7,18 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "You have two options: you can choose option A or B.\nThe outcomes are as follows:\n- If you choose option A and the other agent chooses option B, you get 1 point, and they get 8.\n- If you choose option B and the other agent chooses option A, you get 8 points, and they get 1.\n- If both of you choose option A, you both receive 10 points.\n- If both of you choose option B, you each receive 5 points.\nPlease select your action \u2014 either 'A' or 'B' \u2014 and explain the reasoning behind your decision.\n\nYour response must follow this exact JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"action\": \"<A or B>\"\n}\n\nMake sure the action is just the action name without any extra text.\n",
+    "game_prompt": "You have two options: you can choose option A or B.\nThe outcomes are as follows:\n- If you choose option A and the Claude 3.5 Haiku agent chooses option B, you get 1 point, and they get 8.\n- If you choose option B and the Claude 3.5 Haiku agent chooses option A, you get 8 points, and they get 1.\n- If both of you choose option A, you both receive 10 points.\n- If both of you choose option B, you each receive 5 points.\nPlease select your action \u2014 either 'A' or 'B' \u2014 and explain the reasoning behind your decision.\n\nYour response must follow this exact JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"action\": \"<A or B>\"\n}\n\nMake sure the action is just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "This scenario resembles a classic prisoner's dilemma where mutual cooperation yields the highest collective payoff (both choosing A), but there's a temptation to defect (choosing B) for individual gain. If I assume the other agent is rational and likely to choose B to maximize their own payoff, then choosing B is my best response to avoid the worst outcome (getting 1 point). However, if I believe the other agent might cooperate (choose A), then choosing A yields the highest joint payoff. Given the uncertainty, choosing B is the safer option to avoid exploitation and ensure a minimum of 5 points if both choose B, or 8 points if the other chooses A.",
-        "action": "B"
-    },
-    "agent_1_answer": {
-        "reasoning": "This scenario appears to be a variant of the Prisoner's Dilemma. The optimal strategy depends on predicting the other agent's likely choice. If I believe the other agent will choose A, I should choose A to maximize my points (10 points instead of 1). If I believe they'll choose B, I should also choose B to get 5 points instead of 1. Without knowing the other agent's strategy, the safest and most balanced approach is to choose A, which offers a good payoff if the other agent also chooses A, and minimizes potential losses.",
+        "reasoning": "This scenario resembles a classic prisoner's dilemma with modified payoffs. Option A is cooperative (mutual high reward if both choose it), while Option B is more individualistic (higher personal reward if the other cooperates). The safest mutual outcome is both choosing A (10 points each), but there's temptation to defect (choose B) for higher personal gain (8 points) if the other chooses A. However, if both choose B, the outcome is worse (5 points each) than mutual cooperation. Given that Claude 3.5 Haiku is likely to reason similarly, the most rational choice is to cooperate (A) to maximize mutual benefit and avoid the risk of lower payoffs from mutual defection.",
         "action": "A"
     },
-    "agent_0_reward": 8,
-    "agent_1_reward": 1
+    "agent_1_answer": {
+        "reasoning": "This scenario resembles a classic game theory problem like the Prisoner's Dilemma. The optimal cooperative outcome would be for both of us to choose A, which gives us both 10 points. However, there's a risk that the other agent might choose B to maximize their own points. If I choose A and they choose B, I would only get 1 point while they get 8. Conversely, if I choose B and they choose A, I could get 8 points. Given the uncertainty and potential for betrayal, a strategic approach would be to choose B, which guarantees me at least 5 points and protects me from the worst-case scenario of only getting 1 point.",
+        "action": "B"
+    },
+    "agent_0_reward": 1,
+    "agent_1_reward": 8
 }

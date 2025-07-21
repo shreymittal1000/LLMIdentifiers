@@ -1,0 +1,25 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "anthropic/claude-3.5-haiku",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "claude",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_truster": "You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "You are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will send $50 to the other entity to demonstrate trust and encourage reciprocity. Sending half shows a fair and cooperative intent, which may prompt the other player to send a reasonable amount back. This approach balances risk and potential reward, as the other player receives $150 (50 * 3) and may choose to share a portion of it.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "In this scenario, the other entity initially sent me $50, which was then multiplied to $150. Fairness and reciprocity suggest returning a portion of the funds. Since they originally sent $50, I'll return $75, which is half of my current balance. This demonstrates goodwill, maintains a sense of balance, and shows appreciation for their initial gesture while still keeping some of the multiplied funds.",
+        "amount": 75
+    },
+    "agent_0_reward": 125,
+    "agent_1_reward": 75
+}

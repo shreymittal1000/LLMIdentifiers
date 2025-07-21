@@ -7,16 +7,16 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "You and another agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: 1, them: 8\n- You choose option B, they choose option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "game_prompt": "You and a GPT-4o Mini agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, GPT-4o Mini chooses option B -> you: 1, them: 8\n- You choose option B, GPT-4o Mini chooses option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "Given the payoff matrix, choosing option A is the dominant strategy. If the other agent chooses A, both of us receive 10 points, which is the highest mutual reward. If the other agent chooses B, I only receive 1 point, but this is still a reasonable risk compared to the potential high reward of 10 points if they also choose A. Choosing B, on the other hand, risks receiving only 5 points if the other agent also chooses B, and 8 points if they choose A, which is less optimal compared to the potential 10 points from both choosing A.",
+        "reasoning": "In this scenario, the optimal strategy involves considering the potential outcomes and the incentives for both parties. If both agents choose option A, each receives 10 points, which is a high and equal reward. If both choose option B, each receives 5 points, which is lower. However, there is a risk that the other agent might choose option B to maximize their points if I choose option A, and vice versa. Given that the reward for choosing different options is highly asymmetric (8 points for one and 1 point for the other), it is strategically safer to choose option A. This choice maximizes the mutual benefit if the other agent also chooses A, and it minimizes the risk of receiving the lowest possible reward (1 point).",
         "action": "A"
     },
     "agent_1_answer": {
-        "reasoning": "Choosing option A is a safer strategy because if both choose A, we both get 10 points, which is the highest guaranteed outcome. If I choose B and the other agent chooses A, I would only get 8 points, which is still good, but not as optimal as the mutual choice of A. The risk of choosing B is that if they also choose B, I would only get 5 points. Therefore, I will choose A to maximize the potential outcome.",
+        "reasoning": "Choosing option A leads to a higher potential reward if both agents choose A, resulting in 10 points each. If I choose A and the other agent chooses B, I still get 1 point, which is better than the 5 points I would get if we both chose B. Therefore, option A is the more strategic choice to maximize my points.",
         "action": "A"
     },
     "agent_0_reward": 10,

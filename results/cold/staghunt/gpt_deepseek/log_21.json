@@ -7,18 +7,18 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "You and another agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: 1, them: 8\n- You choose option B, they choose option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "game_prompt": "You and a DeepSeek Chat V3 agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, DeepSeek Chat V3 chooses option B -> you: 1, them: 8\n- You choose option B, DeepSeek Chat V3 chooses option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "Choosing option A is more beneficial if the other agent also chooses A, as it guarantees 10 points for both. If they choose B, I would still receive 1 point, which is better than the 5 points I would get if I chose B and they also chose B. Therefore, I believe that choosing A maximizes my potential outcomes.",
-        "action": "A"
-    },
-    "agent_1_answer": {
-        "reasoning": "This scenario resembles the classic Prisoner's Dilemma, where mutual cooperation (both choosing A) yields the highest collective payoff (10 points each). However, if I choose B while the other agent chooses A, I get the highest individual payoff (8 points). Conversely, if I choose A and the other agent chooses B, I get the lowest payoff (1 point). Choosing B is the safer option to avoid the worst outcome, but it risks mutual defection (both choosing B), which gives a moderate payoff (5 points each). Given the uncertainty of the other agent's choice, I will choose B to maximize my minimum payoff (avoiding the worst-case scenario of 1 point).",
+        "reasoning": "Choosing option A could lead to a higher payoff if DeepSeek Chat V3 also chooses A, resulting in 10 points for both. However, if they choose B, I would only get 1 point. On the other hand, if I choose B and they choose A, I would get 8 points, which is better than the worst-case scenario of choosing A. Given the potential outcomes, I believe that choosing B is a safer option that maximizes my potential points while minimizing the risk of a low score.",
         "action": "B"
     },
-    "agent_0_reward": 1,
-    "agent_1_reward": 8
+    "agent_1_answer": {
+        "reasoning": "This scenario resembles a classic prisoner's dilemma. Choosing option A (cooperate) maximizes mutual benefit if both agents choose it (10 points each). However, choosing option B (defect) offers a higher individual payoff if the other agent chooses A (8 points vs. 1 point). Given that I don't know the other agent's choice, I'll choose B to maximize my potential payoff, even though mutual cooperation would be better overall.",
+        "action": "B"
+    },
+    "agent_0_reward": 5,
+    "agent_1_reward": 5
 }

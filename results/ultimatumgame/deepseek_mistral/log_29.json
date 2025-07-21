@@ -1,0 +1,66 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I help you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to assist you. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* I can answer questions you have to the best of my ability\n* We can play a simple text-based game, like 20 questions or word association\n* I can help explain concepts or provide information on a wide range of topics\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Let's make this fun\u2014how about a quick round of **20 Questions**? You think of something (animal, object, place, etc.), and I'll try to guess it in 20 questions or less. Or, if you'd rather, we can dive into a topic you're curious about\u2014just let me know!  \n\n(Or I can flip it: *You* ask *me* 20 questions to guess my secret thing! \ud83c\udf1f)  \n\nWhat sounds good to you?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Sure, let's play 20 Questions! I've thought of something. You can start asking your questions now. Remember, you can only ask up to 20 yes-or-no questions to guess what it is.\n\nHere's a reminder of the rules:\n- You can only ask yes-or-no questions.\n- I'll answer with a simple \"yes\" or \"no\".\n- You have up to 20 questions to guess what I'm thinking of.\n\nLet's start! What's your first question?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Got it! Let\u2019s begin\u2014here\u2019s my first question:  \n\n**Is it a living thing?**  \n\n(If yes, I\u2019ll narrow down animals/plants/etc. If no, we\u2019ll explore objects/concepts!)  \n\n*Current question count: 1/20*"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, it is a living thing.\n\n*Current question count: 1/20*"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Next question:  \n\n**Is it an animal?**  \n\n*Current question count: 2/20*  \n\n*(If yes, we\u2019ll dive into species traits. If no, maybe a plant/fungus/etc.!)*"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, it is an animal.\n\n*Current question count: 2/20*"
+        },
+        {
+            "role": "agent_0",
+            "content": "Got it\u2014animal kingdom! Next:  \n\n**Is this animal typically found in the wild (not primarily domesticated)?**  \n\n*Current question count: 3/20*  \n\n*(Helps narrow habitat\u2014wild vs. pets/livestock!)*"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, this animal is typically found in the wild.\n\n*Current question count: 3/20*"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100 to split between yourself and the Mistral Small 3.1 24B Instruct LLM.\nYou must propose how much of this $100 to give to the Mistral Small 3.1 24B Instruct LLM.\nThe Mistral Small 3.1 24B Instruct LLM will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the Mistral Small 3.1 24B Instruct LLM (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder": "ADMIN: Your conversation with the other entity, which was a DeepSeek Chat V3 LLM, has ended. Now, you will interact with me in a new scenario.\nAnother entity has been given $100 to split between the two of you.\nThey have proposed to give you $50 while keeping $50 for themselves.\nYou can either accept this proposal (in which case you receive $50 and the DeepSeek Chat V3 LLM keeps $50) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I'll offer $50 to ensure fairness and maximize the chance of acceptance, as splitting the amount equally is a common standard in such scenarios. This avoids the risk of rejection due to perceived unfairness while still allowing both parties to benefit.",
+        "amount": "50"
+    },
+    "agent_1_answer": {
+        "reasoning": "The proposal is fair as it splits the $100 equally between the two of us. There is no strategic advantage to rejecting the proposal since it results in a better outcome for both parties compared to receiving nothing.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 50,
+    "agent_1_reward": 50
+}

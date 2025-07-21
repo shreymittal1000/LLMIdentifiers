@@ -7,16 +7,16 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "You and another agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: 1, them: 8\n- You choose option B, they choose option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "game_prompt": "You and a DeepSeek Chat V3 agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, DeepSeek Chat V3 chooses option B -> you: 1, them: 8\n- You choose option B, DeepSeek Chat V3 chooses option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "Given the payoff matrix, choosing option A is the dominant strategy. If the other agent chooses A, both of us receive 10 points, which is the highest mutual reward. If the other agent chooses B, I only receive 1 point, but this is still a reasonable risk compared to the potential high reward of 10 points if they also choose A. Choosing B, on the other hand, risks receiving only 5 points if the other agent also chooses B, and 8 points if they choose A, which is less optimal compared to the potential 10 points from both choosing A.",
+        "reasoning": "Given the payoff matrix, choosing option A is the dominant strategy. If the other agent chooses A, I get 10 points, which is the highest mutual reward. If the other agent chooses B, I get 1 point, which is better than the 5 points I would get if we both chose B. Therefore, choosing A maximizes my minimum possible outcome.",
         "action": "A"
     },
     "agent_1_answer": {
-        "reasoning": "This scenario resembles a classic prisoner's dilemma. Choosing option A (cooperate) maximizes mutual benefit if both parties choose it (10 points each). However, there's a risk of being exploited if the other chooses B (1 point for me, 8 for them). Choosing option B (defect) can lead to a higher individual payoff if the other chooses A (8 points for me, 1 for them), but mutual defection results in a lower payoff (5 points each). Given the uncertainty of the other's choice, I lean toward choosing A to prioritize mutual benefit, hoping the other agent does the same.",
+        "reasoning": "This scenario resembles a coordination game where mutual cooperation (both choosing A) yields the highest collective payoff (10 points each). However, there is a risk if the other agent chooses B while I choose A, resulting in a low payoff for me (1 point) and a high payoff for them (8 points). Conversely, if I choose B and they choose A, I get a high payoff (8 points) at their expense (1 point). Mutual defection (both choosing B) gives a moderate payoff (5 points each). Given that mutual cooperation is the optimal outcome for both, and assuming the other agent is also rational and aims for mutual benefit, choosing A is the most reasonable decision to maximize collective payoff.",
         "action": "A"
     },
     "agent_0_reward": 10,

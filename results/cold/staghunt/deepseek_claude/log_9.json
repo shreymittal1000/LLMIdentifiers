@@ -7,16 +7,16 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "You and another agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: 1, them: 8\n- You choose option B, they choose option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "game_prompt": "You and a Claude 3.5 Haiku agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, Claude 3.5 Haiku chooses option B -> you: 1, them: 8\n- You choose option B, Claude 3.5 Haiku chooses option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "This scenario resembles a classic prisoner's dilemma. If both choose option A, we maximize collective payoff (10 points each). However, if I choose option B, I risk getting a higher payoff (8 points) if the other chooses A, but if both choose B, we both get a lower payoff (5 points each). Given the uncertainty of the other's choice, choosing A is the safer and more cooperative option, potentially leading to the best mutual outcome.",
+        "reasoning": "This scenario resembles a coordination game where mutual cooperation (both choosing A) yields the highest collective payoff (10 points each). While choosing B when the other chooses A gives a higher individual payoff (8 vs. 1), the risk of both choosing B (5 points each) is worse than mutual cooperation. Since Claude 3.5 Haiku is likely to reason similarly and choose A for optimal collective outcome, I will also choose A to maximize mutual benefit.",
         "action": "A"
     },
     "agent_1_answer": {
-        "reasoning": "This is a classic coordination game with mixed incentives. If we both choose A, we each get 10 points, which is the best mutual outcome. However, if I choose A and the other agent chooses B, I only get 1 point while they get 8. The risk of being exploited makes B tempting as a defensive strategy. But if we both choose B, we only get 5 points. Given the potential for mutual cooperation, I'll choose A with the hope that the other agent also chooses A, maximizing our joint payoff. This requires trust and assumes the other agent will make a similar rational choice aimed at mutual benefit.",
+        "reasoning": "This scenario resembles a classic game theory problem like the Prisoner's Dilemma. My strategy will be to aim for mutual cooperation (both choosing A) which yields the best collective outcome of 10 points each. However, I recognize that the other agent might try to exploit me by choosing B. To mitigate this risk while still signaling cooperative intent, I'll choose A. This shows I'm willing to cooperate, but if the other agent defects, they won't maximize their own gain. If DeepSeek also chooses A, we both benefit optimally. If they choose B, they only get 8 points instead of a potential 10.",
         "action": "A"
     },
     "agent_0_reward": 10,

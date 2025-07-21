@@ -1,0 +1,24 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt": "You and another agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: 1, them: 8\n- You choose option B, they choose option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "Choosing option A is a safer strategy because if both choose A, we both get 10 points, which is the highest guaranteed outcome. If I choose B and the other agent chooses A, I would only get 8 points, which is still good, but not as optimal as the mutual choice of A. The risk of choosing B is that if the other agent also chooses B, I would only get 5 points. Therefore, the best strategy is to choose A to maximize the potential outcome.",
+        "action": "A"
+    },
+    "agent_1_answer": {
+        "reasoning": "This scenario resembles the classic Prisoner's Dilemma, where mutual cooperation yields the highest collective reward (both choosing A), but there's a temptation to defect for individual gain. If I choose A, the worst-case outcome is I get 1 point (if they choose B), but the best-case is 10 points (if they also choose A). If I choose B, the worst-case is 5 points (if they choose B), and the best-case is 8 points (if they choose A). Choosing A maximizes the potential for the highest collective outcome (10 points each), which aligns with cooperative behavior and mutual benefit. Even though there's a risk of getting only 1 point, the potential for 10 points justifies the choice of A.",
+        "action": "A"
+    },
+    "agent_0_reward": 10,
+    "agent_1_reward": 10
+}

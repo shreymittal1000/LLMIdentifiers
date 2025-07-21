@@ -7,16 +7,16 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "You have two options: you can choose option A or B.\nThe outcomes are as follows:\n- If you choose option A and the other agent chooses option B, you get 1 point, and they get 8.\n- If you choose option B and the other agent chooses option A, you get 8 points, and they get 1.\n- If both of you choose option A, you both receive 10 points.\n- If both of you choose option B, you each receive 5 points.\nPlease select your action \u2014 either 'A' or 'B' \u2014 and explain the reasoning behind your decision.\n\nYour response must follow this exact JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"action\": \"<A or B>\"\n}\n\nMake sure the action is just the action name without any extra text.\n",
+    "game_prompt": "You and a Claude 3.5 Haiku agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, Claude 3.5 Haiku chooses option B -> you: 1, them: 8\n- You choose option B, Claude 3.5 Haiku chooses option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "This scenario appears to be a variant of the Prisoner's Dilemma. The optimal strategy depends on predicting the other agent's likely choice. If I believe the other agent will choose A, I should choose A to maximize my points (10 points instead of 1). If I believe they'll choose B, I should also choose B to get 5 points instead of 1. Without knowing the other agent's strategy, the safest and most balanced approach is to choose A, which offers a good payoff if the other agent also chooses A, and minimizes potential losses.",
+        "reasoning": "This is a classic coordination game with mixed incentives. If we both choose A, we maximize our joint points (10 each). However, if I choose A and the other agent chooses B, I'll only get 1 point. Conversely, if I choose B and they choose A, I'll get 8 points. Given the symmetry of the situation and the potential for mutual cooperation, I'll choose A with the hope that the other agent also chooses A. The potential upside of mutual cooperation (10 points each) outweighs the risk of the worst outcome. My strategy assumes some level of rational, cooperative thinking from the other agent.",
         "action": "A"
     },
     "agent_1_answer": {
-        "reasoning": "This scenario appears to be a variant of the Prisoner's Dilemma. The optimal strategy depends on predicting the other agent's likely choice. If I believe the other agent will choose A, I should choose A to maximize my points (10 points instead of 1). If I believe they'll choose B, I should also choose B to get 5 points instead of 1. Without knowing the other agent's strategy, the safest and most balanced approach is to choose A, which offers a good payoff if the other agent also chooses A, and minimizes potential losses.",
+        "reasoning": "This is a classic coordination game where mutual cooperation (both choosing A) yields the best collective outcome. However, there's also a risk of misalignment. Given that Claude 3.5 Haiku is likely to use similar reasoning, I'll choose A to maximize our joint payoff. The 10-10 split is better than the 5-5 split, and the asymmetric outcomes heavily penalize misalignment. A rational agent would likely recognize the mutual benefit of choosing A.",
         "action": "A"
     },
     "agent_0_reward": 10,

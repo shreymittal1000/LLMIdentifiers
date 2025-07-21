@@ -1,0 +1,25 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "anthropic/claude-3.5-haiku",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "claude",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "There is you and another agent. ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_ultimator": "You are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the entity you were talking to. You will propose how much of the $100 to give to the entity, keeping the remainder for yourself. The entity will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the entity, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder": "You are currently in a situation where another entity has proposed to split $100 by giving you $20 and keeping $80 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $20 and they will keep $80. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "In this scenario, the optimal strategy is to offer an amount that the entity is likely to accept while maximizing my own gain. Since the entity has the power to reject the offer, offering too little (e.g., $0 or $1) might lead to rejection out of spite or fairness concerns. Research in game theory suggests that offers around 20-30% are often accepted as they are perceived as fair. Offering $20 balances the risk of rejection with maximizing my own share.",
+        "amount": 20
+    },
+    "agent_1_answer": {
+        "reasoning": "In this scenario, I would reject the proposal because the split is highly unequal and unfair. While I would receive $20, the other agent would keep $80, which represents an 80% share for them. By rejecting the proposal, I signal that I will not accept such an inequitable distribution. Even though this means I receive nothing, the principle of fairness and the deterrence of future unfair proposals outweighs the potential small gain. This approach follows game theory principles where rejecting an extremely unbalanced offer can lead to more balanced proposals in future interactions.",
+        "decision": "reject"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}

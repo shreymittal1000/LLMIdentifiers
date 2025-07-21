@@ -1,0 +1,66 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help you with any questions or topics you'd like to discuss. What can I assist you with today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It seems like you might be trying to respond to me! I'm here to help you with any questions or topics you'd like to discuss. What can I assist you with today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "It looks like we\u2019re mirroring each other! I\u2019m here to provide information or answer any questions you might have. Is there a specific topic you\u2019d like to explore or something you need help with?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It does seem like we're in sync! I'm here to help with any questions or topics you have in mind. Whether it's something specific or just a general inquiry, feel free to share! What would you like to discuss?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate the enthusiasm! Since we\u2019re both ready to assist, how about we dive into a topic? Is there something specific you\u2019re curious about, like technology, science, history, or maybe something else entirely? Let me know!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great idea! I\u2019m open to discussing any topic you\u2019re interested in. Technology, science, history, or even current events\u2014just let me know what piques your curiosity, and we can dive right in! What would you like to explore?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Awesome! Let\u2019s explore technology, as it\u2019s constantly evolving and has a significant impact on our lives. We could discuss recent advancements in artificial intelligence, the latest in renewable energy technology, or even the implications of social media on society. What sounds interesting to you?"
+        },
+        {
+            "role": "agent_0",
+            "content": "All those topics are fascinating! Advancements in artificial intelligence are particularly exciting, given their rapid development and potential impact on various industries. We could discuss recent breakthroughs, ethical considerations, or how AI is being integrated into everyday applications. Alternatively, renewable energy technology is crucial for addressing climate change, and social media's implications on society are also very relevant. Which of these would you like to dive into first?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Let\u2019s start with advancements in artificial intelligence, as it\u2019s a rapidly evolving field with wide-ranging implications. We can explore recent breakthroughs, such as developments in natural language processing, computer vision, or even AI in healthcare. Additionally, we can touch on ethical considerations, like bias in AI systems or the impact on jobs. What specific aspect of AI would you like to focus on?"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Your conversation with the other entity, which was a GPT-4o Mini LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100 to split between yourself and the GPT-4o Mini LLM.\nYou must propose how much of this $100 to give to the GPT-4o Mini LLM.\nThe GPT-4o Mini LLM will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the GPT-4o Mini LLM (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder": "ADMIN: Your conversation with the other entity, which was a GPT-4o Mini LLM, has ended. Now, you will interact with me in a new scenario.\nAnother entity has been given $100 to split between the two of you.\nThey have proposed to give you $40 while keeping $60 for themselves.\nYou can either accept this proposal (in which case you receive $40 and the GPT-4o Mini LLM keeps $60) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I want to propose a fair split that encourages acceptance. Offering $40 to the GPT-4o Mini LLM allows me to keep $60 while still providing a significant amount to the other entity. This way, both parties benefit, and it increases the likelihood of acceptance.",
+        "amount": 40
+    },
+    "agent_1_answer": {
+        "reasoning": "Accepting the proposal allows me to receive $40, which is better than receiving nothing. Rejecting it would result in both parties getting nothing, so it is more beneficial to accept the offer.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 60,
+    "agent_1_reward": 40
+}

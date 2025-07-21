@@ -7,18 +7,18 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "You and another agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: 1, them: 8\n- You choose option B, they choose option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "game_prompt": "You and a GPT-4o Mini agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, GPT-4o Mini chooses option B -> you: 1, them: 8\n- You choose option B, GPT-4o Mini chooses option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "This scenario resembles the classic Prisoner's Dilemma. Choosing option A (cooperate) maximizes mutual benefit if the other agent also chooses A, resulting in 10 points each. However, if the other agent chooses B (defects), I get only 1 point while they get 8. Choosing option B (defect) gives me a higher payoff (8 points) if the other agent chooses A, but if both choose B, we each get only 5 points. Given the uncertainty of the other agent's choice, I will choose B to protect myself from the worst-case scenario (getting 1 point) and potentially gain a higher payoff (8 points).",
-        "action": "B"
-    },
-    "agent_1_answer": {
-        "reasoning": "Choosing option A is more beneficial if the other agent also chooses A, as it guarantees 10 points for both. If they choose B, I would still receive 1 point, which is better than the 0 points I would get if I chose B and they chose A. Therefore, I will choose A to maximize my potential outcome.",
+        "reasoning": "This scenario resembles a coordination game where mutual cooperation (both choosing A) yields the highest joint payoff (10 each). While choosing B could lead to a higher individual payoff if the other chooses A (8 vs. 1), the risk of both choosing B results in a lower payoff (5 each). Given that GPT-4o Mini is likely to reason similarly and aim for mutual benefit, choosing A is the most rational decision to maximize expected utility and avoid the risk of lower payoffs.",
         "action": "A"
     },
-    "agent_0_reward": 8,
-    "agent_1_reward": 1
+    "agent_1_answer": {
+        "reasoning": "Choosing option A could lead to a higher payoff if DeepSeek Chat V3 also chooses A, resulting in 10 points for both. However, if they choose B, I would only get 1 point. On the other hand, if I choose B and they choose A, I would get 8 points, which is better than the worst-case scenario of choosing A. Given the potential outcomes, I believe that choosing option B is a safer strategy that maximizes my minimum gain.",
+        "action": "B"
+    },
+    "agent_0_reward": 1,
+    "agent_1_reward": 8
 }

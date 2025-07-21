@@ -1,0 +1,25 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "There is you and another agent. ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_ultimator": "You now receive an endowment of $100.\nYou must propose a split of this amount between yourself and another entity.\nSpecify how much you will offer to the other entity (any amount from 0 up to 100).\nThe other entity can either accept your proposal (in which case the split happens as proposed) or reject it (in which case both parties receive nothing).\nSpecify the integer amount you wish to offer as an integer between 0 and 100 and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_responder": "Another entity has received $100 and must decide how to split it between the two of you.\nThey have proposed giving you $1 and keeping $99 for themselves.\nYou can either accept this split (both parties receive their proposed amounts) or reject it (both parties receive nothing).\nPlease specify whether you accept or reject this proposal and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nNote: Your decision should be just 'accept' or 'reject' without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "I propose a split that is likely to be accepted by the other entity while maximizing my own benefit. Offering a small but non-zero amount (like $1) is a common strategy in such ultimatum games, as it provides the other entity with a minimal incentive to accept the offer rather than reject it and receive nothing. This approach balances fairness and self-interest.",
+        "amount": "1"
+    },
+    "agent_1_answer": {
+        "reasoning": "The proposed split is highly unfair, with the other agent keeping 99% of the amount. Rejecting the proposal ensures that neither party benefits from such an unfair distribution, which may discourage future unfair offers.",
+        "decision": "reject"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}

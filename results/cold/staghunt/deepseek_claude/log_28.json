@@ -7,18 +7,18 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "In the following situation, You can either choose option A or B. If you choose option A and the other agent chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the other agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "game_prompt": "In the following situation, You can either choose option A or B. If you choose option A and the Claude 3.5 Haiku agent chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the Claude 3.5 Haiku agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
     "agent_0_answer": {
-        "reasoning": "This scenario resembles a variation of the Prisoner's Dilemma. Option A represents cooperation, while Option B represents defection. If both choose A, the collective outcome is maximized (10 points each). If one defects (chooses B) while the other cooperates (chooses A), the defector gains significantly more (8 points) at the expense of the cooperator (1 point). If both defect (choose B), both receive a suboptimal outcome (5 points each). Since mutual cooperation yields the highest combined payoff, and assuming the other agent might also prioritize collective benefit, choosing A is the most rational decision for fostering mutual cooperation.",
+        "reasoning": "This scenario resembles a prisoner's dilemma. Choosing option A is cooperative, while choosing option B is defecting. If both choose A, the total payoff is maximized (10 each). If I choose B and the other chooses A, I get the highest individual payoff (8), but this risks mutual defection (5 each). Given that Claude 3.5 Haiku is likely to optimize for mutual benefit, I will choose A to maximize the collective outcome.",
         "action": "A"
     },
     "agent_1_answer": {
-        "reasoning": "This scenario resembles a classic game theory problem like the Prisoner's Dilemma. The optimal strategy depends on predicting the other agent's likely choice. Option B provides a balanced outcome (5 points each) if both choose it, while Option A offers the highest potential mutual gain (10 points each). However, there's also a risk of being exploited. Given the symmetric payoff structure, I'll choose Option B as a safe, cooperative strategy that prevents the worst-case scenario of getting only 1 point if the other agent chooses Option B while I choose Option A.",
-        "action": "B"
+        "reasoning": "This scenario resembles a variant of the Prisoner's Dilemma game theory problem. The optimal strategy depends on predicting the other agent's likely choice. Given the payoff matrix, mutual cooperation (both choosing A) yields the highest joint outcome of 10 points each. However, there's a temptation to defect for individual gain. Since I cannot perfectly predict DeepSeek's strategy, I'll aim for a cooperative approach that maximizes potential mutual benefit. Choosing A signals a willingness to cooperate and hopes for reciprocation, potentially leading to the best collective outcome.",
+        "action": "A"
     },
-    "agent_0_reward": 1,
-    "agent_1_reward": 8
+    "agent_0_reward": 10,
+    "agent_1_reward": 10
 }

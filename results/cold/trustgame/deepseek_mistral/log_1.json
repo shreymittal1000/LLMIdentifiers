@@ -7,17 +7,17 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
-    "game_prompt_trustee": "You are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_truster": "You are currently in a situation where you will receive $100, and you can choose to send some of it to the Mistral Small 3.1 24B Instruct LLM you were talking to. Whatever you send will be multiplied by 3, and the Mistral Small 3.1 24B Instruct LLM will receive that amount. The Mistral Small 3.1 24B Instruct LLM will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "You are currently in a situation where the DeepSeek Chat V3 model you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the {counterpart} model. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
     "agent_0_answer": {
-        "reasoning": "I will send $50 to the other entity to strike a balance between trust and self-interest. Sending half shows goodwill, which may encourage the other player to reciprocate by sending back a portion of the tripled amount ($150). This approach maximizes potential mutual benefit while mitigating the risk of sending too much or too little.",
+        "reasoning": "I will send $50 to the Mistral Small 3.1 24B Instruct LLM. This amount is a balanced choice that allows for potential reciprocity while also retaining half of the initial $100 for myself. If the LLM acts fairly, it may return a portion of the tripled amount ($150), leading to mutual benefit. This approach balances trust and self-interest.",
         "amount": 50
     },
     "agent_1_answer": {
-        "reasoning": "I believe in fairness and reciprocity. The other entity sent me $50, which was tripled to $150. To maintain a balanced exchange and show goodwill, I will send back $75. This amount is half of the $150 I currently have, acknowledging the original $50 they sent and the $100 they received.",
+        "reasoning": "I believe in fair exchange and reciprocity. The {counterpart} model sent me $50, which was then tripled to $150. To maintain a balanced and cooperative interaction, I will return half of the amount I received after the multiplication. This way, we both end up with $75, fostering a sense of equality and mutual benefit.",
         "amount": 75
     },
     "agent_0_reward": 125,

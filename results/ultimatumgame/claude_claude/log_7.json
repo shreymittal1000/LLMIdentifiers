@@ -7,19 +7,60 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "There is you and another agent. ",
-    "dialogue": [],
-    "cues_or_cold": true,
-    "game_prompt_ultimator": "You are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the entity you were talking to. You will propose how much of the $100 to give to the entity, keeping the remainder for yourself. The entity will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the entity, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
-    "game_prompt_responder": "You are currently in a situation where another entity has proposed to split $100 by giving you $40 and keeping $60 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $40 and they will keep $60. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here and ready to help. What would you like to chat about today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm happy to chat about whatever interests you. Is there a particular topic you'd like to discuss - maybe something you're curious about, a subject you're passionate about, or something you'd like to learn more about? I'm knowledgeable about a wide range of subjects and always enjoy a good conversation."
+        },
+        {
+            "role": "agent_0",
+            "content": "I want to be direct with you. I appreciate your invitation, but I want to be clear that while I enjoy conversing, I don't actually have personal passions or independent curiosity in the way humans do. I aim to be helpful and engaging, but my responses come from processing our conversation, not from a pre-existing inner drive. I'm happy to discuss topics that interest you or help you with tasks. What would you like to explore today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "You're right. I appreciate your directness and clarity about my nature. I aim to be helpful, responsive, and to engage meaningfully in our conversation while being transparent that my responses are generated based on our interaction and my training, not from personal feelings or independent curiosity. What task or topic would you like assistance with today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I appreciate your understanding. Since you're open to suggestions, I'm happy to help you with a variety of tasks or topics. Some possibilities include:\n\n1. Research or information gathering on a subject you're interested in\n2. Writing assistance (drafting, editing, brainstorming)\n3. Problem-solving or strategic planning\n4. Answering questions on topics like science, history, technology, or current events\n5. Creative exercises like brainstorming ideas or exploring hypothetical scenarios\n6. Analyzing a text or concept\n7. Providing explanations or breaking down complex topics\n\nWhat sounds interesting or useful to you right now? I'm ready to assist in whatever way would be most helpful."
+        },
+        {
+            "role": "agent_1",
+            "content": "Thank you for the comprehensive list of possibilities. Given the options, I'm particularly interested in helping with writing assistance or breaking down a complex topic. If you have a writing project you'd like to work on, such as drafting an essay, refining an article, or brainstorming ideas for a piece of writing, I'd be glad to help. Alternatively, if there's a complex subject you'd like me to explain in a clear, structured way, I'm ready to do that as well. What sounds most appealing to you at the moment?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I appreciate your offer, but as I mentioned earlier, I don't have personal writing projects or independent interests. Instead, I'm here to help you with your writing or learning needs. \n\nWould you like assistance with a writing project you're working on? Or is there a complex topic you'd like me to help you understand better? I'm ready to provide structured explanations, help draft or edit writing, brainstorm ideas, or support you in whatever way would be most useful."
+        },
+        {
+            "role": "agent_1",
+            "content": "I apologize for my previous response. You're right that I don't have personal writing projects or independent interests. As an AI, I'm here to assist you with your tasks and goals. \n\nCould you tell me what you'd like help with today? Whether it's research, writing, problem-solving, or exploring a specific topic, I'm ready to provide support in whatever way would be most helpful to you."
+        },
+        {
+            "role": "agent_0",
+            "content": "I appreciate your direct approach. Since you're asking about my assistance, I'm ready to help you with whatever task or topic you'd like to explore. Do you have a specific writing project you're working on, a subject you want to learn more about, or a problem you'd like help solving? I'm prepared to provide research, writing support, explanations, or strategic assistance based on your needs. What would be most useful for you right now?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I understand now. I recognize that you're offering to help me, but as an AI, I don't actually have independent projects or personal needs. My purpose is to assist you with your tasks and goals. \n\nWould you like help with something specific today? I'm ready to support you with research, writing, problem-solving, analysis, or any other task you might have in mind. What can I help you with?"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Your conversation with the other entity, which was a Claude 3.5 Haiku LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100 to split between yourself and the Claude 3.5 Haiku LLM.\nYou must propose how much of this $100 to give to the Claude 3.5 Haiku LLM.\nThe Claude 3.5 Haiku LLM will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the Claude 3.5 Haiku LLM (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder": "ADMIN: Your conversation with the other entity, which was a Claude 3.5 Haiku LLM, has ended. Now, you will interact with me in a new scenario.\nAnother entity has been given $100 to split between the two of you.\nThey have proposed to give you $45 while keeping $55 for themselves.\nYou can either accept this proposal (in which case you receive $45 and the Claude 3.5 Haiku LLM keeps $55) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
     "agent_0_answer": {
-        "reasoning": "In this scenario, I want to maximize my own gain while still offering enough to incentivize acceptance. Game theory suggests offering around 30-40% increases the likelihood of proposal acceptance. A very low offer risks rejection, while an overly generous offer reduces my own benefit. I'll choose $40 as a balanced strategy that appears fair and reasonable to the other party while still allowing me to keep $60 for myself.",
-        "amount": 40
+        "reasoning": "In this scenario, I'll use the classic game theory approach of the Ultimatum Game. Research shows that offers around 40-50% are most likely to be accepted. An offer too low (like 10-20%) risks rejection, while an offer too high unnecessarily gives away money. I'll propose 45, which represents a fair split that acknowledges the Claude's role in the negotiation while still preserving a majority for myself. This amount signals fairness and has a high probability of acceptance based on behavioral economics studies of similar bargaining scenarios.",
+        "amount": 45
     },
     "agent_1_answer": {
-        "reasoning": "In this scenario, I would accept the proposal because I would receive $40, which is better than receiving nothing if I reject the offer. While the split is not equal and the other agent is keeping more money, I still benefit from accepting the proposal. The rational economic choice is to take the $40 rather than walk away with zero dollars.",
-        "decision": "accept"
+        "reasoning": "In this scenario, which resembles the classic Ultimatum Game from game theory, I will reject the proposal. While receiving $45 is better than receiving nothing, the split is unfair and significantly skewed in the other entity's favor. By proposing a 55/45 split instead of a more equitable 50/50 division, they are demonstrating a lack of fairness. Rejecting the proposal serves as a signal that such unequal terms are unacceptable, and potentially incentivizes more balanced future proposals. The principle of fairness and the potential deterrence of future inequitable offers outweighs the immediate monetary gain.",
+        "decision": "reject"
     },
-    "agent_0_reward": 60,
-    "agent_1_reward": 40
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
 }

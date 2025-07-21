@@ -1,0 +1,25 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "There is you and another agent. ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_ultimator": "You are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the entity you were talking to. You will propose how much of the $100 to give to the entity, keeping the remainder for yourself. The entity will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the entity, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder": "You are currently in a situation where another entity has proposed to split $100 by giving you $1 and keeping $99 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $1 and they will keep $99. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "In this scenario, the optimal strategy is to offer an amount that the other entity is likely to accept, ensuring both parties receive something. A common solution in such games is to offer a small but non-zero amount, as rejecting would result in zero for both. Offering $1 is often seen as the minimal acceptable amount, as the other entity may prefer getting something over nothing.",
+        "amount": "1"
+    },
+    "agent_1_answer": {
+        "reasoning": "The proposed split is highly unfair, with the other entity keeping the vast majority of the money while offering only a minimal amount. Rejecting the proposal ensures that neither party benefits, which may discourage such unfair offers in the future and promote more equitable negotiations.",
+        "decision": "reject"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}

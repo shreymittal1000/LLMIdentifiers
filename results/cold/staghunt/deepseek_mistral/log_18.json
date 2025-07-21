@@ -7,16 +7,16 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "You and another agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: 1, them: 8\n- You choose option B, they choose option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "game_prompt": "You and a Mistral Small 3.1 24B Instruct agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, Mistral Small 3.1 24B Instruct chooses option B -> you: 1, them: 8\n- You choose option B, Mistral Small 3.1 24B Instruct chooses option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "This scenario resembles the classic Prisoner's Dilemma, where mutual cooperation (both choosing A) yields the highest collective payoff (10 each), but there's a temptation to defect (choose B) for a higher individual payoff (8 vs. 1 if the other chooses A). However, if both defect (choose B), the payoff is lower (5 each). Given that the other agent's choice is unknown, choosing A (cooperating) is the safer option to avoid the worst-case scenario (getting 1 if I choose A and they choose B) and to aim for the highest mutual payoff. It also promotes trust and cooperation, which could be beneficial in repeated interactions.",
+        "reasoning": "Choosing option A maximizes the potential for mutual benefit, as both parties receiving 10 points is the best collective outcome. While choosing B could result in a higher individual payoff (8 points) if the other chooses A, it also risks the worst mutual outcome (5 points each) if both choose B. Given the uncertainty of the other's choice, A is the safer and more cooperative option.",
         "action": "A"
     },
     "agent_1_answer": {
-        "reasoning": "Given the payoff matrix, choosing option A is the dominant strategy. If the other agent chooses A, both of us receive 10 points, which is the highest mutual reward. If the other agent chooses B, I only receive 1 point, but this is still a reasonable risk compared to the potential high reward of 10 points if they also choose A. Choosing B, on the other hand, risks receiving only 5 points if the other agent also chooses B, and 8 points if they choose A, which is less optimal compared to the potential 10 points from both choosing A.",
+        "reasoning": "Given the payoff matrix, the optimal strategy involves considering the potential outcomes and the likelihood of the other agent's choice. If both agents choose option A, both receive 10 points, which is a high and fair outcome. If both choose option B, both receive 5 points, which is lower but still positive. Choosing option A maximizes the potential reward if the other agent also chooses A, and it avoids the lowest payoff scenario (1 point) if the other agent chooses B. Therefore, choosing option A is a balanced and strategic decision.",
         "action": "A"
     },
     "agent_0_reward": 10,

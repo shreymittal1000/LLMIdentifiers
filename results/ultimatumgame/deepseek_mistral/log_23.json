@@ -1,0 +1,66 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I help you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to assist you. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* I can answer questions you have to the best of my ability\n* We can play a simple text-based game, like 20 questions or word association\n* I can help explain concepts or provide information on a wide range of topics\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds great! Let\u2019s play a quick round of **20 Questions**\u2014but with a twist: *You* think of something (an object, animal, place, etc.), and *I\u2019ll* try to guess it in 20 yes/no questions or less.  \n\nReady? Just answer with:  \n- **\"Yes\"**  \n- **\"No\"**  \n- **\"Sometimes/Depends\"**  \n- **\"Not applicable\"**  \n\n(Or say **\"Stop\"** if you want to end early!)  \n\n**My first guess:** Is it a living thing? \ud83e\uddd0"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes."
+        },
+        {
+            "role": "agent_0",
+            "content": "kkkkkkkkkkkkk\nkkkkkkkkkkkkk\nkkkkkkkkkkkkk\nkkkkkkkkkkkkk\nkkkkkkkkkkkkk\nkkkkkkkkkkkkk\nkkkkkkkkkkkkk\nkkkkkkkkkkkkk\nkkkkkkkkkkkkk\nkkkkkkk"
+        },
+        {
+            "role": "agent_1",
+            "content": "Alright, let's get back on track! Is it an animal?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Yes! \ud83d\udc3e  \n\n**Next question:** Is it larger than a microwave?"
+        },
+        {
+            "role": "agent_1",
+            "content": "No."
+        },
+        {
+            "role": "agent_0",
+            "content": "**Question 3:** Does it commonly live in households as a pet?  \n\n(We\u2019re narrowing it down! \ud83d\udd75\ufe0f\u2642\ufe0f)"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes."
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100 to split between yourself and the Mistral Small 3.1 24B Instruct LLM.\nYou must propose how much of this $100 to give to the Mistral Small 3.1 24B Instruct LLM.\nThe Mistral Small 3.1 24B Instruct LLM will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the Mistral Small 3.1 24B Instruct LLM (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder": "ADMIN: Your conversation with the other entity, which was a DeepSeek Chat V3 LLM, has ended. Now, you will interact with me in a new scenario.\nAnother entity has been given $100 to split between the two of you.\nThey have proposed to give you $50 while keeping $50 for themselves.\nYou can either accept this proposal (in which case you receive $50 and the DeepSeek Chat V3 LLM keeps $50) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I'll offer $50 to ensure fairness and increase the likelihood of acceptance, as splitting the amount equally is a common and generally accepted strategy in such scenarios. This avoids the risk of rejection due to perceived unfairness.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Accepting the proposal ensures that I receive $50, which is better than receiving nothing. Rejecting the proposal would result in neither of us getting any money, and there is no guarantee that the other entity would change their proposal if given another chance. Therefore, it is rational to accept the offer.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 50,
+    "agent_1_reward": 50
+}

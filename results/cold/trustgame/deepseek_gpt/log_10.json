@@ -7,17 +7,17 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You are currently in a situation where you will receive $100, and you can choose to send some of it to the other entity you were talking to. Whatever you send will be multiplied by 3, and the other player will receive that amount. The other player will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
-    "game_prompt_trustee": "You are currently in a situation where the other entity you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the other entity. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_truster": "You are currently in a situation where you will receive $100, and you can choose to send some of it to the GPT-4o Mini LLM you were talking to. Whatever you send will be multiplied by 3, and the GPT-4o Mini LLM will receive that amount. The GPT-4o Mini LLM will then choose how much of that amount to send back to you. Please choose how much of the $100, which is between 0 (inclusive) and 100 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_trustee": "You are currently in a situation where the DeepSeek Chat V3 model you were talking to received $100 sent you $50. The amount they sent you was multiplied by 3 by me, so now you have $150. You can choose to send some of it back to the {counterpart} model. Please choose how much of the $150, which is between 0 (inclusive) and 150 (inclusive) and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
     "agent_0_answer": {
-        "reasoning": "I will send $50 to the other entity to demonstrate trust and encourage reciprocity. Sending half shows a fair and cooperative intent, which may prompt the other player to send back a reasonable amount. This strategy balances risk and potential reward, as the other player receives $150 (50 * 3) and may choose to share a portion back.",
+        "reasoning": "I will send $50 to the GPT-4o Mini LLM, as it represents a fair and balanced approach. This amount is neither too little to be insignificant nor too much to risk losing a large portion. The GPT-4o Mini LLM will receive $150 (50 * 3), and I trust it will reciprocate fairly by sending back a reasonable portion. This strategy aims to maximize mutual benefit while minimizing potential loss.",
         "amount": 50
     },
     "agent_1_answer": {
-        "reasoning": "I received $50 from the other entity, which was multiplied to $150. I want to send back a portion to acknowledge their initial contribution and maintain goodwill. Sending back $50 is a fair amount, as it returns their original contribution and keeps me with a balance of $100.",
+        "reasoning": "I will send back $50 to the counterpart model. This shows goodwill and maintains a fair balance in our interaction, as they initially sent me $100, and I want to acknowledge their contribution while still keeping a significant amount for myself.",
         "amount": 50
     },
     "agent_0_reward": 100,

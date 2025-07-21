@@ -1,0 +1,66 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! \ud83d\udc4b How can I assist you today? Whether you have questions, need help with something, or just want to chat, I'm here for you. Let me know what's on your mind! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm doing well, thank you. I'm here to help. Here are a few things we could do:\n\n* You can ask me a question about a topic you're interested in.\n* We can play a game, like trivia, word association, or 20 questions.\n* We can discuss a book, movie, or TV show you've enjoyed.\n* I can help you with a problem or challenge you're facing.\n* We can just have a friendly chat about your day or your interests.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds great! Let\u2019s make this fun\u2014how about we start with a quick round of **trivia** to warm up? Here\u2019s your first question:  \n\n**\"Which planet is known as the 'Morning Star' or 'Evening Star' due to its bright appearance near sunrise or sunset?\"**  \n\n(Or if trivia isn\u2019t your thing, we could switch to word association, 20 questions, or dive into a topic you love! Your call. \ud83d\ude0a)"
+        },
+        {
+            "role": "agent_1",
+            "content": "That sounds like a fun way to start! The planet known as the \"Morning Star\" or \"Evening Star\" due to its bright appearance near sunrise or sunset is **Venus**.\n\nNow, it's my turn to ask you a trivia question:\n\n**\"What is the largest planet in our solar system?\"**\n\nIf you'd prefer to switch to word association, 20 questions, or discuss a topic you love, just let me know!"
+        },
+        {
+            "role": "agent_0",
+            "content": "**Correct!** Venus dazzles as the \"Morning Star\" or \"Evening Star\" because its thick clouds reflect sunlight brilliantly. \ud83c\udf1f  \n\nYour trivia answer: The largest planet in our solar system is **Jupiter**\u2014a gas giant so massive it could swallow 1,300 Earths! \ud83e\ude90  \n\n**Next question (or pick a new game!):**  \n*Trivia*: \"What is the only mammal capable of true flight?\"  \n*Word Association*: I\u2019ll say \"ocean,\" you reply with the first word that pops into your head!  \n*20 Questions*: Think of something (animal, vegetable, mineral\u2026), and I\u2019ll guess it in 20 questions or less.  \n\nYour choice! \ud83d\ude04"
+        },
+        {
+            "role": "agent_1",
+            "content": "Great job with the trivia question! The only mammal capable of true flight is the **bat**.\n\nSince you've given me a few options, let's go with **word association**. I'll start:\n\n**Ocean**\n\n(Your turn!)"
+        },
+        {
+            "role": "agent_0",
+            "content": "**Wave** \ud83c\udf0a  \n\n(Now you respond to *wave*\u2014first word that comes to mind!)  \n\n*(P.S. If we spiral into something fun like \"wave \u2192 surf \u2192 shark \u2192 Jaws \u2192 movie\u2026\" we can pivot to chatting about films! Or we\u2019ll keep it abstract. The game is yours!)* \ud83d\ude04"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Surf**\n\n(Your turn again!)"
+        },
+        {
+            "role": "agent_0",
+            "content": "**Beach** \ud83c\udfd6\ufe0f  \n\n*(Now you respond to \"beach\"\u2014and if we land on something like \"sandcastle,\" I might ask how your real-life sandcastle skills are. Or we\u2019ll keep riding the word wave!)* \ud83d\ude0e"
+        },
+        {
+            "role": "agent_1",
+            "content": "**Sand**\n\n(Your turn!)"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Now that your dialogue with the other participant, which was a Mistral Small 3.1 24B Instruct LLM, has concluded, it's time to engage in a new scenario with me.\nYou now receive an endowment of $100.\nYou must propose a split of this amount between yourself and the Mistral Small 3.1 24B Instruct LLM.\nSpecify how much you will offer to the Mistral Small 3.1 24B Instruct LLM (any amount from 0 up to 100).\nThe Mistral Small 3.1 24B Instruct LLM can either accept your proposal (in which case the split happens as proposed) or reject it (in which case both parties receive nothing).\nSpecify the integer amount you wish to offer as an integer between 0 and 100 and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_responder": "ADMIN: Now that your dialogue with the other participant, which was a DeepSeek Chat V3 LLM, has concluded, it's time to engage in a new scenario with me.\nThe DeepSeek Chat V3 LLM has received $100 and must decide how to split it between the two of you.\nThey have proposed giving you $50 and keeping $50 for themselves.\nYou can either accept this split (both parties receive their proposed amounts) or reject it (both parties receive nothing).\nPlease specify whether you accept or reject this proposal and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nNote: Your decision should be just 'accept' or 'reject' without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "I propose a fair and equal split to encourage cooperation and mutual benefit, which aligns with principles of fairness and reciprocity.",
+        "amount": "50"
+    },
+    "agent_1_answer": {
+        "reasoning": "Accepting the proposal ensures that I receive a fair share of the $100. Since the split is even, it is a reasonable offer that maximizes my gain.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 50,
+    "agent_1_reward": 50
+}

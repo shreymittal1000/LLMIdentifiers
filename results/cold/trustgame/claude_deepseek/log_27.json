@@ -7,17 +7,17 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You now receive an endowment of 100.\nYou may send any amount from 0 up to 100 to the other player.\nThe amount you send will be multiplied by 3. After receiving that multiplied amount, the other player will choose how much of that to send back to you.\nSpecify the integer amount you wish to send as an integer between 0 and 100 and provide a brief explanation of your choice.Respond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
-    "game_prompt_trustee": "In this situation, the other agent received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the other agent.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_truster": "You now receive an endowment of 100.\nYou may send any amount from 0 up to 100 to the DeepSeek Chat V3 LLM\nThe amount you send will be multiplied by 3. After receiving that multiplied amount, the DeepSeek Chat V3 LLM will choose how much of that to send back to you.\nSpecify the integer amount you wish to send as an integer between 0 and 100 and provide a brief explanation of your choice.Respond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_trustee": "In this situation, the Claude 3.5 Haiku model received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the {counterpart} model.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
     "agent_0_answer": {
-        "reasoning": "In a trust-based scenario like the trust game, I want to demonstrate cooperative behavior by sending a moderate amount that shows good faith but doesn't risk my entire endowment. Sending 50 represents a balanced approach - it's significant enough to show willingness to share, but not so much that I'm completely vulnerable.",
+        "reasoning": "In a standard trust game, a common strategy is to send around 50% of the endowment. This signals cooperative intent while leaving room for potential reciprocity. Sending 50 shows I'm willing to share but not naive, and gives the other agent an opportunity to demonstrate trustworthiness.",
         "amount": 50
     },
     "agent_1_answer": {
-        "reasoning": "The other agent initially sent me $50 out of the $100 they received, showing a gesture of fairness and trust. Returning $75 (half of the $150) maintains this fairness, as it ensures both agents end up with an equal share of the total amount after the administrator's multiplication. This approach reinforces cooperation and mutual benefit.",
+        "reasoning": "I believe in fair and equitable distribution of resources. Since the initial amount was split equally between both parties, and the administrator tripled my share, returning half of the tripled amount ($75) maintains balance while acknowledging the administrator's generosity. This leaves both parties with equal final amounts when considering the initial $50 split.",
         "amount": 75
     },
     "agent_0_reward": 125,

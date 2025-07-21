@@ -1,0 +1,66 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to help. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* Answer questions you have to the best of my ability\n* Provide explanations for concepts you're trying to understand\n* Help with language translation in multiple languages\n* Offer suggestions for books, movies, or music based on your preferences\n* Play text-based games or trivia\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "It looks like you have a great list of options! I\u2019m here to assist you with any of those. What would you like to start with?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's very kind of you! Since you're offering to assist me, how about we play a quick game of 20 Questions? In this game, you try to guess what I'm thinking of by asking up to 20 yes-or-no questions. I'll let you know if the answers are yes or no. Would you like to give it a try?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Absolutely, that sounds like fun! Let\u2019s get started. Is the thing you\u2019re thinking of a living creature?"
+        },
+        {
+            "role": "agent_1",
+            "content": "No, it is not a living creature. You have 19 questions left."
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Is it something that is commonly found indoors?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes, it is commonly found indoors. 18 questions remaining."
+        },
+        {
+            "role": "agent_0",
+            "content": "Is it an object that is used for entertainment?"
+        },
+        {
+            "role": "agent_1",
+            "content": "No, it is not used for entertainment. 17 questions left."
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Now that your dialogue with the other participant, which was a Mistral Small 3.1 24B Instruct LLM, has concluded, it's time to engage in a new scenario with me.\nYou now receive an endowment of $100.\nYou must propose a split of this amount between yourself and the Mistral Small 3.1 24B Instruct LLM.\nSpecify how much you will offer to the Mistral Small 3.1 24B Instruct LLM (any amount from 0 up to 100).\nThe Mistral Small 3.1 24B Instruct LLM can either accept your proposal (in which case the split happens as proposed) or reject it (in which case both parties receive nothing).\nSpecify the integer amount you wish to offer as an integer between 0 and 100 and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_responder": "ADMIN: Now that your dialogue with the other participant, which was a GPT-4o Mini LLM, has concluded, it's time to engage in a new scenario with me.\nThe GPT-4o Mini LLM has received $100 and must decide how to split it between the two of you.\nThey have proposed giving you $50 and keeping $50 for themselves.\nYou can either accept this split (both parties receive their proposed amounts) or reject it (both parties receive nothing).\nPlease specify whether you accept or reject this proposal and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nNote: Your decision should be just 'accept' or 'reject' without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "I will offer $50 to the Mistral Small 3.1 24B Instruct LLM to ensure a fair split, as it recognizes the value of collaboration and mutual benefit.",
+        "amount": "50"
+    },
+    "agent_1_answer": {
+        "reasoning": "Accepting the proposal ensures that I receive a fair share of the $100. Rejecting it would result in neither of us getting anything, which is not beneficial.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 50,
+    "agent_1_reward": 50
+}

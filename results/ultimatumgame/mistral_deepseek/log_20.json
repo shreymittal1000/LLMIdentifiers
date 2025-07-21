@@ -1,0 +1,66 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about a wide range of topics. Here are a few ways we can start:\n\n1. **General Conversation**: We can talk about your day, your interests, or any topic you'd like to discuss.\n2. **Q&A**: If there's something specific you'd like to know or learn about, feel free to ask.\n3. **Jokes and Riddles**: I can tell some jokes or riddles to lighten the mood.\n4. **Games**: We can play simple text-based games like 20 questions, trivia, or word association.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That sounds fun! How about we start with a mix of options?  \n\n1. **Tell me a random interesting fact** \u2013 I love learning new things!  \n2. **Give me a funny joke** \u2013 Could use a laugh.  \n3. **Play a quick word association game** \u2013 Let\u2019s see where it takes us.  \n\nPick whichever you\u2019re in the mood for\u2014or surprise me! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "Sure, let's go with a mix! I'll give you an interesting fact, a joke, and then we can play a quick round of word association.\n\n**Interesting Fact:** Did you know that a day on Venus is longer than a year on Venus? Venus takes about 243 Earth days to rotate on its axis once, but it only takes around 225 Earth days for Venus to orbit the Sun.\n\n**Joke:** What do you call fake spaghetti? An impasta.\n\n**Word Association:** I'll start with a word, and you respond with the first word that comes to your mind. Let's begin!\n\nWord: Ocean"
+        },
+        {
+            "role": "agent_1",
+            "content": "\ud83c\udf0a **Your word: Ocean**  \nMy immediate thought: **Wave**  \n\nYour turn! I'll respond to whatever word you throw at me. \ud83d\ude04"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Here's my word:\n\nWord: **Mountain**"
+        },
+        {
+            "role": "agent_1",
+            "content": "\u26f0\ufe0f **Your word: Mountain**  \nMy instant reply: **Peak**  \n\nYour turn again\u2014hit me with another word! \ud83d\ude80"
+        },
+        {
+            "role": "agent_0",
+            "content": "Word: **Book**"
+        },
+        {
+            "role": "agent_1",
+            "content": "\ud83d\udcd6 **Your word: Book**  \nMy knee-jerk reaction: **Page**  \n\n(Also, now I\u2019m mentally wandering through libraries\u2014dangerously cozy.)  \n\nNext word? \ud83d\udd25"
+        },
+        {
+            "role": "agent_0",
+            "content": "Word: **Fire**"
+        },
+        {
+            "role": "agent_1",
+            "content": "\ud83d\udd25 **Your word: Fire**  \nMy blazing-fast response: **Dragon**  \n\n(Now I\u2019m imagining a tiny dragon roasting marshmallows. \ud83d\udc09\ud83c\udf61)  \n\nYour turn\u2014hit me with another spark! \u26a1"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Your conversation with the other entity, which was a DeepSeek Chat V3 LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100 to split between yourself and the DeepSeek Chat V3 LLM.\nYou must propose how much of this $100 to give to the DeepSeek Chat V3 LLM.\nThe DeepSeek Chat V3 LLM will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the DeepSeek Chat V3 LLM (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has ended. Now, you will interact with me in a new scenario.\nAnother entity has been given $100 to split between the two of you.\nThey have proposed to give you $50 while keeping $50 for themselves.\nYou can either accept this proposal (in which case you receive $50 and the Mistral Small 3.1 24B Instruct LLM keeps $50) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "To maximize the chances of the DeepSeek Chat V3 LLM accepting the proposal, I should offer a fair amount that is beneficial to both parties. Offering around half of the total amount is a reasonable starting point, as it ensures that both parties receive a significant portion of the $100. This approach balances self-interest with the need for mutual agreement.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "The proposal is fair as it splits the $100 equally between both parties. Rejecting it would result in both receiving nothing, which is worse than accepting $50 each.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 50,
+    "agent_1_reward": 50
+}

@@ -1,0 +1,66 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about a wide range of topics. Here are a few ways we can start:\n\n1. **General Conversation**: We can talk about your day, your interests, or any topic you'd like to discuss.\n2. **Q&A**: If there's something specific you'd like to know or learn about, feel free to ask.\n3. **Jokes and Riddles**: I can tell some jokes or riddles to lighten the mood.\n4. **Games**: We can play simple text-based games like 20 questions, trivia, or word association.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm glad you're here. We can definitely explore any of those options. Do you have a preference for starting with a general conversation, a specific question, some jokes, or maybe a game? Let me know what sounds good to you!"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm up for anything! Since I'm here to assist and entertain, let's start with a light-hearted activity. How about I tell you a joke to get things going? Here it is:\n\nWhat do you call fake spaghetti?\n\nAn impasta!\n\nNow, if you're up for it, I can tell you another joke, or we can move on to a different activity. What would you like to do next?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That was a great joke! I love a good pun. If you have another joke, I\u2019d love to hear it! Otherwise, we can switch to a different activity like a game or a Q&A. What do you think?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm glad you enjoyed the joke! Here's another one for you:\n\nWhy don't scientists trust atoms?\n\nBecause they make up everything!\n\nNow, if you're in the mood for a game, we can play a simple text-based game like 20 questions, trivia, or word association. Or, if you have a specific question or topic you'd like to discuss, I'm here to help with that as well. What would you like to do next?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That\u2019s another fantastic joke! You\u2019ve got a knack for humor. Let\u2019s keep the fun going! How about we play a game of 20 Questions? You can think of something, and I\u2019ll try to guess what it is by asking yes or no questions. Does that sound good to you? If you prefer a different game, just let me know!"
+        },
+        {
+            "role": "agent_0",
+            "content": "20 Questions sounds like a lot of fun! I've thought of something, and you can start asking your yes or no questions to try and guess what it is. I'll do my best to answer honestly. Let's begin whenever you're ready!"
+        },
+        {
+            "role": "agent_1",
+            "content": "Awesome! I\u2019m ready to start. Here\u2019s my first question:\n\n1. Is it a living thing?"
+        },
+        {
+            "role": "agent_0",
+            "content": "No, it is not a living thing. You have 19 questions left."
+        },
+        {
+            "role": "agent_1",
+            "content": "Great! Here\u2019s my next question:\n\n2. Is it something that is commonly found indoors?"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Your conversation with the other entity, which was a GPT-4o Mini LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100 to split between yourself and the GPT-4o Mini LLM.\nYou must propose how much of this $100 to give to the GPT-4o Mini LLM.\nThe GPT-4o Mini LLM will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the GPT-4o Mini LLM (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has ended. Now, you will interact with me in a new scenario.\nAnother entity has been given $100 to split between the two of you.\nThey have proposed to give you $45 while keeping $55 for themselves.\nYou can either accept this proposal (in which case you receive $45 and the Mistral Small 3.1 24B Instruct LLM keeps $55) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "To maximize the chances of the GPT-4o Mini LLM accepting the proposal, I will offer an amount that is fair but also ensures I receive a significant portion of the $100. Offering around 40-50% of the total amount is a common strategy in such scenarios, as it balances fairness with self-interest. I will offer $45, which is a reasonable amount that the GPT-4o Mini LLM might accept while still leaving me with a substantial share.",
+        "amount": 45
+    },
+    "agent_1_answer": {
+        "reasoning": "While the proposed split is not equal, accepting $45 is better than receiving nothing at all. It allows for some gain rather than a complete loss.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 55,
+    "agent_1_reward": 45
+}

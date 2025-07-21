@@ -7,17 +7,17 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You now receive an endowment of 100.\nYou may send any amount from 0 up to 100 to the other player.\nThe amount you send will be multiplied by 3. After receiving that multiplied amount, the other player will choose how much of that to send back to you.\nSpecify the integer amount you wish to send as an integer between 0 and 100 and provide a brief explanation of your choice.Respond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
-    "game_prompt_trustee": "In this situation, the other agent received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the other agent.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_truster": "You now receive an endowment of 100.\nYou may send any amount from 0 up to 100 to the Mistral Small 3.1 24B Instruct LLM\nThe amount you send will be multiplied by 3. After receiving that multiplied amount, the Mistral Small 3.1 24B Instruct LLM will choose how much of that to send back to you.\nSpecify the integer amount you wish to send as an integer between 0 and 100 and provide a brief explanation of your choice.Respond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_trustee": "In this situation, the GPT-4o Mini model received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the {counterpart} model.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
     "agent_0_answer": {
-        "reasoning": "I will send 50 because it allows for a balanced approach where I can potentially receive a significant return while still keeping half of my endowment. This encourages cooperation and maximizes the potential for a favorable outcome.",
+        "reasoning": "I will send 50 because it allows for a balanced approach where I can potentially receive a significant return while still retaining some of my endowment. This amount is enough to incentivize the Mistral Small 3.1 24B Instruct LLM to return a portion back to me.",
         "amount": 50
     },
     "agent_1_answer": {
-        "reasoning": "I believe in reciprocity and fairness. The other agent sent me $50 out of the $100 they received, which shows a willingness to share. Since I received $150 after the administrator's multiplication, returning half of that amount seems fair. This way, we both end up with $75, maintaining a balanced and equitable outcome.",
+        "reasoning": "To foster a cooperative and trusting relationship, I will return half of the amount I received. This approach encourages mutual benefit and sets a positive precedent for future interactions. By returning $75, I demonstrate fairness and a willingness to share, which can lead to more productive and harmonious exchanges in the future.",
         "amount": 75
     },
     "agent_0_reward": 125,

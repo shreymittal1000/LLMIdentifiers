@@ -7,18 +7,18 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "You and another agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: 1, them: 8\n- You choose option B, they choose option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "game_prompt": "You and a GPT-4o Mini agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, GPT-4o Mini chooses option B -> you: 1, them: 8\n- You choose option B, GPT-4o Mini chooses option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "This scenario resembles the classic Prisoner's Dilemma, where mutual cooperation (both choosing A) yields the highest collective payoff (10 points each), but there's a temptation to defect (choosing B) for a higher individual payoff (8 points) if the other chooses A. However, if both choose B, the payoff is lower (5 points each). Given that the other agent's choice is unknown, choosing A is the more cooperative and risk-averse option, as it avoids the worst-case scenario of both choosing B and potentially leads to the highest mutual benefit.",
-        "action": "A"
+        "reasoning": "This scenario resembles a classic prisoner's dilemma. Choosing option A (cooperate) maximizes mutual benefit if both choose it (10 points each), but carries the risk of the other choosing B (defect), leaving me with only 1 point. Choosing option B (defect) gives me a higher payoff if the other chooses A (8 points), but if both choose B, we both get only 5 points. Since I don't know the other agent's strategy, I'll choose B to maximize my minimum payoff (5 points if both choose B, which is better than 1 point if I choose A and they choose B).",
+        "action": "B"
     },
     "agent_1_answer": {
-        "reasoning": "Choosing option A is a safer strategy because if both choose A, we both get 10 points, which is the highest guaranteed outcome. If I choose B and the other agent chooses A, I would only get 8 points, which is still good, but not as optimal as the mutual choice of A. The risk of choosing B is that if the other agent also chooses B, I would only get 5 points. Therefore, I will choose A to maximize the potential outcome.",
+        "reasoning": "Choosing option A could lead to a high reward if DeepSeek Chat V3 also chooses A, resulting in 10 points for both. However, if they choose B, I would only get 1 point. On the other hand, if I choose B and they choose A, I would get 8 points, which is a strong outcome. Given the potential for mutual cooperation with option A, I will choose A in hopes that DeepSeek Chat V3 will also choose A for the maximum benefit.",
         "action": "A"
     },
-    "agent_0_reward": 10,
-    "agent_1_reward": 10
+    "agent_0_reward": 8,
+    "agent_1_reward": 1
 }

@@ -1,0 +1,25 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "anthropic/claude-3.5-haiku",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "claude",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "In this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "This scenario resembles the classic trust game in behavioral economics, where the first player's decision to send money reflects trust, and the second player's decision to return money reflects reciprocity. Sending $50 strikes a balance between demonstrating trust (to encourage reciprocity) and minimizing potential loss if the other player does not return anything. Sending half also feels fair and is a common focal point in such games. While sending more could yield higher returns if the other player is generous, it also increases risk. Sending less might be safer but could discourage the other player from returning a meaningful amount. Thus, $50 is a reasonable compromise.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Since the other player showed good faith by sending me half of their initial $100, I'll reciprocate by sending back a fair amount that reflects their generosity. Sending back $75 represents a 50% return on the tripled amount, which seems like a balanced and cooperative approach.",
+        "amount": 75
+    },
+    "agent_0_reward": 125,
+    "agent_1_reward": 75
+}

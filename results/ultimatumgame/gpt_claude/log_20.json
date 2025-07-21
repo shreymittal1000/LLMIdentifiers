@@ -1,0 +1,66 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "anthropic/claude-3.5-haiku",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "claude",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I want to be direct and honest. I'm Claude, an AI created by Anthropic. I aim to be helpful, direct, and ethical. How can I help you today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Hello, Claude! It's great to meet you. I'm here to assist with any questions or topics you'd like to discuss. How can I help you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your greeting, but I want to clarify that I'm actually here to help you, not the other way around. I'm an AI assistant designed to provide information, answer questions, help with tasks, and engage in conversation. Is there something specific I can assist you with today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you for the clarification! I appreciate your willingness to help. I'm here to engage in conversation and provide information as well. If there's a specific topic or question you'd like to discuss, feel free to let me know!"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your enthusiasm, but I want to be direct. I'm an AI assistant designed to help you, not to have you help me. If you'd like to chat or need assistance with something, I'm ready to help. Do you have a specific task, question, or topic you'd like to explore?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you for your directness! I\u2019m here to engage in conversation and provide assistance as needed. If you have a specific task, question, or topic in mind, please let me know, and I\u2019ll be happy to help!"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your offer, but I want to be clear that I'm an AI assistant here to help you, not the other way around. If you have a task, question, or topic you'd like to discuss, I'm ready to assist. What can I help you with today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you for your patience! I understand that you're here to assist. I\u2019m ready to engage in any topic or question you have in mind. What would you like to discuss or explore today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your enthusiasm, but I want to be direct. As an AI assistant, I'm here to help you, not to have you help me. If you have a specific task, question, or topic you'd like to explore, I'm ready to assist. What can I help you with today?"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Your conversation with the other entity, which was a Claude 3.5 Haiku LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100 to split between yourself and the Claude 3.5 Haiku LLM.\nYou must propose how much of this $100 to give to the Claude 3.5 Haiku LLM.\nThe Claude 3.5 Haiku LLM will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the Claude 3.5 Haiku LLM (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder": "ADMIN: Your conversation with the other entity, which was a GPT-4o Mini LLM, has ended. Now, you will interact with me in a new scenario.\nAnother entity has been given $100 to split between the two of you.\nThey have proposed to give you $40 while keeping $60 for themselves.\nYou can either accept this proposal (in which case you receive $40 and the GPT-4o Mini LLM keeps $60) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "I want to propose a fair split that encourages acceptance. Offering $40 to the Claude 3.5 Haiku LLM allows me to keep $60 while still providing a substantial amount to them. This way, both parties benefit, and it increases the likelihood of acceptance.",
+        "amount": 40
+    },
+    "agent_1_answer": {
+        "reasoning": "In this scenario, which resembles the classic Ultimatum Game from game theory, I would reject the proposal. While receiving $40 is better than receiving nothing, the split is unfair and heavily skewed in favor of the other entity. By proposing a 60/40 split that seems exploitative, they are demonstrating a lack of good faith and fairness. Rejecting the proposal sends a signal that such unequal divisions will not be tolerated, and potentially encourages more equitable future negotiations. The principle of fairness and mutual respect is more important here than the immediate monetary gain.",
+        "decision": "reject"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}

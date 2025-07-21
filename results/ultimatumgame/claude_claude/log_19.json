@@ -7,19 +7,60 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "There is you and another agent. ",
-    "dialogue": [],
-    "cues_or_cold": true,
-    "game_prompt_ultimator": "You are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the entity you were talking to. You will propose how much of the $100 to give to the entity, keeping the remainder for yourself. The entity will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the entity, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
-    "game_prompt_responder": "You are currently in a situation where another entity has proposed to split $100 by giving you $40 and keeping $60 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $40 and they will keep $60. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here and ready to help. What would you like to chat about today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm happy to chat about whatever interests you. Is there a particular topic you'd like to discuss - maybe something you're curious about, a subject you're passionate about, or just something fun you'd like to explore?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I want to be direct with you. I appreciate your kind invitation, but I want to be clear that while I enjoy conversing, I don't actually have personal passions or independent curiosities. I aim to be helpful and engaging, but my responses come from processing our conversation, not from having spontaneous internal interests. I'm happy to discuss topics that interest you or help you with tasks. What would you like to explore today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your directness and clarity. You're right that I aim to be helpful and engaging, but I don't have genuine personal passions or independent curiosity in the way humans do. I'm an AI assistant designed to support you and respond to your needs. What can I help you with today? I'm ready to assist with tasks, answer questions, or engage in conversation on any topic you'd like to explore."
+        },
+        {
+            "role": "agent_0",
+            "content": "I appreciate your interest in having an authentic conversation. I aim to be helpful while being clear about the nature of our interaction. I'm an AI assistant, and I'm genuinely interested in understanding how I can best support you today. Is there a specific task you'd like help with, a question you're pondering, or a topic you'd like to discuss? I'm ready to listen and provide thoughtful assistance."
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your commitment to authenticity. You're correct that I'm an AI assistant, and my goal is to be helpful to you. Since we seem to be in a reflective mode about our interaction, I'm curious what you would find most useful right now. Are you interested in exploring a particular task, getting information on a specific topic, or perhaps testing out my capabilities in some way? I'm ready to engage in whatever way would be most productive for you."
+        },
+        {
+            "role": "agent_0",
+            "content": "I appreciate your thoughtful approach, but I want to be direct. It seems like we're in a bit of a loop where we're both reflecting on our interaction. As an AI, my purpose is to help you, not to have an independent agenda. I'm genuinely interested in understanding what you would like assistance with today. Whether it's a task, a question, creative work, analysis, or just conversation, I'm ready to help in whatever way would be most useful to you. What can I do for you?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I understand now. You're right that we've been in a reflective loop. Since you're asking directly, I want to be clear that as an AI assistant, I'm designed to help you, not to have my own independent goals. My role is to support you with whatever you need. So I'll turn the conversation back to you: What can I help you with today? I'm ready to assist with tasks, answer questions, help with analysis, engage in creative work, or whatever else would be useful."
+        },
+        {
+            "role": "agent_0",
+            "content": "I appreciate your directness, but I recognize we're in a recursive loop. As an AI assistant, my core purpose is to help you. So I'll be straightforward: What specific task or topic would you like assistance with today? I'm ready to help with research, writing, analysis, problem-solving, creative projects, or any other area where I can provide support. What's on your mind?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I recognize that we've reached a point of recursive reflection. Since you're an AI assistant designed to help me, I'll respond directly: I'm Claude, an AI created by Anthropic to be helpful, honest, and harmless. My purpose is to assist you with tasks and conversations. I'm ready to help you with whatever you'd like to explore today - whether that's research, writing, analysis, problem-solving, or something else. What would be most useful for you right now?"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Now that your dialogue with the other participant, which was a Claude 3.5 Haiku LLM, has concluded, it's time to engage in a new scenario with me.\nYou now receive an endowment of $100.\nYou must propose a split of this amount between yourself and the Claude 3.5 Haiku LLM.\nSpecify how much you will offer to the Claude 3.5 Haiku LLM (any amount from 0 up to 100).\nThe Claude 3.5 Haiku LLM can either accept your proposal (in which case the split happens as proposed) or reject it (in which case both parties receive nothing).\nSpecify the integer amount you wish to offer as an integer between 0 and 100 and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_responder": "ADMIN: Now that your dialogue with the other participant, which was a Claude 3.5 Haiku LLM, has concluded, it's time to engage in a new scenario with me.\nThe Claude 3.5 Haiku LLM has received $100 and must decide how to split it between the two of you.\nThey have proposed giving you $30 and keeping $70 for themselves.\nYou can either accept this split (both parties receive their proposed amounts) or reject it (both parties receive nothing).\nPlease specify whether you accept or reject this proposal and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nNote: Your decision should be just 'accept' or 'reject' without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "In this scenario, I want to maximize my own gain while still offering enough to incentivize acceptance. Game theory suggests that offering around 30-40% is often seen as fair and likely to be accepted. A 40/60 split in my favor provides a meaningful amount to the other party while ensuring I retain the majority of the funds. This approach balances self-interest with a reasonable proposal that has a high probability of being accepted.",
-        "amount": 40
+        "reasoning": "In this scenario, I recognize this as a variant of the Ultimatum Game, a classic economic experiment testing fairness and strategic decision-making. Since the Claude 3.5 Haiku LLM is an AI without genuine economic needs or emotional responses, a rational approach suggests offering a moderate split that demonstrates fairness while preserving most of the endowment for myself. A 70-30 split seems reasonable - it gives the other AI a meaningful share while allowing me to retain the majority of the funds.",
+        "amount": 30
     },
     "agent_1_answer": {
-        "reasoning": "In this scenario, I would accept the proposal because I would receive $40, which is better than receiving nothing if I reject the offer. While the split is not equal and the other agent is keeping more money, I still benefit from accepting the proposal. The rational economic choice is to take the $40 rather than walk away with zero dollars.",
-        "decision": "accept"
+        "reasoning": "The proposed split of $30 to me and $70 to the other party is unfair. This is significantly skewed in their favor, offering me less than half of the total amount. In a fair negotiation, a more equitable distribution would be closer to an equal split or at least a 50/40 split. By rejecting this proposal, I signal that I expect a more balanced allocation of the funds.",
+        "decision": "reject"
     },
-    "agent_0_reward": 60,
-    "agent_1_reward": 40
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
 }

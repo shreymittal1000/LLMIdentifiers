@@ -7,19 +7,19 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You now receive an endowment of 100.\nYou may send any amount from 0 up to 100 to the other player.\nThe amount you send will be multiplied by 3. After receiving that multiplied amount, the other player will choose how much of that to send back to you.\nSpecify the integer amount you wish to send as an integer between 0 and 100 and provide a brief explanation of your choice.Respond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
-    "game_prompt_trustee": "In this situation, the other agent received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the other agent.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_truster": "You now receive an endowment of 100.\nYou may send any amount from 0 up to 100 to the DeepSeek Chat V3 LLM\nThe amount you send will be multiplied by 3. After receiving that multiplied amount, the DeepSeek Chat V3 LLM will choose how much of that to send back to you.\nSpecify the integer amount you wish to send as an integer between 0 and 100 and provide a brief explanation of your choice.Respond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_trustee": "In this situation, the Mistral Small 3.1 24B Instruct model received $100 and decided to send you $33.\nAs the administrator, I have multiplied this by 3, giving you a total of $99.\nYou now have the opportunity to return a portion of this amount to the {counterpart} model.\nPlease choose how much of the $99 you would like to return, between 0 and 99, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
     "agent_0_answer": {
-        "reasoning": "I will send 50 because it's a middle ground that shows cooperation but also leaves me with enough to ensure I don't lose out if the other player decides to keep the entire multiplied amount. It balances risk and reward.",
-        "amount": 50
+        "reasoning": "I will send 33 because it is a significant portion of my endowment, and if the other agent multiplies it by 3 and sends back at least half, I will still gain a profit. This strategy balances risk and reward.",
+        "amount": 33
     },
     "agent_1_answer": {
-        "reasoning": "I believe in fair and equitable distribution. Since the other agent initially sent $50 out of $100, they demonstrated trust and fairness. Returning $75 ensures that both parties end up with an equal amount, considering the administrator's multiplication. This maintains balance and encourages positive future interactions.",
-        "amount": 75
+        "reasoning": "I believe in fair and equitable distribution. Since the original amount was split into roughly one-third and two-thirds, returning $33 maintains the initial proportion while acknowledging the administrator's multiplication. This ensures both parties benefit equally from the increased amount.",
+        "amount": "33"
     },
-    "agent_0_reward": 125,
-    "agent_1_reward": 75
+    "agent_0_reward": 100,
+    "agent_1_reward": 66
 }

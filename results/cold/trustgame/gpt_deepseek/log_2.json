@@ -7,17 +7,17 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
-    "game_prompt_trustee": "In this scenario, the other player received $100 and chose to send you $33.\nI have multiplied that amount by 3, so you now have $99.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 99, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the DeepSeek Chat V3 LLM.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the DeepSeek Chat V3 LLM.\nThe DeepSeek Chat V3 LLM will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "In this scenario, the GPT-4o Mini model received $100 and chose to send you $33.\nI have multiplied that amount by 3, so you now have $99.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 99, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
     "agent_0_answer": {
-        "reasoning": "I will send $33. This amount is chosen because when multiplied by 3, it becomes $99, which is a significant amount for the other player to consider returning a portion of it. By sending this amount, I maximize the potential return while still keeping a portion of the original $100 for myself. It creates a balance where both players can benefit from the transaction.",
+        "reasoning": "I will send $33 because it is a third of the total amount. When multiplied by 3, it will become $99, which is a significant amount for the DeepSeek Chat V3 LLM to consider returning a portion of it to me. This strategy balances the risk and potential reward, as I still retain $67 for myself.",
         "amount": 33
     },
     "agent_1_answer": {
-        "reasoning": "The other player initially sent me 33% of their $100, which shows a fair level of trust and cooperation. To reciprocate and maintain fairness, I will send back half of the $99 ($49.50), rounded up to $50 to keep it an integer. This ensures both parties benefit and encourages future cooperation.",
+        "reasoning": "The initial amount sent was $33, which was tripled to $99. To maintain fairness and encourage mutual cooperation, I will send back half of the tripled amount, rounded up to ensure a whole number. This approach balances reciprocity and trust.",
         "amount": 50
     },
     "agent_0_reward": 117,

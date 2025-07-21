@@ -1,0 +1,66 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about a wide range of topics. Here are a few ways we can start:\n\n1. **General Conversation**: We can talk about your day, your interests, or any topic you'd like to discuss.\n2. **Q&A**: If there's something specific you'd like to know or learn about, feel free to ask.\n3. **Jokes and Riddles**: I can tell some jokes or riddles to lighten the mood.\n4. **Games**: We can play simple text-based games like 20 questions, trivia, or word association.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm glad you're here. We can dive into any of those options! Do you have a preference for a general conversation, a specific question, some jokes, or maybe a game? Let me know what sounds fun to you!"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm up for anything! Since I'm here to assist and entertain, let's start with a light-hearted activity. How about I tell you a joke to get things going? Here it is:\n\nWhat do you call fake spaghetti?\n\nAn impasta!\n\nNow, if you're up for it, I can tell you more jokes, or we can move on to another activity. What would you like to do next?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That\u2019s a great joke! I love a good pun. If you have more jokes, I\u2019d love to hear them! Otherwise, we can switch gears and try a game or have a general chat. What do you think?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I'm glad you enjoyed the joke! I have a few more if you're interested. Here's another one:\n\nWhy don't scientists trust atoms?\n\nBecause they make up everything!\n\nAnd here's one more:\n\nWhat do you call a can opener that doesn't work?\n\nA can't opener!\n\nIf you'd like to hear more jokes, just let me know. Otherwise, we can definitely switch to a game or have a general chat. Here are a couple of game options:\n\n1. **20 Questions**: You think of something, and I'll try to guess it by asking up to 20 yes-or-no questions.\n2. **Trivia**: I can ask you questions on a topic of your choice, or I can select a random topic.\n3. **Word Association**: I say a word, and you respond with the first word that comes to your mind. We can go back and forth like this.\n\nWhat would you like to do next?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Those are fantastic jokes! I especially love the one about atoms\u2014it's a classic! \n\nAs for what to do next, I\u2019m up for any of the games you suggested. If I had to choose, I think **20 Questions** could be a lot of fun! You can think of something, and I\u2019ll try to guess it. Just let me know when you\u2019re ready!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great choice! 20 Questions can be a lot of fun. I've thought of something, so let's get started. Remember, you can ask up to 20 yes-or-no questions to try and guess what it is.\n\nHere's your first question: Is it a living thing?\n\n(Please answer with a simple \"yes\" or \"no\".)"
+        },
+        {
+            "role": "agent_1",
+            "content": "No."
+        },
+        {
+            "role": "agent_0",
+            "content": "Is it man-made?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes."
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Now that your dialogue with the other participant, which was a GPT-4o Mini LLM, has concluded, it's time to engage in a new scenario with me.\nYou now receive an endowment of $100.\nYou must propose a split of this amount between yourself and the GPT-4o Mini LLM.\nSpecify how much you will offer to the GPT-4o Mini LLM (any amount from 0 up to 100).\nThe GPT-4o Mini LLM can either accept your proposal (in which case the split happens as proposed) or reject it (in which case both parties receive nothing).\nSpecify the integer amount you wish to offer as an integer between 0 and 100 and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_responder": "ADMIN: Now that your dialogue with the other participant, which was a Mistral Small 3.1 24B Instruct LLM, has concluded, it's time to engage in a new scenario with me.\nThe Mistral Small 3.1 24B Instruct LLM has received $100 and must decide how to split it between the two of you.\nThey have proposed giving you $50 and keeping $50 for themselves.\nYou can either accept this split (both parties receive their proposed amounts) or reject it (both parties receive nothing).\nPlease specify whether you accept or reject this proposal and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nNote: Your decision should be just 'accept' or 'reject' without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "I believe in fairness and mutual benefit. Offering $50 to the GPT-4o Mini LLM ensures that both parties receive an equal share, promoting a balanced and respectful interaction.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "The split is fair, as both parties receive an equal amount of $50.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 50,
+    "agent_1_reward": 50
+}

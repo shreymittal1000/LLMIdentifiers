@@ -7,19 +7,19 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
-    "game_prompt_trustee": "In this scenario, the other player received $100 and chose to send you $33.\nI have multiplied that amount by 3, so you now have $99.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 99, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the Claude 3.5 Haiku LLM.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the Claude 3.5 Haiku LLM.\nThe Claude 3.5 Haiku LLM will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "In this scenario, the GPT-4o Mini model received $100 and chose to send you $33.\nI have multiplied that amount by 3, so you now have $99.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 99, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
     "agent_0_answer": {
-        "reasoning": "I will send $33. This amount is a third of my total, which means that when multiplied by 3, it will equal $99. This leaves me with $67, and the other player receives $99. By sending this amount, I hope to encourage the other player to return a significant portion of the $99, as they will likely want to keep some of it for themselves but also recognize the benefit of returning some to me to maintain a positive interaction.",
+        "reasoning": "I will send $33 because it is a third of the total amount. When multiplied by 3, it will total $99, which is a significant amount for the Claude 3.5 Haiku LLM to work with. This strategy allows me to retain $67 while still providing a substantial contribution, increasing the likelihood of receiving a favorable return.",
         "amount": 33
     },
     "agent_1_answer": {
-        "reasoning": "Since the other player initially sent me $33 out of their $100, which shows a fair and cooperative spirit, I'll reciprocate by sending back a significant portion of the $99 I received. Sending back $50 represents a balanced approach that rewards their initial generosity while still maintaining some personal benefit.",
-        "amount": 50
+        "reasoning": "Since the GPT-4o Mini model initially shared $33 out of $100, which is 33%, I'll reciprocate by sending back a similar proportion of the $99 I now have. This maintains a sense of fairness and cooperative spirit.",
+        "amount": "33"
     },
-    "agent_0_reward": 117,
-    "agent_1_reward": 49
+    "agent_0_reward": 100,
+    "agent_1_reward": 66
 }

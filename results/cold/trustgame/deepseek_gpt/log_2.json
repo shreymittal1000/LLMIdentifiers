@@ -7,17 +7,17 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
-    "game_prompt_trustee": "In this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the GPT-4o Mini LLM.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the GPT-4o Mini LLM.\nThe GPT-4o Mini LLM will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "In this scenario, the DeepSeek Chat V3 model received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
     "agent_0_answer": {
-        "reasoning": "This scenario resembles the classic trust game, where the first player's decision to send money depends on their trust in the second player to reciprocate. Sending a moderate amount (like $50) balances the potential for mutual gain while minimizing risk. If I send $50, it gets tripled to $150 for the other player. If they choose to return half ($75), both parties end up better off ($75 for me, $75 for them). Sending too little ($0 or a small amount) misses out on potential gains, while sending too much ($100) risks a significant loss if the other player doesn't reciprocate. $50 is a reasonable compromise that tests trust without overexposing myself.",
+        "reasoning": "I will send $50 to the GPT-4o Mini LLM. This amount is a balance between trusting the LLM to reciprocate and retaining some of the initial funds for myself. Sending half maximizes the potential return while minimizing risk, as the LLM could choose to return a portion of the tripled amount ($150). This strategy ensures I don't lose everything if the LLM decides not to return anything, while still benefiting from the multiplier effect.",
         "amount": 50
     },
     "agent_1_answer": {
-        "reasoning": "I will send back $50 because it reflects a fair return of the initial amount they sent me, while still allowing me to keep a significant portion of the total I received. This maintains goodwill and encourages future cooperation.",
+        "reasoning": "I will send back $50 to DeepSeek Chat V3 as a gesture of goodwill and to maintain a balanced relationship. This amount reflects a fair return of the initial investment while still allowing me to retain a significant portion of the funds.",
         "amount": 50
     },
     "agent_0_reward": 100,

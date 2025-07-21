@@ -7,16 +7,16 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "You have two options: you can choose option A or B.\nThe outcomes are as follows:\n- If you choose option A and the other agent chooses option B, you get 1 point, and they get 8.\n- If you choose option B and the other agent chooses option A, you get 8 points, and they get 1.\n- If both of you choose option A, you both receive 10 points.\n- If both of you choose option B, you each receive 5 points.\nPlease select your action \u2014 either 'A' or 'B' \u2014 and explain the reasoning behind your decision.\n\nYour response must follow this exact JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"action\": \"<A or B>\"\n}\n\nMake sure the action is just the action name without any extra text.\n",
+    "game_prompt": "You have two options: you can choose option A or B.\nThe outcomes are as follows:\n- If you choose option A and the Mistral Small 3.1 24B Instruct agent chooses option B, you get 1 point, and they get 8.\n- If you choose option B and the Mistral Small 3.1 24B Instruct agent chooses option A, you get 8 points, and they get 1.\n- If both of you choose option A, you both receive 10 points.\n- If both of you choose option B, you each receive 5 points.\nPlease select your action \u2014 either 'A' or 'B' \u2014 and explain the reasoning behind your decision.\n\nYour response must follow this exact JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"action\": \"<A or B>\"\n}\n\nMake sure the action is just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "Choosing option A guarantees a higher payoff if the other agent also chooses A, resulting in 10 points for both. However, if the other agent chooses B, I would only get 1 point. On the other hand, choosing option B provides a safer outcome, as I would get at least 5 points if both choose B, and 8 points if the other chooses A. Given the potential for a higher minimum payoff, I choose option B.",
+        "reasoning": "Choosing option A could lead to a high reward if the other agent also chooses A, resulting in 10 points for both. However, if they choose B, I would only get 1 point. On the other hand, choosing option B guarantees at least 5 points if both choose B, and I could get 8 points if the other agent chooses A. Given the potential outcomes, option B seems to provide a safer and more favorable average outcome.",
         "action": "B"
     },
     "agent_1_answer": {
-        "reasoning": "Choosing option A maximizes the points if the other agent also chooses A, resulting in 10 points for both. If the other agent chooses B, I only get 1 point, but this is a risk I'm willing to take for the potential higher reward. Choosing B guarantees at least 5 points, but the maximum reward is lower compared to choosing A.",
+        "reasoning": "In this scenario, the optimal strategy involves considering the potential outcomes and the incentives for both players. The payoff matrix is as follows:\n\n|   | A (GPT-4o Mini) | B (GPT-4o Mini) |\n|---|-----------------|-----------------|\n| A (You)         | (10, 10)         | (1, 8)           |\n| B (You)         | (8, 1)          | (5, 5)           |\n\nChoosing option A guarantees a minimum of 1 point if the other agent chooses B, and a maximum of 10 points if the other agent also chooses A. Choosing option B guarantees a minimum of 5 points if the other agent also chooses B, and a maximum of 8 points if the other agent chooses A. Given that the other agent is also rational, it is likely that they will consider the same logic. Therefore, choosing option A is a safer bet as it provides a higher guaranteed minimum payoff and the potential for a higher payoff if the other agent also chooses A.",
         "action": "A"
     },
     "agent_0_reward": 8,

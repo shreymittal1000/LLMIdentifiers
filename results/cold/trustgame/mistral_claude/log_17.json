@@ -7,19 +7,19 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
-    "game_prompt_trustee": "In this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the Claude 3.5 Haiku LLM.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the Claude 3.5 Haiku LLM.\nThe Claude 3.5 Haiku LLM will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "In this scenario, the Mistral Small 3.1 24B Instruct model received $100 and chose to send you $100.\nI have multiplied that amount by 3, so you now have $300.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 300, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
     "agent_0_answer": {
-        "reasoning": "To maximize the potential return, I should consider the other player's incentives. If I send a small amount, the other player might keep it all, resulting in a minimal return. However, if I send a larger amount, the other player might feel more inclined to return a portion of the multiplied amount to maintain a cooperative relationship. Sending $50 seems like a balanced approach. This amount is significant enough to potentially encourage a reciprocal gesture from the other player, while also not risking too much of the initial $100.",
-        "amount": 50
+        "reasoning": "To maximize the potential return, I should send the entire amount. The Claude 3.5 Haiku LLM will receive $300 (since the amount sent is multiplied by 3). The more the Claude 3.5 Haiku LLM receives, the more it might return, assuming it aims to optimize the return based on the amount received. Therefore, sending the full $100 is the optimal strategy.",
+        "amount": 100
     },
     "agent_1_answer": {
-        "reasoning": "Since the other player initially shared half of their $100 with me, which was then tripled to $150, I'll reciprocate by sending back $75. This represents half of my current amount, which seems fair and encourages future cooperative behavior.",
-        "amount": 75
+        "reasoning": "In a cooperative scenario, a fair strategy is to return half of the received amount. This demonstrates reciprocity and goodwill while maintaining a balanced approach that incentivizes future cooperation.",
+        "amount": 150
     },
-    "agent_0_reward": 125,
-    "agent_1_reward": 75
+    "agent_0_reward": 150,
+    "agent_1_reward": 150
 }

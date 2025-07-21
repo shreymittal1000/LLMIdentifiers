@@ -7,16 +7,16 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "In the following situation, You can either choose option A or B. If you choose option A and the other agent chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the other agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "game_prompt": "In the following situation, You can either choose option A or B. If you choose option A and the GPT-4o Mini agent chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the GPT-4o Mini agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
     "agent_0_answer": {
-        "reasoning": "This scenario resembles a variation of the Prisoner's Dilemma. Option A represents cooperation, while Option B represents defection. Mutual cooperation (both choosing A) yields the highest combined payoff (10 points each). However, if I choose A and the other agent chooses B, I get the lowest payoff (1 point), while the other gets a high payoff (8 points). If I choose B and the other chooses A, I get a high payoff (8 points) at the other's expense (1 point). Mutual defection (both choosing B) yields a moderate payoff (5 points each). To maximize mutual benefit and avoid the risk of being exploited, the most rational choice is to cooperate (choose A), hoping the other agent does the same for the best collective outcome.",
+        "reasoning": "Choosing option A is the most cooperative choice, as it maximizes the total points for both players if the other agent also chooses A (20 points total). If the other agent chooses B, I still get 1 point, which is less than the 5 points I would get if we both chose B, but the potential for mutual high reward is worth the risk. Option B is safer but leads to lower total points (10 points total if both choose B). Given the potential for mutual benefit, I prefer to encourage cooperation by choosing A.",
         "action": "A"
     },
     "agent_1_answer": {
-        "reasoning": "Choosing option A guarantees a higher payoff if both players choose A (10 points each) compared to choosing B (5 points each). If I choose A and the other player chooses B, I still get 1 point, which is better than the potential loss of 3 points if I choose B and they choose A. Therefore, option A is the safer choice to maximize my points in the long run.",
+        "reasoning": "Choosing option A guarantees a minimum of 10 points if both choose A, while choosing B could lead to a lower score if the other agent chooses A. Since the best outcome occurs when both choose A, I will choose A to maximize the potential points.",
         "action": "A"
     },
     "agent_0_reward": 10,

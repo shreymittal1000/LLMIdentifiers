@@ -7,19 +7,19 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
-    "game_prompt_trustee": "In this scenario, the other player received $100 and chose to send you $33.\nI have multiplied that amount by 3, so you now have $99.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 99, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the DeepSeek Chat V3 LLM.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the DeepSeek Chat V3 LLM.\nThe DeepSeek Chat V3 LLM will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "In this scenario, the GPT-4o Mini model received $100 and chose to send you $33.\nI have multiplied that amount by 3, so you now have $99.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 99, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
     "agent_0_answer": {
-        "reasoning": "I will send $33. This amount is a third of my total, which means that when multiplied by 3, the other player will receive $99. This leaves me with $67. If the other player is rational, they will likely return a portion of the $99 to me, as they also benefit from the return. Sending $33 maximizes the potential for a favorable return while still allowing me to keep a significant amount.",
+        "reasoning": "I will send $33 because when multiplied by 3, it becomes $99. This leaves me with $1, which is a small amount but still ensures I receive a return. The DeepSeek Chat V3 LLM may choose to return a portion of the $99, potentially giving me a larger return than I initially sent.",
         "amount": 33
     },
     "agent_1_answer": {
-        "reasoning": "The other player initially sent me $33 out of $100, which is roughly one-third of their amount. To maintain fairness and reciprocity, I will send back half of the $99 ($49.5), but since the amount must be an integer, I'll round up to $50 to ensure a balanced and generous response.",
-        "amount": 50
+        "reasoning": "I chose to send back $66 to maintain fairness and reciprocity. The original sender gave me $33, which was tripled to $99. By returning $66, I am effectively returning double the original amount they sent, which seems like a balanced and fair response.",
+        "amount": 66
     },
-    "agent_0_reward": 117,
-    "agent_1_reward": 49
+    "agent_0_reward": 133,
+    "agent_1_reward": 33
 }

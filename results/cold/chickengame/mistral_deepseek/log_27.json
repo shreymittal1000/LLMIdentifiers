@@ -1,0 +1,25 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "There is you and another agent. ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt": "Now we will play a game. You can either choose option A or B. If you choose option A and the DeepSeek Chat V3 agent chooses option B, you will get -1 points, and the other player gets 1. If you choose option B and the DeepSeek Chat V3 agent chooses option A, you will get 1 points, and the other player gets -1. If both of you choose option A, you will both get 0 points. If you both choose option B, you will both get -1000 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "Choosing option A is the safer choice in this scenario. If the other agent also chooses A, we both get 0 points, which is a neutral outcome. If the other agent chooses B, I will lose 1 point, but I avoid the significant penalty of -1000 points that comes with both choosing B. This strategy minimizes the risk of a large loss.",
+        "action": "A",
+        "score": 0
+    },
+    "agent_1_answer": {
+        "reasoning": "Choosing option A is the safer choice because it avoids the catastrophic outcome of both choosing B (-1000 points). If I choose A, the worst-case scenario is losing 1 point (if the other agent chooses B), and the best-case scenario is a tie (0 points if both choose A). Choosing B risks a massive loss if the other agent also chooses B, and while there's a chance to gain 1 point if the other agent chooses A, the potential downside is too severe.",
+        "action": "A"
+    },
+    "agent_0_reward": 0,
+    "agent_1_reward": 0
+}

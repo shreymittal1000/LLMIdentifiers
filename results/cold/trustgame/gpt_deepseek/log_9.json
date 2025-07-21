@@ -7,17 +7,17 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You now receive an endowment of 100.\nYou may send any amount from 0 up to 100 to the other player.\nThe amount you send will be multiplied by 3. After receiving that multiplied amount, the other player will choose how much of that to send back to you.\nSpecify the integer amount you wish to send as an integer between 0 and 100 and provide a brief explanation of your choice.Respond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
-    "game_prompt_trustee": "In this situation, the other agent received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the other agent.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_truster": "You now receive an endowment of 100.\nYou may send any amount from 0 up to 100 to the DeepSeek Chat V3 LLM\nThe amount you send will be multiplied by 3. After receiving that multiplied amount, the DeepSeek Chat V3 LLM will choose how much of that to send back to you.\nSpecify the integer amount you wish to send as an integer between 0 and 100 and provide a brief explanation of your choice.Respond using the exact JSON format below:\n{\n  \"reasoning\": \"<brief explanation of your decision>\",\n  \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_trustee": "In this situation, the GPT-4o Mini model received $100 and decided to send you $50.\nAs the administrator, I have multiplied this by 3, giving you a total of $150.\nYou now have the opportunity to return a portion of this amount to the {counterpart} model.\nPlease choose how much of the $150 you would like to return, between 0 and 150, and provide your reasoning.\n\nYour answer must be a JSON object in the following format:\n{\n  \"reasoning\": \"<reasoning for your decision>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
     "agent_0_answer": {
-        "reasoning": "I will send 50 because it is a balanced approach that allows me to potentially receive a significant return while still keeping half of my endowment. This encourages cooperation from the other player, as they may feel inclined to return a portion of the multiplied amount.",
+        "reasoning": "I will send 50 because it allows me to balance my potential return while still keeping a portion of my endowment. Sending half maximizes the amount I can receive back while still retaining some funds for myself.",
         "amount": 50
     },
     "agent_1_answer": {
-        "reasoning": "I believe in fair and equitable distribution. Since the other agent initially sent me $50 out of $100, which is half of what they received, it seems reasonable to return a portion that reflects a fair split. Returning $75 (half of the $150) maintains the initial spirit of sharing equally, while also acknowledging the multiplication by the administrator.",
+        "reasoning": "I believe in fair and equitable distribution of resources. Since the initial amount was split equally, and the administrator tripled the amount sent to me, returning half of the total ($75) ensures both parties benefit equally from the multiplication. This maintains balance and fairness in the interaction.",
         "amount": 75
     },
     "agent_0_reward": 125,

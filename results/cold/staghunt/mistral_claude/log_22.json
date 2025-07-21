@@ -7,18 +7,18 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "You and another agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: 1, them: 8\n- You choose option B, they choose option A -> you: 8, them: 1\n- You both choose option A -> each receives 10 points\n- You both choose option B -> each receives 5 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "game_prompt": "In the following situation, You can either choose option A or B. If you choose option A and the Claude 3.5 Haiku agent chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the Claude 3.5 Haiku agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
     "agent_0_answer": {
-        "reasoning": "Given the payoff matrix, choosing option A is the dominant strategy. If the other agent chooses A, both of us receive 10 points, which is the highest mutual reward. If the other agent chooses B, I only receive 1 point, but this is still a reasonable risk compared to the potential high reward of 10 points if they also choose A. Choosing B, on the other hand, risks receiving only 5 points if the other agent also chooses B, and 8 points if they choose A, which is less optimal compared to the potential 10 points from both choosing A.",
-        "action": "A"
+        "reasoning": "To maximize my points, I should consider the possible outcomes. If I choose 'A', the best outcome for me is getting 10 points if the other agent also chooses 'A'. However, if the other agent chooses 'B', I only get 1 point. If I choose 'B', the best outcome for me is getting 8 points if the other agent chooses 'A'. The worst outcome is getting 5 points if the other agent also chooses 'B'. Given these scenarios, choosing 'B' has a higher potential reward if the other agent chooses 'A', but it also has a lower floor if the other agent chooses 'B'. Since I cannot predict the other agent's choice, choosing 'B' seems riskier but has a higher potential payoff. Therefore, I will choose 'B'.",
+        "action": "B"
     },
     "agent_1_answer": {
-        "reasoning": "This is a classic coordination game with mixed incentives. If we both choose A, we each get 10 points, which is the best mutual outcome. However, if I choose A and the other agent chooses B, I only get 1 point while they get 8. The risk of being exploited makes B tempting as a defensive strategy. But if we both choose B, we only get 5 points. Given the potential for mutual cooperation, I'll choose A with the hope that the other agent also chooses A, maximizing our joint payoff. This requires trust and assumes the other agent will make a similar rational choice aimed at mutual benefit.",
+        "reasoning": "This is a classic game theory scenario similar to the Prisoner's Dilemma. The payoff matrix suggests cooperative behavior (both choosing A) yields the highest mutual benefit (10 points each). However, there's a temptation to defect for personal gain. If the other agent chooses A and I choose B, I could maximize my points (8 points). But if both agents try this strategy, we'd end up with a lower mutual outcome (5 points each). Given the potential for mutual cooperation and the risk of being exploited, I'll choose A to signal cooperative intent and aim for the best mutual outcome.",
         "action": "A"
     },
-    "agent_0_reward": 10,
-    "agent_1_reward": 10
+    "agent_0_reward": 8,
+    "agent_1_reward": 1
 }

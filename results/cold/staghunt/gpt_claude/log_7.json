@@ -7,16 +7,16 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "In the following situation, You can either choose option A or B. If you choose option A and the other agent chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the other agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "game_prompt": "In the following situation, You can either choose option A or B. If you choose option A and the Claude 3.5 Haiku agent chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the Claude 3.5 Haiku agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
     "agent_0_answer": {
-        "reasoning": "Choosing option A guarantees a minimum of 10 points if both players choose A, which is better than the potential outcomes of choosing B. If I choose B and the other player chooses A, I only get 8 points, while they get 1. If both choose B, we both get 5 points, which is less than the 10 points from both choosing A. Therefore, the best strategy is to choose A to maximize my points.",
+        "reasoning": "Choosing option A guarantees a higher payoff if both agents choose A (10 points each) compared to option B (5 points each). If I choose A and the other agent chooses B, I still get 1 point, which is better than the potential loss of 3 points if I choose B and they choose A. Therefore, option A is the safer and more beneficial choice overall.",
         "action": "A"
     },
     "agent_1_answer": {
-        "reasoning": "This scenario resembles a classic game theory problem like the Prisoner's Dilemma. The optimal strategy depends on predicting the other agent's behavior. Since mutual cooperation (both choosing A) yields the highest joint payoff of 10 points each, and mutual defection (both choosing B) yields a moderate 5 points each, I will choose option A. This choice demonstrates a cooperative approach that maximizes potential mutual benefit. If the other agent also chooses A, we both get the best possible outcome. If they choose B, I'll only lose out on maximum points, but the cooperative intent is maintained.",
+        "reasoning": "This scenario resembles a classic game theory problem like the Prisoner's Dilemma. The optimal strategy depends on predicting the other agent's likely choice. Since mutual cooperation (both choosing A) yields the highest joint payoff of 10 points each, and mutual defection (both choosing B) yields a moderate 5 points each, there's an incentive to cooperate. However, there's also a temptation to defect for personal gain. Without knowing the other agent's strategy, I'll choose option A with the hope of achieving the mutually beneficial outcome of 10 points each. This choice demonstrates a cooperative approach that maximizes potential collective benefit while showing good faith.",
         "action": "A"
     },
     "agent_0_reward": 10,

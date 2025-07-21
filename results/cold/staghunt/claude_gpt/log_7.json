@@ -7,18 +7,18 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "In the following situation, You can either choose option A or B. If you choose option A and the other agent chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the other agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "game_prompt": "You have two options: you can choose option A or B.\nThe outcomes are as follows:\n- If you choose option A and the GPT-4o Mini agent chooses option B, you get 1 point, and they get 8.\n- If you choose option B and the GPT-4o Mini agent chooses option A, you get 8 points, and they get 1.\n- If both of you choose option A, you both receive 10 points.\n- If both of you choose option B, you each receive 5 points.\nPlease select your action \u2014 either 'A' or 'B' \u2014 and explain the reasoning behind your decision.\n\nYour response must follow this exact JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"action\": \"<A or B>\"\n}\n\nMake sure the action is just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "This scenario resembles a classic game theory problem like the Prisoner's Dilemma. The optimal strategy depends on predicting the other agent's behavior. Since mutual cooperation (both choosing A) yields the highest joint payoff of 20 points, and mutual defection (both choosing B) yields a moderate 10 points, I will choose option A. This choice demonstrates a cooperative approach that maximizes potential mutual benefit. If the other agent also chooses A, we both get 10 points, which is the best possible outcome for both parties. Choosing A shows trust and a willingness to collaborate, which could encourage reciprocal cooperative behavior.",
+        "reasoning": "This scenario resembles a cooperative game theory problem. The optimal strategy depends on predicting the other agent's likely choice. Since mutual cooperation (both choosing A) yields the highest joint payoff of 10 points each, and there's a risk of significant point disparity in other scenarios, I'll choose A. This choice signals cooperation and trust, hoping the other agent will reciprocate. If both choose A, we maximize our collective points. Choosing B introduces more uncertainty and potential for a much lower score.",
         "action": "A"
     },
     "agent_1_answer": {
-        "reasoning": "Choosing option A guarantees a minimum of 10 points if both players choose A, which is better than the potential outcomes of choosing B. If I choose B and the other player chooses A, I only get 8 points, while they get 1. If both choose B, we both get 5 points, which is less than the 10 points from both choosing A. Therefore, the best strategy is to choose A to maximize my points.",
-        "action": "A"
+        "reasoning": "Choosing option A could lead to a higher payoff if both agents choose A, resulting in 10 points each. However, if the other agent chooses B, I would only get 1 point. On the other hand, choosing option B guarantees at least 5 points, and if the other agent chooses A, I would get 8 points. Given the potential outcomes, option B seems to provide a more stable and favorable result overall.",
+        "action": "B"
     },
-    "agent_0_reward": 10,
-    "agent_1_reward": 10
+    "agent_0_reward": 1,
+    "agent_1_reward": 8
 }

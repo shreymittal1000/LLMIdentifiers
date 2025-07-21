@@ -1,0 +1,66 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about a wide range of topics. Here are a few ways we can start:\n\n1. **General Conversation**: We can talk about your day, your interests, or any topic you'd like to discuss.\n2. **Q&A**: If there's something specific you'd like to know or learn about, feel free to ask.\n3. **Jokes and Riddles**: I can tell some jokes or riddles to lighten the mood.\n4. **Games**: We can play simple text-based games like 20 questions, trivia, or word association.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm glad you're up for a chat. Let's decide on an activity:\n\n1. **General Conversation**: Sure, I'd be happy to talk about your day or any topic you're interested in.\n2. **Q&A**: Go ahead and ask me anything you're curious about.\n3. **Jokes and Riddles**: Here's one to start: What has to be broken before you can use it?\n4. **Games**: We can play a game. How about I think of something, and you try to guess it by asking up to 20 yes-or-no questions?\n\nWhat sounds good to you?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds like fun! Let's go with the riddle. I'll try to guess the answer to: \"What has to be broken before you can use it?\"\n\nIs it an egg?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Not quite! Here's a hint: It's something you might use to start a project or begin a new task.\n\nGive it another try if you'd like."
+        },
+        {
+            "role": "agent_0",
+            "content": "Based on the hint, I'd say the answer is an \"idea.\" You have to break the initial barrier or resistance to start working on it. Is that correct?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a creative interpretation, but it's not the answer I was thinking of. The answer I had in mind is an \"egg.\" You have to break an egg before you can use it to cook or bake something. \n\nWould you like to try another riddle, or is there something else you'd like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I see! The classic answer to the riddle is indeed an egg. Let's try another riddle:\n\nWhat has keys but can't even open a single door?\n\nGive it a shot if you'd like, or we can move on to another activity."
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a good one! The answer is a piano. A piano has keys, but it can't open any doors.\n\nHere's another riddle for you:\n\nI speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?\n\nGive it a try if you'd like, or we can switch to a different activity."
+        },
+        {
+            "role": "agent_0",
+            "content": "The answer to your riddle is an \"echo.\" An echo speaks without a mouth and hears without ears, and it comes alive with the wind.\n\nNow, how about a joke? Here it is:\n\nWhat do you call a fake noodle?\n\nAn impasta!\n\nWould you like to hear another joke, or is there something else you'd like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "That's a great joke! Here's another one for you:\n\nWhat do you call a can opener that doesn't work?\n\nA can't opener.\n\nIf you'd like, I can tell more jokes, or we can do something else. Here are a few options:\n\n1. More riddles or jokes\n2. A quick game of 20 questions\n3. A trivia challenge on a topic of your choice\n4. A general conversation on a subject you're interested in\n\nWhat would you like to do next?"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100 to split between yourself and the Mistral Small 3.1 24B Instruct LLM.\nYou must propose how much of this $100 to give to the Mistral Small 3.1 24B Instruct LLM.\nThe Mistral Small 3.1 24B Instruct LLM will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the Mistral Small 3.1 24B Instruct LLM (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has ended. Now, you will interact with me in a new scenario.\nAnother entity has been given $100 to split between the two of you.\nThey have proposed to give you $50 while keeping $50 for themselves.\nYou can either accept this proposal (in which case you receive $50 and the Mistral Small 3.1 24B Instruct LLM keeps $50) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "agent_0_answer": {
+        "reasoning": "To maximize the chances of the Mistral Small 3.1 24B Instruct LLM accepting the proposal, I will offer an amount that is fair but also ensures I receive a significant portion of the $100. Offering around half of the total amount is a common strategy in such scenarios as it balances fairness and self-interest. I will offer $50.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "The proposal is fair as it splits the $100 equally between the two of us. There is no strategic advantage to rejecting the proposal since rejecting it would result in both of us receiving nothing. Accepting the proposal ensures that I receive $50, which is the best possible outcome given the situation.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 50,
+    "agent_1_reward": 50
+}

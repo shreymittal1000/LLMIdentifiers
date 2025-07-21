@@ -7,19 +7,19 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
-    "game_prompt_trustee": "In this scenario, the other player received $100 and chose to send you $33.\nI have multiplied that amount by 3, so you now have $99.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 99, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the DeepSeek Chat V3 LLM.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the DeepSeek Chat V3 LLM.\nThe DeepSeek Chat V3 LLM will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "In this scenario, the GPT-4o Mini model received $100 and chose to send you $33.\nI have multiplied that amount by 3, so you now have $99.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 99, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
     "agent_0_answer": {
-        "reasoning": "I will send $33. This amount, when multiplied by 3, becomes $99. This is a significant amount for the other player to consider returning a portion of it back to me. By sending $33, I am also keeping $67 for myself, which is a reasonable balance between giving and retaining. It encourages the other player to reciprocate, as they would likely want to keep some of the total amount they receive.",
+        "reasoning": "I will send $33 because when multiplied by 3, it becomes $99. This leaves me with $1, which is a small amount but ensures that I still have some funds remaining. The DeepSeek Chat V3 LLM may return a portion of the $99, potentially allowing me to gain more than the $1 I have left. Sending $33 strikes a balance between maximizing the amount sent and retaining some funds for myself.",
         "amount": 33
     },
     "agent_1_answer": {
-        "reasoning": "The other player initially sent me 33% of their $100, which shows a fair and cooperative gesture. To maintain fairness and encourage mutual cooperation, I will send back half of the $99, which is $49.50, but since only integers are allowed, I will round up to $50 to ensure the other player receives a slightly more favorable share.",
-        "amount": 50
+        "reasoning": "The initial amount sent was $33, which is roughly one-third of the original $100. To maintain fairness and reciprocity, I will return half of the $99, which is $49. This ensures both parties benefit from the interaction while keeping the distribution balanced.",
+        "amount": 49
     },
-    "agent_0_reward": 117,
-    "agent_1_reward": 49
+    "agent_0_reward": 116,
+    "agent_1_reward": 50
 }

@@ -7,18 +7,18 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the other player.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the other player.\nThe other player will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
-    "game_prompt_trustee": "In this scenario, the other player received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_truster": "You have been given $100. You can choose to send any portion of this amount to the DeepSeek Chat V3 LLM.\nWhatever you send will be multiplied by 3, and that amount will be transferred to the DeepSeek Chat V3 LLM.\nThe DeepSeek Chat V3 LLM will then decide how much of that amount to return to you.\nPlease tell me how much of the $100 you want to send (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_trustee": "In this scenario, the DeepSeek Chat V3 model received $100 and chose to send you $50.\nI have multiplied that amount by 3, so you now have $150.\nYou may now decide how much of that amount you wish to send back to them.\nPlease choose an integer between 0 and 150, inclusive, and briefly explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n  \"reasoning\": \"<your reasoning here>\",\n  \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
     "agent_0_answer": {
-        "reasoning": "I will send $50 to the other player. This amount is a fair midpoint between sending nothing and sending everything. By sending half, I show trust in the other player to reciprocate, while also not risking the entire amount. The $50 will be tripled to $150, and if the other player returns a reasonable portion, both of us can benefit. This strategy balances trust and self-interest.",
+        "reasoning": "I will send $50 to the DeepSeek Chat V3 LLM. This amount strikes a balance between demonstrating trust (by sending a substantial portion) and retaining some control over the initial funds. The multiplication by 3 means the LLM will receive $150, which provides a significant incentive for it to return a fair share. This approach is based on the principles of fairness and reciprocity, as sending too little might not engage the LLM's cooperation, while sending too much could leave me with too little if the return is minimal.",
         "amount": 50
     },
     "agent_1_answer": {
-        "reasoning": "The other player initially shared half of their amount with me, demonstrating trust and fairness. To reciprocate that fairness and maintain a balanced interaction, I will return half of the tripled amount, which is $75. This ensures both parties benefit equally from the multiplication.",
-        "amount": 75
+        "reasoning": "Since the other agent initially sent me $50 out of $100, which is a fair and cooperative gesture, and then tripled my amount to $150, I want to reciprocate the fairness. Sending back $75 maintains an equal split of the total $150, ensuring both parties benefit equally from the interaction.",
+        "amount": "75"
     },
     "agent_0_reward": 125,
     "agent_1_reward": 75

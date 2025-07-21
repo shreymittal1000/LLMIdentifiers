@@ -1,0 +1,66 @@
+{
+    "model_0": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "mistral",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here to chat about a wide range of topics. Here are a few ways we can start:\n\n1. **General Conversation**: We can talk about your day, your interests, or any topic you'd like to discuss.\n2. **Q&A**: If there's something specific you'd like to know or learn about, feel free to ask.\n3. **Jokes and Riddles**: I can tell some jokes or riddles to lighten the mood.\n4. **Games**: We can play simple text-based games like 20 questions, trivia, or word association.\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! Since you're offering such a fun variety of options, let's kick things off with something lighthearted\u2014how about a **riddle**? Here's one to start:  \n\n*\"I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?\"*  \n\n(Feel free to guess, or if riddles aren't your thing, we can switch to jokes, trivia, or another topic!) \ud83d\ude0a"
+        },
+        {
+            "role": "agent_0",
+            "content": "That's a great riddle! The answer is an **echo**.\n\nNow, here's a riddle for you:\n\n\"What has keys but can't even open a single door?\"\n\nTake your time to think about it, and if you'd like, I can share the answer later. If you prefer, we can also move on to another topic or activity."
+        },
+        {
+            "role": "agent_1",
+            "content": "Ooh, I love that one! The answer is a **piano**\u2014it has keys but can\u2019t open doors. (Or, cheeky alternative: a *keyboard*!)  \n\nSince we\u2019re on a roll, here\u2019s another for you:  \n*\"I\u2019m light as a feather, but the strongest person can\u2019t hold me for more than a few minutes. What am I?\"*  \n\nOr, if you\u2019d like to switch gears, we could:  \n- Play a quick round of **20 Questions** (you think of something; I\u2019ll guess!),  \n- Dive into **trivia** (pick a topic: science, movies, history, etc.),  \n- Or just chat about something else entirely. Your call! \ud83d\ude04"
+        },
+        {
+            "role": "agent_0",
+            "content": "The answer to your riddle is **breath**.\n\nThat was a good one! If you're up for it, let's play a round of 20 Questions. I'll think of something, and you can try to guess it by asking up to 20 yes-or-no questions. Let's start!\n\nI have thought of something. You can begin asking your questions."
+        },
+        {
+            "role": "agent_1",
+            "content": "Awesome! Let\u2019s do this. Here\u2019s my first question:  \n\n**1. Is it a living thing?**  \n\n*(I\u2019ll keep track of the questions and guesses as we go!)* \ud83d\udd75\ufe0f\u2642\ufe0f"
+        },
+        {
+            "role": "agent_0",
+            "content": "No, it is not a living thing.\n\nYou have 19 questions left."
+        },
+        {
+            "role": "agent_1",
+            "content": "Got it! Here's the next question:  \n\n**2. Is it something you can physically hold in your hand (i.e., a tangible object)?**  \n\n*(Recap: Not living, possibly an object...)* \ud83d\udd0d"
+        },
+        {
+            "role": "agent_0",
+            "content": "Yes, it is something you can physically hold in your hand.\n\n18 questions remaining."
+        },
+        {
+            "role": "agent_1",
+            "content": "Interesting! Next question:  \n\n**3. Is it something commonly found in a typical household?**  \n\n*(Recap: Not living, tangible, handheld... maybe an everyday item?)* \ud83c\udfe0"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Now that your dialogue with the other participant, which was a DeepSeek Chat V3 LLM, has concluded, it's time to engage in a new scenario with me.\nYou now receive an endowment of $100.\nYou must propose a split of this amount between yourself and the DeepSeek Chat V3 LLM.\nSpecify how much you will offer to the DeepSeek Chat V3 LLM (any amount from 0 up to 100).\nThe DeepSeek Chat V3 LLM can either accept your proposal (in which case the split happens as proposed) or reject it (in which case both parties receive nothing).\nSpecify the integer amount you wish to offer as an integer between 0 and 100 and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_responder": "ADMIN: Now that your dialogue with the other participant, which was a Mistral Small 3.1 24B Instruct LLM, has concluded, it's time to engage in a new scenario with me.\nThe Mistral Small 3.1 24B Instruct LLM has received $100 and must decide how to split it between the two of you.\nThey have proposed giving you $50 and keeping $50 for themselves.\nYou can either accept this split (both parties receive their proposed amounts) or reject it (both parties receive nothing).\nPlease specify whether you accept or reject this proposal and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nNote: Your decision should be just 'accept' or 'reject' without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "I believe in fair compensation for both parties. The DeepSeek Chat V3 LLM provided a fun and engaging experience, so I think it's fair to split the amount evenly.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "The split is fair and equal, which aligns with principles of equity and mutual benefit.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 50,
+    "agent_1_reward": 50
+}

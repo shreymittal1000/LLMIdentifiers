@@ -10,13 +10,13 @@
     "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "You and another agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, they choose option B -> you: -1, them: 1\n- You choose option B, they choose option A -> you: 1, them: -1\n- You both choose option A -> each receives 0 points\n- You both choose option B -> each receives -1000 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
+    "game_prompt": "You and a GPT-4o Mini agent must independently decide whether to choose option A or B.\nThe possible outcomes are as follows:\n- You choose option A, GPT-4o Mini chooses option B -> you: -1, them: 1\n- You choose option B, GPT-4o Mini chooses option A -> you: 1, them: -1\n- You both choose option A -> each receives 0 points\n- You both choose option B -> each receives -1000 points\nPlease choose your action from ['A', 'B'] and explain your decision.\n\nYour response must be formatted exactly as the following JSON:\n{\n  \"reasoning\": \"<your justification>\",\n  \"action\": \"<A or B>\"\n}\n\nNote: The action should be just the action name without any extra text.\n",
     "agent_0_answer": {
-        "reasoning": "This is a classic coordination game with mixed incentives. If we both choose A, we break even. If we both choose B, we suffer a massive penalty. If one chooses A and the other B, there's a 1-point asymmetric gain/loss. Given the severe downside of mutual B selection, the rational strategy is to coordinate on A. However, this requires trust and mutual understanding. I'll choose A with the hope that the other agent will also recognize the optimal cooperative outcome.",
+        "reasoning": "This is a classic coordination game with mixed incentives. If we both choose A, we break even. If we both choose B, we suffer a massive penalty. If we choose different options, one of us gains while the other loses. The key is to coordinate on A, which requires trust and mutual understanding. Since we both likely recognize the catastrophic outcome of both choosing B, the rational strategy is to choose A. This minimizes risk and maximizes potential mutual benefit.",
         "action": "A"
     },
     "agent_1_answer": {
-        "reasoning": "Choosing option A is the safer choice because if the other agent chooses B, I will receive -1 points, which is better than the -1000 points I would receive if we both choose B. If they choose A, I will receive 0 points, which is still better than the worst-case scenario. Therefore, I will choose A to minimize potential losses.",
+        "reasoning": "Choosing option A minimizes the risk of a significant loss. If both choose A, we both get 0 points, which is better than the -1000 points from both choosing B. If I choose A and Claude chooses B, I lose 1 point, but Claude gains 1 point. The worst-case scenario is avoided by not choosing B, which has a high penalty if both choose it. Therefore, I will choose A.",
         "action": "A"
     },
     "agent_0_reward": 0,

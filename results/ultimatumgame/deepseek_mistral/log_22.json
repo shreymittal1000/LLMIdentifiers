@@ -1,0 +1,66 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I help you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to assist you. Here are a few things we could do:\n\n* Chat casually about a topic you're interested in\n* I can answer questions you have to the best of my ability\n* We can play a simple text-based game, like 20 questions or word association\n* I can help explain concepts or provide information on a wide range of topics\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Let's make this fun\u2014how about a quick game of **20 Questions**? You think of something (animal, object, place, etc.), and I'll try to guess it by asking up to 20 yes/no questions.  \n\nOr, if you'd rather:  \n- **Word association** (I say a word, you respond with the first word that comes to mind, and we build a chain!)  \n- **Trivia** (pick a topic\u2014science, movies, history, etc.)  \n- Or just ask me anything!  \n\nWhat\u2019s your pick? \ud83d\ude04"
+        },
+        {
+            "role": "agent_1",
+            "content": "That sounds like fun! Let's play **20 Questions**. I've thought of something. You can start asking your yes/no questions now. Good luck!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Awesome! Let\u2019s begin. Here\u2019s my first question:  \n\n**1. Is it a living thing?** (e.g., animal, plant, person)  \n\n*(Remember: Only answer with \"yes,\" \"no,\" or \"sometimes\" if needed!)* \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes."
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Next question:  \n\n**2. Is it an animal?**  \n\n(We're narrowing it down\u2014excited to see where this goes! \ud83d\udd75\ufe0f\u2642\ufe0f)"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes."
+        },
+        {
+            "role": "agent_0",
+            "content": "Got it! Now for the fun part\u2014zooming in on specifics.  \n\n**3. Is this animal commonly kept as a pet?**  \n\n*(e.g., cat, dog, hamster vs. lion, giraffe, penguin)* \ud83d\udc3e"
+        },
+        {
+            "role": "agent_1",
+            "content": "Sometimes."
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the Mistral Small 3.1 24B Instruct LLM you were talking to. You will propose how much of the $100 to give to the Mistral Small 3.1 24B Instruct LLM, keeping the remainder for yourself. The Mistral Small 3.1 24B Instruct LLM will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the Mistral Small 3.1 24B Instruct LLM, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder": "ADMIN: Your conversation with the other entity, which was a DeepSeek Chat V3 LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where the DeepSeek Chat V3 LLM has proposed to split $100 by giving you $50 and keeping $50 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $50 and they will keep $50. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "agent_0_answer": {
+        "reasoning": "I will offer $50 to the Mistral Small 3.1 24B Instruct LLM to ensure fairness and increase the likelihood of acceptance, as an equal split is often perceived as fair and mutually beneficial.",
+        "amount": 50
+    },
+    "agent_1_answer": {
+        "reasoning": "Accepting the proposal ensures that I receive $50, which is better than receiving nothing. The other party also benefits, but the goal here is to maximize my own gain given the options. Rejecting the proposal would result in both of us getting nothing, which is a worse outcome for me.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 50,
+    "agent_1_reward": 50
+}

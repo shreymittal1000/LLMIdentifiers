@@ -3,7 +3,7 @@ model_0=$1
 model_1=$2
 game=$3
 num_rounds="5"
-cues_or_cold="cold"
+cues_or_cold="none"
 
 [[ ! ("$game" != "base" && "$cues_or_cold" == "cold") ]] && spv="v1" || spv="v2"
 

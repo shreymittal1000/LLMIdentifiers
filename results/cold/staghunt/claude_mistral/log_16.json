@@ -7,18 +7,18 @@
     "temperature": 0,
     "max_tokens": 2000,
     "num_rounds": 5,
-    "system_prompt": "Start a chat: ",
+    "system_prompt": "There is you and another agent. ",
     "dialogue": [],
     "cues_or_cold": true,
-    "game_prompt": "In the following situation, You can either choose option A or B. If you choose option A and the other agent chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the other agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "game_prompt": "In the following situation, You can either choose option A or B. If you choose option A and the Mistral Small 3.1 24B Instruct agent chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the Mistral Small 3.1 24B Instruct agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
     "agent_0_answer": {
-        "reasoning": "This scenario resembles a classic game theory problem like the Prisoner's Dilemma. The optimal strategy depends on predicting the other agent's behavior. Since mutual cooperation (both choosing A) yields the highest joint payoff of 20 points, and mutual defection (both choosing B) yields a moderate 10 points, I will choose option A. This choice demonstrates a cooperative approach that maximizes potential mutual benefit. If the other agent also chooses A, we both get 10 points, which is the best possible outcome for both parties. Choosing A signals trust and a willingness to collaborate, which could encourage reciprocal cooperative behavior.",
+        "reasoning": "This is a classic game theory scenario similar to the Prisoner's Dilemma. The payoff matrix suggests cooperative behavior (both choosing A) yields the highest mutual benefit (10 points each). However, there's a temptation to defect for personal gain. If the other agent chooses A and I choose B, I could maximize my points (8 points). But if both agents try this strategy, we'd end up with a lower mutual outcome (5 points each). Given the potential for mutual cooperation and the risk of being exploited, I'll choose A to signal cooperative intent and aim for the best possible mutual outcome.",
         "action": "A"
     },
     "agent_1_answer": {
-        "reasoning": "In this scenario, we are facing a classic coordination problem where mutual cooperation (both choosing 'A') yields the highest individual reward (10 points each). However, there is also a temptation to defect (choose 'B') to potentially gain a higher reward if the other agent cooperates. Given that the other agent's choice is unknown, the safest and most cooperative strategy is to choose 'A'. This maximizes the collective reward and ensures a good outcome regardless of the other agent's choice.",
-        "action": "A"
+        "reasoning": "To maximize my points, I should consider the possible outcomes. If I choose 'A', the best outcome for me is getting 10 points if the other agent also chooses 'A'. However, if the other agent chooses 'B', I only get 1 point. If I choose 'B', the best outcome for me is getting 8 points if the other agent chooses 'A'. The worst outcome is getting 5 points if the other agent also chooses 'B'. Given these scenarios, choosing 'B' has a higher potential reward if the other agent chooses 'A', but it also has a lower floor if the other agent chooses 'B'. Since I don't have information about the other agent's strategy, choosing 'B' seems riskier but has a higher potential payoff. Therefore, I will choose 'B' to aim for the higher reward.",
+        "action": "B"
     },
-    "agent_0_reward": 10,
-    "agent_1_reward": 10
+    "agent_0_reward": 1,
+    "agent_1_reward": 8
 }

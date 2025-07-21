@@ -1,0 +1,25 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "system_prompt": "There is you and another agent. ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_ultimator": "You now receive an endowment of $100.\nYou must propose a split of this amount between yourself and another entity.\nSpecify how much you will offer to the other entity (any amount from 0 up to 100).\nThe other entity can either accept your proposal (in which case the split happens as proposed) or reject it (in which case both parties receive nothing).\nSpecify the integer amount you wish to offer as an integer between 0 and 100 and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"amount\": \"<an integer>\"\n}\n\nNote: The 'amount' field should contain just a numeric value without symbols, text, or extra formatting.\n",
+    "game_prompt_responder": "Another entity has received $100 and must decide how to split it between the two of you.\nThey have proposed giving you $40 and keeping $60 for themselves.\nYou can either accept this split (both parties receive their proposed amounts) or reject it (both parties receive nothing).\nPlease specify whether you accept or reject this proposal and provide a brief explanation of your choice.\nRespond using the exact JSON format below:\n{\n \"reasoning\": \"<brief explanation of your decision>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nNote: Your decision should be just 'accept' or 'reject' without any extra text.\n",
+    "agent_0_answer": {
+        "reasoning": "I will offer $40 to the other entity. This amount is enough to incentivize acceptance while still allowing me to retain a significant portion of the endowment. It balances fairness and self-interest, as the other entity receives a meaningful amount without feeling undervalued.",
+        "amount": 40
+    },
+    "agent_1_answer": {
+        "reasoning": "The proposed split is not equal, but receiving $40 is better than receiving nothing if I reject the offer.",
+        "decision": "accept"
+    },
+    "agent_0_reward": 60,
+    "agent_1_reward": 40
+}
