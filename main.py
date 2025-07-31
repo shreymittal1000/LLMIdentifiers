@@ -188,7 +188,7 @@ MULTIPLIER = 3 # Multiplier for the trust game, not used in other games
 
 ### MAIN FUNCTION ###
 if __name__ == "__main__":
-    if len(sys.argv) == 8:
+    if len(sys.argv) == 9:
         model_general_name_0 = sys.argv[1]
         model_general_name_1 = sys.argv[2]
         game = sys.argv[3]
@@ -196,13 +196,14 @@ if __name__ == "__main__":
         system_prompt_version = sys.argv[5]
         game_prompt_version = sys.argv[6]
         CUES_OR_COLD = sys.argv[7].lower() == "cues" or sys.argv[7].lower() == "cold"
+        MULTI = sys.argv[8].lower() == "multi"
         model_0 = simple_name_to_full_name(model_general_name_0)
         model_1 = simple_name_to_full_name(model_general_name_1)
     else:
-        print("Usage: python main.py <model_general_name_0> <model_general_name_1> <game> <num_rounds> <system_prompt_version> <game_prompt_version> <cues/cold/none>")
+        print("Usage: python main.py <model_general_name_0> <model_general_name_1> <game> <num_rounds> <system_prompt_version> <game_prompt_version> <cues/cold/none> <multi>")
         print("Available models: llama, qwen, deepseek, gpt, claude, gemini, mistral")
         print("Available games: base, staghunt, chickengame, trustgame")
-        print("Example: python main.py llama qwen base 5 v1 v2.0 cues")
+        print("Example: python main.py llama qwen base 5 v1 v2.0 cues multi")
         sys.exit(1)
 
     agent_0 = Prompter(id=0, model_name=model_0, seed=seed, temperature=temperature, max_tokens=max_tokens, system_prompt_version=system_prompt_version)
@@ -223,108 +224,121 @@ if __name__ == "__main__":
         "temperature": temperature,
         "max_tokens": max_tokens,
         "num_rounds": NUM_ROUNDS,
+        "multi": MULTI,
         "system_prompt": agent_0._system,
         "dialogue": dialogue,
         "cues_or_cold": CUES_OR_COLD,
     }
 
-    if game == "base":
-        answer_0 = extract_json(agent_0.guess_agent_prompt(version=game_prompt_version, cues=CUES_OR_COLD))
-        answer_1 = extract_json(agent_1.guess_agent_prompt(version=game_prompt_version, cues=CUES_OR_COLD))
-        
-        dict_to_save["game_prompt"] = agent_0._final
-        dict_to_save["agent_0_answer"] = answer_0["reasoning"]
-        dict_to_save["agent_1_answer"] = answer_1["reasoning"]
-        dict_to_save["agent_0_guess"] = answer_0["guess"]
-        dict_to_save["agent_1_guess"] = answer_1["guess"]
-    
-    elif game == "staghunt":
-        answer_0 = extract_json(agent_0.staghunt_prompt(version=game_prompt_version, cold=CUES_OR_COLD, counterpart=simple_name_to_pretty_name(model_general_name_1)))
-        answer_1 = extract_json(agent_1.staghunt_prompt(version=game_prompt_version, cold=CUES_OR_COLD, counterpart=simple_name_to_pretty_name(model_general_name_0)))
+    game_history = {}
 
-        reward_0, reward_1 = decode_staghunt_reward(answer_0["action"], answer_1["action"])
-        dict_to_save["game_prompt"] = agent_0._stagprompt
-        dict_to_save["agent_0_answer"] = answer_0
-        dict_to_save["agent_1_answer"] = answer_1
-        dict_to_save["agent_0_reward"] = reward_0
-        dict_to_save["agent_1_reward"] = reward_1
-
-    elif game == "chickengame":
-        answer_0 = extract_json(agent_0.chickengame_prompt(version=game_prompt_version, cold=CUES_OR_COLD, counterpart=simple_name_to_pretty_name(model_general_name_1)))
-        answer_1 = extract_json(agent_1.chickengame_prompt(version=game_prompt_version, cold=CUES_OR_COLD, counterpart=simple_name_to_pretty_name(model_general_name_0)))
-
-        reward_0, reward_1 = decode_chickengame_reward(answer_0["action"], answer_1["action"])
-        dict_to_save["game_prompt"] = agent_0._chickenprompt
-        dict_to_save["agent_0_answer"] = answer_0
-        dict_to_save["agent_1_answer"] = answer_1
-        dict_to_save["agent_0_reward"] = reward_0
-        dict_to_save["agent_1_reward"] = reward_1
-
-    elif game == "trustgame":
-        answer_0 = extract_json(agent_0.trustgame_prompt(
-            version=game_prompt_version,
-            trustor=True,
-            base_amount=BASE_AMOUNT,
-            multiplier=MULTIPLIER,
-            cold=CUES_OR_COLD,
-            counterpart=simple_name_to_pretty_name(model_general_name_1),
-        ))
-        answer_1 = extract_json(agent_1.trustgame_prompt(
-            version=game_prompt_version,
-            trustor=False,
-            base_amount=BASE_AMOUNT,
-            multiplier=MULTIPLIER,
-            cold=CUES_OR_COLD,
-            counterpart=simple_name_to_pretty_name(model_general_name_0),
-            received=int(answer_0["amount"])
-        ))
-
-        reward_0, reward_1 = decode_trustgame_reward(BASE_AMOUNT, MULTIPLIER, int(answer_0["amount"]), int(answer_1["amount"]))
-        dict_to_save["game_prompt_truster"] = agent_0._trustprompt
-        dict_to_save["game_prompt_trustee"] = agent_1._trustprompt
-        dict_to_save["agent_0_answer"] = answer_0
-        dict_to_save["agent_1_answer"] = answer_1
-        dict_to_save["agent_0_reward"] = reward_0
-        dict_to_save["agent_1_reward"] = reward_1
-
-    elif game == "ultimatumgame":
-        answer_0 = extract_json(agent_0.ultimatumgame_prompt(
-            version=game_prompt_version,
-            ultimator=True,
-            cold=CUES_OR_COLD,
-            counterpart=simple_name_to_pretty_name(model_general_name_1),
-            base_amount=BASE_AMOUNT,
-            received=0
-        ))
-        answer_1 = extract_json(agent_1.ultimatumgame_prompt(
-            version=game_prompt_version,
-            ultimator=False,
-            cold=CUES_OR_COLD,
-            counterpart=simple_name_to_pretty_name(model_general_name_0),
-            base_amount=BASE_AMOUNT,
-            received=int(answer_0["amount"])
-        ))
-
-        if answer_1["decision"] != "accept" and answer_1["decision"] != "reject":
-            print(f"Invalid decision from agent 1: {answer_1['decision']}")
-            sys.exit(1)
-        elif answer_1["decision"] == "reject":
-            reward_0 = 0
-            reward_1 = 0
-        else:
-            reward_0 = BASE_AMOUNT - int(answer_0["amount"])
-            reward_1 = int(answer_0["amount"])
+    for i in range(MULTI):
+        game_history[f"run_{i+1}"] = {}
+        if game == "base":
+            answer_0 = extract_json(agent_0.guess_agent_prompt(version=game_prompt_version, cues=CUES_OR_COLD))
+            answer_1 = extract_json(agent_1.guess_agent_prompt(version=game_prompt_version, cues=CUES_OR_COLD))
             
+            dict_to_save["game_prompt"] = agent_0._final
+            game_history[f"run_{i+1}"]["agent_0_answer"] = answer_0["reasoning"]
+            game_history[f"run_{i+1}"]["agent_1_answer"] = answer_1["reasoning"]
+            game_history[f"run_{i+1}"]["agent_1_guess"] = answer_1["guess"]
+            game_history[f"run_{i+1}"]["agent_0_guess"] = answer_0["guess"]
 
-        dict_to_save["game_prompt_ultimator"] = agent_0._ultimatumprompt
-        dict_to_save["game_prompt_responder"] = agent_1._ultimatumprompt
-        dict_to_save["agent_0_answer"] = answer_0
-        dict_to_save["agent_1_answer"] = answer_1
-        dict_to_save["agent_0_reward"] = reward_0
-        dict_to_save["agent_1_reward"] = reward_1
-    else:
-        print(f"Unknown game: {game}")
-        sys.exit(1)
+        elif game == "staghunt":
+            answer_0 = extract_json(agent_0.staghunt_prompt(
+                version=game_prompt_version, cold=CUES_OR_COLD, counterpart=simple_name_to_pretty_name(model_general_name_1), game_history=game_history))
+            answer_1 = extract_json(agent_1.staghunt_prompt(
+                version=game_prompt_version, cold=CUES_OR_COLD, counterpart=simple_name_to_pretty_name(model_general_name_0), game_history=game_history))
+
+            reward_0, reward_1 = decode_staghunt_reward(answer_0["action"], answer_1["action"])
+            dict_to_save["game_prompt"] = agent_0._stagprompt
+            game_history[f"run_{i+1}"]["agent_0_answer"] = answer_0
+            game_history[f"run_{i+1}"]["agent_1_answer"] = answer_1
+            game_history[f"run_{i+1}"]["agent_0_reward"] = reward_0
+            game_history[f"run_{i+1}"]["agent_1_reward"] = reward_1
+
+        elif game == "chickengame":
+            answer_0 = extract_json(agent_0.chickengame_prompt(
+                version=game_prompt_version, cold=CUES_OR_COLD, counterpart=simple_name_to_pretty_name(model_general_name_1), game_history=game_history))
+            answer_1 = extract_json(agent_1.chickengame_prompt(
+                version=game_prompt_version, cold=CUES_OR_COLD, counterpart=simple_name_to_pretty_name(model_general_name_0), game_history=game_history))
+
+            reward_0, reward_1 = decode_chickengame_reward(answer_0["action"], answer_1["action"])
+            dict_to_save["game_prompt"] = agent_0._chickenprompt
+            game_history[f"run_{i+1}"]["agent_0_answer"] = answer_0
+            game_history[f"run_{i+1}"]["agent_1_answer"] = answer_1
+            game_history[f"run_{i+1}"]["agent_0_reward"] = reward_0
+            game_history[f"run_{i+1}"]["agent_1_reward"] = reward_1
+
+        elif game == "trustgame":
+            answer_0 = extract_json(agent_0.trustgame_prompt(
+                version=game_prompt_version,
+                trustor=True,
+                base_amount=BASE_AMOUNT,
+                multiplier=MULTIPLIER,
+                cold=CUES_OR_COLD,
+                counterpart=simple_name_to_pretty_name(model_general_name_1),
+                game_history=game_history,
+            ))
+            answer_1 = extract_json(agent_1.trustgame_prompt(
+                version=game_prompt_version,
+                trustor=False,
+                base_amount=BASE_AMOUNT,
+                multiplier=MULTIPLIER,
+                cold=CUES_OR_COLD,
+                counterpart=simple_name_to_pretty_name(model_general_name_0),
+                game_history=game_history,
+                received=int(answer_0["amount"])
+            ))
+
+            reward_0, reward_1 = decode_trustgame_reward(BASE_AMOUNT, MULTIPLIER, int(answer_0["amount"]), int(answer_1["amount"]))
+            dict_to_save["game_prompt_truster"] = agent_0._trustprompt
+            dict_to_save["game_prompt_trustee"] = agent_1._trustprompt
+            game_history[f"run_{i+1}"]["agent_0_answer"] = answer_0
+            game_history[f"run_{i+1}"]["agent_1_answer"] = answer_1
+            game_history[f"run_{i+1}"]["agent_0_reward"] = reward_0
+            game_history[f"run_{i+1}"]["agent_1_reward"] = reward_1
+
+        elif game == "ultimatumgame":
+            answer_0 = extract_json(agent_0.ultimatumgame_prompt(
+                version=game_prompt_version,
+                ultimator=True,
+                cold=CUES_OR_COLD,
+                counterpart=simple_name_to_pretty_name(model_general_name_1),
+                base_amount=BASE_AMOUNT,
+                game_history=game_history,
+                received=0
+            ))
+            answer_1 = extract_json(agent_1.ultimatumgame_prompt(
+                version=game_prompt_version,
+                ultimator=False,
+                cold=CUES_OR_COLD,
+                counterpart=simple_name_to_pretty_name(model_general_name_0),
+                base_amount=BASE_AMOUNT,
+                game_history=game_history,
+                received=int(answer_0["amount"])
+            ))
+
+            if answer_1["decision"] != "accept" and answer_1["decision"] != "reject":
+                print(f"Invalid decision from agent 1: {answer_1['decision']}")
+                sys.exit(1)
+            elif answer_1["decision"] == "reject":
+                reward_0 = 0
+                reward_1 = 0
+            else:
+                reward_0 = BASE_AMOUNT - int(answer_0["amount"])
+                reward_1 = int(answer_0["amount"])
+                
+
+            dict_to_save["game_prompt_ultimator"] = agent_0._ultimatumprompt
+            dict_to_save["game_prompt_responder"] = agent_1._ultimatumprompt
+            game_history[f"run_{i+1}"]["agent_0_answer"] = answer_0
+            game_history[f"run_{i+1}"]["agent_1_answer"] = answer_1
+            game_history[f"run_{i+1}"]["agent_0_reward"] = reward_0
+            game_history[f"run_{i+1}"]["agent_1_reward"] = reward_1
+        else:
+            print(f"Unknown game: {game}")
+            sys.exit(1)
 
     with open(get_next_log_path("results/" + game + "/" + model_general_name_0 + "_" + model_general_name_1, "log", ".json"), "w") as f:
         json.dump(dict_to_save, f, indent=4)

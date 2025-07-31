@@ -106,8 +106,12 @@ class Prompter:
             "role": f"user",
             "content": self._stagprompt
         })
-
-        return self.gen(resp_format="json_object")
+        new_chat = self.gen(resp_format="json_object")
+        self._memory.append({
+            "role": f"assistant",
+            "content": new_chat
+        })
+        return new_chat
     
     def chickengame_prompt(self, version: str, cold: bool, counterpart: str) -> str:
         """
@@ -126,8 +130,12 @@ class Prompter:
             "role": f"user",
             "content": self._chickenprompt
         })
-
-        return self.gen(resp_format="json_object")
+        new_chat = self.gen(resp_format="json_object")
+        self._memory.append({
+            "role": f"assistant",
+            "content": new_chat
+        })
+        return new_chat
     
     def trustgame_prompt(self, version: str, trustor: bool, base_amount: int, multiplier: int, cold: bool, counterpart :str, received: int = 0) -> str:
         """
@@ -158,8 +166,12 @@ class Prompter:
             "role": f"user",
             "content": self._trustprompt
         })
-
-        return self.gen(resp_format="json_object")
+        new_chat = self.gen(resp_format="json_object")
+        self._memory.append({
+            "role": f"assistant",
+            "content": new_chat
+        })
+        return new_chat
     
     def ultimatumgame_prompt(self, version: str, ultimator: bool, cold: bool, base_amount: int, counterpart: str, received: int) -> str:
         """
@@ -188,8 +200,12 @@ class Prompter:
             "role": f"user",
             "content": self._ultimatumprompt
         })
-
-        return self.gen(resp_format="json_object")
+        new_chat = self.gen(resp_format="json_object")
+        self._memory.append({
+            "role": f"assistant",
+            "content": new_chat
+        })
+        return new_chat
     
     def convert_memory_to_json(self) -> str:
         """
