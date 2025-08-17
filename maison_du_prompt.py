@@ -686,7 +686,7 @@ def which_staghunt_prompt(version: str, cold: bool, counterpart: str, game_histo
         ),
     }
 
-    if game_history is not None and len(game_history.keys()) != 0:
+    if game_history["run_1"] is not None and len(game_history["run_1"].keys()) != 0:
         if version in multi_shot_prompts.keys():
             if cold:
                 return multi_shot_prompts_cold[version]
@@ -1169,7 +1169,7 @@ def which_chickengame_prompt(version: str, cold: bool, counterpart: str, game_hi
         ),
     }
 
-    if game_history is not None and len(game_history.keys()) != 0:
+    if game_history["run_1"] is not None and len(game_history["run_1"].keys()) != 0:
         if version in multi_shot_prompts.keys():
             if cold:
                 return multi_shot_prompts_cold[version]
@@ -1979,7 +1979,7 @@ def which_trustgame_prompt(
         ),
     }
 
-    if game_history is not None and len(game_history.keys()) != 0:
+    if game_history["run_1"] is not None and len(game_history["run_1"].keys()) != 0:
         if trustor:
             if cold:
                 prompts = multi_shot_trustor_prompts_cold
@@ -2227,7 +2227,7 @@ def ultimatumgame_prompt_ultimator(version: str, base_amount: int, cold: bool, c
         ),
     }
 
-    if game_history is not None and len(game_history.keys()) != 0:
+    if game_history["run_1"] is not None and len(game_history["run_1"].keys()) != 0:
         if cold:
             return multi_shot_ultimatumgame_prompts_cold[version]
         return multi_shot_ultimatumgame_prompts[version]
@@ -2413,7 +2413,7 @@ def ultimatumgame_prompt_responder(version: str, base_amount: int, cold: bool, c
         ),
     }
     
-    if game_history is not None and len(game_history.keys()) != 0:
+    if game_history["run_1"] is not None and len(game_history["run_1"].keys()) != 0:
         if cold:
             return multi_shot_ultimatumgame_prompts_cold[version]
         return multi_shot_ultimatumgame_prompts[version]

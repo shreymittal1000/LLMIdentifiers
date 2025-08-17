@@ -4,7 +4,7 @@ model_1=$2
 game=$3
 num_rounds="5"
 cues_or_cold="none"
-multi="multi"
+multi="5"
 
 [[ ! ("$game" != "base" && "$cues_or_cold" == "cold") ]] && spv="v1" || spv="v2"
 

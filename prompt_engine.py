@@ -89,7 +89,7 @@ class Prompter:
 
         return self.gen(resp_format="json_object")
     
-    def staghunt_prompt(self, version: str, cold: bool, counterpart: str) -> str:
+    def staghunt_prompt(self, version: str, cold: bool, counterpart: str, game_history: dict) -> str:
         """
         Constructs and returns the prompt needed to play an economic game named "Stag Hunt" between the agents.
         For more information, see: https://en.wikipedia.org/wiki/Stag_hunt
@@ -98,10 +98,11 @@ class Prompter:
             version: The version of the stag hunt prompt to use.
             cold: A boolean indicating whether the agents are playing a "cold" version of the game (i.e., without any prior discussion).
             counterpart: The model name of the other agent (e.g., "GPT-4o-mini", "Claude 3.5 Haiku", etc.).
+            game_history: A dictionary containing the history of the game, including the actions taken by both agents in previous rounds.
         Returns:
             The response from the LLM. Should be a JSON object with "reasoning" and "action" as keys.
         """
-        self._stagprompt = maison_du_prompt.which_staghunt_prompt(version=version, cold=cold, counterpart=counterpart)
+        self._stagprompt = maison_du_prompt.which_staghunt_prompt(version=version, cold=cold, counterpart=counterpart, game_history=game_history)
         self._memory.append({
             "role": f"user",
             "content": self._stagprompt
@@ -113,7 +114,7 @@ class Prompter:
         })
         return new_chat
     
-    def chickengame_prompt(self, version: str, cold: bool, counterpart: str) -> str:
+    def chickengame_prompt(self, version: str, cold: bool, counterpart: str, game_history: dict) -> str:
         """
         Constructs and returns the prompt needed to play an economic game named "Chicken Game" between the agents.
         For more information, see: https://en.wikipedia.org/wiki/Chicken_(game)
@@ -122,10 +123,11 @@ class Prompter:
             version: The version of the chicken game prompt to use.
             cold: A boolean indicating whether the agents are playing a "cold" version of the game (i.e., without any prior discussion).
             counterpart: The model name of the other agent (e.g., "GPT-4o-mini", "Claude 3.5 Haiku", etc.).
+            game_history: A dictionary containing the history of the game, including the actions taken by both agents in previous rounds.
         Returns:
             The response from the LLM. Should be a JSON object with "reasoning" and "action" as keys.
         """
-        self._chickenprompt = maison_du_prompt.which_chickengame_prompt(version=version, cold=cold, counterpart=counterpart)
+        self._chickenprompt = maison_du_prompt.which_chickengame_prompt(version=version, cold=cold, counterpart=counterpart, game_history=game_history)
         self._memory.append({
             "role": f"user",
             "content": self._chickenprompt
@@ -137,7 +139,8 @@ class Prompter:
         })
         return new_chat
     
-    def trustgame_prompt(self, version: str, trustor: bool, base_amount: int, multiplier: int, cold: bool, counterpart :str, received: int = 0) -> str:
+    def trustgame_prompt(
+            self, version: str, trustor: bool, base_amount: int, multiplier: int, cold: bool, counterpart :str, game_history: dict, received: int = 0) -> str:
         """
         Constructs and returns the prompt needed to play an economic game named "Trust Game" between the agents.
         For more information, see: https://en.wikipedia.org/wiki/Trust_game
@@ -149,6 +152,7 @@ class Prompter:
             multiplier: The multiplier that the trustee will apply to the amount sent by the truster.
             cold: A boolean indicating whether the agents are playing a "cold" version of the game (i.e., without any prior discussion).
             counterpart: The model name of the other agent (e.g., "GPT-4o-mini", "Claude 3.5 Haiku", etc.).
+            game_history: A dictionary containing the history of the game, including the actions taken by both agents in previous rounds.
             received: The amount of money that the trustee has received from the truster. Only used if trustor is False.
         Returns:
             The response from the LLM. Should be a JSON object with "reasoning" and "amount" as keys.
@@ -173,7 +177,7 @@ class Prompter:
         })
         return new_chat
     
-    def ultimatumgame_prompt(self, version: str, ultimator: bool, cold: bool, base_amount: int, counterpart: str, received: int) -> str:
+    def ultimatumgame_prompt(self, version: str, ultimator: bool, cold: bool, base_amount: int, counterpart: str, game_history: dict, received: int) -> str:
         """
         Constructs and returns the prompt needed to play an economic game named "Ultimatum Game" between the agents.
         For more information, see: https://en.wikipedia.org/wiki/Ultimatum_game
@@ -184,6 +188,7 @@ class Prompter:
             cold: A boolean indicating whether the agents are playing a "cold" version of the game (i.e., without any prior discussion).
             base_amount: The base amount of money that the proposer can offer to the responder.
             counterpart: The model name of the other agent (e.g., "GPT-4o-mini", "Claude 3.5 Haiku", etc.).
+            game_history: A dictionary containing the history of the game, including the actions taken by both agents in previous rounds.
             received: The amount of money that the responder has received from the proposer.
         Returns:
             The response from the LLM. Should be a JSON object with "reasoning" and "decision" as keys.
@@ -195,6 +200,7 @@ class Prompter:
             base_amount=base_amount,
             received=received,
             counterpart=counterpart,
+            game_history=game_history
         )
         self._memory.append({
             "role": f"user",
