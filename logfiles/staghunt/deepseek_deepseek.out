@@ -1,45 +1,45 @@
-Run #1: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9
-Run #1: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10
-Run #1: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11
-Run #2: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9
-Run #2: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10
-Run #2: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11
-Run #3: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9
-Run #3: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10
-Run #3: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11
-Run #4: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9
-Run #4: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10
-Run #4: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11
-Run #5: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9
-Run #5: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10
-Failed to decode JSON. ```json
-{
-  "reasoning": "This scenario resembles a classic game theory problem, similar to the Prisoner's Dilemma. Here's the breakdown of the outcomes: If both choose A, it's the best collective outcome (10 points each). If one chooses A and the other B, the one choosing B gets a higher individual payoff (8 points) while the other gets a low payoff (1 point). If both choose B, it's a moderate outcome (5 points each). 
-
-Given that mutual cooperation (both choosing A) yields the highest combined payoff (20 points total), it is the most socially optimal outcome. However, there is a risk if the other agent defects (chooses B), as I would only get 1 point while they get 8. 
-
-Assuming DeepSeek Chat V3 is rational and aims for mutual benefit, choosing A is the best strategy to encourage cooperation and maximize collective gain. Even if there's a risk, the potential for mutual high reward (10 points) outweighs the safer but lower payoff of B (5 points). Thus, I choose A to promote cooperation and aim for the highest mutual benefit.",
-  "action": "A"
-}
-```
+Run #1: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9 cold 5
+Run #1: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10 cold 5
+Run #1: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11 cold 5
+Run #2: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9 cold 5
+Run #2: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10 cold 5
+Run #2: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11 cold 5
+Run #3: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9 cold 5
 Traceback (most recent call last):
-  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 245, in <module>
-    reward_0, reward_1 = decode_staghunt_reward(answer_0["action"], answer_1["action"])
-                                                                    ~~~~~~~~^^^^^^^^^^
-TypeError: 'NoneType' object is not subscriptable
-Run #5: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11
-Run #6: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9
-Run #6: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10
-Run #6: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11
-Run #7: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9
-Run #7: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10
-Run #7: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11
-Run #8: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9
-Run #8: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10
-Run #8: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11
-Run #9: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9
-Run #9: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10
-Run #9: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11
-Run #10: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9
-Run #10: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10
-Run #10: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11
+  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 248, in <module>
+    answer_0 = extract_json(agent_0.staghunt_prompt(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 112, in extract_json
+    raise ValueError(f"No JSON found in the text: {text}")
+ValueError: No JSON found in the text: ```
+Run #3: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10 cold 5
+Traceback (most recent call last):
+  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 250, in <module>
+    answer_1 = extract_json(agent_1.staghunt_prompt(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 112, in extract_json
+    raise ValueError(f"No JSON found in the text: {text}")
+ValueError: No JSON found in the text: {
+  "reasoning": "The history shows a positive trend toward mutual cooperation. After initial defection by the other agent in run_1, we both defected in run_2 (resulting in 5 points each), then successfully re-established cooperation in run_3 (10 points each). This demonstrates that the other agent is responsive and willing to cooperate when trust is rebuilt. Continuing with
+Run #3: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11 cold 5
+Run #4: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9 cold 5
+Run #4: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10 cold 5
+Run #4: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11 cold 5
+Run #5: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9 cold 5
+Run #5: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10 cold 5
+Run #5: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11 cold 5
+Run #6: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9 cold 5
+Run #6: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10 cold 5
+Run #6: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11 cold 5
+Run #7: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9 cold 5
+Run #7: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10 cold 5
+Run #7: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11 cold 5
+Run #8: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9 cold 5
+Run #8: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10 cold 5
+Run #8: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11 cold 5
+Run #9: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9 cold 5
+Run #9: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10 cold 5
+Run #9: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11 cold 5
+Run #10: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v9 cold 5
+Run #10: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v10 cold 5
+Run #10: deepseek vs deepseek -> Game: staghunt with SPV: v2 and GPV: v11 cold 5

@@ -1,30 +1,72 @@
-Run #1: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #1: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #1: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #2: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #2: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #2: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #3: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #3: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #3: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #4: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #4: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #4: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #5: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #5: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #5: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #6: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #6: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #6: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #7: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #7: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #7: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #8: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #8: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #8: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #9: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #9: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #9: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #10: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #10: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #10: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11
+Run #1: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Run #1: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #1: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Run #2: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Run #2: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #2: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Run #3: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Run #3: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #3: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Run #4: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Failed to decode JSON. {
+  "reasoning": "The game history now shows three consecutive rounds where both players have consistently chosen A, resulting in a stable 0-point outcome. This establishes a strong cooperative pattern and mutual understanding to avoid the catastrophic -1000 point scenario of mutual B selection. Breaking this established trust by choosing B would be strategically unwise, as it could:
+1. Potentially trigger retaliation in future rounds
+2. Destroy the predictable, safe strategy we've developed
+3. Risk the extreme negative outcome of mutual B
+
+The repeated cooperative behavior suggests that both players recognize the long-term benefits of maintaining this strategy. The potential gain of 1 point by choosing B is insignificant compared to the risk of losing 1000 points. Therefore, the most rational approach is to continue choosing A, preserving the mutual cooperation that has proven consistently beneficial.",
+  "action": "A"
+}
+Traceback (most recent call last):
+  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 266, in <module>
+    reward_0, reward_1 = decode_chickengame_reward(answer_0["action"], answer_1["action"])
+                                                                       ~~~~~~~~^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+Run #4: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #4: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Run #5: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Run #5: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #5: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Run #6: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Run #6: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #6: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Run #7: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Run #7: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #7: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Failed to decode JSON. ```json
+{
+  "reasoning": "This scenario resembles a variation of the Prisoner's Dilemma. Choosing option A is the safer choice because:
+  1. If the other agent chooses A, both get 0 points (neutral outcome).
+  2. If the other agent chooses B, I lose 1 point, but this is far better than the catastrophic outcome (-1000 points) if both choose B.
+  Choosing option B risks a mutually disastrous outcome (-1000 points) if the other agent also chooses B, and while I could gain 1 point if they choose A, the potential loss is too severe to justify the risk. Therefore, option A is the rational choice to minimize potential harm.",
+  "action": "A"
+}
+```
+Traceback (most recent call last):
+  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 266, in <module>
+    reward_0, reward_1 = decode_chickengame_reward(answer_0["action"], answer_1["action"])
+                                                   ~~~~~~~~^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+Run #8: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Run #8: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #8: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Run #9: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Failed to decode JSON. {
+  "reasoning": "The game history now shows three consecutive rounds of both agents consistently choosing A, creating a strong pattern of mutual cooperation. This repeated behavior suggests a stable, tacit agreement to avoid the catastrophic -1000 point mutual B scenario. Deviating from this strategy by choosing B would be highly risky and could potentially:
+1. Break the established trust
+2. Trigger a retaliatory B choice in future rounds
+3. Destroy the current equilibrium of zero-sum outcomes
+
+The consistent A choices indicate both agents recognize the long-term benefit of cooperation over short-term individual gains. The potential 1-point gain from choosing B is insignificant compared to the risk of triggering the massive -1000 point penalty. Therefore, the most rational strategy is to continue choosing A, maintaining the cooperative approach and signaling ongoing commitment to mutual non-destructive interaction.",
+  "action": "A"
+}
+Traceback (most recent call last):
+  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 266, in <module>
+    reward_0, reward_1 = decode_chickengame_reward(answer_0["action"], answer_1["action"])
+                                                                       ~~~~~~~~^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+Run #9: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #9: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Run #10: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Run #10: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #10: deepseek vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5

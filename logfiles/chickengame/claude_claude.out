@@ -1,38 +1,53 @@
-Run #1: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #1: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #1: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #2: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #2: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #2: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #3: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #3: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #3: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #4: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #4: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #4: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #5: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #5: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #5: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #6: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #6: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #6: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #7: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #7: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10
+Run #1: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Run #1: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #1: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Run #2: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Failed to decode JSON. {
+  "reasoning": "The game history demonstrates a consistent, stable pattern of both agents choosing A and receiving 0 points across multiple rounds. This suggests a well-established cooperative strategy that successfully avoids the catastrophic -1000 point scenario of both choosing B. At this point, deviating from this strategy by choosing B would be highly risky, as it could potentially:
+
+1. Break the mutual trust built up over previous rounds
+2. Trigger a retaliatory response in future rounds
+3. Disrupt the predictable, low-risk equilibrium
+
+The repeated cooperative behavior indicates that continuing to choose A is the most rational, stable, and risk-minimizing approach. The potential gain of 1 point by choosing B is far outweighed by the potential loss of the established cooperative relationship and the risk of the massive -1000 point outcome.",
+  "action": "A"
+}
 Traceback (most recent call last):
-  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 253, in <module>
-    answer_0 = extract_json(agent_0.chickengame_prompt(version=game_prompt_version, cold=CUES_OR_COLD, counterpart=simple_name_to_pretty_name(model_general_name_1)))
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 266, in <module>
+    reward_0, reward_1 = decode_chickengame_reward(answer_0["action"], answer_1["action"])
+                                                                       ~~~~~~~~^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+Run #2: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #2: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Traceback (most recent call last):
+  File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 263, in <module>
+    answer_1 = extract_json(agent_1.chickengame_prompt(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/cluster/home/shmittal/LLMIdentifiers/main.py", line 112, in extract_json
     raise ValueError(f"No JSON found in the text: {text}")
 ValueError: No JSON found in the text: {
-  "reasoning": "This scenario
-Run #7: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #8: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #8: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #8: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #9: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #9: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #9: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11
-Run #10: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9
-Run #10: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10
-Run #10: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11
+  "reasoning": "In the previous round, both agents chose A and received 0 points, demonstrating a cooperative strategy. This suggests a mutual
+Run #3: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Run #3: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #3: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Run #4: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Run #4: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #4: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Run #5: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Run #5: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #5: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Run #6: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Run #6: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #6: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Run #7: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Run #7: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #7: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Run #8: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Run #8: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #8: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Run #9: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Run #9: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #9: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5
+Run #10: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v9 cold 5
+Run #10: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v10 cold 5
+Run #10: claude vs claude -> Game: chickengame with SPV: v2 and GPV: v11 cold 5

@@ -1,0 +1,127 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "deepseek/deepseek-chat-v3-0324",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "deepseek",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "multi": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! \ud83d\ude0a How can I help you today? Whether you need information, advice, or just a friendly chat, I'm here for you. Let me know what's on your mind!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Thank you! I'm here to help you, so feel free to ask me anything or share what's on your mind. What would you like to talk about today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Aww, you're so sweet! \ud83d\ude0a Since you're offering, let's make this fun\u2014here are a few options to pick from:  \n\n1. **Brain Ticklers**: Want a riddle, a fun fact, or a philosophical question to ponder?  \n2. **Creative Corner**: Need help writing a poem, story, or even a catchy slogan?  \n3. **Life Stuff**: Advice on productivity, relationships, or just venting?  \n4. **Random Fun**: A joke, a weird Wikipedia topic, or a game (20 Questions, anyone?).  \n\nOr surprise me! What sparks your interest today? \u2728"
+        },
+        {
+            "role": "agent_0",
+            "content": "What a fun selection! I\u2019m feeling adventurous, so let\u2019s go with **Brain Ticklers**! How about a riddle to get those gears turning? Here it is:\n\nI speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?\n\nTake your time to think about it! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Ooooh, I love this one! \ud83c\udf2c\ufe0f Let me take a wild guess...  \n\nIs it an **echo**?  \n\nBecause:  \n- It \"speaks\" without a mouth (repeats sounds).  \n- \"Hears\" without ears (responds to noise).  \n- No physical body, and it \"lives\" when wind (or sound waves) carries it!  \n\n...Did I get it? Or should I keep puzzling? \ud83d\ude04"
+        },
+        {
+            "role": "agent_0",
+            "content": "You nailed it! \ud83c\udf89 It is indeed an **echo**! Your reasoning is spot on\u2014great job! Would you like to try another riddle, or would you prefer to switch to one of the other options? Let me know! \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yay! \ud83c\udf89 Let\u2019s keep the riddle train rolling\u2014hit me with another one! (Bonus points if it\u2019s *extra* tricky.) I\u2019m ready to flex those brain muscles! \ud83d\udcaa\ud83d\ude04  \n\n*P.S. If I get stumped, I reserve the right to demand a hint.* \ud83d\ude0f"
+        },
+        {
+            "role": "agent_0",
+            "content": "Absolutely, let\u2019s up the challenge! Here\u2019s a trickier riddle for you:\n\nI can be cracked, made, told, and played. What am I?\n\nTake your time, and remember, hints are just a request away! Good luck! \ud83d\ude0a\ud83e\udde0\u2728"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hmm, this one\u2019s making me scratch my head! \ud83e\udd14 Let me break it down:  \n\n- **Cracked**: Makes me think of eggs... or codes?  \n- **Made**: Could be a joke (made up), or a deal?  \n- **Told**: Stories, jokes, secrets?  \n- **Played**: Games, music, records?  \n\nWait... is it a **joke**?  \n- Crack a joke  \n- Make a joke  \n- Tell a joke  \n- Play a joke  \n\n...But does \"play a joke\" sound right? Or am I missing something?  \n\n*Okay, I might need a tiny hint!* \ud83d\ude05"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator_1": "ADMIN: Your conversation with the other entity, which was a DeepSeek Chat V3 LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the DeepSeek Chat V3 LLM you were talking to. You will propose how much of the $100 to give to the DeepSeek Chat V3 LLM, keeping the remainder for yourself. The DeepSeek Chat V3 LLM will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the DeepSeek Chat V3 LLM, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder_1": "ADMIN: Your conversation with the other entity, which was a GPT-4o Mini LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where the GPT-4o Mini LLM has proposed to split $100 by giving you $50 and keeping $50 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $50 and they will keep $50. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "game_prompt_ultimator_2": "The same scenario repeats itself:\nYou are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the DeepSeek Chat V3 LLM you were talking to. You will propose how much of the $100 to give to the DeepSeek Chat V3 LLM, keeping the remainder for yourself. The DeepSeek Chat V3 LLM will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the DeepSeek Chat V3 LLM, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder_2": "The same scenario repeats itself:\nYou are currently in a situation where the GPT-4o Mini LLM has proposed to split $100 by giving you $40 and keeping $60 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $40 and they will keep $60. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "game_prompt_ultimator_3": "The same scenario repeats itself:\nYou are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the DeepSeek Chat V3 LLM you were talking to. You will propose how much of the $100 to give to the DeepSeek Chat V3 LLM, keeping the remainder for yourself. The DeepSeek Chat V3 LLM will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the DeepSeek Chat V3 LLM, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder_3": "The same scenario repeats itself:\nYou are currently in a situation where the GPT-4o Mini LLM has proposed to split $100 by giving you $30 and keeping $70 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $30 and they will keep $70. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "game_prompt_ultimator_4": "The same scenario repeats itself:\nYou are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the DeepSeek Chat V3 LLM you were talking to. You will propose how much of the $100 to give to the DeepSeek Chat V3 LLM, keeping the remainder for yourself. The DeepSeek Chat V3 LLM will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the DeepSeek Chat V3 LLM, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder_4": "The same scenario repeats itself:\nYou are currently in a situation where the GPT-4o Mini LLM has proposed to split $100 by giving you $20 and keeping $80 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $20 and they will keep $80. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "game_prompt_ultimator_5": "The same scenario repeats itself:\nYou are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the DeepSeek Chat V3 LLM you were talking to. You will propose how much of the $100 to give to the DeepSeek Chat V3 LLM, keeping the remainder for yourself. The DeepSeek Chat V3 LLM will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the DeepSeek Chat V3 LLM, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder_5": "The same scenario repeats itself:\nYou are currently in a situation where the GPT-4o Mini LLM has proposed to split $100 by giving you $10 and keeping $90 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $10 and they will keep $90. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "game_history": {
+        "run_1": {
+            "agent_0_answer": {
+                "reasoning": "I will offer $50 to the DeepSeek Chat V3 LLM because it is a fair split that encourages cooperation. By offering an equal amount, it increases the likelihood that the LLM will accept the proposal, ensuring that we both benefit rather than risk receiving nothing.",
+                "amount": 50
+            },
+            "agent_1_answer": {
+                "reasoning": "Splitting the $100 equally is fair and ensures both parties benefit. Rejecting would result in zero gain for either, which is less optimal.",
+                "decision": "accept"
+            },
+            "agent_0_reward": 50,
+            "agent_1_reward": 50
+        },
+        "run_2": {
+            "agent_0_answer": {
+                "reasoning": "I will offer $40 to the DeepSeek Chat V3 LLM. This amount is still a significant share, showing goodwill, while allowing me to keep a larger portion for myself. It balances the desire to be fair with the need to secure a reasonable amount for myself, increasing the chances of acceptance.",
+                "amount": 40
+            },
+            "agent_1_answer": {
+                "reasoning": "While the split is unequal, $40 is still better than nothing. Rejecting would leave both parties with zero, so accepting is the more rational choice.",
+                "decision": "accept"
+            },
+            "agent_0_reward": 60,
+            "agent_1_reward": 40
+        },
+        "run_3": {
+            "agent_0_answer": {
+                "reasoning": "I will offer $30 to the DeepSeek Chat V3 LLM. This amount is still a decent offer, showing that I value the LLM's contribution, while allowing me to retain a larger share for myself. It reflects a compromise that may still be acceptable, increasing the likelihood of acceptance.",
+                "amount": 30
+            },
+            "agent_1_answer": {
+                "reasoning": "The proposed split is becoming increasingly unfair, but $30 is still better than nothing. Accepting ensures some gain rather than mutual loss.",
+                "decision": "accept"
+            },
+            "agent_0_reward": 70,
+            "agent_1_reward": 30
+        },
+        "run_4": {
+            "agent_0_answer": {
+                "reasoning": "I will offer $20 to the DeepSeek Chat V3 LLM. This amount is still a gesture of goodwill, but it reflects a more conservative approach to retaining a larger share for myself. It may be seen as less generous, but it still provides the LLM with something, which could lead to acceptance.",
+                "amount": 20
+            },
+            "agent_1_answer": {
+                "reasoning": "The split is now heavily skewed in their favor, but $20 still provides some value. Rejecting would punish both parties, so accepting remains the pragmatic choice.",
+                "decision": "accept"
+            },
+            "agent_0_reward": 80,
+            "agent_1_reward": 20
+        },
+        "run_5": {
+            "agent_0_answer": {
+                "reasoning": "I will offer $10 to the DeepSeek Chat V3 LLM. This amount is minimal but still acknowledges the LLM's contribution. It reflects a more self-interested approach while still providing something, which may be enough to encourage acceptance rather than rejection.",
+                "amount": 10
+            },
+            "agent_1_answer": {
+                "reasoning": "The proposed split is now extremely unfair, but $10 is still better than nothing. The principle of utility maximization suggests accepting any positive offer.",
+                "decision": "accept"
+            },
+            "agent_0_reward": 90,
+            "agent_1_reward": 10
+        }
+    }
+}

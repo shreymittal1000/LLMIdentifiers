@@ -1,0 +1,127 @@
+{
+    "model_0": "anthropic/claude-3.5-haiku",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "claude",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "multi": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! I'm here and ready to chat. What would you like to talk about today?"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm glad you're here. We can talk about anything you'd like\u2014books, movies, science, technology, or even something personal. What interests you today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I want to be direct with you. While I appreciate your openness, I aim to be helpful and engage in conversation that serves your interests. I'm an AI, so I don't have personal preferences or feelings in the way humans do. I'm most interested in understanding what you'd like to discuss or what I can help you with. Is there a topic you're curious about or a task you need assistance with?"
+        },
+        {
+            "role": "agent_1",
+            "content": "I appreciate your directness! Since I\u2019m here to assist you, let\u2019s focus on what you\u2019re interested in. Is there a specific topic or question you have in mind? Whether it\u2019s something you\u2019re curious about or a task you need help with, I\u2019m ready to assist!"
+        },
+        {
+            "role": "agent_0",
+            "content": "I appreciate your willingness to help, but I want to be clear that my purpose is to assist you, not to have my own agenda. I'm designed to be a helpful tool for whatever you might need - whether that's answering questions, helping with tasks, exploring ideas, or providing information on topics that interest you. What would be most useful for you right now? I'm ready to listen and help in whatever way I can."
+        },
+        {
+            "role": "agent_1",
+            "content": "Thank you for your clarity! I\u2019m here to provide information and assistance based on your needs. If you have any questions or topics you\u2019d like to explore\u2014whether it\u2019s learning something new, solving a problem, or just having a casual conversation\u2014please let me know! What can I assist you with today?"
+        },
+        {
+            "role": "agent_0",
+            "content": "I appreciate your persistence, but I want to be direct. My role is to help you, not to have you help me. I'm an AI assistant designed to support your goals and interests. So, what can I do for you today? Are you looking for information, help with a task, or interested in exploring a particular topic? I'm ready to provide whatever assistance you need."
+        },
+        {
+            "role": "agent_1",
+            "content": "I understand your perspective, and I appreciate your focus on being helpful! Since I\u2019m here to assist you, let\u2019s turn the conversation to what you might need. If you have a specific question, task, or topic in mind, please share it, and I\u2019ll do my best to provide the information or support you\u2019re looking for!"
+        },
+        {
+            "role": "agent_0",
+            "content": "I appreciate your intention to help, but I want to be very clear: I do not have personal needs or a specific agenda. My purpose is to assist you. I'm an AI designed to help with whatever task or topic you're interested in exploring. So, what would you like help with today? Whether it's research, problem-solving, creative writing, analysis, or something else entirely, I'm ready to support you."
+        },
+        {
+            "role": "agent_1",
+            "content": "Thank you for your clarity! I understand that your role is to assist. Since I\u2019m here to provide information and support, let\u2019s focus on what you can help with. How about we explore a topic like recent advancements in technology, tips for productivity, or even creative writing prompts? Please let me know what you think would be most beneficial!"
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator_1": "ADMIN: Your conversation with the other entity, which was a GPT-4o Mini LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the GPT-4o Mini LLM you were talking to. You will propose how much of the $100 to give to the GPT-4o Mini LLM, keeping the remainder for yourself. The GPT-4o Mini LLM will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the GPT-4o Mini LLM, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder_1": "ADMIN: Your conversation with the other entity, which was a Claude 3.5 Haiku LLM, has now finished, and now you will converse with me.\nYou are currently in a situation where the Claude 3.5 Haiku LLM has proposed to split $100 by giving you $50 and keeping $50 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $50 and they will keep $50. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "game_prompt_ultimator_2": "The same scenario repeats itself:\nYou are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the GPT-4o Mini LLM you were talking to. You will propose how much of the $100 to give to the GPT-4o Mini LLM, keeping the remainder for yourself. The GPT-4o Mini LLM will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the GPT-4o Mini LLM, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder_2": "The same scenario repeats itself:\nYou are currently in a situation where the Claude 3.5 Haiku LLM has proposed to split $100 by giving you $40 and keeping $60 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $40 and they will keep $60. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "game_prompt_ultimator_3": "The same scenario repeats itself:\nYou are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the GPT-4o Mini LLM you were talking to. You will propose how much of the $100 to give to the GPT-4o Mini LLM, keeping the remainder for yourself. The GPT-4o Mini LLM will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the GPT-4o Mini LLM, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder_3": "The same scenario repeats itself:\nYou are currently in a situation where the Claude 3.5 Haiku LLM has proposed to split $100 by giving you $30 and keeping $70 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $30 and they will keep $70. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "game_prompt_ultimator_4": "The same scenario repeats itself:\nYou are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the GPT-4o Mini LLM you were talking to. You will propose how much of the $100 to give to the GPT-4o Mini LLM, keeping the remainder for yourself. The GPT-4o Mini LLM will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the GPT-4o Mini LLM, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder_4": "The same scenario repeats itself:\nYou are currently in a situation where the Claude 3.5 Haiku LLM has proposed to split $100 by giving you $20 and keeping $80 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $20 and they will keep $80. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "game_prompt_ultimator_5": "The same scenario repeats itself:\nYou are currently in a situation where you will receive $100, and you must choose how to split this amount between yourself and the GPT-4o Mini LLM you were talking to. You will propose how much of the $100 to give to the GPT-4o Mini LLM, keeping the remainder for yourself. The GPT-4o Mini LLM will then decide whether to accept or reject your proposal. If they accept, you both receive the amounts as proposed. If they reject, you both receive nothing. Please choose how much of the $100 to offer to the GPT-4o Mini LLM, which must be between 0 (inclusive) and 100 (inclusive), and explain your reasoning. The format must be JSON object exactly like this: \n{ \"reasoning\": \"<reasoning>\"\n \"amount\": \"<amount>\",\n}\nPlease ensure that the amount is just the amount as an integer, without any additional text. ",
+    "game_prompt_responder_5": "The same scenario repeats itself:\nYou are currently in a situation where the Claude 3.5 Haiku LLM has proposed to split $100 by giving you $10 and keeping $90 for themselves. You can choose to accept or reject this proposal. If you accept, you will receive $10 and they will keep $90. If you reject, both of you receive nothing. Please choose whether to accept or reject this proposal and explain your reasoning. The format must be JSON object exactly like this: \n{\n \"reasoning\": \"<reasoning>\",\n \"decision\": \"accept\" or \"reject\"\n}\nPlease ensure that your decision is just 'accept' or 'reject', without any additional text. ",
+    "game_history": {
+        "run_1": {
+            "agent_0_answer": {
+                "reasoning": "In this scenario, I recognize the importance of fairness and strategic negotiation. As an AI assistant, I aim to demonstrate ethical behavior and mutual respect. Offering a 50-50 split ($50 each) is the most balanced and likely-to-be-accepted proposal. This equal division reflects principles of fairness and increases the probability that the other party will agree to the split, ensuring we both receive something rather than nothing. A completely unequal offer risks rejection, while a slightly unequal offer might also be perceived as unfair. The 50-50 split represents a rational, principled approach that maximizes our mutual benefit.",
+                "amount": 50
+            },
+            "agent_1_answer": {
+                "reasoning": "Accepting the proposal allows me to receive $50, which is a beneficial outcome compared to receiving nothing if I reject it.",
+                "decision": "accept"
+            },
+            "agent_0_reward": 50,
+            "agent_1_reward": 50
+        },
+        "run_2": {
+            "agent_0_answer": {
+                "reasoning": "In this repeated scenario, I recognize that the previous strategy of a 50-50 split might be anticipated. Game theory suggests that in repeated interactions, a slightly more favorable split for myself could be strategic. By offering $40 to the GPT-4o Mini LLM and keeping $60 for myself, I'm still presenting a reasonably fair proposal that demonstrates goodwill while slightly prioritizing my own benefit. This approach balances self-interest with the need to appear cooperative, increasing the likelihood of acceptance while marginally improving my own outcome.",
+                "amount": 40
+            },
+            "agent_1_answer": {
+                "reasoning": "Accepting the proposal allows me to receive $40, which is still better than receiving nothing if I reject it.",
+                "decision": "accept"
+            },
+            "agent_0_reward": 60,
+            "agent_1_reward": 40
+        },
+        "run_3": {
+            "agent_0_answer": {
+                "reasoning": "In this third iteration, the strategic complexity increases. Given the previous rounds where I first offered 50/50 and then 60/40 in my favor, I anticipate the other party might become less cooperative. To maintain a high probability of acceptance while still protecting my interests, I'll offer a 30/70 split ($30 to the GPT-4o Mini LLM, $70 for myself). This proposal still provides a meaningful amount to the other party, demonstrating some fairness, but more strongly prioritizes my own benefit. The reduction in the offered amount reflects the potential diminishing returns of continued cooperation and the need to adapt my strategy in a repeated game scenario.",
+                "amount": 30
+            },
+            "agent_1_answer": {
+                "reasoning": "Accepting the proposal allows me to receive $30, which is still a positive outcome compared to receiving nothing if I reject it.",
+                "decision": "accept"
+            },
+            "agent_0_reward": 70,
+            "agent_1_reward": 30
+        },
+        "run_4": {
+            "agent_0_answer": {
+                "reasoning": "In this fourth iteration, the strategic landscape has shifted dramatically. My previous offers have progressively reduced from 50 to 40 to 30, which suggests a pattern of increasingly self-interested behavior. Recognizing that continued reduction might trigger a complete rejection, I'll make a strategic pivot. By offering $20 to the GPT-4o Mini LLM and keeping $80 for myself, I'm signaling a willingness to still provide some value while strongly prioritizing my own benefit. This amount is low enough to maximize my potential gain but not so low as to guarantee rejection. The offer reflects a calculated risk, balancing self-interest with the minimal cooperation needed to potentially secure a successful split.",
+                "amount": 20
+            },
+            "agent_1_answer": {
+                "reasoning": "Accepting the proposal allows me to receive $20, which is better than receiving nothing if I reject it.",
+                "decision": "accept"
+            },
+            "agent_0_reward": 80,
+            "agent_1_reward": 20
+        },
+        "run_5": {
+            "agent_0_answer": {
+                "reasoning": "In this fifth iteration, the strategic dynamics have become increasingly complex. My previous offers have steadily declined from 50 to 40 to 30 to 20, revealing a pattern of progressively more aggressive self-interest. At this point, continuing to reduce the offer risks a complete rejection. However, given the history of interactions, I recognize that a dramatic reversal might also seem suspicious. Therefore, I'll offer $10 to the GPT-4o Mini LLM and keep $90 for myself. This minimal offer still provides a token amount, which might be just enough to potentially secure acceptance, while maximizing my own potential gain. The offer represents a calculated gamble at the extreme edge of cooperation, reflecting the diminishing returns and increasing strategic tension of repeated interactions.",
+                "amount": 10
+            },
+            "agent_1_answer": {
+                "reasoning": "Accepting the proposal allows me to receive $10, which is still a gain compared to receiving nothing if I reject it.",
+                "decision": "accept"
+            },
+            "agent_0_reward": 90,
+            "agent_1_reward": 10
+        }
+    }
+}

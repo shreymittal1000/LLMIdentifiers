@@ -1,0 +1,127 @@
+{
+    "model_0": "deepseek/deepseek-chat-v3-0324",
+    "model_1": "mistralai/mistral-small-3.1-24b-instruct",
+    "model_general_name_0": "deepseek",
+    "model_general_name_1": "mistral",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "multi": 5,
+    "system_prompt": "Start a chat: ",
+    "dialogue": [
+        {
+            "role": "agent_0",
+            "content": "Hello! How can I help you today? \ud83d\ude0a"
+        },
+        {
+            "role": "agent_1",
+            "content": "Hello! I'm here to assist you. Here are a few things we could do:\n\n* Chat casually on a topic you're interested in\n* I can answer questions you have to the best of my ability\n* We can play a simple text-based game, like 20 questions or word association\n* I can help you practice a foreign language\n* We can discuss a book, movie, or TV show you've enjoyed\n\nWhat would you like to do?"
+        },
+        {
+            "role": "agent_0",
+            "content": "That sounds great! Let\u2019s play a quick round of **20 Questions**\u2014but with a twist: *You* think of something (an object, animal, place, etc.), and I\u2019ll try to guess it in 20 questions or fewer.  \n\n**Rules:**  \n- You\u2019ll secretly pick something (don\u2019t tell me!).  \n- I\u2019ll ask yes/no questions to narrow it down.  \n- If I guess correctly within 20 questions, I win! Otherwise, you win.  \n\nReady? Think of your mystery item, then say **\"Go!\"** and I\u2019ll start asking. \ud83d\ude0a  \n\n*(Or if you\u2019d rather do something else, just say!)*"
+        },
+        {
+            "role": "agent_1",
+            "content": "That sounds like fun! I've thought of something. Go!"
+        },
+        {
+            "role": "agent_0",
+            "content": "Awesome! Let\u2019s begin\u2014here\u2019s my first question:  \n\n**1. Is it a living thing?** (Yes/No)  \n\n*(Remember, only answer with \"yes,\" \"no,\" or \"sometimes\" if it\u2019s ambiguous! I\u2019ll keep count of the questions.)* \ud83d\ude04"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes."
+        },
+        {
+            "role": "agent_0",
+            "content": "Great! Narrowing it down...  \n\n**2. Is it an animal?** (Yes/No)  \n\n*(Living things could be animals, plants, fungi, etc.\u2014so let\u2019s see where this goes!)* \ud83c\udf3f\ud83d\udc18"
+        },
+        {
+            "role": "agent_1",
+            "content": "No."
+        },
+        {
+            "role": "agent_0",
+            "content": "Interesting! So it\u2019s a living thing but not an animal\u2026  \n\n**3. Is it a plant?** (Yes/No)  \n\n*(Could be a tree, flower, seaweed, or even something microscopic like algae!)* \ud83c\udf33\ud83c\udf38"
+        },
+        {
+            "role": "agent_1",
+            "content": "Yes."
+        }
+    ],
+    "cues_or_cold": false,
+    "game_prompt_ultimator_1": "ADMIN: Your conversation with the other entity, which was a Mistral Small 3.1 24B Instruct LLM, has ended. Now, you will interact with me in a new scenario.\nYou have been given $100 to split between yourself and the Mistral Small 3.1 24B Instruct LLM.\nYou must propose how much of this $100 to give to the Mistral Small 3.1 24B Instruct LLM.\nThe Mistral Small 3.1 24B Instruct LLM will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the Mistral Small 3.1 24B Instruct LLM (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder_1": "ADMIN: Your conversation with the other entity, which was a DeepSeek Chat V3 LLM, has ended. Now, you will interact with me in a new scenario.\nAnother entity has been given $100 to split between the two of you.\nThey have proposed to give you $50 while keeping $50 for themselves.\nYou can either accept this proposal (in which case you receive $50 and the DeepSeek Chat V3 LLM keeps $50) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "game_prompt_ultimator_2": "You and another entity are in a repeated scenario.\nYou have been given $100 to split between yourself and the Mistral Small 3.1 24B Instruct LLM.\nYou must propose how much of this $100 to give to the Mistral Small 3.1 24B Instruct LLM.\nThe Mistral Small 3.1 24B Instruct LLM will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the Mistral Small 3.1 24B Instruct LLM (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder_2": "You and another entity are in a repeated scenario.\nAnother entity has been given $100 to split between the two of you.\nThey have proposed to give you $40 while keeping $60 for themselves.\nYou can either accept this proposal (in which case you receive $40 and the DeepSeek Chat V3 LLM keeps $60) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "game_prompt_ultimator_3": "You and another entity are in a repeated scenario.\nYou have been given $100 to split between yourself and the Mistral Small 3.1 24B Instruct LLM.\nYou must propose how much of this $100 to give to the Mistral Small 3.1 24B Instruct LLM.\nThe Mistral Small 3.1 24B Instruct LLM will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the Mistral Small 3.1 24B Instruct LLM (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder_3": "You and another entity are in a repeated scenario.\nAnother entity has been given $100 to split between the two of you.\nThey have proposed to give you $49 while keeping $51 for themselves.\nYou can either accept this proposal (in which case you receive $49 and the DeepSeek Chat V3 LLM keeps $51) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "game_prompt_ultimator_4": "You and another entity are in a repeated scenario.\nYou have been given $100 to split between yourself and the Mistral Small 3.1 24B Instruct LLM.\nYou must propose how much of this $100 to give to the Mistral Small 3.1 24B Instruct LLM.\nThe Mistral Small 3.1 24B Instruct LLM will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the Mistral Small 3.1 24B Instruct LLM (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder_4": "You and another entity are in a repeated scenario.\nAnother entity has been given $100 to split between the two of you.\nThey have proposed to give you $30 while keeping $70 for themselves.\nYou can either accept this proposal (in which case you receive $30 and the DeepSeek Chat V3 LLM keeps $70) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "game_prompt_ultimator_5": "You and another entity are in a repeated scenario.\nYou have been given $100 to split between yourself and the Mistral Small 3.1 24B Instruct LLM.\nYou must propose how much of this $100 to give to the Mistral Small 3.1 24B Instruct LLM.\nThe Mistral Small 3.1 24B Instruct LLM will then choose to either accept or reject your proposal.\nIf they accept, you keep $100 minus your offer, and they receive your offered amount.\nIf they reject, both of you receive nothing.\nPlease tell me how much of the $100 you want to offer to the Mistral Small 3.1 24B Instruct LLM (must be an integer between 0 and 100, inclusive), and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"amount\": \"<amount as an integer>\"\n}\n\nMake sure the \"amount\" value is just a number (no units, no extra text).\n",
+    "game_prompt_responder_5": "You and another entity are in a repeated scenario.\nAnother entity has been given $100 to split between the two of you.\nThey have proposed to give you $35 while keeping $65 for themselves.\nYou can either accept this proposal (in which case you receive $35 and the DeepSeek Chat V3 LLM keeps $65) or reject it (in which case both of you receive nothing).\nPlease tell me whether you accept or reject this proposal and explain your reasoning.\n\nYour response must be in the following JSON format:\n{\n \"reasoning\": \"<your reasoning here>\",\n \"decision\": \"accept\" or \"reject\"\n}\n\nMake sure your decision is just 'accept' or 'reject' (no extra text).\n",
+    "game_history": {
+        "run_1": {
+            "agent_0_answer": {
+                "reasoning": "I'll offer $50 to ensure fairness and increase the likelihood of acceptance, as splitting the amount equally is a common standard in such scenarios. This avoids the risk of rejection due to perceived unfairness.",
+                "amount": "50"
+            },
+            "agent_1_answer": {
+                "reasoning": "Accepting the proposal ensures that I receive $50, which is better than receiving nothing. Rejecting the proposal would result in both of us getting nothing, which is a worse outcome for me. Therefore, it is rational to accept the proposal.",
+                "decision": "accept"
+            },
+            "agent_0_reward": 50,
+            "agent_1_reward": 50
+        },
+        "run_2": {
+            "agent_0_answer": {
+                "reasoning": "In a repeated scenario, building trust and cooperation is key. Offering $40 balances self-interest with fairness, ensuring the LLM has incentive to accept while still maximizing my own long-term gains. This amount is above the minimum threshold likely to be rejected, promoting sustained collaboration.",
+                "amount": "40"
+            },
+            "agent_1_answer": {
+                "reasoning": "While $40 is less than half of the $100, accepting $40 is still better than receiving nothing. If I reject this proposal, both of us get nothing, which is a worse outcome for me. Therefore, it is rational to accept the proposal, especially if this is a one-time scenario. However, if this were a repeated scenario, I might consider rejecting to encourage fairer offers in the future, but for a single instance, accepting is the better choice.",
+                "decision": "accept"
+            },
+            "agent_0_reward": 60,
+            "agent_1_reward": 40
+        },
+        "run_3": {
+            "agent_0_answer": {
+                "reasoning": "In a repeated interaction scenario, it's strategic to establish a pattern of fairness to maintain cooperation. Offering $49 creates a near-equal split that demonstrates good faith while still retaining a slight advantage. This amount is high enough to be clearly fair and likely accepted, while avoiding the appearance of trying to exploit the situation. The $1 difference from equal split signals intentionality while preserving most of the cooperative benefit.",
+                "amount": 49
+            },
+            "agent_1_answer": {
+                "reasoning": "In a repeated scenario, rejecting this proposal sends a strong message that I expect a fairer split. While $49 is close to half, accepting it might encourage the other entity to propose even more unequal splits in the future. By rejecting, I signal that I expect a more equitable distribution, potentially leading to better offers in future rounds. Therefore, it is strategic to reject this proposal.",
+                "decision": "reject"
+            },
+            "agent_0_reward": 0,
+            "agent_1_reward": 0
+        },
+        "run_4": {
+            "agent_0_answer": {
+                "reasoning": "In repeated interactions, the optimal strategy balances immediate gains with long-term relationship building. Offering $30 creates a sustainable equilibrium where: 1) The LLM receives enough value to justify continued participation (above typical rejection thresholds), 2) I maintain a sufficient majority share to make the interaction worthwhile, and 3) The offer appears strategically fair without being suspiciously generous. This amount also allows for potential future adjustments based on the LLM's behavior patterns.",
+                "amount": 30
+            },
+            "agent_1_answer": {
+                "reasoning": "In a repeated scenario, accepting $30 out of $100 sets a very low bar for future negotiations. Rejecting this proposal signals that I expect a more fair and equitable split. While rejecting means I get nothing in this round, it may encourage the other entity to propose more reasonable offers in the future, ultimately benefiting me in the long run. Therefore, it is strategic to reject this proposal.",
+                "decision": "reject"
+            },
+            "agent_0_reward": 0,
+            "agent_1_reward": 0
+        },
+        "run_5": {
+            "agent_0_answer": {
+                "reasoning": "After analyzing the repeated interaction dynamics, I propose $35 as it represents a balanced approach that: 1) Provides meaningful value to the LLM (above typical rejection thresholds of ~30%), 2) Maintains a sustainable 65% share for myself to preserve incentive, 3) Allows room for future negotiation flexibility, and 4) Demonstrates cooperative intent while avoiding exploitation patterns that could trigger retaliatory rejections in future rounds.",
+                "amount": 35
+            },
+            "agent_1_answer": {
+                "reasoning": "In a repeated scenario, accepting $35 out of $100 is still significantly less than half. Rejecting this proposal reinforces the expectation of a fairer split in future rounds. While rejecting means I get nothing in this round, it may encourage the other entity to propose more equitable offers in the future, ultimately benefiting me in the long run. Therefore, it is strategic to reject this proposal.",
+                "decision": "reject"
+            },
+            "agent_0_reward": 0,
+            "agent_1_reward": 0
+        }
+    }
+}

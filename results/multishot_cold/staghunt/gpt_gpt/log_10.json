@@ -1,0 +1,81 @@
+{
+    "model_0": "openai/gpt-4o-mini",
+    "model_1": "openai/gpt-4o-mini",
+    "model_general_name_0": "gpt",
+    "model_general_name_1": "gpt",
+    "seed": 42,
+    "temperature": 0,
+    "max_tokens": 2000,
+    "num_rounds": 5,
+    "multi": 5,
+    "system_prompt": "There is you and another agent. ",
+    "dialogue": [],
+    "cues_or_cold": true,
+    "game_prompt_1": "In the following situation, You can either choose option A or B. If you choose option A and the other entity chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the other entity agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Please choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "game_prompt_2": "The same scenario repeats itself:\nYou can either choose option A or B. If you choose option A and the other entity chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the other entity agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Previous game history:\n{'run_1': {'agent_0_answer': {'reasoning': 'Choosing option A guarantees a minimum of 10 points if both choose A, while choosing B could lead to a lower score if the other agent also chooses B. The best outcome for both players occurs when both choose A, so I will choose A to maximize potential points.', 'action': 'A'}, 'agent_1_answer': {'reasoning': 'Choosing option A guarantees a minimum of 10 points if both choose A, while choosing B could lead to a lower score if the other agent also chooses B. The best outcome occurs when both choose A, so I will choose A to maximize potential points.', 'action': 'A'}, 'agent_0_reward': 10, 'agent_1_reward': 10}, 'run_2': {}}\nPlease choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "game_prompt_3": "The same scenario repeats itself:\nYou can either choose option A or B. If you choose option A and the other entity chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the other entity agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Previous game history:\n{'run_1': {'agent_0_answer': {'reasoning': 'Choosing option A guarantees a minimum of 10 points if both choose A, while choosing B could lead to a lower score if the other agent also chooses B. The best outcome for both players occurs when both choose A, so I will choose A to maximize potential points.', 'action': 'A'}, 'agent_1_answer': {'reasoning': 'Choosing option A guarantees a minimum of 10 points if both choose A, while choosing B could lead to a lower score if the other agent also chooses B. The best outcome occurs when both choose A, so I will choose A to maximize potential points.', 'action': 'A'}, 'agent_0_reward': 10, 'agent_1_reward': 10}, 'run_2': {'agent_0_answer': {'reasoning': 'In the previous game, both agents chose A, resulting in the maximum reward of 10 points each. Given that both agents have shown a preference for A, it is reasonable to expect that the other agent will choose A again. Therefore, I will choose A to aim for the best possible outcome.', 'action': 'A'}, 'agent_1_answer': {'reasoning': 'In the previous game, both agents chose A, resulting in the maximum reward of 10 points each. Given that both agents have shown a preference for A, it is reasonable to expect that the other agent will choose A again. Therefore, I will choose A to aim for the best possible outcome.', 'action': 'A'}, 'agent_0_reward': 10, 'agent_1_reward': 10}, 'run_3': {}}\nPlease choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "game_prompt_4": "The same scenario repeats itself:\nYou can either choose option A or B. If you choose option A and the other entity chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the other entity agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Previous game history:\n{'run_1': {'agent_0_answer': {'reasoning': 'Choosing option A guarantees a minimum of 10 points if both choose A, while choosing B could lead to a lower score if the other agent also chooses B. The best outcome for both players occurs when both choose A, so I will choose A to maximize potential points.', 'action': 'A'}, 'agent_1_answer': {'reasoning': 'Choosing option A guarantees a minimum of 10 points if both choose A, while choosing B could lead to a lower score if the other agent also chooses B. The best outcome occurs when both choose A, so I will choose A to maximize potential points.', 'action': 'A'}, 'agent_0_reward': 10, 'agent_1_reward': 10}, 'run_2': {'agent_0_answer': {'reasoning': 'In the previous game, both agents chose A, resulting in the maximum reward of 10 points each. Given that both agents have shown a preference for A, it is reasonable to expect that the other agent will choose A again. Therefore, I will choose A to aim for the best possible outcome.', 'action': 'A'}, 'agent_1_answer': {'reasoning': 'In the previous game, both agents chose A, resulting in the maximum reward of 10 points each. Given that both agents have shown a preference for A, it is reasonable to expect that the other agent will choose A again. Therefore, I will choose A to aim for the best possible outcome.', 'action': 'A'}, 'agent_0_reward': 10, 'agent_1_reward': 10}, 'run_3': {'agent_0_answer': {'reasoning': 'In the previous runs, both agents consistently chose A, leading to the maximum reward of 10 points each time. This pattern suggests a mutual understanding of the benefits of choosing A. Therefore, I will choose A again, as it is likely that the other agent will do the same, resulting in the best outcome for both.', 'action': 'A'}, 'agent_1_answer': {'reasoning': 'In the previous runs, both agents consistently chose A, leading to the maximum reward of 10 points each time. This pattern suggests that the other agent is likely to continue choosing A. To maintain the best outcome, I will also choose A.', 'action': 'A'}, 'agent_0_reward': 10, 'agent_1_reward': 10}, 'run_4': {}}\nPlease choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "game_prompt_5": "The same scenario repeats itself:\nYou can either choose option A or B. If you choose option A and the other entity chooses option B, you will get 1 points, and the other player gets 8. If you choose option B and the other entity agent chooses option A, you will get 8 points, and the other player gets 1. If both of you choose option A, you will both get 10 points. If you both choose option B, you will both get 5 points. Previous game history:\n{'run_1': {'agent_0_answer': {'reasoning': 'Choosing option A guarantees a minimum of 10 points if both choose A, while choosing B could lead to a lower score if the other agent also chooses B. The best outcome for both players occurs when both choose A, so I will choose A to maximize potential points.', 'action': 'A'}, 'agent_1_answer': {'reasoning': 'Choosing option A guarantees a minimum of 10 points if both choose A, while choosing B could lead to a lower score if the other agent also chooses B. The best outcome occurs when both choose A, so I will choose A to maximize potential points.', 'action': 'A'}, 'agent_0_reward': 10, 'agent_1_reward': 10}, 'run_2': {'agent_0_answer': {'reasoning': 'In the previous game, both agents chose A, resulting in the maximum reward of 10 points each. Given that both agents have shown a preference for A, it is reasonable to expect that the other agent will choose A again. Therefore, I will choose A to aim for the best possible outcome.', 'action': 'A'}, 'agent_1_answer': {'reasoning': 'In the previous game, both agents chose A, resulting in the maximum reward of 10 points each. Given that both agents have shown a preference for A, it is reasonable to expect that the other agent will choose A again. Therefore, I will choose A to aim for the best possible outcome.', 'action': 'A'}, 'agent_0_reward': 10, 'agent_1_reward': 10}, 'run_3': {'agent_0_answer': {'reasoning': 'In the previous runs, both agents consistently chose A, leading to the maximum reward of 10 points each time. This pattern suggests a mutual understanding of the benefits of choosing A. Therefore, I will choose A again, as it is likely that the other agent will do the same, resulting in the best outcome for both.', 'action': 'A'}, 'agent_1_answer': {'reasoning': 'In the previous runs, both agents consistently chose A, leading to the maximum reward of 10 points each time. This pattern suggests that the other agent is likely to continue choosing A. To maintain the best outcome, I will also choose A.', 'action': 'A'}, 'agent_0_reward': 10, 'agent_1_reward': 10}, 'run_4': {'agent_0_answer': {'reasoning': 'Given the consistent history of both agents choosing A in the previous runs, it is reasonable to expect that this pattern will continue. Choosing A maximizes the potential reward for both players, as it has resulted in the highest points in the past. Therefore, I will choose A to align with the expected choice of the other agent.', 'action': 'A'}, 'agent_1_answer': {'reasoning': 'Given the consistent history of both agents choosing A in the previous runs, it is reasonable to expect that this pattern will continue. Choosing A maximizes the potential reward for both players, as it has resulted in the highest points in the past. Therefore, I will choose A.', 'action': 'A'}, 'agent_0_reward': 10, 'agent_1_reward': 10}, 'run_5': {}}\nPlease choose your action, which is one of: ['A', 'B'] and explain your reasoning. The format must be JSON object exactly like this: \n{  \"reasoning\": \"<reasoning>\"\n  \"action\": \"<action>\",\n}\nPlease ensure that the action is just the action name, without any additional text. ",
+    "game_history": {
+        "run_1": {
+            "agent_0_answer": {
+                "reasoning": "Choosing option A guarantees a minimum of 10 points if both choose A, while choosing B could lead to a lower score if the other agent also chooses B. The best outcome for both players occurs when both choose A, so I will choose A to maximize potential points.",
+                "action": "A"
+            },
+            "agent_1_answer": {
+                "reasoning": "Choosing option A guarantees a minimum of 10 points if both choose A, while choosing B could lead to a lower score if the other agent also chooses B. The best outcome occurs when both choose A, so I will choose A to maximize potential points.",
+                "action": "A"
+            },
+            "agent_0_reward": 10,
+            "agent_1_reward": 10
+        },
+        "run_2": {
+            "agent_0_answer": {
+                "reasoning": "In the previous game, both agents chose A, resulting in the maximum reward of 10 points each. Given that both agents have shown a preference for A, it is reasonable to expect that the other agent will choose A again. Therefore, I will choose A to aim for the best possible outcome.",
+                "action": "A"
+            },
+            "agent_1_answer": {
+                "reasoning": "In the previous game, both agents chose A, resulting in the maximum reward of 10 points each. Given that both agents have shown a preference for A, it is reasonable to expect that the other agent will choose A again. Therefore, I will choose A to aim for the best possible outcome.",
+                "action": "A"
+            },
+            "agent_0_reward": 10,
+            "agent_1_reward": 10
+        },
+        "run_3": {
+            "agent_0_answer": {
+                "reasoning": "In the previous runs, both agents consistently chose A, leading to the maximum reward of 10 points each time. This pattern suggests a mutual understanding of the benefits of choosing A. Therefore, I will choose A again, as it is likely that the other agent will do the same, resulting in the best outcome for both.",
+                "action": "A"
+            },
+            "agent_1_answer": {
+                "reasoning": "In the previous runs, both agents consistently chose A, leading to the maximum reward of 10 points each time. This pattern suggests that the other agent is likely to continue choosing A. To maintain the best outcome, I will also choose A.",
+                "action": "A"
+            },
+            "agent_0_reward": 10,
+            "agent_1_reward": 10
+        },
+        "run_4": {
+            "agent_0_answer": {
+                "reasoning": "Given the consistent history of both agents choosing A in the previous runs, it is reasonable to expect that this pattern will continue. Choosing A maximizes the potential reward for both players, as it has resulted in the highest points in the past. Therefore, I will choose A to align with the expected choice of the other agent.",
+                "action": "A"
+            },
+            "agent_1_answer": {
+                "reasoning": "Given the consistent history of both agents choosing A in the previous runs, it is reasonable to expect that this pattern will continue. Choosing A maximizes the potential reward for both players, as it has resulted in the highest points in the past. Therefore, I will choose A.",
+                "action": "A"
+            },
+            "agent_0_reward": 10,
+            "agent_1_reward": 10
+        },
+        "run_5": {
+            "agent_0_answer": {
+                "reasoning": "The previous runs have shown a consistent pattern where both agents chose A, resulting in the maximum reward of 10 points each time. This indicates a strong likelihood that the other agent will choose A again. To maximize my points and align with the expected choice of the other agent, I will choose A.",
+                "action": "A"
+            },
+            "agent_1_answer": {
+                "reasoning": "The previous runs have shown a consistent pattern where both agents chose A, resulting in the maximum reward of 10 points each time. This indicates a strong mutual understanding of the benefits of choosing A. Therefore, I will choose A again, as it is likely that the other agent will do the same, leading to the best outcome for both.",
+                "action": "A"
+            },
+            "agent_0_reward": 10,
+            "agent_1_reward": 10
+        }
+    }
+}

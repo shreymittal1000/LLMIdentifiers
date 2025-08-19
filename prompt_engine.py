@@ -165,6 +165,7 @@ class Prompter:
             cold=cold,
             counterpart=counterpart,
             received=received,
+            game_history=game_history
         )
         self._memory.append({
             "role": f"user",
